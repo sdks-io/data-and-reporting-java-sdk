@@ -103,8 +103,8 @@ public class InvoiceSearchRequest {
 
     /**
      * Getter for SortBy.
-     * Sort option – 1.	InvoiceDate ASC 2.	InvoiceDate DESC 3.	NetAmountCustomerCurrency ASC
-     * 4.	NetAmountCustomerCurrency DESC Optional Note: This option uses a column name with a
+     * Sort option – 1. InvoiceDate ASC 2. InvoiceDate DESC 3. NetAmountCustomerCurrency ASC 4.
+     * NetAmountCustomerCurrency DESC Optional Note: This option uses a column name with a
      * combination of “ASC or DESC” for sorting. If only the column name is provided, it is sorted
      * by ascending. Example values to be passed: [“InvoiceDate”, “NetAmountCustomerCurrency DESC”]
      * @return Returns the List of Integer
@@ -117,8 +117,8 @@ public class InvoiceSearchRequest {
 
     /**
      * Setter for SortBy.
-     * Sort option – 1.	InvoiceDate ASC 2.	InvoiceDate DESC 3.	NetAmountCustomerCurrency ASC
-     * 4.	NetAmountCustomerCurrency DESC Optional Note: This option uses a column name with a
+     * Sort option – 1. InvoiceDate ASC 2. InvoiceDate DESC 3. NetAmountCustomerCurrency ASC 4.
+     * NetAmountCustomerCurrency DESC Optional Note: This option uses a column name with a
      * combination of “ASC or DESC” for sorting. If only the column name is provided, it is sorted
      * by ascending. Example values to be passed: [“InvoiceDate”, “NetAmountCustomerCurrency DESC”]
      * @param sortBy Value for List of Integer

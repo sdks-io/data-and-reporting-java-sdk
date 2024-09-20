@@ -12,7 +12,7 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `ColCoCode` | `String` | Required | Collecting Company Code (Shell Code) of the selected payer. | String getColCoCode() | setColCoCode(String colCoCode) |
-| `InvoiceStatus` | [`PricedTransactionReqV2InvoiceStatusEnum`](../../doc/models/priced-transaction-req-v2-invoice-status-enum.md) | Required | Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U – Un-Invoiced, A – All<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | PricedTransactionReqV2InvoiceStatusEnum getInvoiceStatus() | setInvoiceStatus(PricedTransactionReqV2InvoiceStatusEnum invoiceStatus) |
+| `InvoiceStatus` | `Object` | Required | - | Object getInvoiceStatus() | setInvoiceStatus(Object invoiceStatus) |
 | `PayerNumber` | `String` | Required | Payer Number of the selected payer.<br>**Constraints**: *Minimum Length*: `1` | String getPayerNumber() | setPayerNumber(String payerNumber) |
 | `AccountId` | `Integer` | Optional | Account Id (GFN customer id) | Integer getAccountId() | setAccountId(Integer accountId) |
 | `AccountNumber` | `String` | Optional | Account Number of the selected account. | String getAccountNumber() | setAccountNumber(String accountNumber) |
@@ -32,10 +32,10 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
 | `FeeTypeId` | `Integer` | Optional | Card Id (i.e. Unique Card Id in GFN) | Integer getFeeTypeId() | setFeeTypeId(Integer feeTypeId) |
 | `LineItemDescription` | `String` | Optional | Item identifier in the transaction.<br>**Constraints**: *Minimum Length*: `4`, *Maximum Length*: `128` | String getLineItemDescription() | setLineItemDescription(String lineItemDescription) |
 | `Cards` | `List<Integer>` | Optional | This entity accepts the list of CardId to filter in the response.<br>Note: The number of cardId allowed to be passed in the request is configurable to a maximum of 500 cards.<br>**Constraints**: *Minimum Items*: `1`, *Maximum Items*: `500` | List<Integer> getCards() | setCards(List<Integer> cards) |
-| `SortOrder` | [`PricedTransactionReqV2SortOrderEnum`](../../doc/models/priced-transaction-req-v2-sort-order-enum.md) | Optional | Allowed Sorting Options<br><br>1. TransactionDateAscending<br>2. TransactionDateDescending<br>3. GrossAmountDescending<br>4. GrossAmountAscending<br>5. NetAmountAscending<br>6. NetAmountDescensding<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | PricedTransactionReqV2SortOrderEnum getSortOrder() | setSortOrder(PricedTransactionReqV2SortOrderEnum sortOrder) |
+| `SortOrder` | [`PricedTransactionReqV2SortOrderEnum`](../../doc/models/priced-transaction-req-v2-sort-order-enum.md) | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | PricedTransactionReqV2SortOrderEnum getSortOrder() | setSortOrder(PricedTransactionReqV2SortOrderEnum sortOrder) |
 | `FromDate` | `String` | Optional | From transaction delivery date<br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` | String getFromDate() | setFromDate(String fromDate) |
 | `ToDate` | `String` | Optional | To transaction delivery date<br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` | String getToDate() | setToDate(String toDate) |
-| `Period` | [`PricedTransactionReqV2PeriodEnum`](../../doc/models/priced-transaction-req-v2-period-enum.md) | Optional | Pass below one of the value as per the required transaction period<br><br>1. Last 7 Days<br>2. Last 30 Days<br>3. Last 90 Days | PricedTransactionReqV2PeriodEnum getPeriod() | setPeriod(PricedTransactionReqV2PeriodEnum period) |
+| `Period` | [`PricedTransactionReqV2PeriodEnum`](../../doc/models/priced-transaction-req-v2-period-enum.md) | Optional | - | PricedTransactionReqV2PeriodEnum getPeriod() | setPeriod(PricedTransactionReqV2PeriodEnum period) |
 | `PostingDateFrom` | `String` | Optional | Transaction posting start date and time<br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` | String getPostingDateFrom() | setPostingDateFrom(String postingDateFrom) |
 | `PostingDateTo` | `String` | Optional | Transaction posting end date and time<br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` | String getPostingDateTo() | setPostingDateTo(String postingDateTo) |
 | `TransactionItemId` | `String` | Optional | Unique id of the transaction that may include one or more salesitems | String getTransactionItemId() | setTransactionItemId(String transactionItemId) |
@@ -54,7 +54,10 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
 ```json
 {
   "ColCoCode": "032",
-  "InvoiceStatus": "A",
+  "InvoiceStatus": {
+    "key1": "val1",
+    "key2": "val2"
+  },
   "PayerNumber": "DE26685263",
   "AccountId": 29484,
   "AccountNumber": "DE26667080",
@@ -72,10 +75,8 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
   "SiteGroupId": 202,
   "FeeTypeId": 275549,
   "LineItemDescription": "ABC3",
-  "SortOrder": "5",
   "FromDate": "2022-01-01 00:00:00",
   "ToDate": "2022-01-01 00:00:00",
-  "Period": 3,
   "PostingDateFrom": "2022-01-01 00:00:00",
   "PostingDateTo": "2022-01-01 00:00:00",
   "TransactionItemId": "io9KVXk1UkW57XWKyeaHHg",

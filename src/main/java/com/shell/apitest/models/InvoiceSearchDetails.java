@@ -678,9 +678,9 @@ public class InvoiceSearchDetails {
     /**
      * Internal Getter for CurrentBillingFrequency.
      * Current billing frequency of the account. A few of the possible IDs and Description are
-     * below: 1	Daily (all days) 2	Daily (only working days) 3	Weekly - Monday 4	Weekly - Tuesday
-     * 5	Weekly - Wednesday 6	Weekly - Thursday 7	Weekly - Friday 8	Weekly - Saturday 9	Weekly -
-     * Sunday 10	Monthly - 1st Example: Weekly – Wednesday
+     * below: 1 Daily (all days) 2 Daily (only working days) 3 Weekly - Monday 4 Weekly - Tuesday 5
+     * Weekly - Wednesday 6 Weekly - Thursday 7 Weekly - Friday 8 Weekly - Saturday 9 Weekly -
+     * Sunday 10 Monthly - 1st Example: Weekly – Wednesday
      * @return Returns the Internal String
      */
     @JsonGetter("CurrentBillingFrequency")
@@ -693,9 +693,9 @@ public class InvoiceSearchDetails {
     /**
      * Getter for CurrentBillingFrequency.
      * Current billing frequency of the account. A few of the possible IDs and Description are
-     * below: 1	Daily (all days) 2	Daily (only working days) 3	Weekly - Monday 4	Weekly - Tuesday
-     * 5	Weekly - Wednesday 6	Weekly - Thursday 7	Weekly - Friday 8	Weekly - Saturday 9	Weekly -
-     * Sunday 10	Monthly - 1st Example: Weekly – Wednesday
+     * below: 1 Daily (all days) 2 Daily (only working days) 3 Weekly - Monday 4 Weekly - Tuesday 5
+     * Weekly - Wednesday 6 Weekly - Thursday 7 Weekly - Friday 8 Weekly - Saturday 9 Weekly -
+     * Sunday 10 Monthly - 1st Example: Weekly – Wednesday
      * @return Returns the String
      */
     public String getCurrentBillingFrequency() {
@@ -705,9 +705,9 @@ public class InvoiceSearchDetails {
     /**
      * Setter for CurrentBillingFrequency.
      * Current billing frequency of the account. A few of the possible IDs and Description are
-     * below: 1	Daily (all days) 2	Daily (only working days) 3	Weekly - Monday 4	Weekly - Tuesday
-     * 5	Weekly - Wednesday 6	Weekly - Thursday 7	Weekly - Friday 8	Weekly - Saturday 9	Weekly -
-     * Sunday 10	Monthly - 1st Example: Weekly – Wednesday
+     * below: 1 Daily (all days) 2 Daily (only working days) 3 Weekly - Monday 4 Weekly - Tuesday 5
+     * Weekly - Wednesday 6 Weekly - Thursday 7 Weekly - Friday 8 Weekly - Saturday 9 Weekly -
+     * Sunday 10 Monthly - 1st Example: Weekly – Wednesday
      * @param currentBillingFrequency Value for String
      */
     @JsonSetter("CurrentBillingFrequency")
@@ -718,9 +718,9 @@ public class InvoiceSearchDetails {
     /**
      * UnSetter for CurrentBillingFrequency.
      * Current billing frequency of the account. A few of the possible IDs and Description are
-     * below: 1	Daily (all days) 2	Daily (only working days) 3	Weekly - Monday 4	Weekly - Tuesday
-     * 5	Weekly - Wednesday 6	Weekly - Thursday 7	Weekly - Friday 8	Weekly - Saturday 9	Weekly -
-     * Sunday 10	Monthly - 1st Example: Weekly – Wednesday
+     * below: 1 Daily (all days) 2 Daily (only working days) 3 Weekly - Monday 4 Weekly - Tuesday 5
+     * Weekly - Wednesday 6 Weekly - Thursday 7 Weekly - Friday 8 Weekly - Saturday 9 Weekly -
+     * Sunday 10 Monthly - 1st Example: Weekly – Wednesday
      */
     public void unsetCurrentBillingFrequency() {
         currentBillingFrequency = null;
@@ -729,9 +729,9 @@ public class InvoiceSearchDetails {
     /**
      * Internal Getter for CurrentBillingFrequencyId.
      * Current billing frequency id of the account. A few of the possible IDs and Description are
-     * below: 1	Daily (all days) 2	Daily (only working days) 3	Weekly - Monday 4	Weekly - Tuesday
-     * 5	Weekly - Wednesday 6	Weekly - Thursday 7	Weekly - Friday 8	Weekly - Saturday 9	Weekly -
-     * Sunday 10	Monthly - 1st Example: 5
+     * below: 1 Daily (all days) 2 Daily (only working days) 3 Weekly - Monday 4 Weekly - Tuesday 5
+     * Weekly - Wednesday 6 Weekly - Thursday 7 Weekly - Friday 8 Weekly - Saturday 9 Weekly -
+     * Sunday 10 Monthly - 1st Example: 5
      * @return Returns the Internal Integer
      */
     @JsonGetter("CurrentBillingFrequencyId")
@@ -744,9 +744,9 @@ public class InvoiceSearchDetails {
     /**
      * Getter for CurrentBillingFrequencyId.
      * Current billing frequency id of the account. A few of the possible IDs and Description are
-     * below: 1	Daily (all days) 2	Daily (only working days) 3	Weekly - Monday 4	Weekly - Tuesday
-     * 5	Weekly - Wednesday 6	Weekly - Thursday 7	Weekly - Friday 8	Weekly - Saturday 9	Weekly -
-     * Sunday 10	Monthly - 1st Example: 5
+     * below: 1 Daily (all days) 2 Daily (only working days) 3 Weekly - Monday 4 Weekly - Tuesday 5
+     * Weekly - Wednesday 6 Weekly - Thursday 7 Weekly - Friday 8 Weekly - Saturday 9 Weekly -
+     * Sunday 10 Monthly - 1st Example: 5
      * @return Returns the Integer
      */
     public Integer getCurrentBillingFrequencyId() {
@@ -756,9 +756,9 @@ public class InvoiceSearchDetails {
     /**
      * Setter for CurrentBillingFrequencyId.
      * Current billing frequency id of the account. A few of the possible IDs and Description are
-     * below: 1	Daily (all days) 2	Daily (only working days) 3	Weekly - Monday 4	Weekly - Tuesday
-     * 5	Weekly - Wednesday 6	Weekly - Thursday 7	Weekly - Friday 8	Weekly - Saturday 9	Weekly -
-     * Sunday 10	Monthly - 1st Example: 5
+     * below: 1 Daily (all days) 2 Daily (only working days) 3 Weekly - Monday 4 Weekly - Tuesday 5
+     * Weekly - Wednesday 6 Weekly - Thursday 7 Weekly - Friday 8 Weekly - Saturday 9 Weekly -
+     * Sunday 10 Monthly - 1st Example: 5
      * @param currentBillingFrequencyId Value for Integer
      */
     @JsonSetter("CurrentBillingFrequencyId")
@@ -769,9 +769,9 @@ public class InvoiceSearchDetails {
     /**
      * UnSetter for CurrentBillingFrequencyId.
      * Current billing frequency id of the account. A few of the possible IDs and Description are
-     * below: 1	Daily (all days) 2	Daily (only working days) 3	Weekly - Monday 4	Weekly - Tuesday
-     * 5	Weekly - Wednesday 6	Weekly - Thursday 7	Weekly - Friday 8	Weekly - Saturday 9	Weekly -
-     * Sunday 10	Monthly - 1st Example: 5
+     * below: 1 Daily (all days) 2 Daily (only working days) 3 Weekly - Monday 4 Weekly - Tuesday 5
+     * Weekly - Wednesday 6 Weekly - Thursday 7 Weekly - Friday 8 Weekly - Saturday 9 Weekly -
+     * Sunday 10 Monthly - 1st Example: 5
      */
     public void unsetCurrentBillingFrequencyId() {
         currentBillingFrequencyId = null;
@@ -779,8 +779,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Internal Getter for CurrentDistributionMethod.
-     * Current distribution method name of the account. Example : Id &amp; Description 1	e-mail 2	Fax
-     * 3	Courier to Customer 4	Courier to Client 5	Print 6	FTP 7	SMS
+     * Current distribution method name of the account. Example : Id &amp; Description 1 e-mail 2 Fax 3
+     * Courier to Customer 4 Courier to Client 5 Print 6 FTP 7 SMS
      * @return Returns the Internal String
      */
     @JsonGetter("CurrentDistributionMethod")
@@ -792,8 +792,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Getter for CurrentDistributionMethod.
-     * Current distribution method name of the account. Example : Id &amp; Description 1	e-mail 2	Fax
-     * 3	Courier to Customer 4	Courier to Client 5	Print 6	FTP 7	SMS
+     * Current distribution method name of the account. Example : Id &amp; Description 1 e-mail 2 Fax 3
+     * Courier to Customer 4 Courier to Client 5 Print 6 FTP 7 SMS
      * @return Returns the String
      */
     public String getCurrentDistributionMethod() {
@@ -802,8 +802,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Setter for CurrentDistributionMethod.
-     * Current distribution method name of the account. Example : Id &amp; Description 1	e-mail 2	Fax
-     * 3	Courier to Customer 4	Courier to Client 5	Print 6	FTP 7	SMS
+     * Current distribution method name of the account. Example : Id &amp; Description 1 e-mail 2 Fax 3
+     * Courier to Customer 4 Courier to Client 5 Print 6 FTP 7 SMS
      * @param currentDistributionMethod Value for String
      */
     @JsonSetter("CurrentDistributionMethod")
@@ -813,8 +813,8 @@ public class InvoiceSearchDetails {
 
     /**
      * UnSetter for CurrentDistributionMethod.
-     * Current distribution method name of the account. Example : Id &amp; Description 1	e-mail 2	Fax
-     * 3	Courier to Customer 4	Courier to Client 5	Print 6	FTP 7	SMS
+     * Current distribution method name of the account. Example : Id &amp; Description 1 e-mail 2 Fax 3
+     * Courier to Customer 4 Courier to Client 5 Print 6 FTP 7 SMS
      */
     public void unsetCurrentDistributionMethod() {
         currentDistributionMethod = null;
@@ -822,8 +822,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Internal Getter for CurrentDistributionMethodId.
-     * Current distribution method id of the account. Example : Id &amp; Description 1	e-mail 2	Fax
-     * 3	Courier to Customer 4	Courier to Client 5	Print 6	FTP 7	SMS
+     * Current distribution method id of the account. Example : Id &amp; Description 1 e-mail 2 Fax 3
+     * Courier to Customer 4 Courier to Client 5 Print 6 FTP 7 SMS
      * @return Returns the Internal Integer
      */
     @JsonGetter("CurrentDistributionMethodId")
@@ -835,8 +835,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Getter for CurrentDistributionMethodId.
-     * Current distribution method id of the account. Example : Id &amp; Description 1	e-mail 2	Fax
-     * 3	Courier to Customer 4	Courier to Client 5	Print 6	FTP 7	SMS
+     * Current distribution method id of the account. Example : Id &amp; Description 1 e-mail 2 Fax 3
+     * Courier to Customer 4 Courier to Client 5 Print 6 FTP 7 SMS
      * @return Returns the Integer
      */
     public Integer getCurrentDistributionMethodId() {
@@ -845,8 +845,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Setter for CurrentDistributionMethodId.
-     * Current distribution method id of the account. Example : Id &amp; Description 1	e-mail 2	Fax
-     * 3	Courier to Customer 4	Courier to Client 5	Print 6	FTP 7	SMS
+     * Current distribution method id of the account. Example : Id &amp; Description 1 e-mail 2 Fax 3
+     * Courier to Customer 4 Courier to Client 5 Print 6 FTP 7 SMS
      * @param currentDistributionMethodId Value for Integer
      */
     @JsonSetter("CurrentDistributionMethodId")
@@ -856,8 +856,8 @@ public class InvoiceSearchDetails {
 
     /**
      * UnSetter for CurrentDistributionMethodId.
-     * Current distribution method id of the account. Example : Id &amp; Description 1	e-mail 2	Fax
-     * 3	Courier to Customer 4	Courier to Client 5	Print 6	FTP 7	SMS
+     * Current distribution method id of the account. Example : Id &amp; Description 1 e-mail 2 Fax 3
+     * Courier to Customer 4 Courier to Client 5 Print 6 FTP 7 SMS
      */
     public void unsetCurrentDistributionMethodId() {
         currentDistributionMethodId = null;
@@ -1684,8 +1684,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Internal Getter for PaymentTerms.
-     * A few of the possible IDs and Descriptions are below: 1	14 days after Invoice 2	15 days after
-     * Invoice 3	21 days after Invoice 4	30 days after Invoice 5	45 days after Invoice
+     * A few of the possible IDs and Descriptions are below: 1 14 days after Invoice 2 15 days after
+     * Invoice 3 21 days after Invoice 4 30 days after Invoice 5 45 days after Invoice
      * @return Returns the Internal String
      */
     @JsonGetter("PaymentTerms")
@@ -1697,8 +1697,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Getter for PaymentTerms.
-     * A few of the possible IDs and Descriptions are below: 1	14 days after Invoice 2	15 days after
-     * Invoice 3	21 days after Invoice 4	30 days after Invoice 5	45 days after Invoice
+     * A few of the possible IDs and Descriptions are below: 1 14 days after Invoice 2 15 days after
+     * Invoice 3 21 days after Invoice 4 30 days after Invoice 5 45 days after Invoice
      * @return Returns the String
      */
     public String getPaymentTerms() {
@@ -1707,8 +1707,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Setter for PaymentTerms.
-     * A few of the possible IDs and Descriptions are below: 1	14 days after Invoice 2	15 days after
-     * Invoice 3	21 days after Invoice 4	30 days after Invoice 5	45 days after Invoice
+     * A few of the possible IDs and Descriptions are below: 1 14 days after Invoice 2 15 days after
+     * Invoice 3 21 days after Invoice 4 30 days after Invoice 5 45 days after Invoice
      * @param paymentTerms Value for String
      */
     @JsonSetter("PaymentTerms")
@@ -1718,8 +1718,8 @@ public class InvoiceSearchDetails {
 
     /**
      * UnSetter for PaymentTerms.
-     * A few of the possible IDs and Descriptions are below: 1	14 days after Invoice 2	15 days after
-     * Invoice 3	21 days after Invoice 4	30 days after Invoice 5	45 days after Invoice
+     * A few of the possible IDs and Descriptions are below: 1 14 days after Invoice 2 15 days after
+     * Invoice 3 21 days after Invoice 4 30 days after Invoice 5 45 days after Invoice
      */
     public void unsetPaymentTerms() {
         paymentTerms = null;
@@ -1728,8 +1728,8 @@ public class InvoiceSearchDetails {
     /**
      * Internal Getter for PaymentTermsId.
      * Payment terms id of the payment customer. A few of the possible IDs and Descriptions are
-     * below: 1	14 days after Invoice 2	15 days after Invoice 3	21 days after Invoice 4	30 days
-     * after Invoice 5	45 days after Invoice
+     * below: 1 14 days after Invoice 2 15 days after Invoice 3 21 days after Invoice 4 30 days
+     * after Invoice 5 45 days after Invoice
      * @return Returns the Internal Integer
      */
     @JsonGetter("PaymentTermsId")
@@ -1742,8 +1742,8 @@ public class InvoiceSearchDetails {
     /**
      * Getter for PaymentTermsId.
      * Payment terms id of the payment customer. A few of the possible IDs and Descriptions are
-     * below: 1	14 days after Invoice 2	15 days after Invoice 3	21 days after Invoice 4	30 days
-     * after Invoice 5	45 days after Invoice
+     * below: 1 14 days after Invoice 2 15 days after Invoice 3 21 days after Invoice 4 30 days
+     * after Invoice 5 45 days after Invoice
      * @return Returns the Integer
      */
     public Integer getPaymentTermsId() {
@@ -1753,8 +1753,8 @@ public class InvoiceSearchDetails {
     /**
      * Setter for PaymentTermsId.
      * Payment terms id of the payment customer. A few of the possible IDs and Descriptions are
-     * below: 1	14 days after Invoice 2	15 days after Invoice 3	21 days after Invoice 4	30 days
-     * after Invoice 5	45 days after Invoice
+     * below: 1 14 days after Invoice 2 15 days after Invoice 3 21 days after Invoice 4 30 days
+     * after Invoice 5 45 days after Invoice
      * @param paymentTermsId Value for Integer
      */
     @JsonSetter("PaymentTermsId")
@@ -1765,8 +1765,8 @@ public class InvoiceSearchDetails {
     /**
      * UnSetter for PaymentTermsId.
      * Payment terms id of the payment customer. A few of the possible IDs and Descriptions are
-     * below: 1	14 days after Invoice 2	15 days after Invoice 3	21 days after Invoice 4	30 days
-     * after Invoice 5	45 days after Invoice
+     * below: 1 14 days after Invoice 2 15 days after Invoice 3 21 days after Invoice 4 30 days
+     * after Invoice 5 45 days after Invoice
      */
     public void unsetPaymentTermsId() {
         paymentTermsId = null;
@@ -1852,8 +1852,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Internal Getter for Status.
-     * Status of the document. Valid values – •	[Empty] – For all document types except for Invoice
-     * and Statement. •	Due – Invoices/Statements due for payment and is within the due date. •	Paid
+     * Status of the document. Valid values – • [Empty] – For all document types except for Invoice
+     * and Statement. • Due – Invoices/Statements due for payment and is within the due date. • Paid
      * – Fully paid Invoices/Statements. Overdue – Invoices/Statements due of payment and has
      * crossed the due date.
      * @return Returns the Internal String
@@ -1867,8 +1867,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Getter for Status.
-     * Status of the document. Valid values – •	[Empty] – For all document types except for Invoice
-     * and Statement. •	Due – Invoices/Statements due for payment and is within the due date. •	Paid
+     * Status of the document. Valid values – • [Empty] – For all document types except for Invoice
+     * and Statement. • Due – Invoices/Statements due for payment and is within the due date. • Paid
      * – Fully paid Invoices/Statements. Overdue – Invoices/Statements due of payment and has
      * crossed the due date.
      * @return Returns the String
@@ -1879,8 +1879,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Setter for Status.
-     * Status of the document. Valid values – •	[Empty] – For all document types except for Invoice
-     * and Statement. •	Due – Invoices/Statements due for payment and is within the due date. •	Paid
+     * Status of the document. Valid values – • [Empty] – For all document types except for Invoice
+     * and Statement. • Due – Invoices/Statements due for payment and is within the due date. • Paid
      * – Fully paid Invoices/Statements. Overdue – Invoices/Statements due of payment and has
      * crossed the due date.
      * @param status Value for String
@@ -1892,8 +1892,8 @@ public class InvoiceSearchDetails {
 
     /**
      * UnSetter for Status.
-     * Status of the document. Valid values – •	[Empty] – For all document types except for Invoice
-     * and Statement. •	Due – Invoices/Statements due for payment and is within the due date. •	Paid
+     * Status of the document. Valid values – • [Empty] – For all document types except for Invoice
+     * and Statement. • Due – Invoices/Statements due for payment and is within the due date. • Paid
      * – Fully paid Invoices/Statements. Overdue – Invoices/Statements due of payment and has
      * crossed the due date.
      */
@@ -1903,8 +1903,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Internal Getter for SummaryDocumentBillingType.
-     * Billing type description. Example: Id &amp; Description -3	Guarantee History -1	Initial Balance
-     * 0	Standard Invoice 1	Immediate Invoice 2	Guarantee 4	Advanced DD Invoice
+     * Billing type description. Example: Id &amp; Description -3 Guarantee History -1 Initial Balance 0
+     * Standard Invoice 1 Immediate Invoice 2 Guarantee 4 Advanced DD Invoice
      * @return Returns the Internal String
      */
     @JsonGetter("SummaryDocumentBillingType")
@@ -1916,8 +1916,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Getter for SummaryDocumentBillingType.
-     * Billing type description. Example: Id &amp; Description -3	Guarantee History -1	Initial Balance
-     * 0	Standard Invoice 1	Immediate Invoice 2	Guarantee 4	Advanced DD Invoice
+     * Billing type description. Example: Id &amp; Description -3 Guarantee History -1 Initial Balance 0
+     * Standard Invoice 1 Immediate Invoice 2 Guarantee 4 Advanced DD Invoice
      * @return Returns the String
      */
     public String getSummaryDocumentBillingType() {
@@ -1926,8 +1926,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Setter for SummaryDocumentBillingType.
-     * Billing type description. Example: Id &amp; Description -3	Guarantee History -1	Initial Balance
-     * 0	Standard Invoice 1	Immediate Invoice 2	Guarantee 4	Advanced DD Invoice
+     * Billing type description. Example: Id &amp; Description -3 Guarantee History -1 Initial Balance 0
+     * Standard Invoice 1 Immediate Invoice 2 Guarantee 4 Advanced DD Invoice
      * @param summaryDocumentBillingType Value for String
      */
     @JsonSetter("SummaryDocumentBillingType")
@@ -1937,8 +1937,8 @@ public class InvoiceSearchDetails {
 
     /**
      * UnSetter for SummaryDocumentBillingType.
-     * Billing type description. Example: Id &amp; Description -3	Guarantee History -1	Initial Balance
-     * 0	Standard Invoice 1	Immediate Invoice 2	Guarantee 4	Advanced DD Invoice
+     * Billing type description. Example: Id &amp; Description -3 Guarantee History -1 Initial Balance 0
+     * Standard Invoice 1 Immediate Invoice 2 Guarantee 4 Advanced DD Invoice
      */
     public void unsetSummaryDocumentBillingType() {
         summaryDocumentBillingType = null;
@@ -1946,8 +1946,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Internal Getter for SummaryDocumentBillingTypeId.
-     * Billing type id. Example: Id &amp; Description -3	Guarantee History -1	Initial Balance 0	Standard
-     * Invoice 1	Immediate Invoice 2	Guarantee 4	Advanced DD Invoice
+     * Billing type id. Example: Id &amp; Description -3 Guarantee History -1 Initial Balance 0 Standard
+     * Invoice 1 Immediate Invoice 2 Guarantee 4 Advanced DD Invoice
      * @return Returns the Internal Integer
      */
     @JsonGetter("SummaryDocumentBillingTypeId")
@@ -1959,8 +1959,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Getter for SummaryDocumentBillingTypeId.
-     * Billing type id. Example: Id &amp; Description -3	Guarantee History -1	Initial Balance 0	Standard
-     * Invoice 1	Immediate Invoice 2	Guarantee 4	Advanced DD Invoice
+     * Billing type id. Example: Id &amp; Description -3 Guarantee History -1 Initial Balance 0 Standard
+     * Invoice 1 Immediate Invoice 2 Guarantee 4 Advanced DD Invoice
      * @return Returns the Integer
      */
     public Integer getSummaryDocumentBillingTypeId() {
@@ -1969,8 +1969,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Setter for SummaryDocumentBillingTypeId.
-     * Billing type id. Example: Id &amp; Description -3	Guarantee History -1	Initial Balance 0	Standard
-     * Invoice 1	Immediate Invoice 2	Guarantee 4	Advanced DD Invoice
+     * Billing type id. Example: Id &amp; Description -3 Guarantee History -1 Initial Balance 0 Standard
+     * Invoice 1 Immediate Invoice 2 Guarantee 4 Advanced DD Invoice
      * @param summaryDocumentBillingTypeId Value for Integer
      */
     @JsonSetter("SummaryDocumentBillingTypeId")
@@ -1980,8 +1980,8 @@ public class InvoiceSearchDetails {
 
     /**
      * UnSetter for SummaryDocumentBillingTypeId.
-     * Billing type id. Example: Id &amp; Description -3	Guarantee History -1	Initial Balance 0	Standard
-     * Invoice 1	Immediate Invoice 2	Guarantee 4	Advanced DD Invoice
+     * Billing type id. Example: Id &amp; Description -3 Guarantee History -1 Initial Balance 0 Standard
+     * Invoice 1 Immediate Invoice 2 Guarantee 4 Advanced DD Invoice
      */
     public void unsetSummaryDocumentBillingTypeId() {
         summaryDocumentBillingTypeId = null;
@@ -2418,8 +2418,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Internal Getter for Type.
-     * Invoice type description. A few of the possible IDs and Description are below: 1	Original
-     * 2	Reversal 3	Replacement Example: Original
+     * Invoice type description. A few of the possible IDs and Description are below: 1 Original 2
+     * Reversal 3 Replacement Example: Original
      * @return Returns the Internal String
      */
     @JsonGetter("Type")
@@ -2431,8 +2431,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Getter for Type.
-     * Invoice type description. A few of the possible IDs and Description are below: 1	Original
-     * 2	Reversal 3	Replacement Example: Original
+     * Invoice type description. A few of the possible IDs and Description are below: 1 Original 2
+     * Reversal 3 Replacement Example: Original
      * @return Returns the String
      */
     public String getType() {
@@ -2441,8 +2441,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Setter for Type.
-     * Invoice type description. A few of the possible IDs and Description are below: 1	Original
-     * 2	Reversal 3	Replacement Example: Original
+     * Invoice type description. A few of the possible IDs and Description are below: 1 Original 2
+     * Reversal 3 Replacement Example: Original
      * @param type Value for String
      */
     @JsonSetter("Type")
@@ -2452,8 +2452,8 @@ public class InvoiceSearchDetails {
 
     /**
      * UnSetter for Type.
-     * Invoice type description. A few of the possible IDs and Description are below: 1	Original
-     * 2	Reversal 3	Replacement Example: Original
+     * Invoice type description. A few of the possible IDs and Description are below: 1 Original 2
+     * Reversal 3 Replacement Example: Original
      */
     public void unsetType() {
         type = null;
@@ -2461,8 +2461,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Internal Getter for TypeId.
-     * Invoice type id. A few of the possible IDs and Descriptions are below: 1	Original 2	Reversal
-     * 3	Replacement Example: 1
+     * Invoice type id. A few of the possible IDs and Descriptions are below: 1 Original 2 Reversal
+     * 3 Replacement Example: 1
      * @return Returns the Internal Integer
      */
     @JsonGetter("TypeId")
@@ -2474,8 +2474,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Getter for TypeId.
-     * Invoice type id. A few of the possible IDs and Descriptions are below: 1	Original 2	Reversal
-     * 3	Replacement Example: 1
+     * Invoice type id. A few of the possible IDs and Descriptions are below: 1 Original 2 Reversal
+     * 3 Replacement Example: 1
      * @return Returns the Integer
      */
     public Integer getTypeId() {
@@ -2484,8 +2484,8 @@ public class InvoiceSearchDetails {
 
     /**
      * Setter for TypeId.
-     * Invoice type id. A few of the possible IDs and Descriptions are below: 1	Original 2	Reversal
-     * 3	Replacement Example: 1
+     * Invoice type id. A few of the possible IDs and Descriptions are below: 1 Original 2 Reversal
+     * 3 Replacement Example: 1
      * @param typeId Value for Integer
      */
     @JsonSetter("TypeId")
@@ -2495,8 +2495,8 @@ public class InvoiceSearchDetails {
 
     /**
      * UnSetter for TypeId.
-     * Invoice type id. A few of the possible IDs and Descriptions are below: 1	Original 2	Reversal
-     * 3	Replacement Example: 1
+     * Invoice type id. A few of the possible IDs and Descriptions are below: 1 Original 2 Reversal
+     * 3 Replacement Example: 1
      */
     public void unsetTypeId() {
         typeId = null;

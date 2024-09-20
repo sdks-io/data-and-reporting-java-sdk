@@ -671,8 +671,8 @@ public class InvoiceSummaryRequestFilters {
 
     /**
      * Internal Getter for Period.
-     * Invoice date search period. Valid values – 1.	Last 7 days – Issued in last 7 days. 2.	Last 30
-     * days – Issued in last 30 days. 3.	Last 90 days – Issued in last 90 days. Optional. This input
+     * Invoice date search period. Valid values – 1. Last 7 days – Issued in last 7 days. 2. Last 30
+     * days – Issued in last 30 days. 3. Last 90 days – Issued in last 90 days. Optional. This input
      * is a search criterion, if given. Example: 1
      * @return Returns the Internal Integer
      */
@@ -685,8 +685,8 @@ public class InvoiceSummaryRequestFilters {
 
     /**
      * Getter for Period.
-     * Invoice date search period. Valid values – 1.	Last 7 days – Issued in last 7 days. 2.	Last 30
-     * days – Issued in last 30 days. 3.	Last 90 days – Issued in last 90 days. Optional. This input
+     * Invoice date search period. Valid values – 1. Last 7 days – Issued in last 7 days. 2. Last 30
+     * days – Issued in last 30 days. 3. Last 90 days – Issued in last 90 days. Optional. This input
      * is a search criterion, if given. Example: 1
      * @return Returns the Integer
      */
@@ -696,8 +696,8 @@ public class InvoiceSummaryRequestFilters {
 
     /**
      * Setter for Period.
-     * Invoice date search period. Valid values – 1.	Last 7 days – Issued in last 7 days. 2.	Last 30
-     * days – Issued in last 30 days. 3.	Last 90 days – Issued in last 90 days. Optional. This input
+     * Invoice date search period. Valid values – 1. Last 7 days – Issued in last 7 days. 2. Last 30
+     * days – Issued in last 30 days. 3. Last 90 days – Issued in last 90 days. Optional. This input
      * is a search criterion, if given. Example: 1
      * @param period Value for Integer
      */
@@ -708,8 +708,8 @@ public class InvoiceSummaryRequestFilters {
 
     /**
      * UnSetter for Period.
-     * Invoice date search period. Valid values – 1.	Last 7 days – Issued in last 7 days. 2.	Last 30
-     * days – Issued in last 30 days. 3.	Last 90 days – Issued in last 90 days. Optional. This input
+     * Invoice date search period. Valid values – 1. Last 7 days – Issued in last 7 days. 2. Last 30
+     * days – Issued in last 30 days. 3. Last 90 days – Issued in last 90 days. Optional. This input
      * is a search criterion, if given. Example: 1
      */
     public void unsetPeriod() {
@@ -718,9 +718,9 @@ public class InvoiceSummaryRequestFilters {
 
     /**
      * Internal Getter for InvoiceStatus.
-     * Status of the invoice. Valid values – •	Due – Invoices due for payment and is within the due
-     * date. •	Paid – Fully paid Invoices. •	Overdue – Invoices due of payment and has crossed the
-     * due date. •	CreditNote – Credit notes •	CreditStatement Optional. This input is a search
+     * Status of the invoice. Valid values – • Due – Invoices due for payment and is within the due
+     * date. • Paid – Fully paid Invoices. • Overdue – Invoices due of payment and has crossed the
+     * due date. • CreditNote – Credit notes • CreditStatement Optional. This input is a search
      * criterion, if given.
      * @return Returns the Internal String
      */
@@ -733,9 +733,9 @@ public class InvoiceSummaryRequestFilters {
 
     /**
      * Getter for InvoiceStatus.
-     * Status of the invoice. Valid values – •	Due – Invoices due for payment and is within the due
-     * date. •	Paid – Fully paid Invoices. •	Overdue – Invoices due of payment and has crossed the
-     * due date. •	CreditNote – Credit notes •	CreditStatement Optional. This input is a search
+     * Status of the invoice. Valid values – • Due – Invoices due for payment and is within the due
+     * date. • Paid – Fully paid Invoices. • Overdue – Invoices due of payment and has crossed the
+     * due date. • CreditNote – Credit notes • CreditStatement Optional. This input is a search
      * criterion, if given.
      * @return Returns the String
      */
@@ -745,9 +745,9 @@ public class InvoiceSummaryRequestFilters {
 
     /**
      * Setter for InvoiceStatus.
-     * Status of the invoice. Valid values – •	Due – Invoices due for payment and is within the due
-     * date. •	Paid – Fully paid Invoices. •	Overdue – Invoices due of payment and has crossed the
-     * due date. •	CreditNote – Credit notes •	CreditStatement Optional. This input is a search
+     * Status of the invoice. Valid values – • Due – Invoices due for payment and is within the due
+     * date. • Paid – Fully paid Invoices. • Overdue – Invoices due of payment and has crossed the
+     * due date. • CreditNote – Credit notes • CreditStatement Optional. This input is a search
      * criterion, if given.
      * @param invoiceStatus Value for String
      */
@@ -758,9 +758,9 @@ public class InvoiceSummaryRequestFilters {
 
     /**
      * UnSetter for InvoiceStatus.
-     * Status of the invoice. Valid values – •	Due – Invoices due for payment and is within the due
-     * date. •	Paid – Fully paid Invoices. •	Overdue – Invoices due of payment and has crossed the
-     * due date. •	CreditNote – Credit notes •	CreditStatement Optional. This input is a search
+     * Status of the invoice. Valid values – • Due – Invoices due for payment and is within the due
+     * date. • Paid – Fully paid Invoices. • Overdue – Invoices due of payment and has crossed the
+     * due date. • CreditNote – Credit notes • CreditStatement Optional. This input is a search
      * criterion, if given.
      */
     public void unsetInvoiceStatus() {
@@ -809,7 +809,7 @@ public class InvoiceSummaryRequestFilters {
     /**
      * Internal Getter for IncludeEInvoiceDetails.
      * Whether to include the additional invoice details in the API response. Optional. Default
-     * value “False”. The parameters that are populated •	DocumentReference •	AdditionalDocuments
+     * value “False”. The parameters that are populated • DocumentReference • AdditionalDocuments
      * The above fields will not be present in the response when the respective data is not
      * available in the source system.
      * @return Returns the Internal Boolean
@@ -824,7 +824,7 @@ public class InvoiceSummaryRequestFilters {
     /**
      * Getter for IncludeEInvoiceDetails.
      * Whether to include the additional invoice details in the API response. Optional. Default
-     * value “False”. The parameters that are populated •	DocumentReference •	AdditionalDocuments
+     * value “False”. The parameters that are populated • DocumentReference • AdditionalDocuments
      * The above fields will not be present in the response when the respective data is not
      * available in the source system.
      * @return Returns the Boolean
@@ -836,7 +836,7 @@ public class InvoiceSummaryRequestFilters {
     /**
      * Setter for IncludeEInvoiceDetails.
      * Whether to include the additional invoice details in the API response. Optional. Default
-     * value “False”. The parameters that are populated •	DocumentReference •	AdditionalDocuments
+     * value “False”. The parameters that are populated • DocumentReference • AdditionalDocuments
      * The above fields will not be present in the response when the respective data is not
      * available in the source system.
      * @param includeEInvoiceDetails Value for Boolean
@@ -849,7 +849,7 @@ public class InvoiceSummaryRequestFilters {
     /**
      * UnSetter for IncludeEInvoiceDetails.
      * Whether to include the additional invoice details in the API response. Optional. Default
-     * value “False”. The parameters that are populated •	DocumentReference •	AdditionalDocuments
+     * value “False”. The parameters that are populated • DocumentReference • AdditionalDocuments
      * The above fields will not be present in the response when the respective data is not
      * available in the source system.
      */
@@ -921,8 +921,8 @@ public class InvoiceSummaryRequestFilters {
 
     /**
      * Internal Getter for Type.
-     * Invoice type. Allowed values – •	Original – Original document. •	Reversal – Reversed
-     * document. •	Replacement – Replaced document. Optional. (When not passed all invoice, types
+     * Invoice type. Allowed values – • Original – Original document. • Reversal – Reversed
+     * document. • Replacement – Replaced document. Optional. (When not passed all invoice, types
      * are considered for search) This input is a search criterion, if given. Example: Original
      * @return Returns the Internal String
      */
@@ -935,8 +935,8 @@ public class InvoiceSummaryRequestFilters {
 
     /**
      * Getter for Type.
-     * Invoice type. Allowed values – •	Original – Original document. •	Reversal – Reversed
-     * document. •	Replacement – Replaced document. Optional. (When not passed all invoice, types
+     * Invoice type. Allowed values – • Original – Original document. • Reversal – Reversed
+     * document. • Replacement – Replaced document. Optional. (When not passed all invoice, types
      * are considered for search) This input is a search criterion, if given. Example: Original
      * @return Returns the String
      */
@@ -946,8 +946,8 @@ public class InvoiceSummaryRequestFilters {
 
     /**
      * Setter for Type.
-     * Invoice type. Allowed values – •	Original – Original document. •	Reversal – Reversed
-     * document. •	Replacement – Replaced document. Optional. (When not passed all invoice, types
+     * Invoice type. Allowed values – • Original – Original document. • Reversal – Reversed
+     * document. • Replacement – Replaced document. Optional. (When not passed all invoice, types
      * are considered for search) This input is a search criterion, if given. Example: Original
      * @param type Value for String
      */
@@ -958,8 +958,8 @@ public class InvoiceSummaryRequestFilters {
 
     /**
      * UnSetter for Type.
-     * Invoice type. Allowed values – •	Original – Original document. •	Reversal – Reversed
-     * document. •	Replacement – Replaced document. Optional. (When not passed all invoice, types
+     * Invoice type. Allowed values – • Original – Original document. • Reversal – Reversed
+     * document. • Replacement – Replaced document. Optional. (When not passed all invoice, types
      * are considered for search) This input is a search criterion, if given. Example: Original
      */
     public void unsetType() {

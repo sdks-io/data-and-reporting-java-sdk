@@ -22,7 +22,7 @@
 | `TransactionStatus` | `String` | Optional | Status of the transaction<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getTransactionStatus() | setTransactionStatus(String transactionStatus) |
 | `DriverName` | `String` | Optional | Driver Name of Card record<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `25` | String getDriverName() | setDriverName(String driverName) |
 | `CardExpiryPeriod` | `Integer` | Optional | Expiry period of the card<br>**Constraints**: `>= 1`, `<= 9999` | Integer getCardExpiryPeriod() | setCardExpiryPeriod(Integer cardExpiryPeriod) |
-| `CardExpiry` | `LocalDate` | Optional | Card Expiry Date | LocalDate getCardExpiry() | setCardExpiry(LocalDate cardExpiry) |
+| `CardExpiry` | `String` | Optional | Card Expiry Date | String getCardExpiry() | setCardExpiry(String cardExpiry) |
 | `CardGroupId` | `Integer` | Optional | Card Group Code<br>**Constraints**: `>= 1`, `<= 99999` | Integer getCardGroupId() | setCardGroupId(Integer cardGroupId) |
 | `CardGroupName` | `String` | Optional | Group nmae of the card | String getCardGroupName() | setCardGroupName(String cardGroupName) |
 | `IssuerCode` | `Integer` | Optional | Issuer code<br>**Constraints**: `>= 1`, `<= 9999` | Integer getIssuerCode() | setIssuerCode(Integer issuerCode) |
@@ -72,8 +72,8 @@
 | `IsShellSite` | `Boolean` | Optional | Is it a shell sites?True or False<br>**Default**: `false` | Boolean getIsShellSite() | setIsShellSite(Boolean isShellSite) |
 | `FleetIdInput` | `String` | Optional | Fleet identifier | String getFleetIdInput() | setFleetIdInput(String fleetIdInput) |
 | `IncomingProductCode` | `Integer` | Optional | In coming product code | Integer getIncomingProductCode() | setIncomingProductCode(Integer incomingProductCode) |
-| `PostingDate` | `LocalDate` | Optional | Date of Posting | LocalDate getPostingDate() | setPostingDate(LocalDate postingDate) |
-| `PostingTime` | `LocalDateTime` | Optional | Time whern posting happened | LocalDateTime getPostingTime() | setPostingTime(LocalDateTime postingTime) |
+| `PostingDate` | `String` | Optional | Date of Posting | String getPostingDate() | setPostingDate(String postingDate) |
+| `PostingTime` | `String` | Optional | Time whern posting happened | String getPostingTime() | setPostingTime(String postingTime) |
 | `ProductCode` | `Integer` | Optional | Product Code - 21 Unleaded - High octane,22 Unleaded - Medium octane,23 Unleaded - Low octane,24 Unleaded Environmental | Integer getProductCode() | setProductCode(Integer productCode) |
 | `ProductName` | `String` | Optional | Name of the product<br>**Constraints**: *Minimum Length*: `8`, *Maximum Length*: `30` | String getProductName() | setProductName(String productName) |
 | `ProductGroupId` | `Integer` | Optional | Id of the product to which group it belongs | Integer getProductGroupId() | setProductGroupId(Integer productGroupId) |
@@ -84,7 +84,7 @@
 | `SiteCode` | `Integer` | Optional | Shell site code | Integer getSiteCode() | setSiteCode(Integer siteCode) |
 | `IncomingSiteNumber` | `Integer` | Optional | In coming site number | Integer getIncomingSiteNumber() | setIncomingSiteNumber(Integer incomingSiteNumber) |
 | `InvoiceCurrencyCode` | `String` | Optional | Currency code on which the invoice is raised<br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` | String getInvoiceCurrencyCode() | setInvoiceCurrencyCode(String invoiceCurrencyCode) |
-| `InvoiceDate` | `LocalDate` | Optional | Date on which the invoice was raised | LocalDate getInvoiceDate() | setInvoiceDate(LocalDate invoiceDate) |
+| `InvoiceDate` | `String` | Optional | Date on which the invoice was raised | String getInvoiceDate() | setInvoiceDate(String invoiceDate) |
 | `InvoiceNumber` | `Double` | Optional | Invoice number | Double getInvoiceNumber() | setInvoiceNumber(Double invoiceNumber) |
 | `FuelProduct` | `Boolean` | Optional | Is it a fuel product? True or False | Boolean getFuelProduct() | setFuelProduct(Boolean fuelProduct) |
 | `VATApplicable` | `String` | Optional | Is VAT applicable?Y or N<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getVATApplicable() | setVATApplicable(String vATApplicable) |
@@ -112,7 +112,7 @@
 | `Quantity` | `Double` | Optional | Quantity of the product | Double getQuantity() | setQuantity(Double quantity) |
 | `RebateRate` | `Double` | Optional | Rebate rate if any | Double getRebateRate() | setRebateRate(Double rebateRate) |
 | `ReceiptNumber` | `Integer` | Optional | Reciept number | Integer getReceiptNumber() | setReceiptNumber(Integer receiptNumber) |
-| `RefundFlag` | [`PricedTransactionRespV2RefundFlagEnum`](../../doc/models/priced-transaction-resp-v2-refund-flag-enum.md) | Optional | Flag to check if there is any refund<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | PricedTransactionRespV2RefundFlagEnum getRefundFlag() | setRefundFlag(PricedTransactionRespV2RefundFlagEnum refundFlag) |
+| `RefundFlag` | [`PricedTransactionRespV2RefundFlagEnum`](../../doc/models/priced-transaction-resp-v2-refund-flag-enum.md) | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | PricedTransactionRespV2RefundFlagEnum getRefundFlag() | setRefundFlag(PricedTransactionRespV2RefundFlagEnum refundFlag) |
 | `SiteGroupId` | `Integer` | Optional | Group identifier for the site | Integer getSiteGroupId() | setSiteGroupId(Integer siteGroupId) |
 | `SiteGroupName` | `String` | Optional | Name of the Site group | String getSiteGroupName() | setSiteGroupName(String siteGroupName) |
 | `Latitude` | `Double` | Optional | Latitude of the site | Double getLatitude() | setLatitude(Double latitude) |
@@ -125,8 +125,8 @@
 | `IsInvoiced` | `Boolean` | Optional | Is invoice raised<br>**Default**: `false` | Boolean getIsInvoiced() | setIsInvoiced(Boolean isInvoiced) |
 | `TransactionCurrencyCode` | `String` | Optional | Transaction currency code | String getTransactionCurrencyCode() | setTransactionCurrencyCode(String transactionCurrencyCode) |
 | `CreditDebitCode` | `String` | Optional | Is it Credit or debit C for credit D for Debit | String getCreditDebitCode() | setCreditDebitCode(String creditDebitCode) |
-| `TransactionDate` | `LocalDate` | Optional | Date of transaction | LocalDate getTransactionDate() | setTransactionDate(LocalDate transactionDate) |
-| `TransactionTime` | `LocalDateTime` | Optional | Time of transaction | LocalDateTime getTransactionTime() | setTransactionTime(LocalDateTime transactionTime) |
+| `TransactionDate` | `String` | Optional | Date of transaction | String getTransactionDate() | setTransactionDate(String transactionDate) |
+| `TransactionTime` | `String` | Optional | Time of transaction | String getTransactionTime() | setTransactionTime(String transactionTime) |
 | `TransactionItemId` | `String` | Optional | Identifier of the Iem in transaction | String getTransactionItemId() | setTransactionItemId(String transactionItemId) |
 | `TrnIdentifier` | `String` | Optional | Transaction identifier | String getTrnIdentifier() | setTrnIdentifier(String trnIdentifier) |
 | `Type` | `String` | Optional | Transaction type for Delco | String getType() | setType(String type) |
@@ -145,14 +145,14 @@
 | `OriginalVATAmount` | `Double` | Optional | Original VAT amount | Double getOriginalVATAmount() | setOriginalVATAmount(Double originalVATAmount) |
 | `EmbossText` | `String` | Optional | Comapany name embosses in text<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getEmbossText() | setEmbossText(String embossText) |
 | `OriginalExchangeRate` | `Double` | Optional | Orginal exchange rate | Double getOriginalExchangeRate() | setOriginalExchangeRate(Double originalExchangeRate) |
-| `OriginalTransactionItemInvoiceDate` | `LocalDate` | Optional | Original treansaction date | LocalDate getOriginalTransactionItemInvoiceDate() | setOriginalTransactionItemInvoiceDate(LocalDate originalTransactionItemInvoiceDate) |
+| `OriginalTransactionItemInvoiceDate` | `String` | Optional | Original treansaction date | String getOriginalTransactionItemInvoiceDate() | setOriginalTransactionItemInvoiceDate(String originalTransactionItemInvoiceDate) |
 | `FeeTypeId` | `Integer` | Optional | Fee type identifier<br>**Constraints**: `>= 1`, `<= 1` | Integer getFeeTypeId() | setFeeTypeId(Integer feeTypeId) |
 | `LineItemDescription` | `Boolean` | Optional | Line item identifier of the product<br>**Default**: `false` | Boolean getLineItemDescription() | setLineItemDescription(Boolean lineItemDescription) |
 | `FeeRuleDescription` | `String` | Optional | Fee rule description<br>**Constraints**: *Minimum Length*: `8`, *Maximum Length*: `25` | String getFeeRuleDescription() | setFeeRuleDescription(String feeRuleDescription) |
 | `Frequency` | `Integer` | Optional | Frequency of transaction<br>**Constraints**: `>= 1`, `<= 1` | Integer getFrequency() | setFrequency(Integer frequency) |
 | `FeeRuleId` | `Integer` | Optional | Fee rule identifier<br>**Constraints**: `>= 1`, `<= 1` | Integer getFeeRuleId() | setFeeRuleId(Integer feeRuleId) |
-| `SystemEntryDate` | `LocalDate` | Optional | Entry date in the system | LocalDate getSystemEntryDate() | setSystemEntryDate(LocalDate systemEntryDate) |
-| `SystemEntryTime` | `LocalDateTime` | Optional | Entry time in the system | LocalDateTime getSystemEntryTime() | setSystemEntryTime(LocalDateTime systemEntryTime) |
+| `SystemEntryDate` | `String` | Optional | Entry date in the system | String getSystemEntryDate() | setSystemEntryDate(String systemEntryDate) |
+| `SystemEntryTime` | `String` | Optional | Entry time in the system | String getSystemEntryTime() | setSystemEntryTime(String systemEntryTime) |
 | `IsManual` | `String` | Optional | Checking if its manual<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getIsManual() | setIsManual(String isManual) |
 | `OriginalTransactionItemId` | `String` | Optional | Is it manual<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getOriginalTransactionItemId() | setOriginalTransactionItemId(String originalTransactionItemId) |
 | `OriginalTransactionItemInvoiceNumber` | `Integer` | Optional | Original invoice transaction number | Integer getOriginalTransactionItemInvoiceNumber() | setOriginalTransactionItemInvoiceNumber(Integer originalTransactionItemInvoiceNumber) |
@@ -170,10 +170,10 @@
 | `EVChargePointConnectorType` | `Integer` | Optional | Ev chariging connector type | Integer getEVChargePointConnectorType() | setEVChargePointConnectorType(Integer eVChargePointConnectorType) |
 | `EVChargePointConnectorTypeDescription` | `String` | Optional | EV charging point connector type description | String getEVChargePointConnectorTypeDescription() | setEVChargePointConnectorTypeDescription(String eVChargePointConnectorTypeDescription) |
 | `EVChargeDuration` | `String` | Optional | Ev charging Duration | String getEVChargeDuration() | setEVChargeDuration(String eVChargeDuration) |
-| `EVChargeStartDate` | `LocalDate` | Optional | EvCharging start Date | LocalDate getEVChargeStartDate() | setEVChargeStartDate(LocalDate eVChargeStartDate) |
-| `EVChargeStartTime` | `LocalDateTime` | Optional | EvCharging start time | LocalDateTime getEVChargeStartTime() | setEVChargeStartTime(LocalDateTime eVChargeStartTime) |
-| `EVChargeEndDate` | `LocalDate` | Optional | EvCharging End Date | LocalDate getEVChargeEndDate() | setEVChargeEndDate(LocalDate eVChargeEndDate) |
-| `EVChargeEndTime` | `LocalDateTime` | Optional | EvCharging End time | LocalDateTime getEVChargeEndTime() | setEVChargeEndTime(LocalDateTime eVChargeEndTime) |
+| `EVChargeStartDate` | `String` | Optional | EvCharging start Date | String getEVChargeStartDate() | setEVChargeStartDate(String eVChargeStartDate) |
+| `EVChargeStartTime` | `String` | Optional | EvCharging start time | String getEVChargeStartTime() | setEVChargeStartTime(String eVChargeStartTime) |
+| `EVChargeEndDate` | `String` | Optional | EvCharging End Date | String getEVChargeEndDate() | setEVChargeEndDate(String eVChargeEndDate) |
+| `EVChargeEndTime` | `String` | Optional | EvCharging End time | String getEVChargeEndTime() | setEVChargeEndTime(String eVChargeEndTime) |
 | `HostingCollectingCompanyNumber` | `Integer` | Optional | - | Integer getHostingCollectingCompanyNumber() | setHostingCollectingCompanyNumber(Integer hostingCollectingCompanyNumber) |
 | `TransactionId` | `Double` | Optional | - | Double getTransactionId() | setTransactionId(Double transactionId) |
 | `FuelOnly` | `Boolean` | Optional | - | Boolean getFuelOnly() | setFuelOnly(Boolean fuelOnly) |
@@ -278,7 +278,6 @@
   "Quantity": 43.28,
   "RebateRate": 0.0022,
   "ReceiptNumber": 6803,
-  "RefundFlag": "Y",
   "SiteGroupId": 202,
   "SiteGroupName": "CZ 9100 ECONOMY NETWORK",
   "Latitude": 53.83606,

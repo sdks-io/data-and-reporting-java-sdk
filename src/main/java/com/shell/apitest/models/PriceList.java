@@ -976,10 +976,10 @@ public class PriceList {
 
     /**
      * Internal Getter for PriceType.
-     * Price Type Possible Values are: •	Country– Price rule defined at country whereas Price Rule
-     * DelcoId same as ColcoId. •	TPNDelcoPrice – Price rule defined in the TPN whereas Price Rule
-     * DelcoId is different from ColcoId. •	NetworkPrice – Price rule defined at Fuel Network level.
-     * •	Other – Price rule defined at either Site or SiteGroup level.
+     * Price Type Possible Values are: • Country– Price rule defined at country whereas Price Rule
+     * DelcoId same as ColcoId. • TPNDelcoPrice – Price rule defined in the TPN whereas Price Rule
+     * DelcoId is different from ColcoId. • NetworkPrice – Price rule defined at Fuel Network level.
+     * • Other – Price rule defined at either Site or SiteGroup level.
      * @return Returns the Internal String
      */
     @JsonGetter("PriceType")
@@ -991,10 +991,10 @@ public class PriceList {
 
     /**
      * Getter for PriceType.
-     * Price Type Possible Values are: •	Country– Price rule defined at country whereas Price Rule
-     * DelcoId same as ColcoId. •	TPNDelcoPrice – Price rule defined in the TPN whereas Price Rule
-     * DelcoId is different from ColcoId. •	NetworkPrice – Price rule defined at Fuel Network level.
-     * •	Other – Price rule defined at either Site or SiteGroup level.
+     * Price Type Possible Values are: • Country– Price rule defined at country whereas Price Rule
+     * DelcoId same as ColcoId. • TPNDelcoPrice – Price rule defined in the TPN whereas Price Rule
+     * DelcoId is different from ColcoId. • NetworkPrice – Price rule defined at Fuel Network level.
+     * • Other – Price rule defined at either Site or SiteGroup level.
      * @return Returns the String
      */
     public String getPriceType() {
@@ -1003,10 +1003,10 @@ public class PriceList {
 
     /**
      * Setter for PriceType.
-     * Price Type Possible Values are: •	Country– Price rule defined at country whereas Price Rule
-     * DelcoId same as ColcoId. •	TPNDelcoPrice – Price rule defined in the TPN whereas Price Rule
-     * DelcoId is different from ColcoId. •	NetworkPrice – Price rule defined at Fuel Network level.
-     * •	Other – Price rule defined at either Site or SiteGroup level.
+     * Price Type Possible Values are: • Country– Price rule defined at country whereas Price Rule
+     * DelcoId same as ColcoId. • TPNDelcoPrice – Price rule defined in the TPN whereas Price Rule
+     * DelcoId is different from ColcoId. • NetworkPrice – Price rule defined at Fuel Network level.
+     * • Other – Price rule defined at either Site or SiteGroup level.
      * @param priceType Value for String
      */
     @JsonSetter("PriceType")
@@ -1016,10 +1016,10 @@ public class PriceList {
 
     /**
      * UnSetter for PriceType.
-     * Price Type Possible Values are: •	Country– Price rule defined at country whereas Price Rule
-     * DelcoId same as ColcoId. •	TPNDelcoPrice – Price rule defined in the TPN whereas Price Rule
-     * DelcoId is different from ColcoId. •	NetworkPrice – Price rule defined at Fuel Network level.
-     * •	Other – Price rule defined at either Site or SiteGroup level.
+     * Price Type Possible Values are: • Country– Price rule defined at country whereas Price Rule
+     * DelcoId same as ColcoId. • TPNDelcoPrice – Price rule defined in the TPN whereas Price Rule
+     * DelcoId is different from ColcoId. • NetworkPrice – Price rule defined at Fuel Network level.
+     * • Other – Price rule defined at either Site or SiteGroup level.
      */
     public void unsetPriceType() {
         priceType = null;
@@ -1339,8 +1339,8 @@ public class PriceList {
 
     /**
      * Internal Getter for PriceRuleDelcoName.
-     * Company Name of the price rule DelCo. E.g.: •	Pilipinas Shell Petroleum Corp •	Shell U.K. Oil
-     * Products Limited •	G &amp; V SERVICE STATIONS NV
+     * Company Name of the price rule DelCo. E.g.: • Pilipinas Shell Petroleum Corp • Shell U.K. Oil
+     * Products Limited • G &amp; V SERVICE STATIONS NV
      * @return Returns the Internal String
      */
     @JsonGetter("PriceRuleDelcoName")
@@ -1352,8 +1352,8 @@ public class PriceList {
 
     /**
      * Getter for PriceRuleDelcoName.
-     * Company Name of the price rule DelCo. E.g.: •	Pilipinas Shell Petroleum Corp •	Shell U.K. Oil
-     * Products Limited •	G &amp; V SERVICE STATIONS NV
+     * Company Name of the price rule DelCo. E.g.: • Pilipinas Shell Petroleum Corp • Shell U.K. Oil
+     * Products Limited • G &amp; V SERVICE STATIONS NV
      * @return Returns the String
      */
     public String getPriceRuleDelcoName() {
@@ -1362,8 +1362,8 @@ public class PriceList {
 
     /**
      * Setter for PriceRuleDelcoName.
-     * Company Name of the price rule DelCo. E.g.: •	Pilipinas Shell Petroleum Corp •	Shell U.K. Oil
-     * Products Limited •	G &amp; V SERVICE STATIONS NV
+     * Company Name of the price rule DelCo. E.g.: • Pilipinas Shell Petroleum Corp • Shell U.K. Oil
+     * Products Limited • G &amp; V SERVICE STATIONS NV
      * @param priceRuleDelcoName Value for String
      */
     @JsonSetter("PriceRuleDelcoName")
@@ -1373,8 +1373,8 @@ public class PriceList {
 
     /**
      * UnSetter for PriceRuleDelcoName.
-     * Company Name of the price rule DelCo. E.g.: •	Pilipinas Shell Petroleum Corp •	Shell U.K. Oil
-     * Products Limited •	G &amp; V SERVICE STATIONS NV
+     * Company Name of the price rule DelCo. E.g.: • Pilipinas Shell Petroleum Corp • Shell U.K. Oil
+     * Products Limited • G &amp; V SERVICE STATIONS NV
      */
     public void unsetPriceRuleDelcoName() {
         priceRuleDelcoName = null;

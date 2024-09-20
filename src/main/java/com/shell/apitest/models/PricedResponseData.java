@@ -9,12 +9,8 @@ package com.shell.apitest.models;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.shell.apitest.DateTimeHelper;
 import io.apimatic.core.types.OptionalNullable;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -34,7 +30,7 @@ public class PricedResponseData {
     private OptionalNullable<String> transactionStatus;
     private OptionalNullable<String> driverName;
     private OptionalNullable<Integer> cardExpiryPeriod;
-    private OptionalNullable<LocalDate> cardExpiry;
+    private OptionalNullable<String> cardExpiry;
     private OptionalNullable<Integer> cardGroupId;
     private OptionalNullable<String> cardGroupName;
     private OptionalNullable<Integer> issuerCode;
@@ -84,8 +80,8 @@ public class PricedResponseData {
     private Boolean isShellSite;
     private OptionalNullable<String> fleetIdInput;
     private OptionalNullable<Integer> incomingProductCode;
-    private OptionalNullable<LocalDate> postingDate;
-    private OptionalNullable<LocalDateTime> postingTime;
+    private OptionalNullable<String> postingDate;
+    private OptionalNullable<String> postingTime;
     private OptionalNullable<Integer> productCode;
     private OptionalNullable<String> productName;
     private OptionalNullable<Integer> productGroupId;
@@ -96,7 +92,7 @@ public class PricedResponseData {
     private OptionalNullable<Integer> siteCode;
     private OptionalNullable<Integer> incomingSiteNumber;
     private OptionalNullable<String> invoiceCurrencyCode;
-    private OptionalNullable<LocalDate> invoiceDate;
+    private OptionalNullable<String> invoiceDate;
     private OptionalNullable<Double> invoiceNumber;
     private OptionalNullable<Boolean> fuelProduct;
     private OptionalNullable<String> vATApplicable;
@@ -137,8 +133,8 @@ public class PricedResponseData {
     private OptionalNullable<Boolean> isInvoiced;
     private OptionalNullable<String> transactionCurrencyCode;
     private OptionalNullable<String> creditDebitCode;
-    private OptionalNullable<LocalDate> transactionDate;
-    private OptionalNullable<LocalDateTime> transactionTime;
+    private OptionalNullable<String> transactionDate;
+    private OptionalNullable<String> transactionTime;
     private OptionalNullable<String> transactionItemId;
     private OptionalNullable<String> trnIdentifier;
     private OptionalNullable<String> type;
@@ -157,14 +153,14 @@ public class PricedResponseData {
     private OptionalNullable<Double> originalVATAmount;
     private OptionalNullable<String> embossText;
     private OptionalNullable<Double> originalExchangeRate;
-    private OptionalNullable<LocalDate> originalTransactionItemInvoiceDate;
+    private OptionalNullable<String> originalTransactionItemInvoiceDate;
     private OptionalNullable<Integer> feeTypeId;
     private OptionalNullable<Boolean> lineItemDescription;
     private OptionalNullable<String> feeRuleDescription;
     private OptionalNullable<Integer> frequency;
     private OptionalNullable<Integer> feeRuleId;
-    private OptionalNullable<LocalDate> systemEntryDate;
-    private OptionalNullable<LocalDateTime> systemEntryTime;
+    private OptionalNullable<String> systemEntryDate;
+    private OptionalNullable<String> systemEntryTime;
     private OptionalNullable<String> isManual;
     private OptionalNullable<String> originalTransactionItemId;
     private OptionalNullable<Integer> originalTransactionItemInvoiceNumber;
@@ -182,10 +178,10 @@ public class PricedResponseData {
     private OptionalNullable<Integer> eVChargePointConnectorType;
     private OptionalNullable<String> eVChargePointConnectorTypeDescription;
     private OptionalNullable<String> eVChargeDuration;
-    private OptionalNullable<LocalDate> eVChargeStartDate;
-    private OptionalNullable<LocalDateTime> eVChargeStartTime;
-    private OptionalNullable<LocalDate> eVChargeEndDate;
-    private OptionalNullable<LocalDateTime> eVChargeEndTime;
+    private OptionalNullable<String> eVChargeStartDate;
+    private OptionalNullable<String> eVChargeStartTime;
+    private OptionalNullable<String> eVChargeEndDate;
+    private OptionalNullable<String> eVChargeEndTime;
     private OptionalNullable<Integer> hostingCollectingCompanyNumber;
     private OptionalNullable<Double> transactionId;
     private OptionalNullable<Boolean> fuelOnly;
@@ -215,7 +211,7 @@ public class PricedResponseData {
      * @param  transactionStatus  String value for transactionStatus.
      * @param  driverName  String value for driverName.
      * @param  cardExpiryPeriod  Integer value for cardExpiryPeriod.
-     * @param  cardExpiry  LocalDate value for cardExpiry.
+     * @param  cardExpiry  String value for cardExpiry.
      * @param  cardGroupId  Integer value for cardGroupId.
      * @param  cardGroupName  String value for cardGroupName.
      * @param  issuerCode  Integer value for issuerCode.
@@ -269,8 +265,8 @@ public class PricedResponseData {
      * @param  isShellSite  Boolean value for isShellSite.
      * @param  fleetIdInput  String value for fleetIdInput.
      * @param  incomingProductCode  Integer value for incomingProductCode.
-     * @param  postingDate  LocalDate value for postingDate.
-     * @param  postingTime  LocalDateTime value for postingTime.
+     * @param  postingDate  String value for postingDate.
+     * @param  postingTime  String value for postingTime.
      * @param  productCode  Integer value for productCode.
      * @param  productName  String value for productName.
      * @param  productGroupId  Integer value for productGroupId.
@@ -281,7 +277,7 @@ public class PricedResponseData {
      * @param  siteCode  Integer value for siteCode.
      * @param  incomingSiteNumber  Integer value for incomingSiteNumber.
      * @param  invoiceCurrencyCode  String value for invoiceCurrencyCode.
-     * @param  invoiceDate  LocalDate value for invoiceDate.
+     * @param  invoiceDate  String value for invoiceDate.
      * @param  invoiceNumber  Double value for invoiceNumber.
      * @param  fuelProduct  Boolean value for fuelProduct.
      * @param  vATApplicable  String value for vATApplicable.
@@ -322,8 +318,8 @@ public class PricedResponseData {
      * @param  isInvoiced  Boolean value for isInvoiced.
      * @param  transactionCurrencyCode  String value for transactionCurrencyCode.
      * @param  creditDebitCode  String value for creditDebitCode.
-     * @param  transactionDate  LocalDate value for transactionDate.
-     * @param  transactionTime  LocalDateTime value for transactionTime.
+     * @param  transactionDate  String value for transactionDate.
+     * @param  transactionTime  String value for transactionTime.
      * @param  transactionItemId  String value for transactionItemId.
      * @param  trnIdentifier  String value for trnIdentifier.
      * @param  type  String value for type.
@@ -342,15 +338,15 @@ public class PricedResponseData {
      * @param  originalVATAmount  Double value for originalVATAmount.
      * @param  embossText  String value for embossText.
      * @param  originalExchangeRate  Double value for originalExchangeRate.
-     * @param  originalTransactionItemInvoiceDate  LocalDate value for
+     * @param  originalTransactionItemInvoiceDate  String value for
      *         originalTransactionItemInvoiceDate.
      * @param  feeTypeId  Integer value for feeTypeId.
      * @param  lineItemDescription  Boolean value for lineItemDescription.
      * @param  feeRuleDescription  String value for feeRuleDescription.
      * @param  frequency  Integer value for frequency.
      * @param  feeRuleId  Integer value for feeRuleId.
-     * @param  systemEntryDate  LocalDate value for systemEntryDate.
-     * @param  systemEntryTime  LocalDateTime value for systemEntryTime.
+     * @param  systemEntryDate  String value for systemEntryDate.
+     * @param  systemEntryTime  String value for systemEntryTime.
      * @param  isManual  String value for isManual.
      * @param  originalTransactionItemId  String value for originalTransactionItemId.
      * @param  originalTransactionItemInvoiceNumber  Integer value for
@@ -370,10 +366,10 @@ public class PricedResponseData {
      * @param  eVChargePointConnectorTypeDescription  String value for
      *         eVChargePointConnectorTypeDescription.
      * @param  eVChargeDuration  String value for eVChargeDuration.
-     * @param  eVChargeStartDate  LocalDate value for eVChargeStartDate.
-     * @param  eVChargeStartTime  LocalDateTime value for eVChargeStartTime.
-     * @param  eVChargeEndDate  LocalDate value for eVChargeEndDate.
-     * @param  eVChargeEndTime  LocalDateTime value for eVChargeEndTime.
+     * @param  eVChargeStartDate  String value for eVChargeStartDate.
+     * @param  eVChargeStartTime  String value for eVChargeStartTime.
+     * @param  eVChargeEndDate  String value for eVChargeEndDate.
+     * @param  eVChargeEndTime  String value for eVChargeEndTime.
      * @param  hostingCollectingCompanyNumber  Integer value for hostingCollectingCompanyNumber.
      * @param  transactionId  Double value for transactionId.
      * @param  fuelOnly  Boolean value for fuelOnly.
@@ -392,7 +388,7 @@ public class PricedResponseData {
             String transactionStatus,
             String driverName,
             Integer cardExpiryPeriod,
-            LocalDate cardExpiry,
+            String cardExpiry,
             Integer cardGroupId,
             String cardGroupName,
             Integer issuerCode,
@@ -442,8 +438,8 @@ public class PricedResponseData {
             Boolean isShellSite,
             String fleetIdInput,
             Integer incomingProductCode,
-            LocalDate postingDate,
-            LocalDateTime postingTime,
+            String postingDate,
+            String postingTime,
             Integer productCode,
             String productName,
             Integer productGroupId,
@@ -454,7 +450,7 @@ public class PricedResponseData {
             Integer siteCode,
             Integer incomingSiteNumber,
             String invoiceCurrencyCode,
-            LocalDate invoiceDate,
+            String invoiceDate,
             Double invoiceNumber,
             Boolean fuelProduct,
             String vATApplicable,
@@ -495,8 +491,8 @@ public class PricedResponseData {
             Boolean isInvoiced,
             String transactionCurrencyCode,
             String creditDebitCode,
-            LocalDate transactionDate,
-            LocalDateTime transactionTime,
+            String transactionDate,
+            String transactionTime,
             String transactionItemId,
             String trnIdentifier,
             String type,
@@ -515,14 +511,14 @@ public class PricedResponseData {
             Double originalVATAmount,
             String embossText,
             Double originalExchangeRate,
-            LocalDate originalTransactionItemInvoiceDate,
+            String originalTransactionItemInvoiceDate,
             Integer feeTypeId,
             Boolean lineItemDescription,
             String feeRuleDescription,
             Integer frequency,
             Integer feeRuleId,
-            LocalDate systemEntryDate,
-            LocalDateTime systemEntryTime,
+            String systemEntryDate,
+            String systemEntryTime,
             String isManual,
             String originalTransactionItemId,
             Integer originalTransactionItemInvoiceNumber,
@@ -540,10 +536,10 @@ public class PricedResponseData {
             Integer eVChargePointConnectorType,
             String eVChargePointConnectorTypeDescription,
             String eVChargeDuration,
-            LocalDate eVChargeStartDate,
-            LocalDateTime eVChargeStartTime,
-            LocalDate eVChargeEndDate,
-            LocalDateTime eVChargeEndTime,
+            String eVChargeStartDate,
+            String eVChargeStartTime,
+            String eVChargeEndDate,
+            String eVChargeEndTime,
             Integer hostingCollectingCompanyNumber,
             Double transactionId,
             Boolean fuelOnly) {
@@ -741,7 +737,7 @@ public class PricedResponseData {
      * @param  transactionStatus  String value for transactionStatus.
      * @param  driverName  String value for driverName.
      * @param  cardExpiryPeriod  Integer value for cardExpiryPeriod.
-     * @param  cardExpiry  LocalDate value for cardExpiry.
+     * @param  cardExpiry  String value for cardExpiry.
      * @param  cardGroupId  Integer value for cardGroupId.
      * @param  cardGroupName  String value for cardGroupName.
      * @param  issuerCode  Integer value for issuerCode.
@@ -795,8 +791,8 @@ public class PricedResponseData {
      * @param  isShellSite  Boolean value for isShellSite.
      * @param  fleetIdInput  String value for fleetIdInput.
      * @param  incomingProductCode  Integer value for incomingProductCode.
-     * @param  postingDate  LocalDate value for postingDate.
-     * @param  postingTime  LocalDateTime value for postingTime.
+     * @param  postingDate  String value for postingDate.
+     * @param  postingTime  String value for postingTime.
      * @param  productCode  Integer value for productCode.
      * @param  productName  String value for productName.
      * @param  productGroupId  Integer value for productGroupId.
@@ -807,7 +803,7 @@ public class PricedResponseData {
      * @param  siteCode  Integer value for siteCode.
      * @param  incomingSiteNumber  Integer value for incomingSiteNumber.
      * @param  invoiceCurrencyCode  String value for invoiceCurrencyCode.
-     * @param  invoiceDate  LocalDate value for invoiceDate.
+     * @param  invoiceDate  String value for invoiceDate.
      * @param  invoiceNumber  Double value for invoiceNumber.
      * @param  fuelProduct  Boolean value for fuelProduct.
      * @param  vATApplicable  String value for vATApplicable.
@@ -848,8 +844,8 @@ public class PricedResponseData {
      * @param  isInvoiced  Boolean value for isInvoiced.
      * @param  transactionCurrencyCode  String value for transactionCurrencyCode.
      * @param  creditDebitCode  String value for creditDebitCode.
-     * @param  transactionDate  LocalDate value for transactionDate.
-     * @param  transactionTime  LocalDateTime value for transactionTime.
+     * @param  transactionDate  String value for transactionDate.
+     * @param  transactionTime  String value for transactionTime.
      * @param  transactionItemId  String value for transactionItemId.
      * @param  trnIdentifier  String value for trnIdentifier.
      * @param  type  String value for type.
@@ -868,15 +864,15 @@ public class PricedResponseData {
      * @param  originalVATAmount  Double value for originalVATAmount.
      * @param  embossText  String value for embossText.
      * @param  originalExchangeRate  Double value for originalExchangeRate.
-     * @param  originalTransactionItemInvoiceDate  LocalDate value for
+     * @param  originalTransactionItemInvoiceDate  String value for
      *         originalTransactionItemInvoiceDate.
      * @param  feeTypeId  Integer value for feeTypeId.
      * @param  lineItemDescription  Boolean value for lineItemDescription.
      * @param  feeRuleDescription  String value for feeRuleDescription.
      * @param  frequency  Integer value for frequency.
      * @param  feeRuleId  Integer value for feeRuleId.
-     * @param  systemEntryDate  LocalDate value for systemEntryDate.
-     * @param  systemEntryTime  LocalDateTime value for systemEntryTime.
+     * @param  systemEntryDate  String value for systemEntryDate.
+     * @param  systemEntryTime  String value for systemEntryTime.
      * @param  isManual  String value for isManual.
      * @param  originalTransactionItemId  String value for originalTransactionItemId.
      * @param  originalTransactionItemInvoiceNumber  Integer value for
@@ -896,10 +892,10 @@ public class PricedResponseData {
      * @param  eVChargePointConnectorTypeDescription  String value for
      *         eVChargePointConnectorTypeDescription.
      * @param  eVChargeDuration  String value for eVChargeDuration.
-     * @param  eVChargeStartDate  LocalDate value for eVChargeStartDate.
-     * @param  eVChargeStartTime  LocalDateTime value for eVChargeStartTime.
-     * @param  eVChargeEndDate  LocalDate value for eVChargeEndDate.
-     * @param  eVChargeEndTime  LocalDateTime value for eVChargeEndTime.
+     * @param  eVChargeStartDate  String value for eVChargeStartDate.
+     * @param  eVChargeStartTime  String value for eVChargeStartTime.
+     * @param  eVChargeEndDate  String value for eVChargeEndDate.
+     * @param  eVChargeEndTime  String value for eVChargeEndTime.
      * @param  hostingCollectingCompanyNumber  Integer value for hostingCollectingCompanyNumber.
      * @param  transactionId  Double value for transactionId.
      * @param  fuelOnly  Boolean value for fuelOnly.
@@ -912,7 +908,7 @@ public class PricedResponseData {
             OptionalNullable<String> additional4, OptionalNullable<String> allowClearing,
             OptionalNullable<Integer> authorisationCode, OptionalNullable<String> transactionStatus,
             OptionalNullable<String> driverName, OptionalNullable<Integer> cardExpiryPeriod,
-            OptionalNullable<LocalDate> cardExpiry, OptionalNullable<Integer> cardGroupId,
+            OptionalNullable<String> cardExpiry, OptionalNullable<Integer> cardGroupId,
             OptionalNullable<String> cardGroupName, OptionalNullable<Integer> issuerCode,
             OptionalNullable<String> cardPAN, OptionalNullable<Integer> releaseCode,
             OptionalNullable<Integer> cardSequenceNumber, OptionalNullable<String> cardType,
@@ -948,14 +944,14 @@ public class PricedResponseData {
             OptionalNullable<String> transactionCurrencySymbol,
             OptionalNullable<String> discountType, OptionalNullable<Boolean> disputeStatus,
             Boolean isShellSite, OptionalNullable<String> fleetIdInput,
-            OptionalNullable<Integer> incomingProductCode, OptionalNullable<LocalDate> postingDate,
-            OptionalNullable<LocalDateTime> postingTime, OptionalNullable<Integer> productCode,
+            OptionalNullable<Integer> incomingProductCode, OptionalNullable<String> postingDate,
+            OptionalNullable<String> postingTime, OptionalNullable<Integer> productCode,
             OptionalNullable<String> productName, OptionalNullable<Integer> productGroupId,
             OptionalNullable<String> incomingCurrencyCode,
             OptionalNullable<String> incomingSiteDescription, OptionalNullable<String> location,
             OptionalNullable<String> siteName, OptionalNullable<Integer> siteCode,
             OptionalNullable<Integer> incomingSiteNumber,
-            OptionalNullable<String> invoiceCurrencyCode, OptionalNullable<LocalDate> invoiceDate,
+            OptionalNullable<String> invoiceCurrencyCode, OptionalNullable<String> invoiceDate,
             OptionalNullable<Double> invoiceNumber, OptionalNullable<Boolean> fuelProduct,
             OptionalNullable<String> vATApplicable, OptionalNullable<String> payerName,
             OptionalNullable<String> payerNumber, OptionalNullable<String> parentCustomerNumber,
@@ -976,24 +972,23 @@ public class PricedResponseData {
             OptionalNullable<Double> euroRebateAmount, OptionalNullable<Double> netEuroAmount,
             OptionalNullable<Double> euroVATAmount, OptionalNullable<String> parentCustomerName,
             OptionalNullable<Boolean> isInvoiced, OptionalNullable<String> transactionCurrencyCode,
-            OptionalNullable<String> creditDebitCode, OptionalNullable<LocalDate> transactionDate,
-            OptionalNullable<LocalDateTime> transactionTime,
-            OptionalNullable<String> transactionItemId, OptionalNullable<String> trnIdentifier,
-            OptionalNullable<String> type, OptionalNullable<Integer> transactionLine,
-            OptionalNullable<String> transactionType, OptionalNullable<String> uTCOffset,
-            OptionalNullable<String> vATCategory, OptionalNullable<Double> vATRate,
-            OptionalNullable<String> vehicleRegistration, OptionalNullable<String> isCancelled,
-            OptionalNullable<Double> colCoGrossAmount, OptionalNullable<Double> colCoNetAmount,
-            OptionalNullable<Double> colCoVATAmount,
+            OptionalNullable<String> creditDebitCode, OptionalNullable<String> transactionDate,
+            OptionalNullable<String> transactionTime, OptionalNullable<String> transactionItemId,
+            OptionalNullable<String> trnIdentifier, OptionalNullable<String> type,
+            OptionalNullable<Integer> transactionLine, OptionalNullable<String> transactionType,
+            OptionalNullable<String> uTCOffset, OptionalNullable<String> vATCategory,
+            OptionalNullable<Double> vATRate, OptionalNullable<String> vehicleRegistration,
+            OptionalNullable<String> isCancelled, OptionalNullable<Double> colCoGrossAmount,
+            OptionalNullable<Double> colCoNetAmount, OptionalNullable<Double> colCoVATAmount,
             OptionalNullable<String> originalCurrencySymbol,
             OptionalNullable<String> originalCurrencyCode,
             OptionalNullable<Double> originalVATAmount, OptionalNullable<String> embossText,
             OptionalNullable<Double> originalExchangeRate,
-            OptionalNullable<LocalDate> originalTransactionItemInvoiceDate,
+            OptionalNullable<String> originalTransactionItemInvoiceDate,
             OptionalNullable<Integer> feeTypeId, OptionalNullable<Boolean> lineItemDescription,
             OptionalNullable<String> feeRuleDescription, OptionalNullable<Integer> frequency,
-            OptionalNullable<Integer> feeRuleId, OptionalNullable<LocalDate> systemEntryDate,
-            OptionalNullable<LocalDateTime> systemEntryTime, OptionalNullable<String> isManual,
+            OptionalNullable<Integer> feeRuleId, OptionalNullable<String> systemEntryDate,
+            OptionalNullable<String> systemEntryTime, OptionalNullable<String> isManual,
             OptionalNullable<String> originalTransactionItemId,
             OptionalNullable<Integer> originalTransactionItemInvoiceNumber,
             OptionalNullable<Integer> originalTransactionItemInvoiceId,
@@ -1005,11 +1000,9 @@ public class PricedResponseData {
             OptionalNullable<String> eVChargePointSerial,
             OptionalNullable<Integer> eVChargePointConnectorType,
             OptionalNullable<String> eVChargePointConnectorTypeDescription,
-            OptionalNullable<String> eVChargeDuration,
-            OptionalNullable<LocalDate> eVChargeStartDate,
-            OptionalNullable<LocalDateTime> eVChargeStartTime,
-            OptionalNullable<LocalDate> eVChargeEndDate,
-            OptionalNullable<LocalDateTime> eVChargeEndTime,
+            OptionalNullable<String> eVChargeDuration, OptionalNullable<String> eVChargeStartDate,
+            OptionalNullable<String> eVChargeStartTime, OptionalNullable<String> eVChargeEndDate,
+            OptionalNullable<String> eVChargeEndTime,
             OptionalNullable<Integer> hostingCollectingCompanyNumber,
             OptionalNullable<Double> transactionId, OptionalNullable<Boolean> fuelOnly) {
         this.accountName = accountName;
@@ -1692,32 +1685,31 @@ public class PricedResponseData {
     /**
      * Internal Getter for CardExpiry.
      * Card Expiry Date
-     * @return Returns the Internal LocalDate
+     * @return Returns the Internal String
      */
     @JsonGetter("CardExpiry")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.SimpleDateSerializer.class)
-    protected OptionalNullable<LocalDate> internalGetCardExpiry() {
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetCardExpiry() {
         return this.cardExpiry;
     }
 
     /**
      * Getter for CardExpiry.
      * Card Expiry Date
-     * @return Returns the LocalDate
+     * @return Returns the String
      */
-    public LocalDate getCardExpiry() {
+    public String getCardExpiry() {
         return OptionalNullable.getFrom(cardExpiry);
     }
 
     /**
      * Setter for CardExpiry.
      * Card Expiry Date
-     * @param cardExpiry Value for LocalDate
+     * @param cardExpiry Value for String
      */
     @JsonSetter("CardExpiry")
-    @JsonDeserialize(using = DateTimeHelper.SimpleDateDeserializer.class)
-    public void setCardExpiry(LocalDate cardExpiry) {
+    public void setCardExpiry(String cardExpiry) {
         this.cardExpiry = OptionalNullable.of(cardExpiry);
     }
 
@@ -3587,32 +3579,31 @@ public class PricedResponseData {
     /**
      * Internal Getter for PostingDate.
      * Date of Posting
-     * @return Returns the Internal LocalDate
+     * @return Returns the Internal String
      */
     @JsonGetter("PostingDate")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.SimpleDateSerializer.class)
-    protected OptionalNullable<LocalDate> internalGetPostingDate() {
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetPostingDate() {
         return this.postingDate;
     }
 
     /**
      * Getter for PostingDate.
      * Date of Posting
-     * @return Returns the LocalDate
+     * @return Returns the String
      */
-    public LocalDate getPostingDate() {
+    public String getPostingDate() {
         return OptionalNullable.getFrom(postingDate);
     }
 
     /**
      * Setter for PostingDate.
      * Date of Posting
-     * @param postingDate Value for LocalDate
+     * @param postingDate Value for String
      */
     @JsonSetter("PostingDate")
-    @JsonDeserialize(using = DateTimeHelper.SimpleDateDeserializer.class)
-    public void setPostingDate(LocalDate postingDate) {
+    public void setPostingDate(String postingDate) {
         this.postingDate = OptionalNullable.of(postingDate);
     }
 
@@ -3627,32 +3618,31 @@ public class PricedResponseData {
     /**
      * Internal Getter for PostingTime.
      * Time whern posting happened
-     * @return Returns the Internal LocalDateTime
+     * @return Returns the Internal String
      */
     @JsonGetter("PostingTime")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Rfc8601DateTimeSerializer.class)
-    protected OptionalNullable<LocalDateTime> internalGetPostingTime() {
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetPostingTime() {
         return this.postingTime;
     }
 
     /**
      * Getter for PostingTime.
      * Time whern posting happened
-     * @return Returns the LocalDateTime
+     * @return Returns the String
      */
-    public LocalDateTime getPostingTime() {
+    public String getPostingTime() {
         return OptionalNullable.getFrom(postingTime);
     }
 
     /**
      * Setter for PostingTime.
      * Time whern posting happened
-     * @param postingTime Value for LocalDateTime
+     * @param postingTime Value for String
      */
     @JsonSetter("PostingTime")
-    @JsonDeserialize(using = DateTimeHelper.Rfc8601DateTimeDeserializer.class)
-    public void setPostingTime(LocalDateTime postingTime) {
+    public void setPostingTime(String postingTime) {
         this.postingTime = OptionalNullable.of(postingTime);
     }
 
@@ -4061,32 +4051,31 @@ public class PricedResponseData {
     /**
      * Internal Getter for InvoiceDate.
      * Date on which the invoice was raised
-     * @return Returns the Internal LocalDate
+     * @return Returns the Internal String
      */
     @JsonGetter("InvoiceDate")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.SimpleDateSerializer.class)
-    protected OptionalNullable<LocalDate> internalGetInvoiceDate() {
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetInvoiceDate() {
         return this.invoiceDate;
     }
 
     /**
      * Getter for InvoiceDate.
      * Date on which the invoice was raised
-     * @return Returns the LocalDate
+     * @return Returns the String
      */
-    public LocalDate getInvoiceDate() {
+    public String getInvoiceDate() {
         return OptionalNullable.getFrom(invoiceDate);
     }
 
     /**
      * Setter for InvoiceDate.
      * Date on which the invoice was raised
-     * @param invoiceDate Value for LocalDate
+     * @param invoiceDate Value for String
      */
     @JsonSetter("InvoiceDate")
-    @JsonDeserialize(using = DateTimeHelper.SimpleDateDeserializer.class)
-    public void setInvoiceDate(LocalDate invoiceDate) {
+    public void setInvoiceDate(String invoiceDate) {
         this.invoiceDate = OptionalNullable.of(invoiceDate);
     }
 
@@ -5153,7 +5142,6 @@ public class PricedResponseData {
 
     /**
      * Getter for RefundFlag.
-     * Flag to check if there is any refund
      * @return Returns the PricedTransactionRespV2RefundFlagEnum
      */
     @JsonGetter("RefundFlag")
@@ -5164,7 +5152,6 @@ public class PricedResponseData {
 
     /**
      * Setter for RefundFlag.
-     * Flag to check if there is any refund
      * @param refundFlag Value for PricedTransactionRespV2RefundFlagEnum
      */
     @JsonSetter("RefundFlag")
@@ -5643,32 +5630,31 @@ public class PricedResponseData {
     /**
      * Internal Getter for TransactionDate.
      * Date of transaction
-     * @return Returns the Internal LocalDate
+     * @return Returns the Internal String
      */
     @JsonGetter("TransactionDate")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.SimpleDateSerializer.class)
-    protected OptionalNullable<LocalDate> internalGetTransactionDate() {
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetTransactionDate() {
         return this.transactionDate;
     }
 
     /**
      * Getter for TransactionDate.
      * Date of transaction
-     * @return Returns the LocalDate
+     * @return Returns the String
      */
-    public LocalDate getTransactionDate() {
+    public String getTransactionDate() {
         return OptionalNullable.getFrom(transactionDate);
     }
 
     /**
      * Setter for TransactionDate.
      * Date of transaction
-     * @param transactionDate Value for LocalDate
+     * @param transactionDate Value for String
      */
     @JsonSetter("TransactionDate")
-    @JsonDeserialize(using = DateTimeHelper.SimpleDateDeserializer.class)
-    public void setTransactionDate(LocalDate transactionDate) {
+    public void setTransactionDate(String transactionDate) {
         this.transactionDate = OptionalNullable.of(transactionDate);
     }
 
@@ -5683,32 +5669,31 @@ public class PricedResponseData {
     /**
      * Internal Getter for TransactionTime.
      * Time of transaction
-     * @return Returns the Internal LocalDateTime
+     * @return Returns the Internal String
      */
     @JsonGetter("TransactionTime")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Rfc8601DateTimeSerializer.class)
-    protected OptionalNullable<LocalDateTime> internalGetTransactionTime() {
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetTransactionTime() {
         return this.transactionTime;
     }
 
     /**
      * Getter for TransactionTime.
      * Time of transaction
-     * @return Returns the LocalDateTime
+     * @return Returns the String
      */
-    public LocalDateTime getTransactionTime() {
+    public String getTransactionTime() {
         return OptionalNullable.getFrom(transactionTime);
     }
 
     /**
      * Setter for TransactionTime.
      * Time of transaction
-     * @param transactionTime Value for LocalDateTime
+     * @param transactionTime Value for String
      */
     @JsonSetter("TransactionTime")
-    @JsonDeserialize(using = DateTimeHelper.Rfc8601DateTimeDeserializer.class)
-    public void setTransactionTime(LocalDateTime transactionTime) {
+    public void setTransactionTime(String transactionTime) {
         this.transactionTime = OptionalNullable.of(transactionTime);
     }
 
@@ -6421,32 +6406,31 @@ public class PricedResponseData {
     /**
      * Internal Getter for OriginalTransactionItemInvoiceDate.
      * Original treansaction date
-     * @return Returns the Internal LocalDate
+     * @return Returns the Internal String
      */
     @JsonGetter("OriginalTransactionItemInvoiceDate")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.SimpleDateSerializer.class)
-    protected OptionalNullable<LocalDate> internalGetOriginalTransactionItemInvoiceDate() {
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetOriginalTransactionItemInvoiceDate() {
         return this.originalTransactionItemInvoiceDate;
     }
 
     /**
      * Getter for OriginalTransactionItemInvoiceDate.
      * Original treansaction date
-     * @return Returns the LocalDate
+     * @return Returns the String
      */
-    public LocalDate getOriginalTransactionItemInvoiceDate() {
+    public String getOriginalTransactionItemInvoiceDate() {
         return OptionalNullable.getFrom(originalTransactionItemInvoiceDate);
     }
 
     /**
      * Setter for OriginalTransactionItemInvoiceDate.
      * Original treansaction date
-     * @param originalTransactionItemInvoiceDate Value for LocalDate
+     * @param originalTransactionItemInvoiceDate Value for String
      */
     @JsonSetter("OriginalTransactionItemInvoiceDate")
-    @JsonDeserialize(using = DateTimeHelper.SimpleDateDeserializer.class)
-    public void setOriginalTransactionItemInvoiceDate(LocalDate originalTransactionItemInvoiceDate) {
+    public void setOriginalTransactionItemInvoiceDate(String originalTransactionItemInvoiceDate) {
         this.originalTransactionItemInvoiceDate = OptionalNullable.of(originalTransactionItemInvoiceDate);
     }
 
@@ -6656,32 +6640,31 @@ public class PricedResponseData {
     /**
      * Internal Getter for SystemEntryDate.
      * Entry date in the system
-     * @return Returns the Internal LocalDate
+     * @return Returns the Internal String
      */
     @JsonGetter("SystemEntryDate")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.SimpleDateSerializer.class)
-    protected OptionalNullable<LocalDate> internalGetSystemEntryDate() {
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetSystemEntryDate() {
         return this.systemEntryDate;
     }
 
     /**
      * Getter for SystemEntryDate.
      * Entry date in the system
-     * @return Returns the LocalDate
+     * @return Returns the String
      */
-    public LocalDate getSystemEntryDate() {
+    public String getSystemEntryDate() {
         return OptionalNullable.getFrom(systemEntryDate);
     }
 
     /**
      * Setter for SystemEntryDate.
      * Entry date in the system
-     * @param systemEntryDate Value for LocalDate
+     * @param systemEntryDate Value for String
      */
     @JsonSetter("SystemEntryDate")
-    @JsonDeserialize(using = DateTimeHelper.SimpleDateDeserializer.class)
-    public void setSystemEntryDate(LocalDate systemEntryDate) {
+    public void setSystemEntryDate(String systemEntryDate) {
         this.systemEntryDate = OptionalNullable.of(systemEntryDate);
     }
 
@@ -6696,32 +6679,31 @@ public class PricedResponseData {
     /**
      * Internal Getter for SystemEntryTime.
      * Entry time in the system
-     * @return Returns the Internal LocalDateTime
+     * @return Returns the Internal String
      */
     @JsonGetter("SystemEntryTime")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Rfc8601DateTimeSerializer.class)
-    protected OptionalNullable<LocalDateTime> internalGetSystemEntryTime() {
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetSystemEntryTime() {
         return this.systemEntryTime;
     }
 
     /**
      * Getter for SystemEntryTime.
      * Entry time in the system
-     * @return Returns the LocalDateTime
+     * @return Returns the String
      */
-    public LocalDateTime getSystemEntryTime() {
+    public String getSystemEntryTime() {
         return OptionalNullable.getFrom(systemEntryTime);
     }
 
     /**
      * Setter for SystemEntryTime.
      * Entry time in the system
-     * @param systemEntryTime Value for LocalDateTime
+     * @param systemEntryTime Value for String
      */
     @JsonSetter("SystemEntryTime")
-    @JsonDeserialize(using = DateTimeHelper.Rfc8601DateTimeDeserializer.class)
-    public void setSystemEntryTime(LocalDateTime systemEntryTime) {
+    public void setSystemEntryTime(String systemEntryTime) {
         this.systemEntryTime = OptionalNullable.of(systemEntryTime);
     }
 
@@ -7399,32 +7381,31 @@ public class PricedResponseData {
     /**
      * Internal Getter for EVChargeStartDate.
      * EvCharging start Date
-     * @return Returns the Internal LocalDate
+     * @return Returns the Internal String
      */
     @JsonGetter("EVChargeStartDate")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.SimpleDateSerializer.class)
-    protected OptionalNullable<LocalDate> internalGetEVChargeStartDate() {
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetEVChargeStartDate() {
         return this.eVChargeStartDate;
     }
 
     /**
      * Getter for EVChargeStartDate.
      * EvCharging start Date
-     * @return Returns the LocalDate
+     * @return Returns the String
      */
-    public LocalDate getEVChargeStartDate() {
+    public String getEVChargeStartDate() {
         return OptionalNullable.getFrom(eVChargeStartDate);
     }
 
     /**
      * Setter for EVChargeStartDate.
      * EvCharging start Date
-     * @param eVChargeStartDate Value for LocalDate
+     * @param eVChargeStartDate Value for String
      */
     @JsonSetter("EVChargeStartDate")
-    @JsonDeserialize(using = DateTimeHelper.SimpleDateDeserializer.class)
-    public void setEVChargeStartDate(LocalDate eVChargeStartDate) {
+    public void setEVChargeStartDate(String eVChargeStartDate) {
         this.eVChargeStartDate = OptionalNullable.of(eVChargeStartDate);
     }
 
@@ -7439,32 +7420,31 @@ public class PricedResponseData {
     /**
      * Internal Getter for EVChargeStartTime.
      * EvCharging start time
-     * @return Returns the Internal LocalDateTime
+     * @return Returns the Internal String
      */
     @JsonGetter("EVChargeStartTime")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Rfc8601DateTimeSerializer.class)
-    protected OptionalNullable<LocalDateTime> internalGetEVChargeStartTime() {
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetEVChargeStartTime() {
         return this.eVChargeStartTime;
     }
 
     /**
      * Getter for EVChargeStartTime.
      * EvCharging start time
-     * @return Returns the LocalDateTime
+     * @return Returns the String
      */
-    public LocalDateTime getEVChargeStartTime() {
+    public String getEVChargeStartTime() {
         return OptionalNullable.getFrom(eVChargeStartTime);
     }
 
     /**
      * Setter for EVChargeStartTime.
      * EvCharging start time
-     * @param eVChargeStartTime Value for LocalDateTime
+     * @param eVChargeStartTime Value for String
      */
     @JsonSetter("EVChargeStartTime")
-    @JsonDeserialize(using = DateTimeHelper.Rfc8601DateTimeDeserializer.class)
-    public void setEVChargeStartTime(LocalDateTime eVChargeStartTime) {
+    public void setEVChargeStartTime(String eVChargeStartTime) {
         this.eVChargeStartTime = OptionalNullable.of(eVChargeStartTime);
     }
 
@@ -7479,32 +7459,31 @@ public class PricedResponseData {
     /**
      * Internal Getter for EVChargeEndDate.
      * EvCharging End Date
-     * @return Returns the Internal LocalDate
+     * @return Returns the Internal String
      */
     @JsonGetter("EVChargeEndDate")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.SimpleDateSerializer.class)
-    protected OptionalNullable<LocalDate> internalGetEVChargeEndDate() {
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetEVChargeEndDate() {
         return this.eVChargeEndDate;
     }
 
     /**
      * Getter for EVChargeEndDate.
      * EvCharging End Date
-     * @return Returns the LocalDate
+     * @return Returns the String
      */
-    public LocalDate getEVChargeEndDate() {
+    public String getEVChargeEndDate() {
         return OptionalNullable.getFrom(eVChargeEndDate);
     }
 
     /**
      * Setter for EVChargeEndDate.
      * EvCharging End Date
-     * @param eVChargeEndDate Value for LocalDate
+     * @param eVChargeEndDate Value for String
      */
     @JsonSetter("EVChargeEndDate")
-    @JsonDeserialize(using = DateTimeHelper.SimpleDateDeserializer.class)
-    public void setEVChargeEndDate(LocalDate eVChargeEndDate) {
+    public void setEVChargeEndDate(String eVChargeEndDate) {
         this.eVChargeEndDate = OptionalNullable.of(eVChargeEndDate);
     }
 
@@ -7519,32 +7498,31 @@ public class PricedResponseData {
     /**
      * Internal Getter for EVChargeEndTime.
      * EvCharging End time
-     * @return Returns the Internal LocalDateTime
+     * @return Returns the Internal String
      */
     @JsonGetter("EVChargeEndTime")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Rfc8601DateTimeSerializer.class)
-    protected OptionalNullable<LocalDateTime> internalGetEVChargeEndTime() {
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetEVChargeEndTime() {
         return this.eVChargeEndTime;
     }
 
     /**
      * Getter for EVChargeEndTime.
      * EvCharging End time
-     * @return Returns the LocalDateTime
+     * @return Returns the String
      */
-    public LocalDateTime getEVChargeEndTime() {
+    public String getEVChargeEndTime() {
         return OptionalNullable.getFrom(eVChargeEndTime);
     }
 
     /**
      * Setter for EVChargeEndTime.
      * EvCharging End time
-     * @param eVChargeEndTime Value for LocalDateTime
+     * @param eVChargeEndTime Value for String
      */
     @JsonSetter("EVChargeEndTime")
-    @JsonDeserialize(using = DateTimeHelper.Rfc8601DateTimeDeserializer.class)
-    public void setEVChargeEndTime(LocalDateTime eVChargeEndTime) {
+    public void setEVChargeEndTime(String eVChargeEndTime) {
         this.eVChargeEndTime = OptionalNullable.of(eVChargeEndTime);
     }
 
@@ -7970,7 +7948,7 @@ public class PricedResponseData {
         private OptionalNullable<String> transactionStatus;
         private OptionalNullable<String> driverName;
         private OptionalNullable<Integer> cardExpiryPeriod;
-        private OptionalNullable<LocalDate> cardExpiry;
+        private OptionalNullable<String> cardExpiry;
         private OptionalNullable<Integer> cardGroupId;
         private OptionalNullable<String> cardGroupName;
         private OptionalNullable<Integer> issuerCode;
@@ -8020,8 +7998,8 @@ public class PricedResponseData {
         private Boolean isShellSite = false;
         private OptionalNullable<String> fleetIdInput;
         private OptionalNullable<Integer> incomingProductCode;
-        private OptionalNullable<LocalDate> postingDate;
-        private OptionalNullable<LocalDateTime> postingTime;
+        private OptionalNullable<String> postingDate;
+        private OptionalNullable<String> postingTime;
         private OptionalNullable<Integer> productCode;
         private OptionalNullable<String> productName;
         private OptionalNullable<Integer> productGroupId;
@@ -8032,7 +8010,7 @@ public class PricedResponseData {
         private OptionalNullable<Integer> siteCode;
         private OptionalNullable<Integer> incomingSiteNumber;
         private OptionalNullable<String> invoiceCurrencyCode;
-        private OptionalNullable<LocalDate> invoiceDate;
+        private OptionalNullable<String> invoiceDate;
         private OptionalNullable<Double> invoiceNumber;
         private OptionalNullable<Boolean> fuelProduct;
         private OptionalNullable<String> vATApplicable;
@@ -8073,8 +8051,8 @@ public class PricedResponseData {
         private OptionalNullable<Boolean> isInvoiced = OptionalNullable.of(false);
         private OptionalNullable<String> transactionCurrencyCode;
         private OptionalNullable<String> creditDebitCode;
-        private OptionalNullable<LocalDate> transactionDate;
-        private OptionalNullable<LocalDateTime> transactionTime;
+        private OptionalNullable<String> transactionDate;
+        private OptionalNullable<String> transactionTime;
         private OptionalNullable<String> transactionItemId;
         private OptionalNullable<String> trnIdentifier;
         private OptionalNullable<String> type;
@@ -8093,14 +8071,14 @@ public class PricedResponseData {
         private OptionalNullable<Double> originalVATAmount;
         private OptionalNullable<String> embossText;
         private OptionalNullable<Double> originalExchangeRate;
-        private OptionalNullable<LocalDate> originalTransactionItemInvoiceDate;
+        private OptionalNullable<String> originalTransactionItemInvoiceDate;
         private OptionalNullable<Integer> feeTypeId;
         private OptionalNullable<Boolean> lineItemDescription = OptionalNullable.of(false);
         private OptionalNullable<String> feeRuleDescription;
         private OptionalNullable<Integer> frequency;
         private OptionalNullable<Integer> feeRuleId;
-        private OptionalNullable<LocalDate> systemEntryDate;
-        private OptionalNullable<LocalDateTime> systemEntryTime;
+        private OptionalNullable<String> systemEntryDate;
+        private OptionalNullable<String> systemEntryTime;
         private OptionalNullable<String> isManual;
         private OptionalNullable<String> originalTransactionItemId;
         private OptionalNullable<Integer> originalTransactionItemInvoiceNumber;
@@ -8118,10 +8096,10 @@ public class PricedResponseData {
         private OptionalNullable<Integer> eVChargePointConnectorType;
         private OptionalNullable<String> eVChargePointConnectorTypeDescription;
         private OptionalNullable<String> eVChargeDuration;
-        private OptionalNullable<LocalDate> eVChargeStartDate;
-        private OptionalNullable<LocalDateTime> eVChargeStartTime;
-        private OptionalNullable<LocalDate> eVChargeEndDate;
-        private OptionalNullable<LocalDateTime> eVChargeEndTime;
+        private OptionalNullable<String> eVChargeStartDate;
+        private OptionalNullable<String> eVChargeStartTime;
+        private OptionalNullable<String> eVChargeEndDate;
+        private OptionalNullable<String> eVChargeEndTime;
         private OptionalNullable<Integer> hostingCollectingCompanyNumber;
         private OptionalNullable<Double> transactionId;
         private OptionalNullable<Boolean> fuelOnly;
@@ -8377,10 +8355,10 @@ public class PricedResponseData {
 
         /**
          * Setter for cardExpiry.
-         * @param  cardExpiry  LocalDate value for cardExpiry.
+         * @param  cardExpiry  String value for cardExpiry.
          * @return Builder
          */
-        public Builder cardExpiry(LocalDate cardExpiry) {
+        public Builder cardExpiry(String cardExpiry) {
             this.cardExpiry = OptionalNullable.of(cardExpiry);
             return this;
         }
@@ -9318,10 +9296,10 @@ public class PricedResponseData {
 
         /**
          * Setter for postingDate.
-         * @param  postingDate  LocalDate value for postingDate.
+         * @param  postingDate  String value for postingDate.
          * @return Builder
          */
-        public Builder postingDate(LocalDate postingDate) {
+        public Builder postingDate(String postingDate) {
             this.postingDate = OptionalNullable.of(postingDate);
             return this;
         }
@@ -9337,10 +9315,10 @@ public class PricedResponseData {
 
         /**
          * Setter for postingTime.
-         * @param  postingTime  LocalDateTime value for postingTime.
+         * @param  postingTime  String value for postingTime.
          * @return Builder
          */
-        public Builder postingTime(LocalDateTime postingTime) {
+        public Builder postingTime(String postingTime) {
             this.postingTime = OptionalNullable.of(postingTime);
             return this;
         }
@@ -9546,10 +9524,10 @@ public class PricedResponseData {
 
         /**
          * Setter for invoiceDate.
-         * @param  invoiceDate  LocalDate value for invoiceDate.
+         * @param  invoiceDate  String value for invoiceDate.
          * @return Builder
          */
-        public Builder invoiceDate(LocalDate invoiceDate) {
+        public Builder invoiceDate(String invoiceDate) {
             this.invoiceDate = OptionalNullable.of(invoiceDate);
             return this;
         }
@@ -10316,10 +10294,10 @@ public class PricedResponseData {
 
         /**
          * Setter for transactionDate.
-         * @param  transactionDate  LocalDate value for transactionDate.
+         * @param  transactionDate  String value for transactionDate.
          * @return Builder
          */
-        public Builder transactionDate(LocalDate transactionDate) {
+        public Builder transactionDate(String transactionDate) {
             this.transactionDate = OptionalNullable.of(transactionDate);
             return this;
         }
@@ -10335,10 +10313,10 @@ public class PricedResponseData {
 
         /**
          * Setter for transactionTime.
-         * @param  transactionTime  LocalDateTime value for transactionTime.
+         * @param  transactionTime  String value for transactionTime.
          * @return Builder
          */
-        public Builder transactionTime(LocalDateTime transactionTime) {
+        public Builder transactionTime(String transactionTime) {
             this.transactionTime = OptionalNullable.of(transactionTime);
             return this;
         }
@@ -10696,12 +10674,12 @@ public class PricedResponseData {
 
         /**
          * Setter for originalTransactionItemInvoiceDate.
-         * @param  originalTransactionItemInvoiceDate  LocalDate value for
+         * @param  originalTransactionItemInvoiceDate  String value for
          *         originalTransactionItemInvoiceDate.
          * @return Builder
          */
         public Builder originalTransactionItemInvoiceDate(
-                LocalDate originalTransactionItemInvoiceDate) {
+                String originalTransactionItemInvoiceDate) {
             this.originalTransactionItemInvoiceDate =
                     OptionalNullable.of(originalTransactionItemInvoiceDate);
             return this;
@@ -10813,10 +10791,10 @@ public class PricedResponseData {
 
         /**
          * Setter for systemEntryDate.
-         * @param  systemEntryDate  LocalDate value for systemEntryDate.
+         * @param  systemEntryDate  String value for systemEntryDate.
          * @return Builder
          */
-        public Builder systemEntryDate(LocalDate systemEntryDate) {
+        public Builder systemEntryDate(String systemEntryDate) {
             this.systemEntryDate = OptionalNullable.of(systemEntryDate);
             return this;
         }
@@ -10832,10 +10810,10 @@ public class PricedResponseData {
 
         /**
          * Setter for systemEntryTime.
-         * @param  systemEntryTime  LocalDateTime value for systemEntryTime.
+         * @param  systemEntryTime  String value for systemEntryTime.
          * @return Builder
          */
-        public Builder systemEntryTime(LocalDateTime systemEntryTime) {
+        public Builder systemEntryTime(String systemEntryTime) {
             this.systemEntryTime = OptionalNullable.of(systemEntryTime);
             return this;
         }
@@ -11183,10 +11161,10 @@ public class PricedResponseData {
 
         /**
          * Setter for eVChargeStartDate.
-         * @param  eVChargeStartDate  LocalDate value for eVChargeStartDate.
+         * @param  eVChargeStartDate  String value for eVChargeStartDate.
          * @return Builder
          */
-        public Builder eVChargeStartDate(LocalDate eVChargeStartDate) {
+        public Builder eVChargeStartDate(String eVChargeStartDate) {
             this.eVChargeStartDate = OptionalNullable.of(eVChargeStartDate);
             return this;
         }
@@ -11202,10 +11180,10 @@ public class PricedResponseData {
 
         /**
          * Setter for eVChargeStartTime.
-         * @param  eVChargeStartTime  LocalDateTime value for eVChargeStartTime.
+         * @param  eVChargeStartTime  String value for eVChargeStartTime.
          * @return Builder
          */
-        public Builder eVChargeStartTime(LocalDateTime eVChargeStartTime) {
+        public Builder eVChargeStartTime(String eVChargeStartTime) {
             this.eVChargeStartTime = OptionalNullable.of(eVChargeStartTime);
             return this;
         }
@@ -11221,10 +11199,10 @@ public class PricedResponseData {
 
         /**
          * Setter for eVChargeEndDate.
-         * @param  eVChargeEndDate  LocalDate value for eVChargeEndDate.
+         * @param  eVChargeEndDate  String value for eVChargeEndDate.
          * @return Builder
          */
-        public Builder eVChargeEndDate(LocalDate eVChargeEndDate) {
+        public Builder eVChargeEndDate(String eVChargeEndDate) {
             this.eVChargeEndDate = OptionalNullable.of(eVChargeEndDate);
             return this;
         }
@@ -11240,10 +11218,10 @@ public class PricedResponseData {
 
         /**
          * Setter for eVChargeEndTime.
-         * @param  eVChargeEndTime  LocalDateTime value for eVChargeEndTime.
+         * @param  eVChargeEndTime  String value for eVChargeEndTime.
          * @return Builder
          */
-        public Builder eVChargeEndTime(LocalDateTime eVChargeEndTime) {
+        public Builder eVChargeEndTime(String eVChargeEndTime) {
             this.eVChargeEndTime = OptionalNullable.of(eVChargeEndTime);
             return this;
         }

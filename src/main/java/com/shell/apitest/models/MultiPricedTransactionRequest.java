@@ -157,9 +157,9 @@ public class MultiPricedTransactionRequest {
 
     /**
      * Getter for Accounts.
-     * List of Payers/Accounts entity. Mandatory. •	Max number of payers allowed in the input is 10,
-     * if it exceeds in the input it will throw an error. •	This value is configurable. Initial
-     * configuration will be 100 and will change to 10 once SFH changes are integrated. Note: 1.	At
+     * List of Payers/Accounts entity. Mandatory. • Max number of payers allowed in the input is 10,
+     * if it exceeds in the input it will throw an error. • This value is configurable. Initial
+     * configuration will be 100 and will change to 10 once SFH changes are integrated. Note: 1. At
      * least one payer should be present. Accounts information are optional.
      * @return Returns the List of MultiPricedTransactionRequestAccountsItems
      */
@@ -170,9 +170,9 @@ public class MultiPricedTransactionRequest {
 
     /**
      * Setter for Accounts.
-     * List of Payers/Accounts entity. Mandatory. •	Max number of payers allowed in the input is 10,
-     * if it exceeds in the input it will throw an error. •	This value is configurable. Initial
-     * configuration will be 100 and will change to 10 once SFH changes are integrated. Note: 1.	At
+     * List of Payers/Accounts entity. Mandatory. • Max number of payers allowed in the input is 10,
+     * if it exceeds in the input it will throw an error. • This value is configurable. Initial
+     * configuration will be 100 and will change to 10 once SFH changes are integrated. Note: 1. At
      * least one payer should be present. Accounts information are optional.
      * @param accounts Value for List of MultiPricedTransactionRequestAccountsItems
      */
@@ -279,7 +279,7 @@ public class MultiPricedTransactionRequest {
 
     /**
      * Getter for Period.
-     * Transactions Period. Possible values are: 1.	Last 7 Days 2.	Last 30 Days 3.	Last 90 Days
+     * Transactions Period. Possible values are: 1. Last 7 Days 2. Last 30 Days 3. Last 90 Days
      * @return Returns the Integer
      */
     @JsonGetter("Period")
@@ -290,7 +290,7 @@ public class MultiPricedTransactionRequest {
 
     /**
      * Setter for Period.
-     * Transactions Period. Possible values are: 1.	Last 7 Days 2.	Last 30 Days 3.	Last 90 Days
+     * Transactions Period. Possible values are: 1. Last 7 Days 2. Last 30 Days 3. Last 90 Days
      * @param period Value for Integer
      */
     @JsonSetter("Period")
@@ -531,10 +531,10 @@ public class MultiPricedTransactionRequest {
 
     /**
      * Getter for SortOrder.
-     * Allowed Sorting Options: 1.	TransactionDateAscending 2.	TransactionDateDescending
-     * 3.	GrossAmountDescending 4.	GrossAmountAscending 5.	NetAmountAscending
-     * 6.	NetAmountDescensding Example value to be passed: 1,3 Note: If IncludeFees is ‘True’ then
-     * sorting is not allowed. This parameter will be ignored.
+     * Allowed Sorting Options: 1. TransactionDateAscending 2. TransactionDateDescending 3.
+     * GrossAmountDescending 4. GrossAmountAscending 5. NetAmountAscending 6. NetAmountDescensding
+     * Example value to be passed: 1,3 Note: If IncludeFees is ‘True’ then sorting is not allowed.
+     * This parameter will be ignored.
      * @return Returns the String
      */
     @JsonGetter("SortOrder")
@@ -545,10 +545,10 @@ public class MultiPricedTransactionRequest {
 
     /**
      * Setter for SortOrder.
-     * Allowed Sorting Options: 1.	TransactionDateAscending 2.	TransactionDateDescending
-     * 3.	GrossAmountDescending 4.	GrossAmountAscending 5.	NetAmountAscending
-     * 6.	NetAmountDescensding Example value to be passed: 1,3 Note: If IncludeFees is ‘True’ then
-     * sorting is not allowed. This parameter will be ignored.
+     * Allowed Sorting Options: 1. TransactionDateAscending 2. TransactionDateDescending 3.
+     * GrossAmountDescending 4. GrossAmountAscending 5. NetAmountAscending 6. NetAmountDescensding
+     * Example value to be passed: 1,3 Note: If IncludeFees is ‘True’ then sorting is not allowed.
+     * This parameter will be ignored.
      * @param sortOrder Value for String
      */
     @JsonSetter("SortOrder")

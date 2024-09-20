@@ -296,8 +296,8 @@ public class Tier {
 
     /**
      * Internal Getter for TieredPricingGroupPeriod.
-     * Tiered pricing group period. Possible Values 1.	Monthly 2.	Quarterly 3.	Semi Annually
-     * 4.	Annual
+     * Tiered pricing group period. Possible Values 1. Monthly 2. Quarterly 3. Semi Annually 4.
+     * Annual
      * @return Returns the Internal String
      */
     @JsonGetter("TieredPricingGroupPeriod")
@@ -309,8 +309,8 @@ public class Tier {
 
     /**
      * Getter for TieredPricingGroupPeriod.
-     * Tiered pricing group period. Possible Values 1.	Monthly 2.	Quarterly 3.	Semi Annually
-     * 4.	Annual
+     * Tiered pricing group period. Possible Values 1. Monthly 2. Quarterly 3. Semi Annually 4.
+     * Annual
      * @return Returns the String
      */
     public String getTieredPricingGroupPeriod() {
@@ -319,8 +319,8 @@ public class Tier {
 
     /**
      * Setter for TieredPricingGroupPeriod.
-     * Tiered pricing group period. Possible Values 1.	Monthly 2.	Quarterly 3.	Semi Annually
-     * 4.	Annual
+     * Tiered pricing group period. Possible Values 1. Monthly 2. Quarterly 3. Semi Annually 4.
+     * Annual
      * @param tieredPricingGroupPeriod Value for String
      */
     @JsonSetter("TieredPricingGroupPeriod")
@@ -330,8 +330,8 @@ public class Tier {
 
     /**
      * UnSetter for TieredPricingGroupPeriod.
-     * Tiered pricing group period. Possible Values 1.	Monthly 2.	Quarterly 3.	Semi Annually
-     * 4.	Annual
+     * Tiered pricing group period. Possible Values 1. Monthly 2. Quarterly 3. Semi Annually 4.
+     * Annual
      */
     public void unsetTieredPricingGroupPeriod() {
         tieredPricingGroupPeriod = null;

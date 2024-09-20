@@ -10,9 +10,71 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.shell.apitest.ApiHelper;
 import com.shell.apitest.Server;
 import com.shell.apitest.exceptions.ApiException;
-import com.shell.apitest.exceptions.DefaultErrorException;
-import com.shell.apitest.exceptions.ErrorObjectException;
-import com.shell.apitest.exceptions.ErrorUserAccessError1Exception;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionCardusagesummary400ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionCardusagesummary401ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionCardusagesummary403ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionCardusagesummary404ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionCardusagesummary500ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionExceptions400ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionExceptions401ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionExceptions403ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionExceptions404ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionExceptions500ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionFees400ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionFees401ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionFees403ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionFees404ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionFees500ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionFeessummary400ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionFeessummary401ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionFeessummary403ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionFeessummary404ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionFeessummary500ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionFuelconsumption400ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionFuelconsumption401ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionFuelconsumption403ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionFuelconsumption404ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionFuelconsumption500ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionMultipayerspricedtransactions400ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionMultipayerspricedtransactions401ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionMultipayerspricedtransactions403ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionMultipayerspricedtransactions404ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionMultipayerspricedtransactions500ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionPricedtransactions400ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionPricedtransactions401ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionPricedtransactions403ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionPricedtransactions404ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionPricedtransactions500ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionPricedtransactionssummary400ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionPricedtransactionssummary401ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionPricedtransactionssummary403ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionPricedtransactionssummary404ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionPricedtransactionssummary500ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionUpdateodometer400ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionUpdateodometer401ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionUpdateodometer403ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionUpdateodometer404ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionUpdateodometer500ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionVolumebasedbonus400ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionVolumebasedbonus401ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionVolumebasedbonus403ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionVolumebasedbonus404ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionVolumebasedbonus500ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionVolumebasedpricing400ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionVolumebasedpricing401ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionVolumebasedpricing403ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionVolumebasedpricing404ErrorException;
+import com.shell.apitest.exceptions.FleetmanagementV1TransactionVolumebasedpricing500ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Priced400ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Priced401ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Priced403ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Priced404ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Priced500ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Recent400ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Recent401ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Recent403ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Recent404ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Recent500ErrorException;
 import com.shell.apitest.http.request.HttpMethod;
 import com.shell.apitest.models.CardUsageSummaryRequest;
 import com.shell.apitest.models.CardUsageSummaryResponse;
@@ -69,9 +131,9 @@ public final class TransactionController extends BaseController {
      * location * Search by transaction posting date * Search by invoice number or date * Search by
      * driver name or vehicle registration number * Search by card group * Search by fuel only
      * transactions * Search by product This API fetches transactions for a period based on the
-     * below parameters and priority order: 1.	InvoiceNumber 2.	InvoiceDate 3.	FromDate, ToDate
-     * 4.	PostingFromDate, PostingToDate (Can be used only when IncludeFees = false)
-     * 5.	InvoiceDateFrom, InvoiceDateTo 6.	Period This API considers only one of the above set of
+     * below parameters and priority order: 1. InvoiceNumber 2. InvoiceDate 3. FromDate, ToDate 4.
+     * PostingFromDate, PostingToDate (Can be used only when IncludeFees = false) 5.
+     * InvoiceDateFrom, InvoiceDateTo 6. Period This API considers only one of the above set of
      * parameters at a time. For example, if InvoiceNumber and Period are provided in the input then
      * Period is ignored and transactions associated to the given invoice number are returned. If
      * none of the above parameters are provided then last 7 days transactions will be fetched. This
@@ -104,9 +166,9 @@ public final class TransactionController extends BaseController {
      * location * Search by transaction posting date * Search by invoice number or date * Search by
      * driver name or vehicle registration number * Search by card group * Search by fuel only
      * transactions * Search by product This API fetches transactions for a period based on the
-     * below parameters and priority order: 1.	InvoiceNumber 2.	InvoiceDate 3.	FromDate, ToDate
-     * 4.	PostingFromDate, PostingToDate (Can be used only when IncludeFees = false)
-     * 5.	InvoiceDateFrom, InvoiceDateTo 6.	Period This API considers only one of the above set of
+     * below parameters and priority order: 1. InvoiceNumber 2. InvoiceDate 3. FromDate, ToDate 4.
+     * PostingFromDate, PostingToDate (Can be used only when IncludeFees = false) 5.
+     * InvoiceDateFrom, InvoiceDateTo 6. Period This API considers only one of the above set of
      * parameters at a time. For example, if InvoiceNumber and Period are provided in the input then
      * Period is ignored and transactions associated to the given invoice number are returned. If
      * none of the above parameters are provided then last 7 days transactions will be fetched. This
@@ -161,19 +223,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new FleetmanagementV1TransactionPricedtransactions400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new FleetmanagementV1TransactionPricedtransactions401ErrorException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.\r\n",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
+                                (reason, context) -> new FleetmanagementV1TransactionPricedtransactions403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new FleetmanagementV1TransactionPricedtransactions404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
+                                (reason, context) -> new FleetmanagementV1TransactionPricedtransactions500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -189,9 +251,9 @@ public final class TransactionController extends BaseController {
      * location * Search by transaction posting date * Search by invoice number or date * Search by
      * driver name or vehicle registration number * Search by card group * Search by fuel only
      * transactions * Search by product This API fetches transactions for a period based on the
-     * below parameters and priority order: 1.	InvoiceNumber 2.	InvoiceDate 3.	FromDate, ToDate
-     * 4.	PostingFromDate, PostingToDate (Can be used only when IncludeFees = false)
-     * 5.	InvoiceDateFrom, InvoiceDateTo 6.	Period This API considers only one of the above set of
+     * below parameters and priority order: 1. InvoiceNumber 2. InvoiceDate 3. FromDate, ToDate 4.
+     * PostingFromDate, PostingToDate (Can be used only when IncludeFees = false) 5.
+     * InvoiceDateFrom, InvoiceDateTo 6. Period This API considers only one of the above set of
      * parameters at a time. For example, if InvoiceNumber and Period are provided in the input then
      * Period is ignored and transactions associated to the given invoice number are returned. If
      * none of the above parameters are provided then last 7 days transactions will be fetched.
@@ -222,9 +284,9 @@ public final class TransactionController extends BaseController {
      * location * Search by transaction posting date * Search by invoice number or date * Search by
      * driver name or vehicle registration number * Search by card group * Search by fuel only
      * transactions * Search by product This API fetches transactions for a period based on the
-     * below parameters and priority order: 1.	InvoiceNumber 2.	InvoiceDate 3.	FromDate, ToDate
-     * 4.	PostingFromDate, PostingToDate (Can be used only when IncludeFees = false)
-     * 5.	InvoiceDateFrom, InvoiceDateTo 6.	Period This API considers only one of the above set of
+     * below parameters and priority order: 1. InvoiceNumber 2. InvoiceDate 3. FromDate, ToDate 4.
+     * PostingFromDate, PostingToDate (Can be used only when IncludeFees = false) 5.
+     * InvoiceDateFrom, InvoiceDateTo 6. Period This API considers only one of the above set of
      * parameters at a time. For example, if InvoiceNumber and Period are provided in the input then
      * Period is ignored and transactions associated to the given invoice number are returned. If
      * none of the above parameters are provided then last 7 days transactions will be fetched.
@@ -276,19 +338,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new FleetmanagementV1TransactionPricedtransactionssummary400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new FleetmanagementV1TransactionPricedtransactionssummary401ErrorException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.\r\n",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
+                                (reason, context) -> new FleetmanagementV1TransactionPricedtransactionssummary403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new FleetmanagementV1TransactionPricedtransactionssummary404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
+                                (reason, context) -> new FleetmanagementV1TransactionPricedtransactionssummary500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -303,9 +365,9 @@ public final class TransactionController extends BaseController {
      * date period * Search by date range * Get sales items only for multiple payers * Search by
      * transaction location * Search by transaction posting date * Search by invoice number or date
      * * Search by fuel only transactions This API fetches transactions for a period based on the
-     * below parameters and priority order: 1.	InvoiceNumber 2.	InvoiceDate 3.	FromDate, ToDate
-     * 4.	PostingFromDate, PostingToDate (Can be used only when IncludeFees = false)
-     * 5.	InvoiceDateFrom, InvoiceDateTo 6.	Period This API considers only one of the above set of
+     * below parameters and priority order: 1. InvoiceNumber 2. InvoiceDate 3. FromDate, ToDate 4.
+     * PostingFromDate, PostingToDate (Can be used only when IncludeFees = false) 5.
+     * InvoiceDateFrom, InvoiceDateTo 6. Period This API considers only one of the above set of
      * parameters at a time. For example, if InvoiceNumber and Period are provided in the input then
      * Period is ignored and transactions associated to the given invoice number are returned. If
      * none of the above parameters are provided then last 7 days transactions will be fetched.
@@ -335,9 +397,9 @@ public final class TransactionController extends BaseController {
      * date period * Search by date range * Get sales items only for multiple payers * Search by
      * transaction location * Search by transaction posting date * Search by invoice number or date
      * * Search by fuel only transactions This API fetches transactions for a period based on the
-     * below parameters and priority order: 1.	InvoiceNumber 2.	InvoiceDate 3.	FromDate, ToDate
-     * 4.	PostingFromDate, PostingToDate (Can be used only when IncludeFees = false)
-     * 5.	InvoiceDateFrom, InvoiceDateTo 6.	Period This API considers only one of the above set of
+     * below parameters and priority order: 1. InvoiceNumber 2. InvoiceDate 3. FromDate, ToDate 4.
+     * PostingFromDate, PostingToDate (Can be used only when IncludeFees = false) 5.
+     * InvoiceDateFrom, InvoiceDateTo 6. Period This API considers only one of the above set of
      * parameters at a time. For example, if InvoiceNumber and Period are provided in the input then
      * Period is ignored and transactions associated to the given invoice number are returned. If
      * none of the above parameters are provided then last 7 days transactions will be fetched.
@@ -389,19 +451,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new FleetmanagementV1TransactionMultipayerspricedtransactions400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new FleetmanagementV1TransactionMultipayerspricedtransactions401ErrorException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.\r\n",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
+                                (reason, context) -> new FleetmanagementV1TransactionMultipayerspricedtransactions403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new FleetmanagementV1TransactionMultipayerspricedtransactions404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
+                                (reason, context) -> new FleetmanagementV1TransactionMultipayerspricedtransactions500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -478,19 +540,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new FleetmanagementV1TransactionCardusagesummary400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new FleetmanagementV1TransactionCardusagesummary401ErrorException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.\r\n",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
+                                (reason, context) -> new FleetmanagementV1TransactionCardusagesummary403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new FleetmanagementV1TransactionCardusagesummary404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
+                                (reason, context) -> new FleetmanagementV1TransactionCardusagesummary500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -569,19 +631,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new FleetmanagementV1TransactionVolumebasedbonus400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new FleetmanagementV1TransactionVolumebasedbonus401ErrorException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.\r\n",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
+                                (reason, context) -> new FleetmanagementV1TransactionVolumebasedbonus403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new FleetmanagementV1TransactionVolumebasedbonus404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
+                                (reason, context) -> new FleetmanagementV1TransactionVolumebasedbonus500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -658,19 +720,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new FleetmanagementV1TransactionVolumebasedpricing400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new FleetmanagementV1TransactionVolumebasedpricing401ErrorException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.\r\n",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
+                                (reason, context) -> new FleetmanagementV1TransactionVolumebasedpricing403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new FleetmanagementV1TransactionVolumebasedpricing404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
+                                (reason, context) -> new FleetmanagementV1TransactionVolumebasedpricing500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -753,19 +815,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new FleetmanagementV1TransactionFees400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new FleetmanagementV1TransactionFees401ErrorException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.\r\n",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
+                                (reason, context) -> new FleetmanagementV1TransactionFees403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new FleetmanagementV1TransactionFees404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
+                                (reason, context) -> new FleetmanagementV1TransactionFees500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -848,19 +910,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new FleetmanagementV1TransactionFeessummary400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new FleetmanagementV1TransactionFeessummary401ErrorException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.\r\n",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
+                                (reason, context) -> new FleetmanagementV1TransactionFeessummary403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new FleetmanagementV1TransactionFeessummary404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
+                                (reason, context) -> new FleetmanagementV1TransactionFeessummary500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -939,19 +1001,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new FleetmanagementV1TransactionFuelconsumption400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new FleetmanagementV1TransactionFuelconsumption401ErrorException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.\r\n",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
+                                (reason, context) -> new FleetmanagementV1TransactionFuelconsumption403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new FleetmanagementV1TransactionFuelconsumption404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
+                                (reason, context) -> new FleetmanagementV1TransactionFuelconsumption500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -1028,19 +1090,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new FleetmanagementV1TransactionUpdateodometer400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new FleetmanagementV1TransactionUpdateodometer401ErrorException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.\r\n",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
+                                (reason, context) -> new FleetmanagementV1TransactionUpdateodometer403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new FleetmanagementV1TransactionUpdateodometer404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
+                                (reason, context) -> new FleetmanagementV1TransactionUpdateodometer500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -1119,19 +1181,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new FleetmanagementV1TransactionExceptions400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new FleetmanagementV1TransactionExceptions401ErrorException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.\r\n",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
+                                (reason, context) -> new FleetmanagementV1TransactionExceptions403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new FleetmanagementV1TransactionExceptions404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
+                                (reason, context) -> new FleetmanagementV1TransactionExceptions500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -1208,20 +1270,20 @@ public final class TransactionController extends BaseController {
                                 response -> ApiHelper.deserialize(response, RecentTransactionsResponse.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new TransactionDataV1Recent400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new TransactionDataV1Recent401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Recent403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new TransactionDataV1Recent404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new TransactionDataV1Recent500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -1308,20 +1370,20 @@ public final class TransactionController extends BaseController {
                                 response -> ApiHelper.deserialize(response, PricedTransactionResponseV2.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new TransactionDataV1Priced400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new TransactionDataV1Priced401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Priced403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new TransactionDataV1Priced404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new TransactionDataV1Priced500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }

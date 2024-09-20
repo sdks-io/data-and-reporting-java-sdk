@@ -10,10 +10,10 @@
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `ProductId` | `Integer` | Optional | Product Id | Integer getProductId() | setProductId(Integer productId) |
-| `ProductCode` | `String` | Optional | Product Code<br>Examples:<br>10	TMF Charges<br>11	Tunnel/Bridges<br>12	Motorway toll<br>13	Ferries | String getProductCode() | setProductCode(String productCode) |
+| `ProductCode` | `String` | Optional | Product Code<br>Examples:<br>10    TMF Charges<br>11    Tunnel/Bridges<br>12    Motorway toll<br>13    Ferries | String getProductCode() | setProductCode(String productCode) |
 | `ProductName` | `String` | Optional | Product Name<br>Examples:<br>Unleaded - High octane<br>Unleaded - Medium octane<br>Unleaded - Low octane<br>Unleaded Environmental | String getProductName() | setProductName(String productName) |
-| `ProductGroupId` | `Integer` | Optional | Product Group Id<br>Example:<br>1	Parent Product Group<br>2	All Fuels<br>3	Motor gasoline<br>4	2 stroke<br>5	Autogas<br>6	CNG | Integer getProductGroupId() | setProductGroupId(Integer productGroupId) |
-| `ProductGroupName` | `String` | Optional | Product Group Name<br>Example:<br>1	Parent Product Group<br>2	All Fuels<br>3	Motor gasoline<br>4	2 stroke<br>5	Autogas<br>6	CNG<br>7	Automotive Gas Oil | String getProductGroupName() | setProductGroupName(String productGroupName) |
+| `ProductGroupId` | `Integer` | Optional | Product Group Id<br>Example:<br>1    Parent Product Group<br>2    All Fuels<br>3    Motor gasoline<br>4    2 stroke<br>5    Autogas<br>6    CNG | Integer getProductGroupId() | setProductGroupId(Integer productGroupId) |
+| `ProductGroupName` | `String` | Optional | Product Group Name<br>Example:<br>1    Parent Product Group<br>2    All Fuels<br>3    Motor gasoline<br>4    2 stroke<br>5    Autogas<br>6    CNG<br>7    Automotive Gas Oil | String getProductGroupName() | setProductGroupName(String productGroupName) |
 | `SiteGroupId` | `Integer` | Optional | Site Group Id<br>Example: 202 | Integer getSiteGroupId() | setSiteGroupId(Integer siteGroupId) |
 | `SiteGroupName` | `String` | Optional | Site Group Name<br>Example: CZ 9100 ECONOMY NETWORK | String getSiteGroupName() | setSiteGroupName(String siteGroupName) |
 | `TotalFuelQuantity` | `Integer` | Optional | Total Fuel Quantity | Integer getTotalFuelQuantity() | setTotalFuelQuantity(Integer totalFuelQuantity) |

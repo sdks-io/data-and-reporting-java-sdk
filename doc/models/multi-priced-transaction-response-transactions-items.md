@@ -44,20 +44,20 @@
 | `IsInvoiced` | `Boolean` | Optional | True when the transaction is already invoice, else return False | Boolean getIsInvoiced() | setIsInvoiced(Boolean isInvoiced) |
 | `InvoiceNumber` | `String` | Optional | Invoice Number if invoiced<br>Example:<br>S04500493<br>S04478304<br>S04490319 | String getInvoiceNumber() | setInvoiceNumber(String invoiceNumber) |
 | `InvoiceDate` | `String` | Optional | Invoice Date<br>Format: yyyyMMdd HH:mm:ss | String getInvoiceDate() | setInvoiceDate(String invoiceDate) |
-| `SiteCode` | `String` | Optional | Site Code<br>Example:<br>050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755 | String getSiteCode() | setSiteCode(String siteCode) |
-| `SiteName` | `String` | Optional | Site Name<br>Example:<br>050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755 | String getSiteName() | setSiteName(String siteName) |
+| `SiteCode` | `String` | Optional | Site Code<br>Example:<br>050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755 | String getSiteCode() | setSiteCode(String siteCode) |
+| `SiteName` | `String` | Optional | Site Name<br>Example:<br>050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755 | String getSiteName() | setSiteName(String siteName) |
 | `SiteCountry` | `String` | Optional | Site Country<br>Example: France, Germany | String getSiteCountry() | setSiteCountry(String siteCountry) |
 | `Location` | [`List<SiteLocation>`](../../doc/models/site-location.md) | Optional | - | List<SiteLocation> getLocation() | setLocation(List<SiteLocation> location) |
 | `CardGroupName` | `String` | Optional | Card Group Name | String getCardGroupName() | setCardGroupName(String cardGroupName) |
 | `ReceiptNumber` | `String` | Optional | ReceiptNumber | String getReceiptNumber() | setReceiptNumber(String receiptNumber) |
-| `ProductCode` | `String` | Optional | Product Code<br>10	TMF Charges<br>11	Tunnel/Bridges<br>12	Motorway toll | String getProductCode() | setProductCode(String productCode) |
+| `ProductCode` | `String` | Optional | Product Code<br>10    TMF Charges<br>11    Tunnel/Bridges<br>12    Motorway toll | String getProductCode() | setProductCode(String productCode) |
 | `ProductName` | `String` | Optional | Product Name<br>Example:<br><br>Unleaded - High octane<br>Unleaded - Medium octane<br>Unleaded - Low octane<br>Unleaded Environmental | String getProductName() | setProductName(String productName) |
-| `ProductGroupId` | `Integer` | Optional | Product Group Id<br>Example:<br>1	Parent Product Group<br>2	All Fuels<br>3	Motor gasoline<br>4	2 stroke<br>5	Autogas | Integer getProductGroupId() | setProductGroupId(Integer productGroupId) |
-| `ProductGroupName` | `String` | Optional | Product Group Name<br>Example:<br>1	Parent Product Group<br>2	All Fuels<br>3	Motor gasoline<br>4	2 stroke<br>5	Autogas | String getProductGroupName() | setProductGroupName(String productGroupName) |
+| `ProductGroupId` | `Integer` | Optional | Product Group Id<br>Example:<br>1    Parent Product Group<br>2    All Fuels<br>3    Motor gasoline<br>4    2 stroke<br>5    Autogas | Integer getProductGroupId() | setProductGroupId(Integer productGroupId) |
+| `ProductGroupName` | `String` | Optional | Product Group Name<br>Example:<br>1    Parent Product Group<br>2    All Fuels<br>3    Motor gasoline<br>4    2 stroke<br>5    Autogas | String getProductGroupName() | setProductGroupName(String productGroupName) |
 | `DelCoExchangeRate` | `Double` | Optional | DelCo Exchange Rate (Site exchange rate)<br>Note: - The value could be null/blank for fees item. | Double getDelCoExchangeRate() | setDelCoExchangeRate(Double delCoExchangeRate) |
 | `ColCoExchangeRate` | `Integer` | Optional | ColCo Exchange Rate (Customer exchange rate) | Integer getColCoExchangeRate() | setColCoExchangeRate(Integer colCoExchangeRate) |
 | `IsShellSite` | `Boolean` | Optional | True when transaction occurred at a Shell site else return False<br>Note: - The value could be null/blank for fees item. | Boolean getIsShellSite() | setIsShellSite(Boolean isShellSite) |
-| `Network` | `String` | Optional | Network  (Shell PH, ESSO, etc.,)<br>100013	STEINDORFER<br>100015	S.A. BELGIAN SHELL N.V.<br>100016	ESSO BE<br>Note: - The value could be null/blank for fees item. | String getNetwork() | setNetwork(String network) |
+| `Network` | `String` | Optional | Network  (Shell PH, ESSO, etc.,)<br>100013    STEINDORFER<br>100015    S.A. BELGIAN SHELL N.V.<br>100016    ESSO BE<br>Note: - The value could be null/blank for fees item. | String getNetwork() | setNetwork(String network) |
 | `SiteGroupId` | `Integer` | Optional | Site Group Id<br>Example: 202<br>Note: - The value could be null/blank for fees item. | Integer getSiteGroupId() | setSiteGroupId(Integer siteGroupId) |
 | `SiteGroupName` | `String` | Optional | Site GroupName<br>Example: CZ 9100 ECONOMY NETWORK<br>Note: - The value could be null/blank for fees item. | String getSiteGroupName() | setSiteGroupName(String siteGroupName) |
 | `PostingDate` | `String` | Optional | Transaction Posting Date<br>Format: yyyyMMdd HHmmss | String getPostingDate() | setPostingDate(String postingDate) |
@@ -100,7 +100,7 @@
 | `TransactionLine` | `String` | Optional | Transaction line item number<br>Example: 1<br>Note: - The value could be null/blank for fees item. | String getTransactionLine() | setTransactionLine(String transactionLine) |
 | `AllowClearing` | `String` | Optional | Is the Sales Item allowed for clearing? i.e. not written off<br>Example: “Y” or “N”<br>Note: - The value could be null/blank for fees item. | String getAllowClearing() | setAllowClearing(String allowClearing) |
 | `CRMNumber` | `String` | Optional | CRM Case number if the sales item is in dispute.<br>Note: - The value could be null/blank for fees item. | String getCRMNumber() | setCRMNumber(String cRMNumber) |
-| `DisputeStatus` | `String` | Optional | Sales Item Dispute Status if disputed<br>0	No Dispute<br>1	In Dispute<br>2	Re-Instated<br>3	Adjusted<br>4	Written Off by Colco<br>5	Written Off by Delco<br>6	Charged Back to Site | String getDisputeStatus() | setDisputeStatus(String disputeStatus) |
+| `DisputeStatus` | `String` | Optional | Sales Item Dispute Status if disputed<br>0    No Dispute<br>1    In Dispute<br>2    Re-Instated<br>3    Adjusted<br>4    Written Off by Colco<br>5    Written Off by Delco<br>6    Charged Back to Site | String getDisputeStatus() | setDisputeStatus(String disputeStatus) |
 | `RebateRate` | `Double` | Optional | Unit discount in customer currency.<br>Example: 28.279000 | Double getRebateRate() | setRebateRate(Double rebateRate) |
 | `DelCoToColCoExchangeRate` | `Integer` | Optional | Exchange rate from transaction currency to customer currency.<br>Example: 1 | Integer getDelCoToColCoExchangeRate() | setDelCoToColCoExchangeRate(Integer delCoToColCoExchangeRate) |
 | `NetEuroAmount` | `Double` | Optional | Net euro amount.<br>Example: 37.93<br>Note: - The value could be null/blank for fees item. | Double getNetEuroAmount() | setNetEuroAmount(Double netEuroAmount) |

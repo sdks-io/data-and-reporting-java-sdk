@@ -289,7 +289,7 @@ public class FuelConsumptionRequest {
     /**
      * Getter for Period.
      * Transactions Period. This is ignored when FromDate is supplied on the request Allowed values
-     * : 1.	Last 7 Days 2.	Last 30 Days 3.	Last 90 Days Optional - When FromDate/ToDate and Period
+     * : 1. Last 7 Days 2. Last 30 Days 3. Last 90 Days Optional - When FromDate/ToDate and Period
      * are not provided, ‘Last 7 Days’ value is considered as default Period.
      * @return Returns the Integer
      */
@@ -302,7 +302,7 @@ public class FuelConsumptionRequest {
     /**
      * Setter for Period.
      * Transactions Period. This is ignored when FromDate is supplied on the request Allowed values
-     * : 1.	Last 7 Days 2.	Last 30 Days 3.	Last 90 Days Optional - When FromDate/ToDate and Period
+     * : 1. Last 7 Days 2. Last 30 Days 3. Last 90 Days Optional - When FromDate/ToDate and Period
      * are not provided, ‘Last 7 Days’ value is considered as default Period.
      * @param period Value for Integer
      */

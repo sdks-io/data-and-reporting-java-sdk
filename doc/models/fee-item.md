@@ -38,8 +38,8 @@
 | `ProductId` | `Integer` | Optional | Product Id<br>Example: Sample list of product ids and description.<br>100 Service fee<br>102 Invoice production fee<br>103 Account fee<br>104 Transaction fee<br>105 Card membership fee | Integer getProductId() | setProductId(Integer productId) |
 | `ProductCode` | `String` | Optional | Product Code – Global as per GFN configuration<br>Example:<br>2 Service fee<br>4 Invoice production fee<br>5 Account fee<br>6 Transaction fee<br>7 Card membership fee | String getProductCode() | setProductCode(String productCode) |
 | `ProductName` | `String` | Optional | Product Name<br>Example: Sample list of product ids and description.<br>Service fee<br>Invoice production fee | String getProductName() | setProductName(String productName) |
-| `ProductGroupId` | `Integer` | Optional | Product Group Id<br>Example: Sample list<br>22	Card related fees<br>23	Monetary Adjustment | Integer getProductGroupId() | setProductGroupId(Integer productGroupId) |
-| `ProductGroupName` | `String` | Optional | Product Group Name<br>Example: Sample list<br>22	Card related fees<br>23	Monetary Adjustment | String getProductGroupName() | setProductGroupName(String productGroupName) |
+| `ProductGroupId` | `Integer` | Optional | Product Group Id<br>Example: Sample list<br>22    Card related fees<br>23    Monetary Adjustment | Integer getProductGroupId() | setProductGroupId(Integer productGroupId) |
+| `ProductGroupName` | `String` | Optional | Product Group Name<br>Example: Sample list<br>22    Card related fees<br>23    Monetary Adjustment | String getProductGroupName() | setProductGroupName(String productGroupName) |
 | `LineItemDescription` | `String` | Optional | Line Item Description generally the quantity as printed on Invoice or the manually keyed in description for manual fees | String getLineItemDescription() | setLineItemDescription(String lineItemDescription) |
 | `Quantity` | `Integer` | Optional | Quantity | Integer getQuantity() | setQuantity(Integer quantity) |
 | `IsInvoiced` | `Boolean` | Optional | True/False.<br>Is fee item invoiced | Boolean getIsInvoiced() | setIsInvoiced(Boolean isInvoiced) |

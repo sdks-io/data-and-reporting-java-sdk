@@ -308,8 +308,8 @@ public class SearchDocumentsInvoice {
 
     /**
      * Internal Getter for DocumentType.
-     * Document type String containing one of the following values: •	NAT (National) •	INT
-     * (International) •	SOA (Statement of Account)
+     * Document type String containing one of the following values: • NAT (National) • INT
+     * (International) • SOA (Statement of Account)
      * @return Returns the Internal String
      */
     @JsonGetter("DocumentType")
@@ -321,8 +321,8 @@ public class SearchDocumentsInvoice {
 
     /**
      * Getter for DocumentType.
-     * Document type String containing one of the following values: •	NAT (National) •	INT
-     * (International) •	SOA (Statement of Account)
+     * Document type String containing one of the following values: • NAT (National) • INT
+     * (International) • SOA (Statement of Account)
      * @return Returns the String
      */
     public String getDocumentType() {
@@ -331,8 +331,8 @@ public class SearchDocumentsInvoice {
 
     /**
      * Setter for DocumentType.
-     * Document type String containing one of the following values: •	NAT (National) •	INT
-     * (International) •	SOA (Statement of Account)
+     * Document type String containing one of the following values: • NAT (National) • INT
+     * (International) • SOA (Statement of Account)
      * @param documentType Value for String
      */
     @JsonSetter("DocumentType")
@@ -342,8 +342,8 @@ public class SearchDocumentsInvoice {
 
     /**
      * UnSetter for DocumentType.
-     * Document type String containing one of the following values: •	NAT (National) •	INT
-     * (International) •	SOA (Statement of Account)
+     * Document type String containing one of the following values: • NAT (National) • INT
+     * (International) • SOA (Statement of Account)
      */
     public void unsetDocumentType() {
         documentType = null;

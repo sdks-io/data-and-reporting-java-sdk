@@ -1652,7 +1652,7 @@ public class FeeItem {
 
     /**
      * Internal Getter for ProductGroupId.
-     * Product Group Id Example: Sample list 22	Card related fees 23	Monetary Adjustment
+     * Product Group Id Example: Sample list 22 Card related fees 23 Monetary Adjustment
      * @return Returns the Internal Integer
      */
     @JsonGetter("ProductGroupId")
@@ -1664,7 +1664,7 @@ public class FeeItem {
 
     /**
      * Getter for ProductGroupId.
-     * Product Group Id Example: Sample list 22	Card related fees 23	Monetary Adjustment
+     * Product Group Id Example: Sample list 22 Card related fees 23 Monetary Adjustment
      * @return Returns the Integer
      */
     public Integer getProductGroupId() {
@@ -1673,7 +1673,7 @@ public class FeeItem {
 
     /**
      * Setter for ProductGroupId.
-     * Product Group Id Example: Sample list 22	Card related fees 23	Monetary Adjustment
+     * Product Group Id Example: Sample list 22 Card related fees 23 Monetary Adjustment
      * @param productGroupId Value for Integer
      */
     @JsonSetter("ProductGroupId")
@@ -1683,7 +1683,7 @@ public class FeeItem {
 
     /**
      * UnSetter for ProductGroupId.
-     * Product Group Id Example: Sample list 22	Card related fees 23	Monetary Adjustment
+     * Product Group Id Example: Sample list 22 Card related fees 23 Monetary Adjustment
      */
     public void unsetProductGroupId() {
         productGroupId = null;
@@ -1691,7 +1691,7 @@ public class FeeItem {
 
     /**
      * Internal Getter for ProductGroupName.
-     * Product Group Name Example: Sample list 22	Card related fees 23	Monetary Adjustment
+     * Product Group Name Example: Sample list 22 Card related fees 23 Monetary Adjustment
      * @return Returns the Internal String
      */
     @JsonGetter("ProductGroupName")
@@ -1703,7 +1703,7 @@ public class FeeItem {
 
     /**
      * Getter for ProductGroupName.
-     * Product Group Name Example: Sample list 22	Card related fees 23	Monetary Adjustment
+     * Product Group Name Example: Sample list 22 Card related fees 23 Monetary Adjustment
      * @return Returns the String
      */
     public String getProductGroupName() {
@@ -1712,7 +1712,7 @@ public class FeeItem {
 
     /**
      * Setter for ProductGroupName.
-     * Product Group Name Example: Sample list 22	Card related fees 23	Monetary Adjustment
+     * Product Group Name Example: Sample list 22 Card related fees 23 Monetary Adjustment
      * @param productGroupName Value for String
      */
     @JsonSetter("ProductGroupName")
@@ -1722,7 +1722,7 @@ public class FeeItem {
 
     /**
      * UnSetter for ProductGroupName.
-     * Product Group Name Example: Sample list 22	Card related fees 23	Monetary Adjustment
+     * Product Group Name Example: Sample list 22 Card related fees 23 Monetary Adjustment
      */
     public void unsetProductGroupName() {
         productGroupName = null;

@@ -677,8 +677,8 @@ public class PriceTransactionRequest {
 
     /**
      * Internal Getter for ProductId.
-     * Product Id Example: 21	Unleaded - High octane 22	Unleaded - Medium octane 23	Unleaded - Low
-     * octane 24	Unleaded Environmental
+     * Product Id Example: 21 Unleaded - High octane 22 Unleaded - Medium octane 23 Unleaded - Low
+     * octane 24 Unleaded Environmental
      * @return Returns the Internal Integer
      */
     @JsonGetter("ProductId")
@@ -690,8 +690,8 @@ public class PriceTransactionRequest {
 
     /**
      * Getter for ProductId.
-     * Product Id Example: 21	Unleaded - High octane 22	Unleaded - Medium octane 23	Unleaded - Low
-     * octane 24	Unleaded Environmental
+     * Product Id Example: 21 Unleaded - High octane 22 Unleaded - Medium octane 23 Unleaded - Low
+     * octane 24 Unleaded Environmental
      * @return Returns the Integer
      */
     public Integer getProductId() {
@@ -700,8 +700,8 @@ public class PriceTransactionRequest {
 
     /**
      * Setter for ProductId.
-     * Product Id Example: 21	Unleaded - High octane 22	Unleaded - Medium octane 23	Unleaded - Low
-     * octane 24	Unleaded Environmental
+     * Product Id Example: 21 Unleaded - High octane 22 Unleaded - Medium octane 23 Unleaded - Low
+     * octane 24 Unleaded Environmental
      * @param productId Value for Integer
      */
     @JsonSetter("ProductId")
@@ -711,8 +711,8 @@ public class PriceTransactionRequest {
 
     /**
      * UnSetter for ProductId.
-     * Product Id Example: 21	Unleaded - High octane 22	Unleaded - Medium octane 23	Unleaded - Low
-     * octane 24	Unleaded Environmental
+     * Product Id Example: 21 Unleaded - High octane 22 Unleaded - Medium octane 23 Unleaded - Low
+     * octane 24 Unleaded Environmental
      */
     public void unsetProductId() {
         productId = null;
@@ -720,8 +720,8 @@ public class PriceTransactionRequest {
 
     /**
      * Internal Getter for ProductCode.
-     * Product Code – Global as per GFN configuration Optional Max Length: 8 Example: 10	TMF Charges
-     * 11	Tunnel/Bridges 12	Motorway toll 13	Ferries
+     * Product Code – Global as per GFN configuration Optional Max Length: 8 Example: 10 TMF Charges
+     * 11 Tunnel/Bridges 12 Motorway toll 13 Ferries
      * @return Returns the Internal String
      */
     @JsonGetter("ProductCode")
@@ -733,8 +733,8 @@ public class PriceTransactionRequest {
 
     /**
      * Getter for ProductCode.
-     * Product Code – Global as per GFN configuration Optional Max Length: 8 Example: 10	TMF Charges
-     * 11	Tunnel/Bridges 12	Motorway toll 13	Ferries
+     * Product Code – Global as per GFN configuration Optional Max Length: 8 Example: 10 TMF Charges
+     * 11 Tunnel/Bridges 12 Motorway toll 13 Ferries
      * @return Returns the String
      */
     public String getProductCode() {
@@ -743,8 +743,8 @@ public class PriceTransactionRequest {
 
     /**
      * Setter for ProductCode.
-     * Product Code – Global as per GFN configuration Optional Max Length: 8 Example: 10	TMF Charges
-     * 11	Tunnel/Bridges 12	Motorway toll 13	Ferries
+     * Product Code – Global as per GFN configuration Optional Max Length: 8 Example: 10 TMF Charges
+     * 11 Tunnel/Bridges 12 Motorway toll 13 Ferries
      * @param productCode Value for String
      */
     @JsonSetter("ProductCode")
@@ -754,8 +754,8 @@ public class PriceTransactionRequest {
 
     /**
      * UnSetter for ProductCode.
-     * Product Code – Global as per GFN configuration Optional Max Length: 8 Example: 10	TMF Charges
-     * 11	Tunnel/Bridges 12	Motorway toll 13	Ferries
+     * Product Code – Global as per GFN configuration Optional Max Length: 8 Example: 10 TMF Charges
+     * 11 Tunnel/Bridges 12 Motorway toll 13 Ferries
      */
     public void unsetProductCode() {
         productCode = null;
@@ -841,12 +841,12 @@ public class PriceTransactionRequest {
 
     /**
      * Internal Getter for SortOrder.
-     * Allowed Sorting Options: 1.	TransactionDateAscending 2.	TransactionDateDescending
-     * 3.	GrossAmountDescending 4.	GrossAmountAscending 5.	DriverNameAscending (If Driver Name is
-     * null then VRN value will be considered) 6.	DriverNameDescending (If Driver Name is null then
-     * VRN value will be considered) 7.	VRNAscending (If VRN is null then Driver Name value will be
-     * considered) 8.	VRNDescending (If VRN is null then Driver Name value will be considered)
-     * 9.	NetAmountAscending 10.	NetAmountDescensding Example value to be passed: “1,3”
+     * Allowed Sorting Options: 1. TransactionDateAscending 2. TransactionDateDescending 3.
+     * GrossAmountDescending 4. GrossAmountAscending 5. DriverNameAscending (If Driver Name is null
+     * then VRN value will be considered) 6. DriverNameDescending (If Driver Name is null then VRN
+     * value will be considered) 7. VRNAscending (If VRN is null then Driver Name value will be
+     * considered) 8. VRNDescending (If VRN is null then Driver Name value will be considered) 9.
+     * NetAmountAscending 10. NetAmountDescensding Example value to be passed: “1,3”
      * @return Returns the Internal String
      */
     @JsonGetter("SortOrder")
@@ -858,12 +858,12 @@ public class PriceTransactionRequest {
 
     /**
      * Getter for SortOrder.
-     * Allowed Sorting Options: 1.	TransactionDateAscending 2.	TransactionDateDescending
-     * 3.	GrossAmountDescending 4.	GrossAmountAscending 5.	DriverNameAscending (If Driver Name is
-     * null then VRN value will be considered) 6.	DriverNameDescending (If Driver Name is null then
-     * VRN value will be considered) 7.	VRNAscending (If VRN is null then Driver Name value will be
-     * considered) 8.	VRNDescending (If VRN is null then Driver Name value will be considered)
-     * 9.	NetAmountAscending 10.	NetAmountDescensding Example value to be passed: “1,3”
+     * Allowed Sorting Options: 1. TransactionDateAscending 2. TransactionDateDescending 3.
+     * GrossAmountDescending 4. GrossAmountAscending 5. DriverNameAscending (If Driver Name is null
+     * then VRN value will be considered) 6. DriverNameDescending (If Driver Name is null then VRN
+     * value will be considered) 7. VRNAscending (If VRN is null then Driver Name value will be
+     * considered) 8. VRNDescending (If VRN is null then Driver Name value will be considered) 9.
+     * NetAmountAscending 10. NetAmountDescensding Example value to be passed: “1,3”
      * @return Returns the String
      */
     public String getSortOrder() {
@@ -872,12 +872,12 @@ public class PriceTransactionRequest {
 
     /**
      * Setter for SortOrder.
-     * Allowed Sorting Options: 1.	TransactionDateAscending 2.	TransactionDateDescending
-     * 3.	GrossAmountDescending 4.	GrossAmountAscending 5.	DriverNameAscending (If Driver Name is
-     * null then VRN value will be considered) 6.	DriverNameDescending (If Driver Name is null then
-     * VRN value will be considered) 7.	VRNAscending (If VRN is null then Driver Name value will be
-     * considered) 8.	VRNDescending (If VRN is null then Driver Name value will be considered)
-     * 9.	NetAmountAscending 10.	NetAmountDescensding Example value to be passed: “1,3”
+     * Allowed Sorting Options: 1. TransactionDateAscending 2. TransactionDateDescending 3.
+     * GrossAmountDescending 4. GrossAmountAscending 5. DriverNameAscending (If Driver Name is null
+     * then VRN value will be considered) 6. DriverNameDescending (If Driver Name is null then VRN
+     * value will be considered) 7. VRNAscending (If VRN is null then Driver Name value will be
+     * considered) 8. VRNDescending (If VRN is null then Driver Name value will be considered) 9.
+     * NetAmountAscending 10. NetAmountDescensding Example value to be passed: “1,3”
      * @param sortOrder Value for String
      */
     @JsonSetter("SortOrder")
@@ -887,12 +887,12 @@ public class PriceTransactionRequest {
 
     /**
      * UnSetter for SortOrder.
-     * Allowed Sorting Options: 1.	TransactionDateAscending 2.	TransactionDateDescending
-     * 3.	GrossAmountDescending 4.	GrossAmountAscending 5.	DriverNameAscending (If Driver Name is
-     * null then VRN value will be considered) 6.	DriverNameDescending (If Driver Name is null then
-     * VRN value will be considered) 7.	VRNAscending (If VRN is null then Driver Name value will be
-     * considered) 8.	VRNDescending (If VRN is null then Driver Name value will be considered)
-     * 9.	NetAmountAscending 10.	NetAmountDescensding Example value to be passed: “1,3”
+     * Allowed Sorting Options: 1. TransactionDateAscending 2. TransactionDateDescending 3.
+     * GrossAmountDescending 4. GrossAmountAscending 5. DriverNameAscending (If Driver Name is null
+     * then VRN value will be considered) 6. DriverNameDescending (If Driver Name is null then VRN
+     * value will be considered) 7. VRNAscending (If VRN is null then Driver Name value will be
+     * considered) 8. VRNDescending (If VRN is null then Driver Name value will be considered) 9.
+     * NetAmountAscending 10. NetAmountDescensding Example value to be passed: “1,3”
      */
     public void unsetSortOrder() {
         sortOrder = null;
@@ -1002,7 +1002,7 @@ public class PriceTransactionRequest {
 
     /**
      * Internal Getter for Period.
-     * Transactions Period. Possible values are: 1.	Last 7 Days 2.	Last 30 Days 3.	Last 90 Days
+     * Transactions Period. Possible values are: 1. Last 7 Days 2. Last 30 Days 3. Last 90 Days
      * Optional - Refer introduction section of this operation for the priority and sequence of
      * different date and invoice number filters that are conditionally applied.
      * @return Returns the Internal Integer
@@ -1016,7 +1016,7 @@ public class PriceTransactionRequest {
 
     /**
      * Getter for Period.
-     * Transactions Period. Possible values are: 1.	Last 7 Days 2.	Last 30 Days 3.	Last 90 Days
+     * Transactions Period. Possible values are: 1. Last 7 Days 2. Last 30 Days 3. Last 90 Days
      * Optional - Refer introduction section of this operation for the priority and sequence of
      * different date and invoice number filters that are conditionally applied.
      * @return Returns the Integer
@@ -1027,7 +1027,7 @@ public class PriceTransactionRequest {
 
     /**
      * Setter for Period.
-     * Transactions Period. Possible values are: 1.	Last 7 Days 2.	Last 30 Days 3.	Last 90 Days
+     * Transactions Period. Possible values are: 1. Last 7 Days 2. Last 30 Days 3. Last 90 Days
      * Optional - Refer introduction section of this operation for the priority and sequence of
      * different date and invoice number filters that are conditionally applied.
      * @param period Value for Integer
@@ -1039,7 +1039,7 @@ public class PriceTransactionRequest {
 
     /**
      * UnSetter for Period.
-     * Transactions Period. Possible values are: 1.	Last 7 Days 2.	Last 30 Days 3.	Last 90 Days
+     * Transactions Period. Possible values are: 1. Last 7 Days 2. Last 30 Days 3. Last 90 Days
      * Optional - Refer introduction section of this operation for the priority and sequence of
      * different date and invoice number filters that are conditionally applied.
      */
@@ -1049,10 +1049,9 @@ public class PriceTransactionRequest {
 
     /**
      * Internal Getter for SiteCode.
-     * Site Code as configured in GFN Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755 050002
-     * -	CHARNOCK RICHARD STHBOUND MWSA 0755 050005 -	HARTSHEAD MOOR EASTBOUND MWSA 0761. 050006
-     * -	HARTSHEAD MOOR WESTBOUND MWSA. Note: If IncludeFees is true then this filter will be
-     * ignored
+     * Site Code as configured in GFN Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 -
+     * CHARNOCK RICHARD STHBOUND MWSA 0755 050005 - HARTSHEAD MOOR EASTBOUND MWSA 0761. 050006 -
+     * HARTSHEAD MOOR WESTBOUND MWSA. Note: If IncludeFees is true then this filter will be ignored
      * @return Returns the Internal String
      */
     @JsonGetter("SiteCode")
@@ -1064,10 +1063,9 @@ public class PriceTransactionRequest {
 
     /**
      * Getter for SiteCode.
-     * Site Code as configured in GFN Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755 050002
-     * -	CHARNOCK RICHARD STHBOUND MWSA 0755 050005 -	HARTSHEAD MOOR EASTBOUND MWSA 0761. 050006
-     * -	HARTSHEAD MOOR WESTBOUND MWSA. Note: If IncludeFees is true then this filter will be
-     * ignored
+     * Site Code as configured in GFN Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 -
+     * CHARNOCK RICHARD STHBOUND MWSA 0755 050005 - HARTSHEAD MOOR EASTBOUND MWSA 0761. 050006 -
+     * HARTSHEAD MOOR WESTBOUND MWSA. Note: If IncludeFees is true then this filter will be ignored
      * @return Returns the String
      */
     public String getSiteCode() {
@@ -1076,10 +1074,9 @@ public class PriceTransactionRequest {
 
     /**
      * Setter for SiteCode.
-     * Site Code as configured in GFN Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755 050002
-     * -	CHARNOCK RICHARD STHBOUND MWSA 0755 050005 -	HARTSHEAD MOOR EASTBOUND MWSA 0761. 050006
-     * -	HARTSHEAD MOOR WESTBOUND MWSA. Note: If IncludeFees is true then this filter will be
-     * ignored
+     * Site Code as configured in GFN Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 -
+     * CHARNOCK RICHARD STHBOUND MWSA 0755 050005 - HARTSHEAD MOOR EASTBOUND MWSA 0761. 050006 -
+     * HARTSHEAD MOOR WESTBOUND MWSA. Note: If IncludeFees is true then this filter will be ignored
      * @param siteCode Value for String
      */
     @JsonSetter("SiteCode")
@@ -1089,10 +1086,9 @@ public class PriceTransactionRequest {
 
     /**
      * UnSetter for SiteCode.
-     * Site Code as configured in GFN Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755 050002
-     * -	CHARNOCK RICHARD STHBOUND MWSA 0755 050005 -	HARTSHEAD MOOR EASTBOUND MWSA 0761. 050006
-     * -	HARTSHEAD MOOR WESTBOUND MWSA. Note: If IncludeFees is true then this filter will be
-     * ignored
+     * Site Code as configured in GFN Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 -
+     * CHARNOCK RICHARD STHBOUND MWSA 0755 050005 - HARTSHEAD MOOR EASTBOUND MWSA 0761. 050006 -
+     * HARTSHEAD MOOR WESTBOUND MWSA. Note: If IncludeFees is true then this filter will be ignored
      */
     public void unsetSiteCode() {
         siteCode = null;

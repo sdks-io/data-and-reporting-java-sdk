@@ -32,7 +32,7 @@ This API will also validate that logged in user has access to the requested API,
 CompletableFuture<LoggedInUserResponse> loggedinUserAsync(
     final String apikey,
     final String requestId,
-    final LoggedInUserRequest body)
+    final FleetmanagementV1UserLoggedinuserRequest body)
 ```
 
 ## Parameters
@@ -40,8 +40,8 @@ CompletableFuture<LoggedInUserResponse> loggedinUserAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `apikey` | `String` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `String` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
-| `body` | [`LoggedInUserRequest`](../../doc/models/logged-in-user-request.md) | Body, Optional | Logged in user request body |
+| `requestId` | `String` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
+| `body` | [`FleetmanagementV1UserLoggedinuserRequest`](../../doc/models/fleetmanagement-v1-user-loggedinuser-request.md) | Body, Optional | Logged in user request body |
 
 ## Response Type
 
@@ -52,7 +52,7 @@ CompletableFuture<LoggedInUserResponse> loggedinUserAsync(
 ```java
 String apikey = "apikey6";
 String requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
-LoggedInUserRequest body = new LoggedInUserRequest.Builder()
+FleetmanagementV1UserLoggedinuserRequest body = new FleetmanagementV1UserLoggedinuserRequest.Builder()
     .includePayerGroup(false)
     .includeEIDDetails(false)
     .requestedAPIName("Name of the API")
@@ -154,11 +154,11 @@ customerController.loggedinUserAsync(apikey, requestId, body).thenAccept(result 
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1UserLoggedinuser400ErrorException`](../../doc/models/fleetmanagement-v1-user-loggedinuser-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1UserLoggedinuser401ErrorException`](../../doc/models/fleetmanagement-v1-user-loggedinuser-401-error-exception.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1UserLoggedinuser403ErrorException`](../../doc/models/fleetmanagement-v1-user-loggedinuser-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1UserLoggedinuser404ErrorException`](../../doc/models/fleetmanagement-v1-user-loggedinuser-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1UserLoggedinuser500ErrorException`](../../doc/models/fleetmanagement-v1-user-loggedinuser-500-error-exception.md) |
 
 
 # Payers
@@ -187,7 +187,7 @@ CompletableFuture<PayerResponse> payersAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `apikey` | `String` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `String` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `requestId` | `String` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`PayerRequest`](../../doc/models/payer-request.md) | Body, Optional | Serach payers request body |
 
 ## Response Type
@@ -427,11 +427,11 @@ customerController.payersAsync(apikey, requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1CustomerPayers400ErrorException`](../../doc/models/fleetmanagement-v1-customer-payers-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1CustomerPayers401ErrorException`](../../doc/models/fleetmanagement-v1-customer-payers-401-error-exception.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1CustomerPayers403ErrorException`](../../doc/models/fleetmanagement-v1-customer-payers-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1CustomerPayers404ErrorException`](../../doc/models/fleetmanagement-v1-customer-payers-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1CustomerPayers500ErrorException`](../../doc/models/fleetmanagement-v1-customer-payers-500-error-exception.md) |
 
 
 # Customer
@@ -451,7 +451,7 @@ CompletableFuture<CustomerDetailResponse> customerAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `apikey` | `String` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `String` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `requestId` | `String` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`CustomerDetailRequest`](../../doc/models/customer-detail-request.md) | Body, Optional | Customerdetails request body |
 
 ## Response Type
@@ -579,11 +579,11 @@ customerController.customerAsync(apikey, requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1CustomerCustomer400ErrorException`](../../doc/models/fleetmanagement-v1-customer-customer-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1CustomerCustomer401ErrorException`](../../doc/models/fleetmanagement-v1-customer-customer-401-error-exception.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1CustomerCustomer403ErrorException`](../../doc/models/fleetmanagement-v1-customer-customer-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1CustomerCustomer404ErrorException`](../../doc/models/fleetmanagement-v1-customer-customer-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1CustomerCustomer500ErrorException`](../../doc/models/fleetmanagement-v1-customer-customer-500-error-exception.md) |
 
 
 # Customer Price List
@@ -608,7 +608,7 @@ CompletableFuture<CustomerPriceListResponse> customerPriceListAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `apikey` | `String` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `String` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `requestId` | `String` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`CustomerPriceListRequest`](../../doc/models/customer-price-list-request.md) | Body, Optional | Customerdetails request body |
 
 ## Response Type
@@ -726,11 +726,11 @@ customerController.customerPriceListAsync(apikey, requestId, body).thenAccept(re
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV2CustomerPricelist400ErrorException`](../../doc/models/fleetmanagement-v2-customer-pricelist-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV2CustomerPricelist401ErrorException`](../../doc/models/fleetmanagement-v2-customer-pricelist-401-error-exception.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV2CustomerPricelist403ErrorException`](../../doc/models/fleetmanagement-v2-customer-pricelist-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV2CustomerPricelist404ErrorException`](../../doc/models/fleetmanagement-v2-customer-pricelist-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV2CustomerPricelist500ErrorException`](../../doc/models/fleetmanagement-v2-customer-pricelist-500-error-exception.md) |
 
 
 # Accounts
@@ -750,7 +750,7 @@ CompletableFuture<AccountResponse> accountsAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `apikey` | `String` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `String` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `requestId` | `String` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`AccountRequest`](../../doc/models/account-request.md) | Body, Optional | - |
 
 ## Response Type
@@ -886,11 +886,11 @@ customerController.accountsAsync(apikey, requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1CustomerAccounts400ErrorException`](../../doc/models/fleetmanagement-v1-customer-accounts-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1CustomerAccounts401ErrorException`](../../doc/models/fleetmanagement-v1-customer-accounts-401-error-exception.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1CustomerAccounts403ErrorException`](../../doc/models/fleetmanagement-v1-customer-accounts-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1CustomerAccounts404ErrorException`](../../doc/models/fleetmanagement-v1-customer-accounts-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1CustomerAccounts500ErrorException`](../../doc/models/fleetmanagement-v1-customer-accounts-500-error-exception.md) |
 
 
 # Card Type
@@ -909,7 +909,7 @@ CompletableFuture<CardTypeResponse> cardTypeAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `apikey` | `String` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `String` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `requestId` | `String` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`CardTypeRequest`](../../doc/models/card-type-request.md) | Body, Optional | Get CardType Request Body |
 
 ## Response Type
@@ -1036,11 +1036,11 @@ customerController.cardTypeAsync(apikey, requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV2CustomerCardtype400ErrorException`](../../doc/models/fleetmanagement-v2-customer-cardtype-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV2CustomerCardtype401ErrorException`](../../doc/models/fleetmanagement-v2-customer-cardtype-401-error-exception.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV2CustomerCardtype403ErrorException`](../../doc/models/fleetmanagement-v2-customer-cardtype-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV2CustomerCardtype404ErrorException`](../../doc/models/fleetmanagement-v2-customer-cardtype-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV2CustomerCardtype500ErrorException`](../../doc/models/fleetmanagement-v2-customer-cardtype-500-error-exception.md) |
 
 
 # Card Groups
@@ -1065,7 +1065,7 @@ CompletableFuture<CardGroupResponse> cardGroupsAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `apikey` | `String` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `String` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `requestId` | `String` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`CardGroupRequest`](../../doc/models/card-group-request.md) | Body, Optional | Request Body |
 
 ## Response Type
@@ -1149,11 +1149,11 @@ customerController.cardGroupsAsync(apikey, requestId, body).thenAccept(result ->
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1CustomerCardgroups400ErrorException`](../../doc/models/fleetmanagement-v1-customer-cardgroups-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1CustomerCardgroups401ErrorException`](../../doc/models/fleetmanagement-v1-customer-cardgroups-401-error-exception.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1CustomerCardgroups403ErrorException`](../../doc/models/fleetmanagement-v1-customer-cardgroups-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1CustomerCardgroups404ErrorException`](../../doc/models/fleetmanagement-v1-customer-cardgroups-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1CustomerCardgroups500ErrorException`](../../doc/models/fleetmanagement-v1-customer-cardgroups-500-error-exception.md) |
 
 
 # Audit Report
@@ -1191,7 +1191,7 @@ CompletableFuture<AuditResponse> auditReportAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `apikey` | `String` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `String` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `requestId` | `String` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`AuditRequest`](../../doc/models/audit-request.md) | Body, Optional | request body |
 
 ## Response Type
@@ -1289,9 +1289,9 @@ customerController.auditReportAsync(apikey, requestId, body).thenAccept(result -
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1CustomerAuditreport400ErrorException`](../../doc/models/fleetmanagement-v1-customer-auditreport-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1CustomerAuditreport401ErrorException`](../../doc/models/fleetmanagement-v1-customer-auditreport-401-error-exception.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1CustomerAuditreport403ErrorException`](../../doc/models/fleetmanagement-v1-customer-auditreport-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1CustomerAuditreport404ErrorException`](../../doc/models/fleetmanagement-v1-customer-auditreport-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1CustomerAuditreport500ErrorException`](../../doc/models/fleetmanagement-v1-customer-auditreport-500-error-exception.md) |
 

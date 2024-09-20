@@ -224,7 +224,7 @@ public class EIDDocument {
 
     /**
      * Internal Getter for DocumentType.
-     * Document type. Possible values: •	NAT (National) •	INT (International)
+     * Document type. Possible values: • NAT (National) • INT (International)
      * @return Returns the Internal String
      */
     @JsonGetter("DocumentType")
@@ -236,7 +236,7 @@ public class EIDDocument {
 
     /**
      * Getter for DocumentType.
-     * Document type. Possible values: •	NAT (National) •	INT (International)
+     * Document type. Possible values: • NAT (National) • INT (International)
      * @return Returns the String
      */
     public String getDocumentType() {
@@ -245,7 +245,7 @@ public class EIDDocument {
 
     /**
      * Setter for DocumentType.
-     * Document type. Possible values: •	NAT (National) •	INT (International)
+     * Document type. Possible values: • NAT (National) • INT (International)
      * @param documentType Value for String
      */
     @JsonSetter("DocumentType")
@@ -255,7 +255,7 @@ public class EIDDocument {
 
     /**
      * UnSetter for DocumentType.
-     * Document type. Possible values: •	NAT (National) •	INT (International)
+     * Document type. Possible values: • NAT (National) • INT (International)
      */
     public void unsetDocumentType() {
         documentType = null;
@@ -419,7 +419,7 @@ public class EIDDocument {
 
     /**
      * Internal Getter for DocumentStatus.
-     * Document status. Possible values: •	NEW •	VIEWED •	DOWNLOADED •	RESTORED
+     * Document status. Possible values: • NEW • VIEWED • DOWNLOADED • RESTORED
      * @return Returns the Internal String
      */
     @JsonGetter("DocumentStatus")
@@ -431,7 +431,7 @@ public class EIDDocument {
 
     /**
      * Getter for DocumentStatus.
-     * Document status. Possible values: •	NEW •	VIEWED •	DOWNLOADED •	RESTORED
+     * Document status. Possible values: • NEW • VIEWED • DOWNLOADED • RESTORED
      * @return Returns the String
      */
     public String getDocumentStatus() {
@@ -440,7 +440,7 @@ public class EIDDocument {
 
     /**
      * Setter for DocumentStatus.
-     * Document status. Possible values: •	NEW •	VIEWED •	DOWNLOADED •	RESTORED
+     * Document status. Possible values: • NEW • VIEWED • DOWNLOADED • RESTORED
      * @param documentStatus Value for String
      */
     @JsonSetter("DocumentStatus")
@@ -450,7 +450,7 @@ public class EIDDocument {
 
     /**
      * UnSetter for DocumentStatus.
-     * Document status. Possible values: •	NEW •	VIEWED •	DOWNLOADED •	RESTORED
+     * Document status. Possible values: • NEW • VIEWED • DOWNLOADED • RESTORED
      */
     public void unsetDocumentStatus() {
         documentStatus = null;

@@ -2279,7 +2279,7 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Internal Getter for SiteCode.
-     * Site Code Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
+     * Site Code Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755
      * @return Returns the Internal String
      */
     @JsonGetter("SiteCode")
@@ -2291,7 +2291,7 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Getter for SiteCode.
-     * Site Code Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
+     * Site Code Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755
      * @return Returns the String
      */
     public String getSiteCode() {
@@ -2300,7 +2300,7 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Setter for SiteCode.
-     * Site Code Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
+     * Site Code Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755
      * @param siteCode Value for String
      */
     @JsonSetter("SiteCode")
@@ -2310,7 +2310,7 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * UnSetter for SiteCode.
-     * Site Code Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
+     * Site Code Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755
      */
     public void unsetSiteCode() {
         siteCode = null;
@@ -2318,7 +2318,7 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Internal Getter for SiteName.
-     * Site Name Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
+     * Site Name Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755
      * @return Returns the Internal String
      */
     @JsonGetter("SiteName")
@@ -2330,7 +2330,7 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Getter for SiteName.
-     * Site Name Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
+     * Site Name Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755
      * @return Returns the String
      */
     public String getSiteName() {
@@ -2339,7 +2339,7 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Setter for SiteName.
-     * Site Name Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
+     * Site Name Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755
      * @param siteName Value for String
      */
     @JsonSetter("SiteName")
@@ -2349,7 +2349,7 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * UnSetter for SiteName.
-     * Site Name Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
+     * Site Name Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755
      */
     public void unsetSiteName() {
         siteName = null;
@@ -2493,7 +2493,7 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Internal Getter for ProductCode.
-     * Product Code 10	TMF Charges 11	Tunnel/Bridges 12	Motorway toll
+     * Product Code 10 TMF Charges 11 Tunnel/Bridges 12 Motorway toll
      * @return Returns the Internal String
      */
     @JsonGetter("ProductCode")
@@ -2505,7 +2505,7 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Getter for ProductCode.
-     * Product Code 10	TMF Charges 11	Tunnel/Bridges 12	Motorway toll
+     * Product Code 10 TMF Charges 11 Tunnel/Bridges 12 Motorway toll
      * @return Returns the String
      */
     public String getProductCode() {
@@ -2514,7 +2514,7 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Setter for ProductCode.
-     * Product Code 10	TMF Charges 11	Tunnel/Bridges 12	Motorway toll
+     * Product Code 10 TMF Charges 11 Tunnel/Bridges 12 Motorway toll
      * @param productCode Value for String
      */
     @JsonSetter("ProductCode")
@@ -2524,7 +2524,7 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * UnSetter for ProductCode.
-     * Product Code 10	TMF Charges 11	Tunnel/Bridges 12	Motorway toll
+     * Product Code 10 TMF Charges 11 Tunnel/Bridges 12 Motorway toll
      */
     public void unsetProductCode() {
         productCode = null;
@@ -2575,8 +2575,8 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Internal Getter for ProductGroupId.
-     * Product Group Id Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas
+     * Product Group Id Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas
      * @return Returns the Internal Integer
      */
     @JsonGetter("ProductGroupId")
@@ -2588,8 +2588,8 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Getter for ProductGroupId.
-     * Product Group Id Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas
+     * Product Group Id Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas
      * @return Returns the Integer
      */
     public Integer getProductGroupId() {
@@ -2598,8 +2598,8 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Setter for ProductGroupId.
-     * Product Group Id Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas
+     * Product Group Id Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas
      * @param productGroupId Value for Integer
      */
     @JsonSetter("ProductGroupId")
@@ -2609,8 +2609,8 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * UnSetter for ProductGroupId.
-     * Product Group Id Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas
+     * Product Group Id Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas
      */
     public void unsetProductGroupId() {
         productGroupId = null;
@@ -2618,8 +2618,8 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Internal Getter for ProductGroupName.
-     * Product Group Name Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas
+     * Product Group Name Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas
      * @return Returns the Internal String
      */
     @JsonGetter("ProductGroupName")
@@ -2631,8 +2631,8 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Getter for ProductGroupName.
-     * Product Group Name Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas
+     * Product Group Name Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas
      * @return Returns the String
      */
     public String getProductGroupName() {
@@ -2641,8 +2641,8 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Setter for ProductGroupName.
-     * Product Group Name Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas
+     * Product Group Name Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas
      * @param productGroupName Value for String
      */
     @JsonSetter("ProductGroupName")
@@ -2652,8 +2652,8 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * UnSetter for ProductGroupName.
-     * Product Group Name Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas
+     * Product Group Name Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas
      */
     public void unsetProductGroupName() {
         productGroupName = null;
@@ -2782,7 +2782,7 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Internal Getter for Network.
-     * Network (Shell PH, ESSO, etc.,) 100013	STEINDORFER 100015	S.A. BELGIAN SHELL N.V. 100016	ESSO
+     * Network (Shell PH, ESSO, etc.,) 100013 STEINDORFER 100015 S.A. BELGIAN SHELL N.V. 100016 ESSO
      * BE Note: - The value could be null/blank for fees item.
      * @return Returns the Internal String
      */
@@ -2795,7 +2795,7 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Getter for Network.
-     * Network (Shell PH, ESSO, etc.,) 100013	STEINDORFER 100015	S.A. BELGIAN SHELL N.V. 100016	ESSO
+     * Network (Shell PH, ESSO, etc.,) 100013 STEINDORFER 100015 S.A. BELGIAN SHELL N.V. 100016 ESSO
      * BE Note: - The value could be null/blank for fees item.
      * @return Returns the String
      */
@@ -2805,7 +2805,7 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Setter for Network.
-     * Network (Shell PH, ESSO, etc.,) 100013	STEINDORFER 100015	S.A. BELGIAN SHELL N.V. 100016	ESSO
+     * Network (Shell PH, ESSO, etc.,) 100013 STEINDORFER 100015 S.A. BELGIAN SHELL N.V. 100016 ESSO
      * BE Note: - The value could be null/blank for fees item.
      * @param network Value for String
      */
@@ -2816,7 +2816,7 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * UnSetter for Network.
-     * Network (Shell PH, ESSO, etc.,) 100013	STEINDORFER 100015	S.A. BELGIAN SHELL N.V. 100016	ESSO
+     * Network (Shell PH, ESSO, etc.,) 100013 STEINDORFER 100015 S.A. BELGIAN SHELL N.V. 100016 ESSO
      * BE Note: - The value could be null/blank for fees item.
      */
     public void unsetNetwork() {
@@ -4519,8 +4519,8 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Internal Getter for DisputeStatus.
-     * Sales Item Dispute Status if disputed 0	No Dispute 1	In Dispute 2	Re-Instated 3	Adjusted
-     * 4	Written Off by Colco 5	Written Off by Delco 6	Charged Back to Site
+     * Sales Item Dispute Status if disputed 0 No Dispute 1 In Dispute 2 Re-Instated 3 Adjusted 4
+     * Written Off by Colco 5 Written Off by Delco 6 Charged Back to Site
      * @return Returns the Internal String
      */
     @JsonGetter("DisputeStatus")
@@ -4532,8 +4532,8 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Getter for DisputeStatus.
-     * Sales Item Dispute Status if disputed 0	No Dispute 1	In Dispute 2	Re-Instated 3	Adjusted
-     * 4	Written Off by Colco 5	Written Off by Delco 6	Charged Back to Site
+     * Sales Item Dispute Status if disputed 0 No Dispute 1 In Dispute 2 Re-Instated 3 Adjusted 4
+     * Written Off by Colco 5 Written Off by Delco 6 Charged Back to Site
      * @return Returns the String
      */
     public String getDisputeStatus() {
@@ -4542,8 +4542,8 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * Setter for DisputeStatus.
-     * Sales Item Dispute Status if disputed 0	No Dispute 1	In Dispute 2	Re-Instated 3	Adjusted
-     * 4	Written Off by Colco 5	Written Off by Delco 6	Charged Back to Site
+     * Sales Item Dispute Status if disputed 0 No Dispute 1 In Dispute 2 Re-Instated 3 Adjusted 4
+     * Written Off by Colco 5 Written Off by Delco 6 Charged Back to Site
      * @param disputeStatus Value for String
      */
     @JsonSetter("DisputeStatus")
@@ -4553,8 +4553,8 @@ public class MultiPricedTransactionResponseTransactionsItems {
 
     /**
      * UnSetter for DisputeStatus.
-     * Sales Item Dispute Status if disputed 0	No Dispute 1	In Dispute 2	Re-Instated 3	Adjusted
-     * 4	Written Off by Colco 5	Written Off by Delco 6	Charged Back to Site
+     * Sales Item Dispute Status if disputed 0 No Dispute 1 In Dispute 2 Re-Instated 3 Adjusted 4
+     * Written Off by Colco 5 Written Off by Delco 6 Charged Back to Site
      */
     public void unsetDisputeStatus() {
         disputeStatus = null;

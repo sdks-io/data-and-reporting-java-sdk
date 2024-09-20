@@ -27,7 +27,7 @@
 | `PricePerUnit` | `Double` | Optional | Price per unit | Double getPricePerUnit() | setPricePerUnit(Double pricePerUnit) |
 | `CurrencyCode` | `String` | Optional | Currency Code.<br>Format : 3 digit ISO code | String getCurrencyCode() | setCurrencyCode(String currencyCode) |
 | `CurrencySymbol` | `String` | Optional | Currency Symbol<br>Example: £ | String getCurrencySymbol() | setCurrencySymbol(String currencySymbol) |
-| `PriceType` | `String` | Optional | Price Type<br>Possible Values are:<br>•	Country– Price rule defined at country whereas Price Rule DelcoId same as ColcoId.<br>•	TPNDelcoPrice – Price rule defined in the TPN whereas Price Rule DelcoId is different from ColcoId.<br>•	NetworkPrice – Price rule defined at Fuel Network level.<br>•	Other – Price rule defined at either Site or SiteGroup level. | String getPriceType() | setPriceType(String priceType) |
+| `PriceType` | `String` | Optional | Price Type<br>Possible Values are:<br>•    Country– Price rule defined at country whereas Price Rule DelcoId same as ColcoId.<br>•    TPNDelcoPrice – Price rule defined in the TPN whereas Price Rule DelcoId is different from ColcoId.<br>•    NetworkPrice – Price rule defined at Fuel Network level.<br>•    Other – Price rule defined at either Site or SiteGroup level. | String getPriceType() | setPriceType(String priceType) |
 | `SiteGroupId` | `Integer` | Optional | Site-Group ID<br>E.g.: 100007 | Integer getSiteGroupId() | setSiteGroupId(Integer siteGroupId) |
 | `SiteGroupName` | `String` | Optional | Site-Group name | String getSiteGroupName() | setSiteGroupName(String siteGroupName) |
 | `SiteCode` | `Integer` | Optional | Site Code | Integer getSiteCode() | setSiteCode(Integer siteCode) |
@@ -36,7 +36,7 @@
 | `FuelNetworkId` | `Integer` | Optional | Fuel Network ID | Integer getFuelNetworkId() | setFuelNetworkId(Integer fuelNetworkId) |
 | `NetworkName` | `String` | Optional | Network Name | String getNetworkName() | setNetworkName(String networkName) |
 | `PriceRuleDelcoId` | `Integer` | Optional | PriceRuleDelcoId | Integer getPriceRuleDelcoId() | setPriceRuleDelcoId(Integer priceRuleDelcoId) |
-| `PriceRuleDelcoName` | `String` | Optional | Company Name of the price rule DelCo.<br><br>E.g.:<br>•	Pilipinas Shell Petroleum Corp<br>•	Shell U.K. Oil Products Limited<br>•	G & V SERVICE STATIONS NV | String getPriceRuleDelcoName() | setPriceRuleDelcoName(String priceRuleDelcoName) |
+| `PriceRuleDelcoName` | `String` | Optional | Company Name of the price rule DelCo.<br><br>E.g.:<br>•    Pilipinas Shell Petroleum Corp<br>•    Shell U.K. Oil Products Limited<br>•    G & V SERVICE STATIONS NV | String getPriceRuleDelcoName() | setPriceRuleDelcoName(String priceRuleDelcoName) |
 | `PriceRuleCountry` | `String` | Optional | PriceRuleCountry<br>E.g.: United Kingdom | String getPriceRuleCountry() | setPriceRuleCountry(String priceRuleCountry) |
 | `PriceRuleCountryCode` | `String` | Optional | ISO Code of PriceRuleCountry<br>E.g.: UK, NL, etc., | String getPriceRuleCountryCode() | setPriceRuleCountryCode(String priceRuleCountryCode) |
 | `PriceRuleBasisId` | `Integer` | Optional | PriceRuleBasisId | Integer getPriceRuleBasisId() | setPriceRuleBasisId(Integer priceRuleBasisId) |

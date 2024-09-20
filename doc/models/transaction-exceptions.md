@@ -50,7 +50,7 @@
 | `SiteCode` | `String` | Optional | Site Code | String getSiteCode() | setSiteCode(String siteCode) |
 | `SiteName` | `String` | Optional | Site Name | String getSiteName() | setSiteName(String siteName) |
 | `SiteCountry` | `String` | Optional | Site Country | String getSiteCountry() | setSiteCountry(String siteCountry) |
-| `Location` | [`ExceptionSiteLocation`](../../doc/models/exception-site-location.md) | Optional | Geography Location entity for Site Location | ExceptionSiteLocation getLocation() | setLocation(ExceptionSiteLocation location) |
+| `Location` | [`Location`](../../doc/models/location.md) | Optional | - | Location getLocation() | setLocation(Location location) |
 | `CardGroupName` | `String` | Optional | Card Group Name | String getCardGroupName() | setCardGroupName(String cardGroupName) |
 | `ReceiptNumber` | `String` | Optional | Receipt Number | String getReceiptNumber() | setReceiptNumber(String receiptNumber) |
 | `ProductCode` | `String` | Optional | Product Code | String getProductCode() | setProductCode(String productCode) |
@@ -100,7 +100,7 @@
 | `TransactionLine` | `String` | Optional | Transaction line item number | String getTransactionLine() | setTransactionLine(String transactionLine) |
 | `AllowClearing` | `String` | Optional | Is the Sales Item allowed for clearing? i.e. not written off<br>Example: “Y” or “N” | String getAllowClearing() | setAllowClearing(String allowClearing) |
 | `CRMNumber` | `String` | Optional | CRM Case number if the sales item is in dispute | String getCRMNumber() | setCRMNumber(String cRMNumber) |
-| `DisputeStatus` | `String` | Optional | Sales Item Dispute Status if disputed<br>0	No Dispute<br>1	In Dispute<br>2	Re-Instated<br>3	Adjusted<br>4	Written Off by Colco<br>5	Written Off by Delco<br>6	Charged Back to Site | String getDisputeStatus() | setDisputeStatus(String disputeStatus) |
+| `DisputeStatus` | `String` | Optional | Sales Item Dispute Status if disputed<br>0    No Dispute<br>1    In Dispute<br>2    Re-Instated<br>3    Adjusted<br>4    Written Off by Colco<br>5    Written Off by Delco<br>6    Charged Back to Site | String getDisputeStatus() | setDisputeStatus(String disputeStatus) |
 | `RebateRate` | `Double` | Optional | Unit discount in customer currency | Double getRebateRate() | setRebateRate(Double rebateRate) |
 | `DelCoToColCoExchangeRate` | `Double` | Optional | Exchange rate from transaction currency to customer currency. | Double getDelCoToColCoExchangeRate() | setDelCoToColCoExchangeRate(Double delCoToColCoExchangeRate) |
 | `NetEuroAmount` | `Double` | Optional | Net euro amount. | Double getNetEuroAmount() | setNetEuroAmount(Double netEuroAmount) |

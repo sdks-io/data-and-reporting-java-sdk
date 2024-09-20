@@ -96,7 +96,7 @@ public class InvoiceSearchAdditionalDocument {
 
     /**
      * Internal Getter for Type.
-     * Type of the additional document. Mandatory Possible values: •	KSeF - Applicable for Poland
+     * Type of the additional document. Mandatory Possible values: • KSeF - Applicable for Poland
      * market.
      * @return Returns the Internal String
      */
@@ -109,7 +109,7 @@ public class InvoiceSearchAdditionalDocument {
 
     /**
      * Getter for Type.
-     * Type of the additional document. Mandatory Possible values: •	KSeF - Applicable for Poland
+     * Type of the additional document. Mandatory Possible values: • KSeF - Applicable for Poland
      * market.
      * @return Returns the String
      */
@@ -119,7 +119,7 @@ public class InvoiceSearchAdditionalDocument {
 
     /**
      * Setter for Type.
-     * Type of the additional document. Mandatory Possible values: •	KSeF - Applicable for Poland
+     * Type of the additional document. Mandatory Possible values: • KSeF - Applicable for Poland
      * market.
      * @param type Value for String
      */
@@ -130,7 +130,7 @@ public class InvoiceSearchAdditionalDocument {
 
     /**
      * UnSetter for Type.
-     * Type of the additional document. Mandatory Possible values: •	KSeF - Applicable for Poland
+     * Type of the additional document. Mandatory Possible values: • KSeF - Applicable for Poland
      * market.
      */
     public void unsetType() {

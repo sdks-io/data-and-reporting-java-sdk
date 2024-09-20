@@ -309,7 +309,7 @@ public class TransactionExceptionsRequest {
      * Getter for ExceptionPeriod.
      * Period in which the Exceptions such as Monthly/Weekly or Daily volume, value or usage to be
      * identified in the given transactions date range. It is only applied when the Output Type is
-     * specified as "Cards". Mandatory when Output Type is Cards 1.	Month 2.	Week 3.	Day 4.	Date
+     * specified as "Cards". Mandatory when Output Type is Cards 1. Month 2. Week 3. Day 4. Date
      * Range
      * @return Returns the Integer
      */
@@ -323,7 +323,7 @@ public class TransactionExceptionsRequest {
      * Setter for ExceptionPeriod.
      * Period in which the Exceptions such as Monthly/Weekly or Daily volume, value or usage to be
      * identified in the given transactions date range. It is only applied when the Output Type is
-     * specified as "Cards". Mandatory when Output Type is Cards 1.	Month 2.	Week 3.	Day 4.	Date
+     * specified as "Cards". Mandatory when Output Type is Cards 1. Month 2. Week 3. Day 4. Date
      * Range
      * @param exceptionPeriod Value for Integer
      */
@@ -334,7 +334,7 @@ public class TransactionExceptionsRequest {
 
     /**
      * Getter for OutputType.
-     * Output Type for Exceptions. Mandatory. Possible values: 1.	Transactions 2.	Cards
+     * Output Type for Exceptions. Mandatory. Possible values: 1. Transactions 2. Cards
      * @return Returns the int
      */
     @JsonGetter("OutputType")
@@ -344,7 +344,7 @@ public class TransactionExceptionsRequest {
 
     /**
      * Setter for OutputType.
-     * Output Type for Exceptions. Mandatory. Possible values: 1.	Transactions 2.	Cards
+     * Output Type for Exceptions. Mandatory. Possible values: 1. Transactions 2. Cards
      * @param outputType Value for int
      */
     @JsonSetter("OutputType")

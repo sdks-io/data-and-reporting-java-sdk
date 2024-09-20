@@ -480,8 +480,8 @@ public class SearchStatementOfAccount {
 
     /**
      * Internal Getter for DueDate.
-     * Due date for payment. Format: yyyyMMdd Note: •	Clients to convert this to appropriate
-     * DateTime type. •	SoA due date is considered as the latest due date of the invoices within the
+     * Due date for payment. Format: yyyyMMdd Note: • Clients to convert this to appropriate
+     * DateTime type. • SoA due date is considered as the latest due date of the invoices within the
      * SoA
      * @return Returns the Internal String
      */
@@ -494,8 +494,8 @@ public class SearchStatementOfAccount {
 
     /**
      * Getter for DueDate.
-     * Due date for payment. Format: yyyyMMdd Note: •	Clients to convert this to appropriate
-     * DateTime type. •	SoA due date is considered as the latest due date of the invoices within the
+     * Due date for payment. Format: yyyyMMdd Note: • Clients to convert this to appropriate
+     * DateTime type. • SoA due date is considered as the latest due date of the invoices within the
      * SoA
      * @return Returns the String
      */
@@ -505,8 +505,8 @@ public class SearchStatementOfAccount {
 
     /**
      * Setter for DueDate.
-     * Due date for payment. Format: yyyyMMdd Note: •	Clients to convert this to appropriate
-     * DateTime type. •	SoA due date is considered as the latest due date of the invoices within the
+     * Due date for payment. Format: yyyyMMdd Note: • Clients to convert this to appropriate
+     * DateTime type. • SoA due date is considered as the latest due date of the invoices within the
      * SoA
      * @param dueDate Value for String
      */
@@ -517,8 +517,8 @@ public class SearchStatementOfAccount {
 
     /**
      * UnSetter for DueDate.
-     * Due date for payment. Format: yyyyMMdd Note: •	Clients to convert this to appropriate
-     * DateTime type. •	SoA due date is considered as the latest due date of the invoices within the
+     * Due date for payment. Format: yyyyMMdd Note: • Clients to convert this to appropriate
+     * DateTime type. • SoA due date is considered as the latest due date of the invoices within the
      * SoA
      */
     public void unsetDueDate() {
@@ -570,10 +570,10 @@ public class SearchStatementOfAccount {
 
     /**
      * Internal Getter for Status.
-     * Status of the document. Valid values – 1.	Paid – Fully paid all Invoices with in the SOA.
-     * 2.	Overdue – At least one invoice payment due date is less than current date with in the SOA.
-     * 3.	Due – At least one invoice is due for payment and is within the due date. There is no
-     * invoice overdue for payment.
+     * Status of the document. Valid values – 1. Paid – Fully paid all Invoices with in the SOA. 2.
+     * Overdue – At least one invoice payment due date is less than current date with in the SOA. 3.
+     * Due – At least one invoice is due for payment and is within the due date. There is no invoice
+     * overdue for payment.
      * @return Returns the Internal String
      */
     @JsonGetter("Status")
@@ -585,10 +585,10 @@ public class SearchStatementOfAccount {
 
     /**
      * Getter for Status.
-     * Status of the document. Valid values – 1.	Paid – Fully paid all Invoices with in the SOA.
-     * 2.	Overdue – At least one invoice payment due date is less than current date with in the SOA.
-     * 3.	Due – At least one invoice is due for payment and is within the due date. There is no
-     * invoice overdue for payment.
+     * Status of the document. Valid values – 1. Paid – Fully paid all Invoices with in the SOA. 2.
+     * Overdue – At least one invoice payment due date is less than current date with in the SOA. 3.
+     * Due – At least one invoice is due for payment and is within the due date. There is no invoice
+     * overdue for payment.
      * @return Returns the String
      */
     public String getStatus() {
@@ -597,10 +597,10 @@ public class SearchStatementOfAccount {
 
     /**
      * Setter for Status.
-     * Status of the document. Valid values – 1.	Paid – Fully paid all Invoices with in the SOA.
-     * 2.	Overdue – At least one invoice payment due date is less than current date with in the SOA.
-     * 3.	Due – At least one invoice is due for payment and is within the due date. There is no
-     * invoice overdue for payment.
+     * Status of the document. Valid values – 1. Paid – Fully paid all Invoices with in the SOA. 2.
+     * Overdue – At least one invoice payment due date is less than current date with in the SOA. 3.
+     * Due – At least one invoice is due for payment and is within the due date. There is no invoice
+     * overdue for payment.
      * @param status Value for String
      */
     @JsonSetter("Status")
@@ -610,10 +610,10 @@ public class SearchStatementOfAccount {
 
     /**
      * UnSetter for Status.
-     * Status of the document. Valid values – 1.	Paid – Fully paid all Invoices with in the SOA.
-     * 2.	Overdue – At least one invoice payment due date is less than current date with in the SOA.
-     * 3.	Due – At least one invoice is due for payment and is within the due date. There is no
-     * invoice overdue for payment.
+     * Status of the document. Valid values – 1. Paid – Fully paid all Invoices with in the SOA. 2.
+     * Overdue – At least one invoice payment due date is less than current date with in the SOA. 3.
+     * Due – At least one invoice is due for payment and is within the due date. There is no invoice
+     * overdue for payment.
      */
     public void unsetStatus() {
         status = null;

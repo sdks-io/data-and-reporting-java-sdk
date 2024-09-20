@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.shell.apitest.models.containers.PricedTransactionResponseTransactionsItemsLocation;
 import io.apimatic.core.types.OptionalNullable;
 import java.util.List;
 
@@ -55,7 +56,7 @@ public class PricedTransactionResponseTransactionsItems {
     private OptionalNullable<String> siteCode;
     private OptionalNullable<String> siteName;
     private OptionalNullable<String> siteCountry;
-    private List<PricedTransactionItemsLocationItems> location;
+    private List<PricedTransactionResponseTransactionsItemsLocation> location;
     private OptionalNullable<String> cardGroupName;
     private OptionalNullable<String> receiptNumber;
     private OptionalNullable<String> productCode;
@@ -190,7 +191,8 @@ public class PricedTransactionResponseTransactionsItems {
      * @param  siteCode  String value for siteCode.
      * @param  siteName  String value for siteName.
      * @param  siteCountry  String value for siteCountry.
-     * @param  location  List of PricedTransactionItemsLocationItems value for location.
+     * @param  location  List of PricedTransactionResponseTransactionsItemsLocation value for
+     *         location.
      * @param  cardGroupName  String value for cardGroupName.
      * @param  receiptNumber  String value for receiptNumber.
      * @param  productCode  String value for productCode.
@@ -322,7 +324,7 @@ public class PricedTransactionResponseTransactionsItems {
             String siteCode,
             String siteName,
             String siteCountry,
-            List<PricedTransactionItemsLocationItems> location,
+            List<PricedTransactionResponseTransactionsItemsLocation> location,
             String cardGroupName,
             String receiptNumber,
             String productCode,
@@ -583,7 +585,8 @@ public class PricedTransactionResponseTransactionsItems {
      * @param  siteCode  String value for siteCode.
      * @param  siteName  String value for siteName.
      * @param  siteCountry  String value for siteCountry.
-     * @param  location  List of PricedTransactionItemsLocationItems value for location.
+     * @param  location  List of PricedTransactionResponseTransactionsItemsLocation value for
+     *         location.
      * @param  cardGroupName  String value for cardGroupName.
      * @param  receiptNumber  String value for receiptNumber.
      * @param  productCode  String value for productCode.
@@ -702,7 +705,7 @@ public class PricedTransactionResponseTransactionsItems {
             OptionalNullable<Boolean> isInvoiced, OptionalNullable<String> invoiceNumber,
             OptionalNullable<String> invoiceDate, OptionalNullable<String> siteCode,
             OptionalNullable<String> siteName, OptionalNullable<String> siteCountry,
-            List<PricedTransactionItemsLocationItems> location,
+            List<PricedTransactionResponseTransactionsItemsLocation> location,
             OptionalNullable<String> cardGroupName, OptionalNullable<String> receiptNumber,
             OptionalNullable<String> productCode, OptionalNullable<String> productName,
             OptionalNullable<Integer> productGroupId, OptionalNullable<String> productGroupName,
@@ -2276,7 +2279,7 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Internal Getter for SiteCode.
-     * Site Code Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 -	CHARNOCK RICHARD
+     * Site Code Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 - CHARNOCK RICHARD
      * STHBOUND MWSA 0755
      * @return Returns the Internal String
      */
@@ -2289,7 +2292,7 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Getter for SiteCode.
-     * Site Code Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 -	CHARNOCK RICHARD
+     * Site Code Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 - CHARNOCK RICHARD
      * STHBOUND MWSA 0755
      * @return Returns the String
      */
@@ -2299,7 +2302,7 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Setter for SiteCode.
-     * Site Code Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 -	CHARNOCK RICHARD
+     * Site Code Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 - CHARNOCK RICHARD
      * STHBOUND MWSA 0755
      * @param siteCode Value for String
      */
@@ -2310,7 +2313,7 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * UnSetter for SiteCode.
-     * Site Code Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 -	CHARNOCK RICHARD
+     * Site Code Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 - CHARNOCK RICHARD
      * STHBOUND MWSA 0755
      */
     public void unsetSiteCode() {
@@ -2319,7 +2322,7 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Internal Getter for SiteName.
-     * Site Name Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 -	CHARNOCK RICHARD
+     * Site Name Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 - CHARNOCK RICHARD
      * STHBOUND MWSA 0755
      * @return Returns the Internal String
      */
@@ -2332,7 +2335,7 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Getter for SiteName.
-     * Site Name Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 -	CHARNOCK RICHARD
+     * Site Name Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 - CHARNOCK RICHARD
      * STHBOUND MWSA 0755
      * @return Returns the String
      */
@@ -2342,7 +2345,7 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Setter for SiteName.
-     * Site Name Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 -	CHARNOCK RICHARD
+     * Site Name Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 - CHARNOCK RICHARD
      * STHBOUND MWSA 0755
      * @param siteName Value for String
      */
@@ -2353,7 +2356,7 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * UnSetter for SiteName.
-     * Site Name Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 -	CHARNOCK RICHARD
+     * Site Name Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 - CHARNOCK RICHARD
      * STHBOUND MWSA 0755
      */
     public void unsetSiteName() {
@@ -2411,11 +2414,11 @@ public class PricedTransactionResponseTransactionsItems {
      * Getter for Location.
      * Geography Location entity for Site Location Note: - The value could be null/blank for fees
      * item
-     * @return Returns the List of PricedTransactionItemsLocationItems
+     * @return Returns the List of PricedTransactionResponseTransactionsItemsLocation
      */
     @JsonGetter("Location")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public List<PricedTransactionItemsLocationItems> getLocation() {
+    public List<PricedTransactionResponseTransactionsItemsLocation> getLocation() {
         return location;
     }
 
@@ -2423,10 +2426,10 @@ public class PricedTransactionResponseTransactionsItems {
      * Setter for Location.
      * Geography Location entity for Site Location Note: - The value could be null/blank for fees
      * item
-     * @param location Value for List of PricedTransactionItemsLocationItems
+     * @param location Value for List of PricedTransactionResponseTransactionsItemsLocation
      */
     @JsonSetter("Location")
-    public void setLocation(List<PricedTransactionItemsLocationItems> location) {
+    public void setLocation(List<PricedTransactionResponseTransactionsItemsLocation> location) {
         this.location = location;
     }
 
@@ -2510,7 +2513,7 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Internal Getter for ProductCode.
-     * Product Code 10	TMF Charges 11	Tunnel/Bridges 12	Motorway toll 13	Ferries
+     * Product Code 10 TMF Charges 11 Tunnel/Bridges 12 Motorway toll 13 Ferries
      * @return Returns the Internal String
      */
     @JsonGetter("ProductCode")
@@ -2522,7 +2525,7 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Getter for ProductCode.
-     * Product Code 10	TMF Charges 11	Tunnel/Bridges 12	Motorway toll 13	Ferries
+     * Product Code 10 TMF Charges 11 Tunnel/Bridges 12 Motorway toll 13 Ferries
      * @return Returns the String
      */
     public String getProductCode() {
@@ -2531,7 +2534,7 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Setter for ProductCode.
-     * Product Code 10	TMF Charges 11	Tunnel/Bridges 12	Motorway toll 13	Ferries
+     * Product Code 10 TMF Charges 11 Tunnel/Bridges 12 Motorway toll 13 Ferries
      * @param productCode Value for String
      */
     @JsonSetter("ProductCode")
@@ -2541,7 +2544,7 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * UnSetter for ProductCode.
-     * Product Code 10	TMF Charges 11	Tunnel/Bridges 12	Motorway toll 13	Ferries
+     * Product Code 10 TMF Charges 11 Tunnel/Bridges 12 Motorway toll 13 Ferries
      */
     public void unsetProductCode() {
         productCode = null;
@@ -2592,8 +2595,8 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Internal Getter for ProductGroupId.
-     * Product Group Id Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas 6	CNG
+     * Product Group Id Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas 6 CNG
      * @return Returns the Internal Integer
      */
     @JsonGetter("ProductGroupId")
@@ -2605,8 +2608,8 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Getter for ProductGroupId.
-     * Product Group Id Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas 6	CNG
+     * Product Group Id Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas 6 CNG
      * @return Returns the Integer
      */
     public Integer getProductGroupId() {
@@ -2615,8 +2618,8 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Setter for ProductGroupId.
-     * Product Group Id Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas 6	CNG
+     * Product Group Id Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas 6 CNG
      * @param productGroupId Value for Integer
      */
     @JsonSetter("ProductGroupId")
@@ -2626,8 +2629,8 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * UnSetter for ProductGroupId.
-     * Product Group Id Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas 6	CNG
+     * Product Group Id Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas 6 CNG
      */
     public void unsetProductGroupId() {
         productGroupId = null;
@@ -2635,8 +2638,8 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Internal Getter for ProductGroupName.
-     * Product Group Name Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas 6	CNG 7	Automotive Gas Oil
+     * Product Group Name Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas 6 CNG 7 Automotive Gas Oil
      * @return Returns the Internal String
      */
     @JsonGetter("ProductGroupName")
@@ -2648,8 +2651,8 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Getter for ProductGroupName.
-     * Product Group Name Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas 6	CNG 7	Automotive Gas Oil
+     * Product Group Name Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas 6 CNG 7 Automotive Gas Oil
      * @return Returns the String
      */
     public String getProductGroupName() {
@@ -2658,8 +2661,8 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Setter for ProductGroupName.
-     * Product Group Name Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas 6	CNG 7	Automotive Gas Oil
+     * Product Group Name Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas 6 CNG 7 Automotive Gas Oil
      * @param productGroupName Value for String
      */
     @JsonSetter("ProductGroupName")
@@ -2669,8 +2672,8 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * UnSetter for ProductGroupName.
-     * Product Group Name Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas 6	CNG 7	Automotive Gas Oil
+     * Product Group Name Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas 6 CNG 7 Automotive Gas Oil
      */
     public void unsetProductGroupName() {
         productGroupName = null;
@@ -2799,8 +2802,8 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Internal Getter for Network.
-     * Network as configured in GFN (Shell PH, ESSO, etc.,) 100013	STEINDORFER 100015	S.A. BELGIAN
-     * SHELL N.V. 100016	ESSO BE Note: - The value could be null/blank for fees item
+     * Network as configured in GFN (Shell PH, ESSO, etc.,) 100013 STEINDORFER 100015 S.A. BELGIAN
+     * SHELL N.V. 100016 ESSO BE Note: - The value could be null/blank for fees item
      * @return Returns the Internal String
      */
     @JsonGetter("Network")
@@ -2812,8 +2815,8 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Getter for Network.
-     * Network as configured in GFN (Shell PH, ESSO, etc.,) 100013	STEINDORFER 100015	S.A. BELGIAN
-     * SHELL N.V. 100016	ESSO BE Note: - The value could be null/blank for fees item
+     * Network as configured in GFN (Shell PH, ESSO, etc.,) 100013 STEINDORFER 100015 S.A. BELGIAN
+     * SHELL N.V. 100016 ESSO BE Note: - The value could be null/blank for fees item
      * @return Returns the String
      */
     public String getNetwork() {
@@ -2822,8 +2825,8 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Setter for Network.
-     * Network as configured in GFN (Shell PH, ESSO, etc.,) 100013	STEINDORFER 100015	S.A. BELGIAN
-     * SHELL N.V. 100016	ESSO BE Note: - The value could be null/blank for fees item
+     * Network as configured in GFN (Shell PH, ESSO, etc.,) 100013 STEINDORFER 100015 S.A. BELGIAN
+     * SHELL N.V. 100016 ESSO BE Note: - The value could be null/blank for fees item
      * @param network Value for String
      */
     @JsonSetter("Network")
@@ -2833,8 +2836,8 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * UnSetter for Network.
-     * Network as configured in GFN (Shell PH, ESSO, etc.,) 100013	STEINDORFER 100015	S.A. BELGIAN
-     * SHELL N.V. 100016	ESSO BE Note: - The value could be null/blank for fees item
+     * Network as configured in GFN (Shell PH, ESSO, etc.,) 100013 STEINDORFER 100015 S.A. BELGIAN
+     * SHELL N.V. 100016 ESSO BE Note: - The value could be null/blank for fees item
      */
     public void unsetNetwork() {
         network = null;
@@ -4520,9 +4523,9 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Internal Getter for DisputeStatus.
-     * Sales Item Dispute Status if disputed 0	No Dispute 1	In Dispute 2	Re-Instated 3	Adjusted
-     * 4	Written Off by Colco 5	Written Off by Delco 6	Charged Back to Site Note: - The value could
-     * be null/blank for fees item.
+     * Sales Item Dispute Status if disputed 0 No Dispute 1 In Dispute 2 Re-Instated 3 Adjusted 4
+     * Written Off by Colco 5 Written Off by Delco 6 Charged Back to Site Note: - The value could be
+     * null/blank for fees item.
      * @return Returns the Internal String
      */
     @JsonGetter("DisputeStatus")
@@ -4534,9 +4537,9 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Getter for DisputeStatus.
-     * Sales Item Dispute Status if disputed 0	No Dispute 1	In Dispute 2	Re-Instated 3	Adjusted
-     * 4	Written Off by Colco 5	Written Off by Delco 6	Charged Back to Site Note: - The value could
-     * be null/blank for fees item.
+     * Sales Item Dispute Status if disputed 0 No Dispute 1 In Dispute 2 Re-Instated 3 Adjusted 4
+     * Written Off by Colco 5 Written Off by Delco 6 Charged Back to Site Note: - The value could be
+     * null/blank for fees item.
      * @return Returns the String
      */
     public String getDisputeStatus() {
@@ -4545,9 +4548,9 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * Setter for DisputeStatus.
-     * Sales Item Dispute Status if disputed 0	No Dispute 1	In Dispute 2	Re-Instated 3	Adjusted
-     * 4	Written Off by Colco 5	Written Off by Delco 6	Charged Back to Site Note: - The value could
-     * be null/blank for fees item.
+     * Sales Item Dispute Status if disputed 0 No Dispute 1 In Dispute 2 Re-Instated 3 Adjusted 4
+     * Written Off by Colco 5 Written Off by Delco 6 Charged Back to Site Note: - The value could be
+     * null/blank for fees item.
      * @param disputeStatus Value for String
      */
     @JsonSetter("DisputeStatus")
@@ -4557,9 +4560,9 @@ public class PricedTransactionResponseTransactionsItems {
 
     /**
      * UnSetter for DisputeStatus.
-     * Sales Item Dispute Status if disputed 0	No Dispute 1	In Dispute 2	Re-Instated 3	Adjusted
-     * 4	Written Off by Colco 5	Written Off by Delco 6	Charged Back to Site Note: - The value could
-     * be null/blank for fees item.
+     * Sales Item Dispute Status if disputed 0 No Dispute 1 In Dispute 2 Re-Instated 3 Adjusted 4
+     * Written Off by Colco 5 Written Off by Delco 6 Charged Back to Site Note: - The value could be
+     * null/blank for fees item.
      */
     public void unsetDisputeStatus() {
         disputeStatus = null;
@@ -6146,7 +6149,7 @@ public class PricedTransactionResponseTransactionsItems {
         private OptionalNullable<String> siteCode;
         private OptionalNullable<String> siteName;
         private OptionalNullable<String> siteCountry;
-        private List<PricedTransactionItemsLocationItems> location;
+        private List<PricedTransactionResponseTransactionsItemsLocation> location;
         private OptionalNullable<String> cardGroupName;
         private OptionalNullable<String> receiptNumber;
         private OptionalNullable<String> productCode;
@@ -6964,10 +6967,12 @@ public class PricedTransactionResponseTransactionsItems {
 
         /**
          * Setter for location.
-         * @param  location  List of PricedTransactionItemsLocationItems value for location.
+         * @param  location  List of PricedTransactionResponseTransactionsItemsLocation value for
+         *         location.
          * @return Builder
          */
-        public Builder location(List<PricedTransactionItemsLocationItems> location) {
+        public Builder location(
+                List<PricedTransactionResponseTransactionsItemsLocation> location) {
             this.location = location;
             return this;
         }

@@ -669,8 +669,8 @@ public class TransactionFeesRequest {
 
     /**
      * Internal Getter for Period.
-     * Fee items Period. This is ignored when FromDate/Todate is supplied on the request. 1.	Last 7
-     * Days 2.	Last 30 Days 3.	Last 90 Days 4.	Last 180 Days Example : Pass 1 for Last 7 days fee
+     * Fee items Period. This is ignored when FromDate/Todate is supplied on the request. 1. Last 7
+     * Days 2. Last 30 Days 3. Last 90 Days 4. Last 180 Days Example : Pass 1 for Last 7 days fee
      * items
      * @return Returns the Internal Integer
      */
@@ -683,8 +683,8 @@ public class TransactionFeesRequest {
 
     /**
      * Getter for Period.
-     * Fee items Period. This is ignored when FromDate/Todate is supplied on the request. 1.	Last 7
-     * Days 2.	Last 30 Days 3.	Last 90 Days 4.	Last 180 Days Example : Pass 1 for Last 7 days fee
+     * Fee items Period. This is ignored when FromDate/Todate is supplied on the request. 1. Last 7
+     * Days 2. Last 30 Days 3. Last 90 Days 4. Last 180 Days Example : Pass 1 for Last 7 days fee
      * items
      * @return Returns the Integer
      */
@@ -694,8 +694,8 @@ public class TransactionFeesRequest {
 
     /**
      * Setter for Period.
-     * Fee items Period. This is ignored when FromDate/Todate is supplied on the request. 1.	Last 7
-     * Days 2.	Last 30 Days 3.	Last 90 Days 4.	Last 180 Days Example : Pass 1 for Last 7 days fee
+     * Fee items Period. This is ignored when FromDate/Todate is supplied on the request. 1. Last 7
+     * Days 2. Last 30 Days 3. Last 90 Days 4. Last 180 Days Example : Pass 1 for Last 7 days fee
      * items
      * @param period Value for Integer
      */
@@ -706,8 +706,8 @@ public class TransactionFeesRequest {
 
     /**
      * UnSetter for Period.
-     * Fee items Period. This is ignored when FromDate/Todate is supplied on the request. 1.	Last 7
-     * Days 2.	Last 30 Days 3.	Last 90 Days 4.	Last 180 Days Example : Pass 1 for Last 7 days fee
+     * Fee items Period. This is ignored when FromDate/Todate is supplied on the request. 1. Last 7
+     * Days 2. Last 30 Days 3. Last 90 Days 4. Last 180 Days Example : Pass 1 for Last 7 days fee
      * items
      */
     public void unsetPeriod() {
@@ -755,8 +755,8 @@ public class TransactionFeesRequest {
 
     /**
      * Internal Getter for ProductId.
-     * Product Id Optional Example: Sample list of product ids and description. 100	Service fee
-     * 102	Invoice production fee 103	Account fee 104	Transaction fee 105	Card membership fee
+     * Product Id Optional Example: Sample list of product ids and description. 100 Service fee 102
+     * Invoice production fee 103 Account fee 104 Transaction fee 105 Card membership fee
      * @return Returns the Internal Integer
      */
     @JsonGetter("ProductId")
@@ -768,8 +768,8 @@ public class TransactionFeesRequest {
 
     /**
      * Getter for ProductId.
-     * Product Id Optional Example: Sample list of product ids and description. 100	Service fee
-     * 102	Invoice production fee 103	Account fee 104	Transaction fee 105	Card membership fee
+     * Product Id Optional Example: Sample list of product ids and description. 100 Service fee 102
+     * Invoice production fee 103 Account fee 104 Transaction fee 105 Card membership fee
      * @return Returns the Integer
      */
     public Integer getProductId() {
@@ -778,8 +778,8 @@ public class TransactionFeesRequest {
 
     /**
      * Setter for ProductId.
-     * Product Id Optional Example: Sample list of product ids and description. 100	Service fee
-     * 102	Invoice production fee 103	Account fee 104	Transaction fee 105	Card membership fee
+     * Product Id Optional Example: Sample list of product ids and description. 100 Service fee 102
+     * Invoice production fee 103 Account fee 104 Transaction fee 105 Card membership fee
      * @param productId Value for Integer
      */
     @JsonSetter("ProductId")
@@ -789,8 +789,8 @@ public class TransactionFeesRequest {
 
     /**
      * UnSetter for ProductId.
-     * Product Id Optional Example: Sample list of product ids and description. 100	Service fee
-     * 102	Invoice production fee 103	Account fee 104	Transaction fee 105	Card membership fee
+     * Product Id Optional Example: Sample list of product ids and description. 100 Service fee 102
+     * Invoice production fee 103 Account fee 104 Transaction fee 105 Card membership fee
      */
     public void unsetProductId() {
         productId = null;
@@ -888,8 +888,8 @@ public class TransactionFeesRequest {
 
     /**
      * Internal Getter for SortOrder.
-     * Allowed Sorting Options: •	FeeDateAscending •	FeeDateDescending •	NetAmountAscending
-     * •	NetAmountDescending Optional. Default: 1
+     * Allowed Sorting Options: • FeeDateAscending • FeeDateDescending • NetAmountAscending •
+     * NetAmountDescending Optional. Default: 1
      * @return Returns the Internal String
      */
     @JsonGetter("SortOrder")
@@ -901,8 +901,8 @@ public class TransactionFeesRequest {
 
     /**
      * Getter for SortOrder.
-     * Allowed Sorting Options: •	FeeDateAscending •	FeeDateDescending •	NetAmountAscending
-     * •	NetAmountDescending Optional. Default: 1
+     * Allowed Sorting Options: • FeeDateAscending • FeeDateDescending • NetAmountAscending •
+     * NetAmountDescending Optional. Default: 1
      * @return Returns the String
      */
     public String getSortOrder() {
@@ -911,8 +911,8 @@ public class TransactionFeesRequest {
 
     /**
      * Setter for SortOrder.
-     * Allowed Sorting Options: •	FeeDateAscending •	FeeDateDescending •	NetAmountAscending
-     * •	NetAmountDescending Optional. Default: 1
+     * Allowed Sorting Options: • FeeDateAscending • FeeDateDescending • NetAmountAscending •
+     * NetAmountDescending Optional. Default: 1
      * @param sortOrder Value for String
      */
     @JsonSetter("SortOrder")
@@ -922,8 +922,8 @@ public class TransactionFeesRequest {
 
     /**
      * UnSetter for SortOrder.
-     * Allowed Sorting Options: •	FeeDateAscending •	FeeDateDescending •	NetAmountAscending
-     * •	NetAmountDescending Optional. Default: 1
+     * Allowed Sorting Options: • FeeDateAscending • FeeDateDescending • NetAmountAscending •
+     * NetAmountDescending Optional. Default: 1
      */
     public void unsetSortOrder() {
         sortOrder = null;

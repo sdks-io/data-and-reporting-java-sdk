@@ -294,8 +294,8 @@ public class SearchDocReq {
 
     /**
      * Internal Getter for InvoiceStatus.
-     * The status of the invoices Optional One of the following values: •	NEW •	VIEWED •	DOWNLOADED
-     * •	RESTORED
+     * The status of the invoices Optional One of the following values: • NEW • VIEWED • DOWNLOADED
+     * • RESTORED
      * @return Returns the Internal String
      */
     @JsonGetter("InvoiceStatus")
@@ -307,8 +307,8 @@ public class SearchDocReq {
 
     /**
      * Getter for InvoiceStatus.
-     * The status of the invoices Optional One of the following values: •	NEW •	VIEWED •	DOWNLOADED
-     * •	RESTORED
+     * The status of the invoices Optional One of the following values: • NEW • VIEWED • DOWNLOADED
+     * • RESTORED
      * @return Returns the String
      */
     public String getInvoiceStatus() {
@@ -317,8 +317,8 @@ public class SearchDocReq {
 
     /**
      * Setter for InvoiceStatus.
-     * The status of the invoices Optional One of the following values: •	NEW •	VIEWED •	DOWNLOADED
-     * •	RESTORED
+     * The status of the invoices Optional One of the following values: • NEW • VIEWED • DOWNLOADED
+     * • RESTORED
      * @param invoiceStatus Value for String
      */
     @JsonSetter("InvoiceStatus")
@@ -328,8 +328,8 @@ public class SearchDocReq {
 
     /**
      * UnSetter for InvoiceStatus.
-     * The status of the invoices Optional One of the following values: •	NEW •	VIEWED •	DOWNLOADED
-     * •	RESTORED
+     * The status of the invoices Optional One of the following values: • NEW • VIEWED • DOWNLOADED
+     * • RESTORED
      */
     public void unsetInvoiceStatus() {
         invoiceStatus = null;
@@ -534,8 +534,8 @@ public class SearchDocReq {
      * Internal Getter for GrossAmountOperator.
      * Criteria on the gross amount, for instance use GT when to retrieve the invoices for that
      * gross amount is greater than the given amount on GrossAmount parameter above. Optional This
-     * parameter will be ignored if GrossAmount parameter is not set. One of the following values:
-     * •	LT (Less Than) •	LE (Lesser or Equal) •	EQ (equal) •	GE (Greater or equal) •	GT (Greater
+     * parameter will be ignored if GrossAmount parameter is not set. One of the following values: •
+     * LT (Less Than) • LE (Lesser or Equal) • EQ (equal) • GE (Greater or equal) • GT (Greater
      * than)
      * @return Returns the Internal String
      */
@@ -550,8 +550,8 @@ public class SearchDocReq {
      * Getter for GrossAmountOperator.
      * Criteria on the gross amount, for instance use GT when to retrieve the invoices for that
      * gross amount is greater than the given amount on GrossAmount parameter above. Optional This
-     * parameter will be ignored if GrossAmount parameter is not set. One of the following values:
-     * •	LT (Less Than) •	LE (Lesser or Equal) •	EQ (equal) •	GE (Greater or equal) •	GT (Greater
+     * parameter will be ignored if GrossAmount parameter is not set. One of the following values: •
+     * LT (Less Than) • LE (Lesser or Equal) • EQ (equal) • GE (Greater or equal) • GT (Greater
      * than)
      * @return Returns the String
      */
@@ -563,8 +563,8 @@ public class SearchDocReq {
      * Setter for GrossAmountOperator.
      * Criteria on the gross amount, for instance use GT when to retrieve the invoices for that
      * gross amount is greater than the given amount on GrossAmount parameter above. Optional This
-     * parameter will be ignored if GrossAmount parameter is not set. One of the following values:
-     * •	LT (Less Than) •	LE (Lesser or Equal) •	EQ (equal) •	GE (Greater or equal) •	GT (Greater
+     * parameter will be ignored if GrossAmount parameter is not set. One of the following values: •
+     * LT (Less Than) • LE (Lesser or Equal) • EQ (equal) • GE (Greater or equal) • GT (Greater
      * than)
      * @param grossAmountOperator Value for String
      */
@@ -577,8 +577,8 @@ public class SearchDocReq {
      * UnSetter for GrossAmountOperator.
      * Criteria on the gross amount, for instance use GT when to retrieve the invoices for that
      * gross amount is greater than the given amount on GrossAmount parameter above. Optional This
-     * parameter will be ignored if GrossAmount parameter is not set. One of the following values:
-     * •	LT (Less Than) •	LE (Lesser or Equal) •	EQ (equal) •	GE (Greater or equal) •	GT (Greater
+     * parameter will be ignored if GrossAmount parameter is not set. One of the following values: •
+     * LT (Less Than) • LE (Lesser or Equal) • EQ (equal) • GE (Greater or equal) • GT (Greater
      * than)
      */
     public void unsetGrossAmountOperator() {
@@ -587,8 +587,8 @@ public class SearchDocReq {
 
     /**
      * Internal Getter for DocumentType.
-     * Document Type Optional One of the following values: •	NAT (National) •	INT (International)
-     * •	SOA (Statement of Account)
+     * Document Type Optional One of the following values: • NAT (National) • INT (International) •
+     * SOA (Statement of Account)
      * @return Returns the Internal String
      */
     @JsonGetter("DocumentType")
@@ -600,8 +600,8 @@ public class SearchDocReq {
 
     /**
      * Getter for DocumentType.
-     * Document Type Optional One of the following values: •	NAT (National) •	INT (International)
-     * •	SOA (Statement of Account)
+     * Document Type Optional One of the following values: • NAT (National) • INT (International) •
+     * SOA (Statement of Account)
      * @return Returns the String
      */
     public String getDocumentType() {
@@ -610,8 +610,8 @@ public class SearchDocReq {
 
     /**
      * Setter for DocumentType.
-     * Document Type Optional One of the following values: •	NAT (National) •	INT (International)
-     * •	SOA (Statement of Account)
+     * Document Type Optional One of the following values: • NAT (National) • INT (International) •
+     * SOA (Statement of Account)
      * @param documentType Value for String
      */
     @JsonSetter("DocumentType")
@@ -621,8 +621,8 @@ public class SearchDocReq {
 
     /**
      * UnSetter for DocumentType.
-     * Document Type Optional One of the following values: •	NAT (National) •	INT (International)
-     * •	SOA (Statement of Account)
+     * Document Type Optional One of the following values: • NAT (National) • INT (International) •
+     * SOA (Statement of Account)
      */
     public void unsetDocumentType() {
         documentType = null;

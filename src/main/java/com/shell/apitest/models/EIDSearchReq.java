@@ -274,7 +274,7 @@ public class EIDSearchReq {
 
     /**
      * Internal Getter for InvoiceType.
-     * Invoice type. Optional. Possible values: •	NAT (National) •	INT (International)
+     * Invoice type. Optional. Possible values: • NAT (National) • INT (International)
      * @return Returns the Internal String
      */
     @JsonGetter("InvoiceType")
@@ -286,7 +286,7 @@ public class EIDSearchReq {
 
     /**
      * Getter for InvoiceType.
-     * Invoice type. Optional. Possible values: •	NAT (National) •	INT (International)
+     * Invoice type. Optional. Possible values: • NAT (National) • INT (International)
      * @return Returns the String
      */
     public String getInvoiceType() {
@@ -295,7 +295,7 @@ public class EIDSearchReq {
 
     /**
      * Setter for InvoiceType.
-     * Invoice type. Optional. Possible values: •	NAT (National) •	INT (International)
+     * Invoice type. Optional. Possible values: • NAT (National) • INT (International)
      * @param invoiceType Value for String
      */
     @JsonSetter("InvoiceType")
@@ -305,7 +305,7 @@ public class EIDSearchReq {
 
     /**
      * UnSetter for InvoiceType.
-     * Invoice type. Optional. Possible values: •	NAT (National) •	INT (International)
+     * Invoice type. Optional. Possible values: • NAT (National) • INT (International)
      */
     public void unsetInvoiceType() {
         invoiceType = null;
@@ -313,7 +313,7 @@ public class EIDSearchReq {
 
     /**
      * Internal Getter for InvoiceStatus.
-     * Status of the document. Optional. Possible values: •	NEW •	VIEWED •	DOWNLOADED •	RESTORED
+     * Status of the document. Optional. Possible values: • NEW • VIEWED • DOWNLOADED • RESTORED
      * @return Returns the Internal String
      */
     @JsonGetter("InvoiceStatus")
@@ -325,7 +325,7 @@ public class EIDSearchReq {
 
     /**
      * Getter for InvoiceStatus.
-     * Status of the document. Optional. Possible values: •	NEW •	VIEWED •	DOWNLOADED •	RESTORED
+     * Status of the document. Optional. Possible values: • NEW • VIEWED • DOWNLOADED • RESTORED
      * @return Returns the String
      */
     public String getInvoiceStatus() {
@@ -334,7 +334,7 @@ public class EIDSearchReq {
 
     /**
      * Setter for InvoiceStatus.
-     * Status of the document. Optional. Possible values: •	NEW •	VIEWED •	DOWNLOADED •	RESTORED
+     * Status of the document. Optional. Possible values: • NEW • VIEWED • DOWNLOADED • RESTORED
      * @param invoiceStatus Value for String
      */
     @JsonSetter("InvoiceStatus")
@@ -344,7 +344,7 @@ public class EIDSearchReq {
 
     /**
      * UnSetter for InvoiceStatus.
-     * Status of the document. Optional. Possible values: •	NEW •	VIEWED •	DOWNLOADED •	RESTORED
+     * Status of the document. Optional. Possible values: • NEW • VIEWED • DOWNLOADED • RESTORED
      */
     public void unsetInvoiceStatus() {
         invoiceStatus = null;

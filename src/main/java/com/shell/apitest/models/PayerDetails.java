@@ -118,7 +118,7 @@ public class PayerDetails {
     private Boolean hasActiveVolBasedPricing;
     private Boolean hasActiveVolBasedBonus;
     private Boolean hasActiveVolBasedAssociationBonus;
-    private FinanceCurrency financeCurrency;
+    private FinanceCurrency2 financeCurrency;
     private OptionalNullable<String> tollsCustomerId;
     private OptionalNullable<String> tollsColcoCountryTypeId;
     private List<CustomerContract> contracts;
@@ -241,7 +241,7 @@ public class PayerDetails {
      * @param  hasActiveVolBasedBonus  Boolean value for hasActiveVolBasedBonus.
      * @param  hasActiveVolBasedAssociationBonus  Boolean value for
      *         hasActiveVolBasedAssociationBonus.
-     * @param  financeCurrency  FinanceCurrency value for financeCurrency.
+     * @param  financeCurrency  FinanceCurrency2 value for financeCurrency.
      * @param  tollsCustomerId  String value for tollsCustomerId.
      * @param  tollsColcoCountryTypeId  String value for tollsColcoCountryTypeId.
      * @param  contracts  List of CustomerContract value for contracts.
@@ -348,7 +348,7 @@ public class PayerDetails {
             Boolean hasActiveVolBasedPricing,
             Boolean hasActiveVolBasedBonus,
             Boolean hasActiveVolBasedAssociationBonus,
-            FinanceCurrency financeCurrency,
+            FinanceCurrency2 financeCurrency,
             String tollsCustomerId,
             String tollsColcoCountryTypeId,
             List<CustomerContract> contracts) {
@@ -568,7 +568,7 @@ public class PayerDetails {
      * @param  hasActiveVolBasedBonus  Boolean value for hasActiveVolBasedBonus.
      * @param  hasActiveVolBasedAssociationBonus  Boolean value for
      *         hasActiveVolBasedAssociationBonus.
-     * @param  financeCurrency  FinanceCurrency value for financeCurrency.
+     * @param  financeCurrency  FinanceCurrency2 value for financeCurrency.
      * @param  tollsCustomerId  String value for tollsCustomerId.
      * @param  tollsColcoCountryTypeId  String value for tollsColcoCountryTypeId.
      * @param  contracts  List of CustomerContract value for contracts.
@@ -640,7 +640,7 @@ public class PayerDetails {
             List<BankAccount> payerBankAccount, Address cardDeliveryAddress,
             Address correspondanceAddress, Address billingAddress, Boolean hasActiveVolBasedPricing,
             Boolean hasActiveVolBasedBonus, Boolean hasActiveVolBasedAssociationBonus,
-            FinanceCurrency financeCurrency, OptionalNullable<String> tollsCustomerId,
+            FinanceCurrency2 financeCurrency, OptionalNullable<String> tollsCustomerId,
             OptionalNullable<String> tollsColcoCountryTypeId, List<CustomerContract> contracts) {
         this.colCoId = colCoId;
         this.colCoCode = colCoCode;
@@ -2005,8 +2005,8 @@ public class PayerDetails {
     /**
      * Internal Getter for BillingFrequencyType.
      * Billing/Invoice frequency. The frequency in which the transactions will be considered for
-     * invoicing in a bulling run E.g.: 1	Daily (all days) 2	Daily (only working days) 3	Weekly -
-     * Monday 4	Weekly – Tuesday Etc.
+     * invoicing in a bulling run E.g.: 1 Daily (all days) 2 Daily (only working days) 3 Weekly -
+     * Monday 4 Weekly – Tuesday Etc.
      * @return Returns the Internal String
      */
     @JsonGetter("BillingFrequencyType")
@@ -2019,8 +2019,8 @@ public class PayerDetails {
     /**
      * Getter for BillingFrequencyType.
      * Billing/Invoice frequency. The frequency in which the transactions will be considered for
-     * invoicing in a bulling run E.g.: 1	Daily (all days) 2	Daily (only working days) 3	Weekly -
-     * Monday 4	Weekly – Tuesday Etc.
+     * invoicing in a bulling run E.g.: 1 Daily (all days) 2 Daily (only working days) 3 Weekly -
+     * Monday 4 Weekly – Tuesday Etc.
      * @return Returns the String
      */
     public String getBillingFrequencyType() {
@@ -2030,8 +2030,8 @@ public class PayerDetails {
     /**
      * Setter for BillingFrequencyType.
      * Billing/Invoice frequency. The frequency in which the transactions will be considered for
-     * invoicing in a bulling run E.g.: 1	Daily (all days) 2	Daily (only working days) 3	Weekly -
-     * Monday 4	Weekly – Tuesday Etc.
+     * invoicing in a bulling run E.g.: 1 Daily (all days) 2 Daily (only working days) 3 Weekly -
+     * Monday 4 Weekly – Tuesday Etc.
      * @param billingFrequencyType Value for String
      */
     @JsonSetter("BillingFrequencyType")
@@ -2042,8 +2042,8 @@ public class PayerDetails {
     /**
      * UnSetter for BillingFrequencyType.
      * Billing/Invoice frequency. The frequency in which the transactions will be considered for
-     * invoicing in a bulling run E.g.: 1	Daily (all days) 2	Daily (only working days) 3	Weekly -
-     * Monday 4	Weekly – Tuesday Etc.
+     * invoicing in a bulling run E.g.: 1 Daily (all days) 2 Daily (only working days) 3 Weekly -
+     * Monday 4 Weekly – Tuesday Etc.
      */
     public void unsetBillingFrequencyType() {
         billingFrequencyType = null;
@@ -2090,8 +2090,8 @@ public class PayerDetails {
 
     /**
      * Internal Getter for BillingRunFrequnecy.
-     * Frequency at which the billing process is triggered.E.g.: 1	Daily (all days) 2	Daily (only
-     * working days) 3	Weekly - Monday 4	Weekly – Tuesday Etc.
+     * Frequency at which the billing process is triggered.E.g.: 1 Daily (all days) 2 Daily (only
+     * working days) 3 Weekly - Monday 4 Weekly – Tuesday Etc.
      * @return Returns the Internal String
      */
     @JsonGetter("BillingRunFrequnecy")
@@ -2103,8 +2103,8 @@ public class PayerDetails {
 
     /**
      * Getter for BillingRunFrequnecy.
-     * Frequency at which the billing process is triggered.E.g.: 1	Daily (all days) 2	Daily (only
-     * working days) 3	Weekly - Monday 4	Weekly – Tuesday Etc.
+     * Frequency at which the billing process is triggered.E.g.: 1 Daily (all days) 2 Daily (only
+     * working days) 3 Weekly - Monday 4 Weekly – Tuesday Etc.
      * @return Returns the String
      */
     public String getBillingRunFrequnecy() {
@@ -2113,8 +2113,8 @@ public class PayerDetails {
 
     /**
      * Setter for BillingRunFrequnecy.
-     * Frequency at which the billing process is triggered.E.g.: 1	Daily (all days) 2	Daily (only
-     * working days) 3	Weekly - Monday 4	Weekly – Tuesday Etc.
+     * Frequency at which the billing process is triggered.E.g.: 1 Daily (all days) 2 Daily (only
+     * working days) 3 Weekly - Monday 4 Weekly – Tuesday Etc.
      * @param billingRunFrequnecy Value for String
      */
     @JsonSetter("BillingRunFrequnecy")
@@ -2124,8 +2124,8 @@ public class PayerDetails {
 
     /**
      * UnSetter for BillingRunFrequnecy.
-     * Frequency at which the billing process is triggered.E.g.: 1	Daily (all days) 2	Daily (only
-     * working days) 3	Weekly - Monday 4	Weekly – Tuesday Etc.
+     * Frequency at which the billing process is triggered.E.g.: 1 Daily (all days) 2 Daily (only
+     * working days) 3 Weekly - Monday 4 Weekly – Tuesday Etc.
      */
     public void unsetBillingRunFrequnecy() {
         billingRunFrequnecy = null;
@@ -4453,24 +4453,20 @@ public class PayerDetails {
 
     /**
      * Getter for FinanceCurrency.
-     * This entity will not be present in the response if the ‘IncludeFinanceCurrency’ flag in the
-     * request is ‘false’
-     * @return Returns the FinanceCurrency
+     * @return Returns the FinanceCurrency2
      */
     @JsonGetter("FinanceCurrency")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public FinanceCurrency getFinanceCurrency() {
+    public FinanceCurrency2 getFinanceCurrency() {
         return financeCurrency;
     }
 
     /**
      * Setter for FinanceCurrency.
-     * This entity will not be present in the response if the ‘IncludeFinanceCurrency’ flag in the
-     * request is ‘false’
-     * @param financeCurrency Value for FinanceCurrency
+     * @param financeCurrency Value for FinanceCurrency2
      */
     @JsonSetter("FinanceCurrency")
-    public void setFinanceCurrency(FinanceCurrency financeCurrency) {
+    public void setFinanceCurrency(FinanceCurrency2 financeCurrency) {
         this.financeCurrency = financeCurrency;
     }
 
@@ -4519,7 +4515,7 @@ public class PayerDetails {
 
     /**
      * Internal Getter for TollsColcoCountryTypeId.
-     * String	Colco country type id in e-TM system This field will have value only when
+     * String Colco country type id in e-TM system This field will have value only when
      * ReturnTollsCustomerId is set to true in the request else set to null or empty.
      * @return Returns the Internal String
      */
@@ -4532,7 +4528,7 @@ public class PayerDetails {
 
     /**
      * Getter for TollsColcoCountryTypeId.
-     * String	Colco country type id in e-TM system This field will have value only when
+     * String Colco country type id in e-TM system This field will have value only when
      * ReturnTollsCustomerId is set to true in the request else set to null or empty.
      * @return Returns the String
      */
@@ -4542,7 +4538,7 @@ public class PayerDetails {
 
     /**
      * Setter for TollsColcoCountryTypeId.
-     * String	Colco country type id in e-TM system This field will have value only when
+     * String Colco country type id in e-TM system This field will have value only when
      * ReturnTollsCustomerId is set to true in the request else set to null or empty.
      * @param tollsColcoCountryTypeId Value for String
      */
@@ -4553,7 +4549,7 @@ public class PayerDetails {
 
     /**
      * UnSetter for TollsColcoCountryTypeId.
-     * String	Colco country type id in e-TM system This field will have value only when
+     * String Colco country type id in e-TM system This field will have value only when
      * ReturnTollsCustomerId is set to true in the request else set to null or empty.
      */
     public void unsetTollsColcoCountryTypeId() {
@@ -4874,7 +4870,7 @@ public class PayerDetails {
         private Boolean hasActiveVolBasedPricing;
         private Boolean hasActiveVolBasedBonus;
         private Boolean hasActiveVolBasedAssociationBonus;
-        private FinanceCurrency financeCurrency;
+        private FinanceCurrency2 financeCurrency;
         private OptionalNullable<String> tollsCustomerId;
         private OptionalNullable<String> tollsColcoCountryTypeId;
         private List<CustomerContract> contracts;
@@ -6671,10 +6667,10 @@ public class PayerDetails {
 
         /**
          * Setter for financeCurrency.
-         * @param  financeCurrency  FinanceCurrency value for financeCurrency.
+         * @param  financeCurrency  FinanceCurrency2 value for financeCurrency.
          * @return Builder
          */
-        public Builder financeCurrency(FinanceCurrency financeCurrency) {
+        public Builder financeCurrency(FinanceCurrency2 financeCurrency) {
             this.financeCurrency = financeCurrency;
             return this;
         }

@@ -170,7 +170,7 @@ public class PricedTransSummaryResponseTransactionsSummaryItems {
 
     /**
      * Internal Getter for ProductCode.
-     * Product Code Examples: 10	TMF Charges 11	Tunnel/Bridges 12	Motorway toll 13	Ferries
+     * Product Code Examples: 10 TMF Charges 11 Tunnel/Bridges 12 Motorway toll 13 Ferries
      * @return Returns the Internal String
      */
     @JsonGetter("ProductCode")
@@ -182,7 +182,7 @@ public class PricedTransSummaryResponseTransactionsSummaryItems {
 
     /**
      * Getter for ProductCode.
-     * Product Code Examples: 10	TMF Charges 11	Tunnel/Bridges 12	Motorway toll 13	Ferries
+     * Product Code Examples: 10 TMF Charges 11 Tunnel/Bridges 12 Motorway toll 13 Ferries
      * @return Returns the String
      */
     public String getProductCode() {
@@ -191,7 +191,7 @@ public class PricedTransSummaryResponseTransactionsSummaryItems {
 
     /**
      * Setter for ProductCode.
-     * Product Code Examples: 10	TMF Charges 11	Tunnel/Bridges 12	Motorway toll 13	Ferries
+     * Product Code Examples: 10 TMF Charges 11 Tunnel/Bridges 12 Motorway toll 13 Ferries
      * @param productCode Value for String
      */
     @JsonSetter("ProductCode")
@@ -201,7 +201,7 @@ public class PricedTransSummaryResponseTransactionsSummaryItems {
 
     /**
      * UnSetter for ProductCode.
-     * Product Code Examples: 10	TMF Charges 11	Tunnel/Bridges 12	Motorway toll 13	Ferries
+     * Product Code Examples: 10 TMF Charges 11 Tunnel/Bridges 12 Motorway toll 13 Ferries
      */
     public void unsetProductCode() {
         productCode = null;
@@ -252,8 +252,8 @@ public class PricedTransSummaryResponseTransactionsSummaryItems {
 
     /**
      * Internal Getter for ProductGroupId.
-     * Product Group Id Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas 6	CNG
+     * Product Group Id Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas 6 CNG
      * @return Returns the Internal Integer
      */
     @JsonGetter("ProductGroupId")
@@ -265,8 +265,8 @@ public class PricedTransSummaryResponseTransactionsSummaryItems {
 
     /**
      * Getter for ProductGroupId.
-     * Product Group Id Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas 6	CNG
+     * Product Group Id Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas 6 CNG
      * @return Returns the Integer
      */
     public Integer getProductGroupId() {
@@ -275,8 +275,8 @@ public class PricedTransSummaryResponseTransactionsSummaryItems {
 
     /**
      * Setter for ProductGroupId.
-     * Product Group Id Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas 6	CNG
+     * Product Group Id Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas 6 CNG
      * @param productGroupId Value for Integer
      */
     @JsonSetter("ProductGroupId")
@@ -286,8 +286,8 @@ public class PricedTransSummaryResponseTransactionsSummaryItems {
 
     /**
      * UnSetter for ProductGroupId.
-     * Product Group Id Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas 6	CNG
+     * Product Group Id Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas 6 CNG
      */
     public void unsetProductGroupId() {
         productGroupId = null;
@@ -295,8 +295,8 @@ public class PricedTransSummaryResponseTransactionsSummaryItems {
 
     /**
      * Internal Getter for ProductGroupName.
-     * Product Group Name Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas 6	CNG 7	Automotive Gas Oil
+     * Product Group Name Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas 6 CNG 7 Automotive Gas Oil
      * @return Returns the Internal String
      */
     @JsonGetter("ProductGroupName")
@@ -308,8 +308,8 @@ public class PricedTransSummaryResponseTransactionsSummaryItems {
 
     /**
      * Getter for ProductGroupName.
-     * Product Group Name Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas 6	CNG 7	Automotive Gas Oil
+     * Product Group Name Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas 6 CNG 7 Automotive Gas Oil
      * @return Returns the String
      */
     public String getProductGroupName() {
@@ -318,8 +318,8 @@ public class PricedTransSummaryResponseTransactionsSummaryItems {
 
     /**
      * Setter for ProductGroupName.
-     * Product Group Name Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas 6	CNG 7	Automotive Gas Oil
+     * Product Group Name Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas 6 CNG 7 Automotive Gas Oil
      * @param productGroupName Value for String
      */
     @JsonSetter("ProductGroupName")
@@ -329,8 +329,8 @@ public class PricedTransSummaryResponseTransactionsSummaryItems {
 
     /**
      * UnSetter for ProductGroupName.
-     * Product Group Name Example: 1	Parent Product Group 2	All Fuels 3	Motor gasoline 4	2 stroke
-     * 5	Autogas 6	CNG 7	Automotive Gas Oil
+     * Product Group Name Example: 1 Parent Product Group 2 All Fuels 3 Motor gasoline 4 2 stroke 5
+     * Autogas 6 CNG 7 Automotive Gas Oil
      */
     public void unsetProductGroupName() {
         productGroupName = null;

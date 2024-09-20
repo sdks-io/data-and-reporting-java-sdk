@@ -14,7 +14,7 @@
 | `PayerName` | `String` | Optional | Customer payer name | String getPayerName() | setPayerName(String payerName) |
 | `AccountNumber` | `String` | Optional | Account Number<br>Example: GB99215176 | String getAccountNumber() | setAccountNumber(String accountNumber) |
 | `AccountName` | `String` | Optional | Invoice account name | String getAccountName() | setAccountName(String accountName) |
-| `DocumentType` | `String` | Optional | Document type<br>String containing one of the following values:<br>•	NAT (National)<br>•	INT (International)<br>•	SOA (Statement of Account) | String getDocumentType() | setDocumentType(String documentType) |
+| `DocumentType` | `String` | Optional | Document type<br>String containing one of the following values:<br>•    NAT (National)<br>•    INT (International)<br>•    SOA (Statement of Account) | String getDocumentType() | setDocumentType(String documentType) |
 | `GrossAmount` | `Double` | Optional | Included tax amount in the invoice | Double getGrossAmount() | setGrossAmount(Double grossAmount) |
 | `NetAmount` | `Double` | Optional | - | Double getNetAmount() | setNetAmount(Double netAmount) |
 | `TaxAmount` | `Double` | Optional | - | Double getTaxAmount() | setTaxAmount(Double taxAmount) |

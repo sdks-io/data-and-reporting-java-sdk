@@ -381,8 +381,8 @@ public class PriceTransSummaryRequest {
 
     /**
      * Getter for ProductId.
-     * Product Id Example: 21	Unleaded - High octane 22	Unleaded - Medium octane 23	Unleaded - Low
-     * octane 24	Unleaded Environmental
+     * Product Id Example: 21 Unleaded - High octane 22 Unleaded - Medium octane 23 Unleaded - Low
+     * octane 24 Unleaded Environmental
      * @return Returns the Integer
      */
     @JsonGetter("ProductId")
@@ -393,8 +393,8 @@ public class PriceTransSummaryRequest {
 
     /**
      * Setter for ProductId.
-     * Product Id Example: 21	Unleaded - High octane 22	Unleaded - Medium octane 23	Unleaded - Low
-     * octane 24	Unleaded Environmental
+     * Product Id Example: 21 Unleaded - High octane 22 Unleaded - Medium octane 23 Unleaded - Low
+     * octane 24 Unleaded Environmental
      * @param productId Value for Integer
      */
     @JsonSetter("ProductId")
@@ -404,8 +404,8 @@ public class PriceTransSummaryRequest {
 
     /**
      * Getter for ProductCode.
-     * Product Code – Global as per GFN configuration Optional Max Length: 8 Example: 10	TMF Charges
-     * 11	Tunnel/Bridges 12	Motorway toll 13	Ferries
+     * Product Code – Global as per GFN configuration Optional Max Length: 8 Example: 10 TMF Charges
+     * 11 Tunnel/Bridges 12 Motorway toll 13 Ferries
      * @return Returns the String
      */
     @JsonGetter("ProductCode")
@@ -416,8 +416,8 @@ public class PriceTransSummaryRequest {
 
     /**
      * Setter for ProductCode.
-     * Product Code – Global as per GFN configuration Optional Max Length: 8 Example: 10	TMF Charges
-     * 11	Tunnel/Bridges 12	Motorway toll 13	Ferries
+     * Product Code – Global as per GFN configuration Optional Max Length: 8 Example: 10 TMF Charges
+     * 11 Tunnel/Bridges 12 Motorway toll 13 Ferries
      * @param productCode Value for String
      */
     @JsonSetter("ProductCode")
@@ -523,7 +523,7 @@ public class PriceTransSummaryRequest {
 
     /**
      * Getter for Period.
-     * Transactions Period. Possible values are: 1.	Last 7 Days 2.	Last 30 Days 3.	Last 90 Days
+     * Transactions Period. Possible values are: 1. Last 7 Days 2. Last 30 Days 3. Last 90 Days
      * Optional - Refer introduction section of this operation for the priority and sequence of
      * different date and invoice number filters that are conditionally applied.
      * @return Returns the Integer
@@ -536,7 +536,7 @@ public class PriceTransSummaryRequest {
 
     /**
      * Setter for Period.
-     * Transactions Period. Possible values are: 1.	Last 7 Days 2.	Last 30 Days 3.	Last 90 Days
+     * Transactions Period. Possible values are: 1. Last 7 Days 2. Last 30 Days 3. Last 90 Days
      * Optional - Refer introduction section of this operation for the priority and sequence of
      * different date and invoice number filters that are conditionally applied.
      * @param period Value for Integer
@@ -548,10 +548,9 @@ public class PriceTransSummaryRequest {
 
     /**
      * Getter for SiteCode.
-     * Site Code as configured in GFN Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755 050002
-     * -	CHARNOCK RICHARD STHBOUND MWSA 0755 050005 -	HARTSHEAD MOOR EASTBOUND MWSA 0761. 050006
-     * -	HARTSHEAD MOOR WESTBOUND MWSA. Note: If IncludeFees is true then this filter will be
-     * ignored
+     * Site Code as configured in GFN Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 -
+     * CHARNOCK RICHARD STHBOUND MWSA 0755 050005 - HARTSHEAD MOOR EASTBOUND MWSA 0761. 050006 -
+     * HARTSHEAD MOOR WESTBOUND MWSA. Note: If IncludeFees is true then this filter will be ignored
      * @return Returns the String
      */
     @JsonGetter("SiteCode")
@@ -562,10 +561,9 @@ public class PriceTransSummaryRequest {
 
     /**
      * Setter for SiteCode.
-     * Site Code as configured in GFN Example: 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755 050002
-     * -	CHARNOCK RICHARD STHBOUND MWSA 0755 050005 -	HARTSHEAD MOOR EASTBOUND MWSA 0761. 050006
-     * -	HARTSHEAD MOOR WESTBOUND MWSA. Note: If IncludeFees is true then this filter will be
-     * ignored
+     * Site Code as configured in GFN Example: 050001 - CHARNOCK RICHARD NTHBOUND MWSA 0755 050002 -
+     * CHARNOCK RICHARD STHBOUND MWSA 0755 050005 - HARTSHEAD MOOR EASTBOUND MWSA 0761. 050006 -
+     * HARTSHEAD MOOR WESTBOUND MWSA. Note: If IncludeFees is true then this filter will be ignored
      * @param siteCode Value for String
      */
     @JsonSetter("SiteCode")

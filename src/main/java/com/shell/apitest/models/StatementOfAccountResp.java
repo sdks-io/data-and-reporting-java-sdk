@@ -17,7 +17,7 @@ import java.util.List;
  * This is a model class for StatementOfAccountResp type.
  */
 public class StatementOfAccountResp {
-    private LastStatementOfAccount lastStatementOfAccount;
+    private LastStatementOfAccount2 lastStatementOfAccount;
     private OptionalNullable<List<MonthlyInvoiceTrend>> monthlyInvoiceTrend;
     private List<PastStatementOfAccounts> pastStatementOfAccounts;
     private OptionalNullable<List<PaymentsSinceLastSOA>> paymentsSinceLastSOA;
@@ -31,7 +31,7 @@ public class StatementOfAccountResp {
 
     /**
      * Initialization constructor.
-     * @param  lastStatementOfAccount  LastStatementOfAccount value for lastStatementOfAccount.
+     * @param  lastStatementOfAccount  LastStatementOfAccount2 value for lastStatementOfAccount.
      * @param  monthlyInvoiceTrend  List of MonthlyInvoiceTrend value for monthlyInvoiceTrend.
      * @param  pastStatementOfAccounts  List of PastStatementOfAccounts value for
      *         pastStatementOfAccounts.
@@ -39,7 +39,7 @@ public class StatementOfAccountResp {
      * @param  invoicesSummaries  List of InvoicesSummaries value for invoicesSummaries.
      */
     public StatementOfAccountResp(
-            LastStatementOfAccount lastStatementOfAccount,
+            LastStatementOfAccount2 lastStatementOfAccount,
             List<MonthlyInvoiceTrend> monthlyInvoiceTrend,
             List<PastStatementOfAccounts> pastStatementOfAccounts,
             List<PaymentsSinceLastSOA> paymentsSinceLastSOA,
@@ -53,7 +53,7 @@ public class StatementOfAccountResp {
 
     /**
      * Initialization constructor.
-     * @param  lastStatementOfAccount  LastStatementOfAccount value for lastStatementOfAccount.
+     * @param  lastStatementOfAccount  LastStatementOfAccount2 value for lastStatementOfAccount.
      * @param  monthlyInvoiceTrend  List of MonthlyInvoiceTrend value for monthlyInvoiceTrend.
      * @param  pastStatementOfAccounts  List of PastStatementOfAccounts value for
      *         pastStatementOfAccounts.
@@ -61,7 +61,7 @@ public class StatementOfAccountResp {
      * @param  invoicesSummaries  List of InvoicesSummaries value for invoicesSummaries.
      */
 
-    protected StatementOfAccountResp(LastStatementOfAccount lastStatementOfAccount,
+    protected StatementOfAccountResp(LastStatementOfAccount2 lastStatementOfAccount,
             OptionalNullable<List<MonthlyInvoiceTrend>> monthlyInvoiceTrend,
             List<PastStatementOfAccounts> pastStatementOfAccounts,
             OptionalNullable<List<PaymentsSinceLastSOA>> paymentsSinceLastSOA,
@@ -75,22 +75,20 @@ public class StatementOfAccountResp {
 
     /**
      * Getter for LastStatementOfAccount.
-     * Latest statement of the account generated for the given Payer.
-     * @return Returns the LastStatementOfAccount
+     * @return Returns the LastStatementOfAccount2
      */
     @JsonGetter("LastStatementOfAccount")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public LastStatementOfAccount getLastStatementOfAccount() {
+    public LastStatementOfAccount2 getLastStatementOfAccount() {
         return lastStatementOfAccount;
     }
 
     /**
      * Setter for LastStatementOfAccount.
-     * Latest statement of the account generated for the given Payer.
-     * @param lastStatementOfAccount Value for LastStatementOfAccount
+     * @param lastStatementOfAccount Value for LastStatementOfAccount2
      */
     @JsonSetter("LastStatementOfAccount")
-    public void setLastStatementOfAccount(LastStatementOfAccount lastStatementOfAccount) {
+    public void setLastStatementOfAccount(LastStatementOfAccount2 lastStatementOfAccount) {
         this.lastStatementOfAccount = lastStatementOfAccount;
     }
 
@@ -249,7 +247,7 @@ public class StatementOfAccountResp {
      * Class to build instances of {@link StatementOfAccountResp}.
      */
     public static class Builder {
-        private LastStatementOfAccount lastStatementOfAccount;
+        private LastStatementOfAccount2 lastStatementOfAccount;
         private OptionalNullable<List<MonthlyInvoiceTrend>> monthlyInvoiceTrend;
         private List<PastStatementOfAccounts> pastStatementOfAccounts;
         private OptionalNullable<List<PaymentsSinceLastSOA>> paymentsSinceLastSOA;
@@ -259,10 +257,10 @@ public class StatementOfAccountResp {
 
         /**
          * Setter for lastStatementOfAccount.
-         * @param  lastStatementOfAccount  LastStatementOfAccount value for lastStatementOfAccount.
+         * @param  lastStatementOfAccount  LastStatementOfAccount2 value for lastStatementOfAccount.
          * @return Builder
          */
-        public Builder lastStatementOfAccount(LastStatementOfAccount lastStatementOfAccount) {
+        public Builder lastStatementOfAccount(LastStatementOfAccount2 lastStatementOfAccount) {
             this.lastStatementOfAccount = lastStatementOfAccount;
             return this;
         }

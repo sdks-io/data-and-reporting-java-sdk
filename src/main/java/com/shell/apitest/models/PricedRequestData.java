@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class PricedRequestData {
     private String colCoCode;
-    private PricedTransactionReqV2InvoiceStatusEnum invoiceStatus;
+    private Object invoiceStatus;
     private String payerNumber;
     private OptionalNullable<Integer> accountId;
     private OptionalNullable<String> accountNumber;
@@ -66,7 +66,7 @@ public class PricedRequestData {
     /**
      * Initialization constructor.
      * @param  colCoCode  String value for colCoCode.
-     * @param  invoiceStatus  PricedTransactionReqV2InvoiceStatusEnum value for invoiceStatus.
+     * @param  invoiceStatus  Object value for invoiceStatus.
      * @param  payerNumber  String value for payerNumber.
      * @param  accountId  Integer value for accountId.
      * @param  accountNumber  String value for accountNumber.
@@ -105,7 +105,7 @@ public class PricedRequestData {
      */
     public PricedRequestData(
             String colCoCode,
-            PricedTransactionReqV2InvoiceStatusEnum invoiceStatus,
+            Object invoiceStatus,
             String payerNumber,
             Integer accountId,
             String accountNumber,
@@ -183,7 +183,7 @@ public class PricedRequestData {
     /**
      * Initialization constructor.
      * @param  colCoCode  String value for colCoCode.
-     * @param  invoiceStatus  PricedTransactionReqV2InvoiceStatusEnum value for invoiceStatus.
+     * @param  invoiceStatus  Object value for invoiceStatus.
      * @param  payerNumber  String value for payerNumber.
      * @param  accountId  Integer value for accountId.
      * @param  accountNumber  String value for accountNumber.
@@ -221,8 +221,7 @@ public class PricedRequestData {
      * @param  transactionId  String value for transactionId.
      */
 
-    protected PricedRequestData(String colCoCode,
-            PricedTransactionReqV2InvoiceStatusEnum invoiceStatus, String payerNumber,
+    protected PricedRequestData(String colCoCode, Object invoiceStatus, String payerNumber,
             OptionalNullable<Integer> accountId, OptionalNullable<String> accountNumber,
             OptionalNullable<String> driverName, OptionalNullable<Integer> cardGroupId,
             OptionalNullable<String> cardPAN, OptionalNullable<String> productCode,
@@ -302,23 +301,19 @@ public class PricedRequestData {
 
     /**
      * Getter for InvoiceStatus.
-     * Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U – Un-Invoiced,
-     * A – All
-     * @return Returns the PricedTransactionReqV2InvoiceStatusEnum
+     * @return Returns the Object
      */
     @JsonGetter("InvoiceStatus")
-    public PricedTransactionReqV2InvoiceStatusEnum getInvoiceStatus() {
+    public Object getInvoiceStatus() {
         return invoiceStatus;
     }
 
     /**
      * Setter for InvoiceStatus.
-     * Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U – Un-Invoiced,
-     * A – All
-     * @param invoiceStatus Value for PricedTransactionReqV2InvoiceStatusEnum
+     * @param invoiceStatus Value for Object
      */
     @JsonSetter("InvoiceStatus")
-    public void setInvoiceStatus(PricedTransactionReqV2InvoiceStatusEnum invoiceStatus) {
+    public void setInvoiceStatus(Object invoiceStatus) {
         this.invoiceStatus = invoiceStatus;
     }
 
@@ -1030,8 +1025,6 @@ public class PricedRequestData {
 
     /**
      * Getter for SortOrder.
-     * Allowed Sorting Options 1. TransactionDateAscending 2. TransactionDateDescending 3.
-     * GrossAmountDescending 4. GrossAmountAscending 5. NetAmountAscending 6. NetAmountDescensding
      * @return Returns the PricedTransactionReqV2SortOrderEnum
      */
     @JsonGetter("SortOrder")
@@ -1042,8 +1035,6 @@ public class PricedRequestData {
 
     /**
      * Setter for SortOrder.
-     * Allowed Sorting Options 1. TransactionDateAscending 2. TransactionDateDescending 3.
-     * GrossAmountDescending 4. GrossAmountAscending 5. NetAmountAscending 6. NetAmountDescensding
      * @param sortOrder Value for PricedTransactionReqV2SortOrderEnum
      */
     @JsonSetter("SortOrder")
@@ -1131,8 +1122,6 @@ public class PricedRequestData {
 
     /**
      * Getter for Period.
-     * Pass below one of the value as per the required transaction period 1. Last 7 Days 2. Last 30
-     * Days 3. Last 90 Days
      * @return Returns the PricedTransactionReqV2PeriodEnum
      */
     @JsonGetter("Period")
@@ -1143,8 +1132,6 @@ public class PricedRequestData {
 
     /**
      * Setter for Period.
-     * Pass below one of the value as per the required transaction period 1. Last 7 Days 2. Last 30
-     * Days 3. Last 90 Days
      * @param period Value for PricedTransactionReqV2PeriodEnum
      */
     @JsonSetter("Period")
@@ -1679,7 +1666,7 @@ public class PricedRequestData {
      */
     public static class Builder {
         private String colCoCode;
-        private PricedTransactionReqV2InvoiceStatusEnum invoiceStatus;
+        private Object invoiceStatus;
         private String payerNumber;
         private OptionalNullable<Integer> accountId;
         private OptionalNullable<String> accountNumber;
@@ -1725,11 +1712,10 @@ public class PricedRequestData {
         /**
          * Initialization constructor.
          * @param  colCoCode  String value for colCoCode.
-         * @param  invoiceStatus  PricedTransactionReqV2InvoiceStatusEnum value for invoiceStatus.
+         * @param  invoiceStatus  Object value for invoiceStatus.
          * @param  payerNumber  String value for payerNumber.
          */
-        public Builder(String colCoCode, PricedTransactionReqV2InvoiceStatusEnum invoiceStatus,
-                String payerNumber) {
+        public Builder(String colCoCode, Object invoiceStatus, String payerNumber) {
             this.colCoCode = colCoCode;
             this.invoiceStatus = invoiceStatus;
             this.payerNumber = payerNumber;
@@ -1747,10 +1733,10 @@ public class PricedRequestData {
 
         /**
          * Setter for invoiceStatus.
-         * @param  invoiceStatus  PricedTransactionReqV2InvoiceStatusEnum value for invoiceStatus.
+         * @param  invoiceStatus  Object value for invoiceStatus.
          * @return Builder
          */
-        public Builder invoiceStatus(PricedTransactionReqV2InvoiceStatusEnum invoiceStatus) {
+        public Builder invoiceStatus(Object invoiceStatus) {
             this.invoiceStatus = invoiceStatus;
             return this;
         }

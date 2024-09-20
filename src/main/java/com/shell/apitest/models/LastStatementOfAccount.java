@@ -884,8 +884,8 @@ public class LastStatementOfAccount {
 
     /**
      * Internal Getter for PaymentMethod.
-     * Payment method description of the Payer. Example: Id &amp; Description •	Incoming - Direct Debit
-     * •	Incoming - Cheque •	Incoming - Direct Debit A •	Incoming - Bank Transfer •	Incoming - Cash
+     * Payment method description of the Payer. Example: Id &amp; Description • Incoming - Direct Debit
+     * • Incoming - Cheque • Incoming - Direct Debit A • Incoming - Bank Transfer • Incoming - Cash
      * @return Returns the Internal String
      */
     @JsonGetter("PaymentMethod")
@@ -897,8 +897,8 @@ public class LastStatementOfAccount {
 
     /**
      * Getter for PaymentMethod.
-     * Payment method description of the Payer. Example: Id &amp; Description •	Incoming - Direct Debit
-     * •	Incoming - Cheque •	Incoming - Direct Debit A •	Incoming - Bank Transfer •	Incoming - Cash
+     * Payment method description of the Payer. Example: Id &amp; Description • Incoming - Direct Debit
+     * • Incoming - Cheque • Incoming - Direct Debit A • Incoming - Bank Transfer • Incoming - Cash
      * @return Returns the String
      */
     public String getPaymentMethod() {
@@ -907,8 +907,8 @@ public class LastStatementOfAccount {
 
     /**
      * Setter for PaymentMethod.
-     * Payment method description of the Payer. Example: Id &amp; Description •	Incoming - Direct Debit
-     * •	Incoming - Cheque •	Incoming - Direct Debit A •	Incoming - Bank Transfer •	Incoming - Cash
+     * Payment method description of the Payer. Example: Id &amp; Description • Incoming - Direct Debit
+     * • Incoming - Cheque • Incoming - Direct Debit A • Incoming - Bank Transfer • Incoming - Cash
      * @param paymentMethod Value for String
      */
     @JsonSetter("PaymentMethod")
@@ -918,8 +918,8 @@ public class LastStatementOfAccount {
 
     /**
      * UnSetter for PaymentMethod.
-     * Payment method description of the Payer. Example: Id &amp; Description •	Incoming - Direct Debit
-     * •	Incoming - Cheque •	Incoming - Direct Debit A •	Incoming - Bank Transfer •	Incoming - Cash
+     * Payment method description of the Payer. Example: Id &amp; Description • Incoming - Direct Debit
+     * • Incoming - Cheque • Incoming - Direct Debit A • Incoming - Bank Transfer • Incoming - Cash
      */
     public void unsetPaymentMethod() {
         paymentMethod = null;
@@ -927,8 +927,8 @@ public class LastStatementOfAccount {
 
     /**
      * Internal Getter for PaymentMethodId.
-     * Payment method Id of the Payer. Example: Id &amp; Description •	Incoming - Direct Debit
-     * •	Incoming - Cheque •	Incoming - Direct Debit A •	Incoming - Bank Transfer •	Incoming - Cash
+     * Payment method Id of the Payer. Example: Id &amp; Description • Incoming - Direct Debit •
+     * Incoming - Cheque • Incoming - Direct Debit A • Incoming - Bank Transfer • Incoming - Cash
      * @return Returns the Internal Integer
      */
     @JsonGetter("PaymentMethodId")
@@ -940,8 +940,8 @@ public class LastStatementOfAccount {
 
     /**
      * Getter for PaymentMethodId.
-     * Payment method Id of the Payer. Example: Id &amp; Description •	Incoming - Direct Debit
-     * •	Incoming - Cheque •	Incoming - Direct Debit A •	Incoming - Bank Transfer •	Incoming - Cash
+     * Payment method Id of the Payer. Example: Id &amp; Description • Incoming - Direct Debit •
+     * Incoming - Cheque • Incoming - Direct Debit A • Incoming - Bank Transfer • Incoming - Cash
      * @return Returns the Integer
      */
     public Integer getPaymentMethodId() {
@@ -950,8 +950,8 @@ public class LastStatementOfAccount {
 
     /**
      * Setter for PaymentMethodId.
-     * Payment method Id of the Payer. Example: Id &amp; Description •	Incoming - Direct Debit
-     * •	Incoming - Cheque •	Incoming - Direct Debit A •	Incoming - Bank Transfer •	Incoming - Cash
+     * Payment method Id of the Payer. Example: Id &amp; Description • Incoming - Direct Debit •
+     * Incoming - Cheque • Incoming - Direct Debit A • Incoming - Bank Transfer • Incoming - Cash
      * @param paymentMethodId Value for Integer
      */
     @JsonSetter("PaymentMethodId")
@@ -961,8 +961,8 @@ public class LastStatementOfAccount {
 
     /**
      * UnSetter for PaymentMethodId.
-     * Payment method Id of the Payer. Example: Id &amp; Description •	Incoming - Direct Debit
-     * •	Incoming - Cheque •	Incoming - Direct Debit A •	Incoming - Bank Transfer •	Incoming - Cash
+     * Payment method Id of the Payer. Example: Id &amp; Description • Incoming - Direct Debit •
+     * Incoming - Cheque • Incoming - Direct Debit A • Incoming - Bank Transfer • Incoming - Cash
      */
     public void unsetPaymentMethodId() {
         paymentMethodId = null;
@@ -970,10 +970,10 @@ public class LastStatementOfAccount {
 
     /**
      * Internal Getter for PaymentTerms.
-     * Payment terms description of the Payer. Example: Id &amp; Description •	14 days after Invoice
-     * •	15 days after Invoice •	21 days after Invoice •	30 days after Invoice •	45 days after
-     * Invoice •	0 days after invoice •	days after invoice •	days after invoice •	7 days after
-     * invoice •	10th of the following month
+     * Payment terms description of the Payer. Example: Id &amp; Description • 14 days after Invoice •
+     * 15 days after Invoice • 21 days after Invoice • 30 days after Invoice • 45 days after Invoice
+     * • 0 days after invoice • days after invoice • days after invoice • 7 days after invoice •
+     * 10th of the following month
      * @return Returns the Internal String
      */
     @JsonGetter("PaymentTerms")
@@ -985,10 +985,10 @@ public class LastStatementOfAccount {
 
     /**
      * Getter for PaymentTerms.
-     * Payment terms description of the Payer. Example: Id &amp; Description •	14 days after Invoice
-     * •	15 days after Invoice •	21 days after Invoice •	30 days after Invoice •	45 days after
-     * Invoice •	0 days after invoice •	days after invoice •	days after invoice •	7 days after
-     * invoice •	10th of the following month
+     * Payment terms description of the Payer. Example: Id &amp; Description • 14 days after Invoice •
+     * 15 days after Invoice • 21 days after Invoice • 30 days after Invoice • 45 days after Invoice
+     * • 0 days after invoice • days after invoice • days after invoice • 7 days after invoice •
+     * 10th of the following month
      * @return Returns the String
      */
     public String getPaymentTerms() {
@@ -997,10 +997,10 @@ public class LastStatementOfAccount {
 
     /**
      * Setter for PaymentTerms.
-     * Payment terms description of the Payer. Example: Id &amp; Description •	14 days after Invoice
-     * •	15 days after Invoice •	21 days after Invoice •	30 days after Invoice •	45 days after
-     * Invoice •	0 days after invoice •	days after invoice •	days after invoice •	7 days after
-     * invoice •	10th of the following month
+     * Payment terms description of the Payer. Example: Id &amp; Description • 14 days after Invoice •
+     * 15 days after Invoice • 21 days after Invoice • 30 days after Invoice • 45 days after Invoice
+     * • 0 days after invoice • days after invoice • days after invoice • 7 days after invoice •
+     * 10th of the following month
      * @param paymentTerms Value for String
      */
     @JsonSetter("PaymentTerms")
@@ -1010,10 +1010,10 @@ public class LastStatementOfAccount {
 
     /**
      * UnSetter for PaymentTerms.
-     * Payment terms description of the Payer. Example: Id &amp; Description •	14 days after Invoice
-     * •	15 days after Invoice •	21 days after Invoice •	30 days after Invoice •	45 days after
-     * Invoice •	0 days after invoice •	days after invoice •	days after invoice •	7 days after
-     * invoice •	10th of the following month
+     * Payment terms description of the Payer. Example: Id &amp; Description • 14 days after Invoice •
+     * 15 days after Invoice • 21 days after Invoice • 30 days after Invoice • 45 days after Invoice
+     * • 0 days after invoice • days after invoice • days after invoice • 7 days after invoice •
+     * 10th of the following month
      */
     public void unsetPaymentTerms() {
         paymentTerms = null;
@@ -1021,9 +1021,9 @@ public class LastStatementOfAccount {
 
     /**
      * Internal Getter for PaymentTermsId.
-     * Payment terms Id of the Payer. Example: Id &amp; Description •	14 days after Invoice •	15 days
-     * after Invoice •	21 days after Invoice •	30 days after Invoice •	45 days after Invoice •	0
-     * days after invoice •	days after invoice •	days after invoice •	7 days after invoice •	10th of
+     * Payment terms Id of the Payer. Example: Id &amp; Description • 14 days after Invoice • 15 days
+     * after Invoice • 21 days after Invoice • 30 days after Invoice • 45 days after Invoice • 0
+     * days after invoice • days after invoice • days after invoice • 7 days after invoice • 10th of
      * the following month
      * @return Returns the Internal Integer
      */
@@ -1036,9 +1036,9 @@ public class LastStatementOfAccount {
 
     /**
      * Getter for PaymentTermsId.
-     * Payment terms Id of the Payer. Example: Id &amp; Description •	14 days after Invoice •	15 days
-     * after Invoice •	21 days after Invoice •	30 days after Invoice •	45 days after Invoice •	0
-     * days after invoice •	days after invoice •	days after invoice •	7 days after invoice •	10th of
+     * Payment terms Id of the Payer. Example: Id &amp; Description • 14 days after Invoice • 15 days
+     * after Invoice • 21 days after Invoice • 30 days after Invoice • 45 days after Invoice • 0
+     * days after invoice • days after invoice • days after invoice • 7 days after invoice • 10th of
      * the following month
      * @return Returns the Integer
      */
@@ -1048,9 +1048,9 @@ public class LastStatementOfAccount {
 
     /**
      * Setter for PaymentTermsId.
-     * Payment terms Id of the Payer. Example: Id &amp; Description •	14 days after Invoice •	15 days
-     * after Invoice •	21 days after Invoice •	30 days after Invoice •	45 days after Invoice •	0
-     * days after invoice •	days after invoice •	days after invoice •	7 days after invoice •	10th of
+     * Payment terms Id of the Payer. Example: Id &amp; Description • 14 days after Invoice • 15 days
+     * after Invoice • 21 days after Invoice • 30 days after Invoice • 45 days after Invoice • 0
+     * days after invoice • days after invoice • days after invoice • 7 days after invoice • 10th of
      * the following month
      * @param paymentTermsId Value for Integer
      */
@@ -1061,9 +1061,9 @@ public class LastStatementOfAccount {
 
     /**
      * UnSetter for PaymentTermsId.
-     * Payment terms Id of the Payer. Example: Id &amp; Description •	14 days after Invoice •	15 days
-     * after Invoice •	21 days after Invoice •	30 days after Invoice •	45 days after Invoice •	0
-     * days after invoice •	days after invoice •	days after invoice •	7 days after invoice •	10th of
+     * Payment terms Id of the Payer. Example: Id &amp; Description • 14 days after Invoice • 15 days
+     * after Invoice • 21 days after Invoice • 30 days after Invoice • 45 days after Invoice • 0
+     * days after invoice • days after invoice • days after invoice • 7 days after invoice • 10th of
      * the following month
      */
     public void unsetPaymentTermsId() {
