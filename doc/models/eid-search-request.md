@@ -11,7 +11,7 @@
 |  --- | --- | --- | --- | --- | --- |
 | `Filters` | [`EIDSearchReq`](../../doc/models/eid-search-req.md) | Optional | - | EIDSearchReq getFilters() | setFilters(EIDSearchReq filters) |
 | `Page` | `Integer` | Optional | Specify the page of results to be returned. | Integer getPage() | setPage(Integer page) |
-| `PageSize` | `Integer` | Optional | Specify the number of records to returned; Max 1000 | Integer getPageSize() | setPageSize(Integer pageSize) |
+| `PageSize` | `Integer` | Optional | Specify the number of records to returned; Max 100 | Integer getPageSize() | setPageSize(Integer pageSize) |
 
 ## Example (as JSON)
 

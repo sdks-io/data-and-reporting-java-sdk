@@ -57,7 +57,7 @@ public class TransactionExceptions {
     private OptionalNullable<String> siteCode;
     private OptionalNullable<String> siteName;
     private OptionalNullable<String> siteCountry;
-    private Location location;
+    private ExceptionSiteLocation location;
     private OptionalNullable<String> cardGroupName;
     private OptionalNullable<String> receiptNumber;
     private OptionalNullable<String> productCode;
@@ -166,7 +166,7 @@ public class TransactionExceptions {
      * @param  siteCode  String value for siteCode.
      * @param  siteName  String value for siteName.
      * @param  siteCountry  String value for siteCountry.
-     * @param  location  Location value for location.
+     * @param  location  ExceptionSiteLocation value for location.
      * @param  cardGroupName  String value for cardGroupName.
      * @param  receiptNumber  String value for receiptNumber.
      * @param  productCode  String value for productCode.
@@ -270,7 +270,7 @@ public class TransactionExceptions {
             String siteCode,
             String siteName,
             String siteCountry,
-            Location location,
+            ExceptionSiteLocation location,
             String cardGroupName,
             String receiptNumber,
             String productCode,
@@ -477,7 +477,7 @@ public class TransactionExceptions {
      * @param  siteCode  String value for siteCode.
      * @param  siteName  String value for siteName.
      * @param  siteCountry  String value for siteCountry.
-     * @param  location  Location value for location.
+     * @param  location  ExceptionSiteLocation value for location.
      * @param  cardGroupName  String value for cardGroupName.
      * @param  receiptNumber  String value for receiptNumber.
      * @param  productCode  String value for productCode.
@@ -567,7 +567,7 @@ public class TransactionExceptions {
             OptionalNullable<Boolean> isInvoiced, OptionalNullable<String> invoiceNumber,
             OptionalNullable<String> invoiceDate, OptionalNullable<String> siteCode,
             OptionalNullable<String> siteName, OptionalNullable<String> siteCountry,
-            Location location, OptionalNullable<String> cardGroupName,
+            ExceptionSiteLocation location, OptionalNullable<String> cardGroupName,
             OptionalNullable<String> receiptNumber, OptionalNullable<String> productCode,
             OptionalNullable<String> productName, OptionalNullable<Integer> productGroupId,
             OptionalNullable<String> productGroupName, OptionalNullable<Double> delCoExchangeRate,
@@ -2311,20 +2311,22 @@ public class TransactionExceptions {
 
     /**
      * Getter for Location.
-     * @return Returns the Location
+     * Geography Location entity for Site Location
+     * @return Returns the ExceptionSiteLocation
      */
     @JsonGetter("Location")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Location getLocation() {
+    public ExceptionSiteLocation getLocation() {
         return location;
     }
 
     /**
      * Setter for Location.
-     * @param location Value for Location
+     * Geography Location entity for Site Location
+     * @param location Value for ExceptionSiteLocation
      */
     @JsonSetter("Location")
-    public void setLocation(Location location) {
+    public void setLocation(ExceptionSiteLocation location) {
         this.location = location;
     }
 
@@ -4816,7 +4818,7 @@ public class TransactionExceptions {
         private OptionalNullable<String> siteCode;
         private OptionalNullable<String> siteName;
         private OptionalNullable<String> siteCountry;
-        private Location location;
+        private ExceptionSiteLocation location;
         private OptionalNullable<String> cardGroupName;
         private OptionalNullable<String> receiptNumber;
         private OptionalNullable<String> productCode;
@@ -5663,10 +5665,10 @@ public class TransactionExceptions {
 
         /**
          * Setter for location.
-         * @param  location  Location value for location.
+         * @param  location  ExceptionSiteLocation value for location.
          * @return Builder
          */
-        public Builder location(Location location) {
+        public Builder location(ExceptionSiteLocation location) {
             this.location = location;
             return this;
         }

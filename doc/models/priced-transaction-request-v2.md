@@ -9,7 +9,7 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Filters` | [`Filters`](../../doc/models/filters.md) | Optional | - | Filters getFilters() | setFilters(Filters filters) |
+| `Filters` | [`PricedRequestData`](../../doc/models/priced-request-data.md) | Optional | This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbilled sales items) from SFSBI. It provides a flexible search criteria and supports paging | PricedRequestData getFilters() | setFilters(PricedRequestData filters) |
 | `Page` | `Integer` | Optional | Specify the page of results to be returned. | Integer getPage() | setPage(Integer page) |
 | `PageSize` | `Integer` | Optional | Specify the number of records to returned; Max 1000 | Integer getPageSize() | setPageSize(Integer pageSize) |
 

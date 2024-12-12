@@ -10,46 +10,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.shell.apitest.ApiHelper;
 import com.shell.apitest.Server;
 import com.shell.apitest.exceptions.ApiException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerAccounts400ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerAccounts401ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerAccounts403ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerAccounts404ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerAccounts500ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerAuditreport400ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerAuditreport401ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerAuditreport403ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerAuditreport404ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerAuditreport500ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerCardgroups400ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerCardgroups401ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerCardgroups403ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerCardgroups404ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerCardgroups500ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerCustomer400ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerCustomer401ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerCustomer403ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerCustomer404ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerCustomer500ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerPayers400ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerPayers401ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerPayers403ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerPayers404ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1CustomerPayers500ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1UserLoggedinuser400ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1UserLoggedinuser401ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1UserLoggedinuser403ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1UserLoggedinuser404ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV1UserLoggedinuser500ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV2CustomerCardtype400ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV2CustomerCardtype401ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV2CustomerCardtype403ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV2CustomerCardtype404ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV2CustomerCardtype500ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV2CustomerPricelist400ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV2CustomerPricelist401ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV2CustomerPricelist403ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV2CustomerPricelist404ErrorException;
-import com.shell.apitest.exceptions.FleetmanagementV2CustomerPricelist500ErrorException;
+import com.shell.apitest.exceptions.DefaultErrorException;
+import com.shell.apitest.exceptions.ErrorUserAccessError1Exception;
 import com.shell.apitest.http.request.HttpMethod;
 import com.shell.apitest.models.AccountRequest;
 import com.shell.apitest.models.AccountResponse;
@@ -161,19 +123,19 @@ public final class CustomerController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new FleetmanagementV1UserLoggedinuser400ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new FleetmanagementV1UserLoggedinuser401ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new FleetmanagementV1UserLoggedinuser403ErrorException(reason, context)))
+                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new FleetmanagementV1UserLoggedinuser404ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new FleetmanagementV1UserLoggedinuser500ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -254,19 +216,19 @@ public final class CustomerController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new FleetmanagementV1CustomerPayers400ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new FleetmanagementV1CustomerPayers401ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new FleetmanagementV1CustomerPayers403ErrorException(reason, context)))
+                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new FleetmanagementV1CustomerPayers404ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new FleetmanagementV1CustomerPayers500ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -341,19 +303,19 @@ public final class CustomerController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new FleetmanagementV1CustomerCustomer400ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new FleetmanagementV1CustomerCustomer401ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new FleetmanagementV1CustomerCustomer403ErrorException(reason, context)))
+                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new FleetmanagementV1CustomerCustomer404ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new FleetmanagementV1CustomerCustomer500ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -438,19 +400,19 @@ public final class CustomerController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new FleetmanagementV2CustomerPricelist400ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new FleetmanagementV2CustomerPricelist401ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new FleetmanagementV2CustomerPricelist403ErrorException(reason, context)))
+                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new FleetmanagementV2CustomerPricelist404ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new FleetmanagementV2CustomerPricelist500ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -525,19 +487,19 @@ public final class CustomerController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new FleetmanagementV1CustomerAccounts400ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new FleetmanagementV1CustomerAccounts401ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new FleetmanagementV1CustomerAccounts403ErrorException(reason, context)))
+                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new FleetmanagementV1CustomerAccounts404ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new FleetmanagementV1CustomerAccounts500ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -612,31 +574,32 @@ public final class CustomerController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new FleetmanagementV2CustomerCardtype400ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new FleetmanagementV2CustomerCardtype401ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new FleetmanagementV2CustomerCardtype403ErrorException(reason, context)))
+                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new FleetmanagementV2CustomerCardtype404ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new FleetmanagementV2CustomerCardtype500ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
 
     /**
      * This operation allows querying the card group details . It provides flexible search criteria
-     * and supports paging.\ When the card group type is configured as ‘Vertical’ in cards platform,
-     * this operation will return all card groups from the given account or if no account is passed
-     * in the input, then will return card groups from all the accounts under the payer. When the
-     * card group type is configured as ‘Horizontal’ in cards platform, this API will return all
-     * card groups configured directly under the payer. Accounts with cancelled status will not be
-     * considered for cardgroups search for the configured (E.g., SFH) set of client apps.
+     * and supports paging.\\ When the card group type is configured as ‘Vertical’ in cards
+     * platform, this operation will return all card groups from the given account or if no account
+     * is passed in the input, then will return card groups from all the accounts under the payer.
+     * When the card group type is configured as ‘Horizontal’ in cards platform, this API will
+     * return all card groups configured directly under the payer. Accounts with cancelled status
+     * will not be considered for cardgroups search for the configured (E.g., SFH) set of client
+     * apps.
      * @param  apikey  Required parameter: This is the API key of the specific environment which
      *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
@@ -655,12 +618,13 @@ public final class CustomerController extends BaseController {
 
     /**
      * This operation allows querying the card group details . It provides flexible search criteria
-     * and supports paging.\ When the card group type is configured as ‘Vertical’ in cards platform,
-     * this operation will return all card groups from the given account or if no account is passed
-     * in the input, then will return card groups from all the accounts under the payer. When the
-     * card group type is configured as ‘Horizontal’ in cards platform, this API will return all
-     * card groups configured directly under the payer. Accounts with cancelled status will not be
-     * considered for cardgroups search for the configured (E.g., SFH) set of client apps.
+     * and supports paging.\\ When the card group type is configured as ‘Vertical’ in cards
+     * platform, this operation will return all card groups from the given account or if no account
+     * is passed in the input, then will return card groups from all the accounts under the payer.
+     * When the card group type is configured as ‘Horizontal’ in cards platform, this API will
+     * return all card groups configured directly under the payer. Accounts with cancelled status
+     * will not be considered for cardgroups search for the configured (E.g., SFH) set of client
+     * apps.
      * @param  apikey  Required parameter: This is the API key of the specific environment which
      *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
@@ -709,19 +673,19 @@ public final class CustomerController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new FleetmanagementV1CustomerCardgroups400ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new FleetmanagementV1CustomerCardgroups401ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new FleetmanagementV1CustomerCardgroups403ErrorException(reason, context)))
+                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new FleetmanagementV1CustomerCardgroups404ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new FleetmanagementV1CustomerCardgroups500ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -804,19 +768,19 @@ public final class CustomerController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new FleetmanagementV1CustomerAuditreport400ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new FleetmanagementV1CustomerAuditreport401ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new FleetmanagementV1CustomerAuditreport403ErrorException(reason, context)))
+                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new FleetmanagementV1CustomerAuditreport404ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new FleetmanagementV1CustomerAuditreport500ErrorException(reason, context)))
+                                (reason, context) -> new DefaultErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }

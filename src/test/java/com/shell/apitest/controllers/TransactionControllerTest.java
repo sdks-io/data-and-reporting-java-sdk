@@ -158,7 +158,7 @@ public class TransactionControllerTest extends BaseControllerTest {
      * by fuel only transactions * Search by product * EV transaction details - Below are EV
      * specific parameters * EVOperator * EVSerialId * EVChargePointSerial *
      * EVChargePointConnectorType * EVChargePointConnectorTypeDescription * EVChargeDuration *
-     * EVChargeStartDate * EVChargeStartTime * EVChargeEndDate * EVChargeEndTime .
+     * EVChargeStartDate * EVChargeStartTime * EVChargeEndDate * EVChargeEndTime.
      * @throws Throwable exception if occurs.
      */
     @Test

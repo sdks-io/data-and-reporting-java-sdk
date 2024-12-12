@@ -157,7 +157,7 @@ public class InvoiceControllerTest extends BaseControllerTest {
      * invoices by invoice type or invoice status * Search invoices by invoice id or number * Search
      * invoices by invoiced country * Search invoices including einvoices * Search invoices by
      * summary document * Search invoices by statement of account * Search invoices by fixed and
-     * custom date periods .
+     * custom date periods.
      * @throws Throwable exception if occurs.
      */
     @Test

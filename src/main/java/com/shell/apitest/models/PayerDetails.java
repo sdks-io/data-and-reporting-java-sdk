@@ -118,7 +118,7 @@ public class PayerDetails {
     private Boolean hasActiveVolBasedPricing;
     private Boolean hasActiveVolBasedBonus;
     private Boolean hasActiveVolBasedAssociationBonus;
-    private FinanceCurrency2 financeCurrency;
+    private FinanceCurrency financeCurrency;
     private OptionalNullable<String> tollsCustomerId;
     private OptionalNullable<String> tollsColcoCountryTypeId;
     private List<CustomerContract> contracts;
@@ -241,7 +241,7 @@ public class PayerDetails {
      * @param  hasActiveVolBasedBonus  Boolean value for hasActiveVolBasedBonus.
      * @param  hasActiveVolBasedAssociationBonus  Boolean value for
      *         hasActiveVolBasedAssociationBonus.
-     * @param  financeCurrency  FinanceCurrency2 value for financeCurrency.
+     * @param  financeCurrency  FinanceCurrency value for financeCurrency.
      * @param  tollsCustomerId  String value for tollsCustomerId.
      * @param  tollsColcoCountryTypeId  String value for tollsColcoCountryTypeId.
      * @param  contracts  List of CustomerContract value for contracts.
@@ -348,7 +348,7 @@ public class PayerDetails {
             Boolean hasActiveVolBasedPricing,
             Boolean hasActiveVolBasedBonus,
             Boolean hasActiveVolBasedAssociationBonus,
-            FinanceCurrency2 financeCurrency,
+            FinanceCurrency financeCurrency,
             String tollsCustomerId,
             String tollsColcoCountryTypeId,
             List<CustomerContract> contracts) {
@@ -568,7 +568,7 @@ public class PayerDetails {
      * @param  hasActiveVolBasedBonus  Boolean value for hasActiveVolBasedBonus.
      * @param  hasActiveVolBasedAssociationBonus  Boolean value for
      *         hasActiveVolBasedAssociationBonus.
-     * @param  financeCurrency  FinanceCurrency2 value for financeCurrency.
+     * @param  financeCurrency  FinanceCurrency value for financeCurrency.
      * @param  tollsCustomerId  String value for tollsCustomerId.
      * @param  tollsColcoCountryTypeId  String value for tollsColcoCountryTypeId.
      * @param  contracts  List of CustomerContract value for contracts.
@@ -640,7 +640,7 @@ public class PayerDetails {
             List<BankAccount> payerBankAccount, Address cardDeliveryAddress,
             Address correspondanceAddress, Address billingAddress, Boolean hasActiveVolBasedPricing,
             Boolean hasActiveVolBasedBonus, Boolean hasActiveVolBasedAssociationBonus,
-            FinanceCurrency2 financeCurrency, OptionalNullable<String> tollsCustomerId,
+            FinanceCurrency financeCurrency, OptionalNullable<String> tollsCustomerId,
             OptionalNullable<String> tollsColcoCountryTypeId, List<CustomerContract> contracts) {
         this.colCoId = colCoId;
         this.colCoCode = colCoCode;
@@ -4453,20 +4453,24 @@ public class PayerDetails {
 
     /**
      * Getter for FinanceCurrency.
-     * @return Returns the FinanceCurrency2
+     * This entity will not be present in the response if the ‘IncludeFinanceCurrency’ flag in the
+     * request is ‘false’
+     * @return Returns the FinanceCurrency
      */
     @JsonGetter("FinanceCurrency")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public FinanceCurrency2 getFinanceCurrency() {
+    public FinanceCurrency getFinanceCurrency() {
         return financeCurrency;
     }
 
     /**
      * Setter for FinanceCurrency.
-     * @param financeCurrency Value for FinanceCurrency2
+     * This entity will not be present in the response if the ‘IncludeFinanceCurrency’ flag in the
+     * request is ‘false’
+     * @param financeCurrency Value for FinanceCurrency
      */
     @JsonSetter("FinanceCurrency")
-    public void setFinanceCurrency(FinanceCurrency2 financeCurrency) {
+    public void setFinanceCurrency(FinanceCurrency financeCurrency) {
         this.financeCurrency = financeCurrency;
     }
 
@@ -4870,7 +4874,7 @@ public class PayerDetails {
         private Boolean hasActiveVolBasedPricing;
         private Boolean hasActiveVolBasedBonus;
         private Boolean hasActiveVolBasedAssociationBonus;
-        private FinanceCurrency2 financeCurrency;
+        private FinanceCurrency financeCurrency;
         private OptionalNullable<String> tollsCustomerId;
         private OptionalNullable<String> tollsColcoCountryTypeId;
         private List<CustomerContract> contracts;
@@ -6667,10 +6671,10 @@ public class PayerDetails {
 
         /**
          * Setter for financeCurrency.
-         * @param  financeCurrency  FinanceCurrency2 value for financeCurrency.
+         * @param  financeCurrency  FinanceCurrency value for financeCurrency.
          * @return Builder
          */
-        public Builder financeCurrency(FinanceCurrency2 financeCurrency) {
+        public Builder financeCurrency(FinanceCurrency financeCurrency) {
             this.financeCurrency = financeCurrency;
             return this;
         }

@@ -50,7 +50,7 @@
 | `SiteCode` | `String` | Optional | Site Code | String getSiteCode() | setSiteCode(String siteCode) |
 | `SiteName` | `String` | Optional | Site Name | String getSiteName() | setSiteName(String siteName) |
 | `SiteCountry` | `String` | Optional | Site Country | String getSiteCountry() | setSiteCountry(String siteCountry) |
-| `Location` | [`Location`](../../doc/models/location.md) | Optional | - | Location getLocation() | setLocation(Location location) |
+| `Location` | [`ExceptionSiteLocation`](../../doc/models/exception-site-location.md) | Optional | Geography Location entity for Site Location | ExceptionSiteLocation getLocation() | setLocation(ExceptionSiteLocation location) |
 | `CardGroupName` | `String` | Optional | Card Group Name | String getCardGroupName() | setCardGroupName(String cardGroupName) |
 | `ReceiptNumber` | `String` | Optional | Receipt Number | String getReceiptNumber() | setReceiptNumber(String receiptNumber) |
 | `ProductCode` | `String` | Optional | Product Code | String getProductCode() | setProductCode(String productCode) |

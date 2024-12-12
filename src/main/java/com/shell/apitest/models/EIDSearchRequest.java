@@ -81,7 +81,7 @@ public class EIDSearchRequest {
 
     /**
      * Getter for PageSize.
-     * Specify the number of records to returned; Max 1000
+     * Specify the number of records to returned; Max 100
      * @return Returns the Integer
      */
     @JsonGetter("PageSize")
@@ -92,7 +92,7 @@ public class EIDSearchRequest {
 
     /**
      * Setter for PageSize.
-     * Specify the number of records to returned; Max 1000
+     * Specify the number of records to returned; Max 100
      * @param pageSize Value for Integer
      */
     @JsonSetter("PageSize")

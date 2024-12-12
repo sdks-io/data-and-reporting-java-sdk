@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
  */
 public class DefaultErrorFault {
     private String faultstring;
-    private Detail detail;
+    private DefaultErrorFaultDetail detail;
 
     /**
      * Default constructor.
@@ -26,11 +26,11 @@ public class DefaultErrorFault {
     /**
      * Initialization constructor.
      * @param  faultstring  String value for faultstring.
-     * @param  detail  Detail value for detail.
+     * @param  detail  DefaultErrorFaultDetail value for detail.
      */
     public DefaultErrorFault(
             String faultstring,
-            Detail detail) {
+            DefaultErrorFaultDetail detail) {
         this.faultstring = faultstring;
         this.detail = detail;
     }
@@ -58,20 +58,22 @@ public class DefaultErrorFault {
 
     /**
      * Getter for Detail.
-     * @return Returns the Detail
+     * Details about the error
+     * @return Returns the DefaultErrorFaultDetail
      */
     @JsonGetter("detail")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Detail getDetail() {
+    public DefaultErrorFaultDetail getDetail() {
         return detail;
     }
 
     /**
      * Setter for Detail.
-     * @param detail Value for Detail
+     * Details about the error
+     * @param detail Value for DefaultErrorFaultDetail
      */
     @JsonSetter("detail")
-    public void setDetail(Detail detail) {
+    public void setDetail(DefaultErrorFaultDetail detail) {
         this.detail = detail;
     }
 
@@ -101,7 +103,7 @@ public class DefaultErrorFault {
      */
     public static class Builder {
         private String faultstring;
-        private Detail detail;
+        private DefaultErrorFaultDetail detail;
 
 
 
@@ -117,10 +119,10 @@ public class DefaultErrorFault {
 
         /**
          * Setter for detail.
-         * @param  detail  Detail value for detail.
+         * @param  detail  DefaultErrorFaultDetail value for detail.
          * @return Builder
          */
-        public Builder detail(Detail detail) {
+        public Builder detail(DefaultErrorFaultDetail detail) {
             this.detail = detail;
             return this;
         }

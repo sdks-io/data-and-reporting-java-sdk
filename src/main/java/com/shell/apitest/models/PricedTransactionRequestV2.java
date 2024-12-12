@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
  * This is a model class for PricedTransactionRequestV2 type.
  */
 public class PricedTransactionRequestV2 {
-    private Filters filters;
+    private PricedRequestData filters;
     private Integer page;
     private Integer pageSize;
 
@@ -26,12 +26,12 @@ public class PricedTransactionRequestV2 {
 
     /**
      * Initialization constructor.
-     * @param  filters  Filters value for filters.
+     * @param  filters  PricedRequestData value for filters.
      * @param  page  Integer value for page.
      * @param  pageSize  Integer value for pageSize.
      */
     public PricedTransactionRequestV2(
-            Filters filters,
+            PricedRequestData filters,
             Integer page,
             Integer pageSize) {
         this.filters = filters;
@@ -41,20 +41,24 @@ public class PricedTransactionRequestV2 {
 
     /**
      * Getter for Filters.
-     * @return Returns the Filters
+     * This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbilled sales
+     * items) from SFSBI. It provides a flexible search criteria and supports paging
+     * @return Returns the PricedRequestData
      */
     @JsonGetter("Filters")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Filters getFilters() {
+    public PricedRequestData getFilters() {
         return filters;
     }
 
     /**
      * Setter for Filters.
-     * @param filters Value for Filters
+     * This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbilled sales
+     * items) from SFSBI. It provides a flexible search criteria and supports paging
+     * @param filters Value for PricedRequestData
      */
     @JsonSetter("Filters")
-    public void setFilters(Filters filters) {
+    public void setFilters(PricedRequestData filters) {
         this.filters = filters;
     }
 
@@ -127,7 +131,7 @@ public class PricedTransactionRequestV2 {
      * Class to build instances of {@link PricedTransactionRequestV2}.
      */
     public static class Builder {
-        private Filters filters;
+        private PricedRequestData filters;
         private Integer page;
         private Integer pageSize;
 
@@ -135,10 +139,10 @@ public class PricedTransactionRequestV2 {
 
         /**
          * Setter for filters.
-         * @param  filters  Filters value for filters.
+         * @param  filters  PricedRequestData value for filters.
          * @return Builder
          */
-        public Builder filters(Filters filters) {
+        public Builder filters(PricedRequestData filters) {
             this.filters = filters;
             return this;
         }
