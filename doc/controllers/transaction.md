@@ -1625,7 +1625,7 @@ String requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
 PricedTransactionRequestV2 body = new PricedTransactionRequestV2.Builder()
     .filters(new PricedRequestData.Builder(
         "032",
-        ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
+        PricedTransactionReqV2InvoiceStatusEnum.A,
         "DE26685263"
     )
     .accountId(29484)

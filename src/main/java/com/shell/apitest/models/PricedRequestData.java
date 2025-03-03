@@ -18,11 +18,13 @@ import java.util.List;
  */
 public class PricedRequestData {
     private String colCoCode;
-    private Object invoiceStatus;
+    private Integer colCoId;
+    private PricedTransactionReqV2InvoiceStatusEnum invoiceStatus;
     private String payerNumber;
     private OptionalNullable<Integer> accountId;
     private OptionalNullable<String> accountNumber;
     private OptionalNullable<String> driverName;
+    private Integer cardId;
     private OptionalNullable<Integer> cardGroupId;
     private OptionalNullable<String> cardPAN;
     private OptionalNullable<String> productCode;
@@ -66,11 +68,13 @@ public class PricedRequestData {
     /**
      * Initialization constructor.
      * @param  colCoCode  String value for colCoCode.
-     * @param  invoiceStatus  Object value for invoiceStatus.
+     * @param  invoiceStatus  PricedTransactionReqV2InvoiceStatusEnum value for invoiceStatus.
      * @param  payerNumber  String value for payerNumber.
+     * @param  colCoId  Integer value for colCoId.
      * @param  accountId  Integer value for accountId.
      * @param  accountNumber  String value for accountNumber.
      * @param  driverName  String value for driverName.
+     * @param  cardId  Integer value for cardId.
      * @param  cardGroupId  Integer value for cardGroupId.
      * @param  cardPAN  String value for cardPAN.
      * @param  productCode  String value for productCode.
@@ -105,11 +109,13 @@ public class PricedRequestData {
      */
     public PricedRequestData(
             String colCoCode,
-            Object invoiceStatus,
+            PricedTransactionReqV2InvoiceStatusEnum invoiceStatus,
             String payerNumber,
+            Integer colCoId,
             Integer accountId,
             String accountNumber,
             String driverName,
+            Integer cardId,
             Integer cardGroupId,
             String cardPAN,
             String productCode,
@@ -142,11 +148,13 @@ public class PricedRequestData {
             String search,
             String transactionId) {
         this.colCoCode = colCoCode;
+        this.colCoId = colCoId;
         this.invoiceStatus = invoiceStatus;
         this.payerNumber = payerNumber;
         this.accountId = OptionalNullable.of(accountId);
         this.accountNumber = OptionalNullable.of(accountNumber);
         this.driverName = OptionalNullable.of(driverName);
+        this.cardId = cardId;
         this.cardGroupId = OptionalNullable.of(cardGroupId);
         this.cardPAN = OptionalNullable.of(cardPAN);
         this.productCode = OptionalNullable.of(productCode);
@@ -183,11 +191,13 @@ public class PricedRequestData {
     /**
      * Initialization constructor.
      * @param  colCoCode  String value for colCoCode.
-     * @param  invoiceStatus  Object value for invoiceStatus.
+     * @param  invoiceStatus  PricedTransactionReqV2InvoiceStatusEnum value for invoiceStatus.
      * @param  payerNumber  String value for payerNumber.
+     * @param  colCoId  Integer value for colCoId.
      * @param  accountId  Integer value for accountId.
      * @param  accountNumber  String value for accountNumber.
      * @param  driverName  String value for driverName.
+     * @param  cardId  Integer value for cardId.
      * @param  cardGroupId  Integer value for cardGroupId.
      * @param  cardPAN  String value for cardPAN.
      * @param  productCode  String value for productCode.
@@ -221,13 +231,15 @@ public class PricedRequestData {
      * @param  transactionId  String value for transactionId.
      */
 
-    protected PricedRequestData(String colCoCode, Object invoiceStatus, String payerNumber,
-            OptionalNullable<Integer> accountId, OptionalNullable<String> accountNumber,
-            OptionalNullable<String> driverName, OptionalNullable<Integer> cardGroupId,
-            OptionalNullable<String> cardPAN, OptionalNullable<String> productCode,
-            OptionalNullable<String> productName, OptionalNullable<String> siteCode,
-            OptionalNullable<String> incomingSiteNumber, OptionalNullable<String> invoiceDate,
-            OptionalNullable<String> invoiceNumber, OptionalNullable<String> purchasedInCountryCode,
+    protected PricedRequestData(String colCoCode,
+            PricedTransactionReqV2InvoiceStatusEnum invoiceStatus, String payerNumber,
+            Integer colCoId, OptionalNullable<Integer> accountId,
+            OptionalNullable<String> accountNumber, OptionalNullable<String> driverName,
+            Integer cardId, OptionalNullable<Integer> cardGroupId, OptionalNullable<String> cardPAN,
+            OptionalNullable<String> productCode, OptionalNullable<String> productName,
+            OptionalNullable<String> siteCode, OptionalNullable<String> incomingSiteNumber,
+            OptionalNullable<String> invoiceDate, OptionalNullable<String> invoiceNumber,
+            OptionalNullable<String> purchasedInCountryCode,
             OptionalNullable<String> purchasedInCountry, OptionalNullable<Integer> siteGroupId,
             OptionalNullable<String> vehicleRegistrationNumber, OptionalNullable<Integer> feeTypeId,
             OptionalNullable<String> lineItemDescription, List<Integer> cards,
@@ -241,11 +253,13 @@ public class PricedRequestData {
             OptionalNullable<String> hostingCollectingCompanyNumber,
             OptionalNullable<String> search, OptionalNullable<String> transactionId) {
         this.colCoCode = colCoCode;
+        this.colCoId = colCoId;
         this.invoiceStatus = invoiceStatus;
         this.payerNumber = payerNumber;
         this.accountId = accountId;
         this.accountNumber = accountNumber;
         this.driverName = driverName;
+        this.cardId = cardId;
         this.cardGroupId = cardGroupId;
         this.cardPAN = cardPAN;
         this.productCode = productCode;
@@ -300,20 +314,45 @@ public class PricedRequestData {
     }
 
     /**
+     * Getter for ColCoId.
+     * The Collecting Company Id in the Shell Card Platform.
+     * @return Returns the Integer
+     */
+    @JsonGetter("ColCoId")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public Integer getColCoId() {
+        return colCoId;
+    }
+
+    /**
+     * Setter for ColCoId.
+     * The Collecting Company Id in the Shell Card Platform.
+     * @param colCoId Value for Integer
+     */
+    @JsonSetter("ColCoId")
+    public void setColCoId(Integer colCoId) {
+        this.colCoId = colCoId;
+    }
+
+    /**
      * Getter for InvoiceStatus.
-     * @return Returns the Object
+     * Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U – Un-Invoiced,
+     * A – All
+     * @return Returns the PricedTransactionReqV2InvoiceStatusEnum
      */
     @JsonGetter("InvoiceStatus")
-    public Object getInvoiceStatus() {
+    public PricedTransactionReqV2InvoiceStatusEnum getInvoiceStatus() {
         return invoiceStatus;
     }
 
     /**
      * Setter for InvoiceStatus.
-     * @param invoiceStatus Value for Object
+     * Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U – Un-Invoiced,
+     * A – All
+     * @param invoiceStatus Value for PricedTransactionReqV2InvoiceStatusEnum
      */
     @JsonSetter("InvoiceStatus")
-    public void setInvoiceStatus(Object invoiceStatus) {
+    public void setInvoiceStatus(PricedTransactionReqV2InvoiceStatusEnum invoiceStatus) {
         this.invoiceStatus = invoiceStatus;
     }
 
@@ -452,6 +491,27 @@ public class PricedRequestData {
      */
     public void unsetDriverName() {
         driverName = null;
+    }
+
+    /**
+     * Getter for CardId.
+     * Unique Card Id in the Shell Card Platform
+     * @return Returns the Integer
+     */
+    @JsonGetter("CardId")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public Integer getCardId() {
+        return cardId;
+    }
+
+    /**
+     * Setter for CardId.
+     * Unique Card Id in the Shell Card Platform
+     * @param cardId Value for Integer
+     */
+    @JsonSetter("CardId")
+    public void setCardId(Integer cardId) {
+        this.cardId = cardId;
     }
 
     /**
@@ -1602,19 +1662,20 @@ public class PricedRequestData {
     @Override
     public String toString() {
         return "PricedRequestData [" + "colCoCode=" + colCoCode + ", invoiceStatus=" + invoiceStatus
-                + ", payerNumber=" + payerNumber + ", accountId=" + accountId + ", accountNumber="
-                + accountNumber + ", driverName=" + driverName + ", cardGroupId=" + cardGroupId
-                + ", cardPAN=" + cardPAN + ", productCode=" + productCode + ", productName="
-                + productName + ", siteCode=" + siteCode + ", incomingSiteNumber="
-                + incomingSiteNumber + ", invoiceDate=" + invoiceDate + ", invoiceNumber="
-                + invoiceNumber + ", purchasedInCountryCode=" + purchasedInCountryCode
-                + ", purchasedInCountry=" + purchasedInCountry + ", siteGroupId=" + siteGroupId
-                + ", vehicleRegistrationNumber=" + vehicleRegistrationNumber + ", feeTypeId="
-                + feeTypeId + ", lineItemDescription=" + lineItemDescription + ", cards=" + cards
-                + ", sortOrder=" + sortOrder + ", fromDate=" + fromDate + ", toDate=" + toDate
-                + ", period=" + period + ", postingDateFrom=" + postingDateFrom + ", postingDateTo="
-                + postingDateTo + ", transactionItemId=" + transactionItemId + ", fuelOnly="
-                + fuelOnly + ", includeFees=" + includeFees + ", isMultipayer=" + isMultipayer
+                + ", payerNumber=" + payerNumber + ", colCoId=" + colCoId + ", accountId="
+                + accountId + ", accountNumber=" + accountNumber + ", driverName=" + driverName
+                + ", cardId=" + cardId + ", cardGroupId=" + cardGroupId + ", cardPAN=" + cardPAN
+                + ", productCode=" + productCode + ", productName=" + productName + ", siteCode="
+                + siteCode + ", incomingSiteNumber=" + incomingSiteNumber + ", invoiceDate="
+                + invoiceDate + ", invoiceNumber=" + invoiceNumber + ", purchasedInCountryCode="
+                + purchasedInCountryCode + ", purchasedInCountry=" + purchasedInCountry
+                + ", siteGroupId=" + siteGroupId + ", vehicleRegistrationNumber="
+                + vehicleRegistrationNumber + ", feeTypeId=" + feeTypeId + ", lineItemDescription="
+                + lineItemDescription + ", cards=" + cards + ", sortOrder=" + sortOrder
+                + ", fromDate=" + fromDate + ", toDate=" + toDate + ", period=" + period
+                + ", postingDateFrom=" + postingDateFrom + ", postingDateTo=" + postingDateTo
+                + ", transactionItemId=" + transactionItemId + ", fuelOnly=" + fuelOnly
+                + ", includeFees=" + includeFees + ", isMultipayer=" + isMultipayer
                 + ", validInvoiceDateOnly=" + validInvoiceDateOnly + ", invoiceFromDate="
                 + invoiceFromDate + ", invoiceToDate=" + invoiceToDate
                 + ", hostingCollectingCompanyNumber=" + hostingCollectingCompanyNumber + ", search="
@@ -1628,6 +1689,8 @@ public class PricedRequestData {
      */
     public Builder toBuilder() {
         Builder builder = new Builder(colCoCode, invoiceStatus, payerNumber)
+                .colCoId(getColCoId())
+                .cardId(getCardId())
                 .cards(getCards())
                 .sortOrder(getSortOrder())
                 .period(getPeriod())
@@ -1670,11 +1733,13 @@ public class PricedRequestData {
      */
     public static class Builder {
         private String colCoCode;
-        private Object invoiceStatus;
+        private PricedTransactionReqV2InvoiceStatusEnum invoiceStatus;
         private String payerNumber;
+        private Integer colCoId;
         private OptionalNullable<Integer> accountId;
         private OptionalNullable<String> accountNumber;
         private OptionalNullable<String> driverName;
+        private Integer cardId;
         private OptionalNullable<Integer> cardGroupId;
         private OptionalNullable<String> cardPAN;
         private OptionalNullable<String> productCode;
@@ -1716,10 +1781,11 @@ public class PricedRequestData {
         /**
          * Initialization constructor.
          * @param  colCoCode  String value for colCoCode.
-         * @param  invoiceStatus  Object value for invoiceStatus.
+         * @param  invoiceStatus  PricedTransactionReqV2InvoiceStatusEnum value for invoiceStatus.
          * @param  payerNumber  String value for payerNumber.
          */
-        public Builder(String colCoCode, Object invoiceStatus, String payerNumber) {
+        public Builder(String colCoCode, PricedTransactionReqV2InvoiceStatusEnum invoiceStatus,
+                String payerNumber) {
             this.colCoCode = colCoCode;
             this.invoiceStatus = invoiceStatus;
             this.payerNumber = payerNumber;
@@ -1737,10 +1803,10 @@ public class PricedRequestData {
 
         /**
          * Setter for invoiceStatus.
-         * @param  invoiceStatus  Object value for invoiceStatus.
+         * @param  invoiceStatus  PricedTransactionReqV2InvoiceStatusEnum value for invoiceStatus.
          * @return Builder
          */
-        public Builder invoiceStatus(Object invoiceStatus) {
+        public Builder invoiceStatus(PricedTransactionReqV2InvoiceStatusEnum invoiceStatus) {
             this.invoiceStatus = invoiceStatus;
             return this;
         }
@@ -1752,6 +1818,16 @@ public class PricedRequestData {
          */
         public Builder payerNumber(String payerNumber) {
             this.payerNumber = payerNumber;
+            return this;
+        }
+
+        /**
+         * Setter for colCoId.
+         * @param  colCoId  Integer value for colCoId.
+         * @return Builder
+         */
+        public Builder colCoId(Integer colCoId) {
+            this.colCoId = colCoId;
             return this;
         }
 
@@ -1809,6 +1885,16 @@ public class PricedRequestData {
          */
         public Builder unsetDriverName() {
             driverName = null;
+            return this;
+        }
+
+        /**
+         * Setter for cardId.
+         * @param  cardId  Integer value for cardId.
+         * @return Builder
+         */
+        public Builder cardId(Integer cardId) {
+            this.cardId = cardId;
             return this;
         }
 
@@ -2362,9 +2448,9 @@ public class PricedRequestData {
          * @return {@link PricedRequestData}
          */
         public PricedRequestData build() {
-            return new PricedRequestData(colCoCode, invoiceStatus, payerNumber, accountId,
-                    accountNumber, driverName, cardGroupId, cardPAN, productCode, productName,
-                    siteCode, incomingSiteNumber, invoiceDate, invoiceNumber,
+            return new PricedRequestData(colCoCode, invoiceStatus, payerNumber, colCoId, accountId,
+                    accountNumber, driverName, cardId, cardGroupId, cardPAN, productCode,
+                    productName, siteCode, incomingSiteNumber, invoiceDate, invoiceNumber,
                     purchasedInCountryCode, purchasedInCountry, siteGroupId,
                     vehicleRegistrationNumber, feeTypeId, lineItemDescription, cards, sortOrder,
                     fromDate, toDate, period, postingDateFrom, postingDateTo, transactionItemId,

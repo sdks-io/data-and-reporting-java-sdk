@@ -45,4 +45,14 @@ public class ErrorUserAccessError1Exception extends ApiException {
     private void setError(ErrorUserAccessError error) {
         this.error = error;
     }
+
+    /**
+     * Converts this ErrorUserAccessError1Exception into string format.
+     * @return String representation of this class
+     */
+    @Override
+    public String toString() {
+        return "ErrorUserAccessError1Exception [" + "statusCode=" + getResponseCode() + ", message="
+                + getMessage() + ", error=" + error + "]";
+    }
 }

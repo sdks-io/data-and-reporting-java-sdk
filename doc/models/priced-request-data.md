@@ -12,11 +12,13 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `ColCoCode` | `String` | Required | Collecting Company Code (Shell Code) of the selected payer. | String getColCoCode() | setColCoCode(String colCoCode) |
-| `InvoiceStatus` | `Object` | Required | - | Object getInvoiceStatus() | setInvoiceStatus(Object invoiceStatus) |
+| `ColCoId` | `Integer` | Optional | The Collecting Company Id in the Shell Card Platform. | Integer getColCoId() | setColCoId(Integer colCoId) |
+| `InvoiceStatus` | [`PricedTransactionReqV2InvoiceStatusEnum`](../../doc/models/priced-transaction-req-v2-invoice-status-enum.md) | Required | Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U – Un-Invoiced, A – All<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | PricedTransactionReqV2InvoiceStatusEnum getInvoiceStatus() | setInvoiceStatus(PricedTransactionReqV2InvoiceStatusEnum invoiceStatus) |
 | `PayerNumber` | `String` | Required | Payer Number of the selected payer.<br>**Constraints**: *Minimum Length*: `1` | String getPayerNumber() | setPayerNumber(String payerNumber) |
 | `AccountId` | `Integer` | Optional | Account Id (GFN customer id) | Integer getAccountId() | setAccountId(Integer accountId) |
 | `AccountNumber` | `String` | Optional | Account Number of the selected account. | String getAccountNumber() | setAccountNumber(String accountNumber) |
 | `DriverName` | `String` | Optional | Driver Name (of Card record)<br>**Constraints**: *Minimum Length*: `4`, *Maximum Length*: `40` | String getDriverName() | setDriverName(String driverName) |
+| `CardId` | `Integer` | Optional | Unique Card Id in the Shell Card Platform | Integer getCardId() | setCardId(Integer cardId) |
 | `CardGroupId` | `Integer` | Optional | Card Group Id in GFN | Integer getCardGroupId() | setCardGroupId(Integer cardGroupId) |
 | `CardPAN` | `String` | Optional | Full Card PAN | String getCardPAN() | setCardPAN(String cardPAN) |
 | `ProductCode` | `String` | Optional | Product Code – Global as per GFN configuration<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `8` | String getProductCode() | setProductCode(String productCode) |
@@ -54,14 +56,13 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
 ```json
 {
   "ColCoCode": "032",
-  "InvoiceStatus": {
-    "key1": "val1",
-    "key2": "val2"
-  },
+  "ColCoId": 32,
+  "InvoiceStatus": "A",
   "PayerNumber": "DE26685263",
   "AccountId": 29484,
   "AccountNumber": "DE26667080",
   "DriverName": "HH NX 508",
+  "CardId": 12435,
   "CardGroupId": 40000,
   "CardPAN": "7002051006629890645",
   "ProductCode": "10",

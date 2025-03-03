@@ -47,4 +47,14 @@ public class DefaultErrorException extends ApiException {
     private void setFault(DefaultErrorFault fault) {
         this.fault = fault;
     }
+
+    /**
+     * Converts this DefaultErrorException into string format.
+     * @return String representation of this class
+     */
+    @Override
+    public String toString() {
+        return "DefaultErrorException [" + "statusCode=" + getResponseCode() + ", message="
+                + getMessage() + ", fault=" + fault + "]";
+    }
 }
