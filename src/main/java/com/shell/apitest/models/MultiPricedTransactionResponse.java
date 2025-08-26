@@ -16,11 +16,6 @@ import java.util.List;
  */
 public class MultiPricedTransactionResponse {
     private List<MultiPricedTransactionResponseTransactionsItems> transactions;
-    private ErrorStatus error;
-    private String requestId;
-    private Integer currentPage;
-    private Integer rowCount;
-    private Integer totalPages;
 
     /**
      * Default constructor.
@@ -32,25 +27,10 @@ public class MultiPricedTransactionResponse {
      * Initialization constructor.
      * @param  transactions  List of MultiPricedTransactionResponseTransactionsItems value for
      *         transactions.
-     * @param  error  ErrorStatus value for error.
-     * @param  requestId  String value for requestId.
-     * @param  currentPage  Integer value for currentPage.
-     * @param  rowCount  Integer value for rowCount.
-     * @param  totalPages  Integer value for totalPages.
      */
     public MultiPricedTransactionResponse(
-            List<MultiPricedTransactionResponseTransactionsItems> transactions,
-            ErrorStatus error,
-            String requestId,
-            Integer currentPage,
-            Integer rowCount,
-            Integer totalPages) {
+            List<MultiPricedTransactionResponseTransactionsItems> transactions) {
         this.transactions = transactions;
-        this.error = error;
-        this.requestId = requestId;
-        this.currentPage = currentPage;
-        this.rowCount = rowCount;
-        this.totalPages = totalPages;
     }
 
     /**
@@ -73,119 +53,12 @@ public class MultiPricedTransactionResponse {
     }
 
     /**
-     * Getter for Error.
-     * @return Returns the ErrorStatus
-     */
-    @JsonGetter("Error")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public ErrorStatus getError() {
-        return error;
-    }
-
-    /**
-     * Setter for Error.
-     * @param error Value for ErrorStatus
-     */
-    @JsonSetter("Error")
-    public void setError(ErrorStatus error) {
-        this.error = error;
-    }
-
-    /**
-     * Getter for RequestId.
-     * API Request Id
-     * @return Returns the String
-     */
-    @JsonGetter("RequestId")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public String getRequestId() {
-        return requestId;
-    }
-
-    /**
-     * Setter for RequestId.
-     * API Request Id
-     * @param requestId Value for String
-     */
-    @JsonSetter("RequestId")
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
-    /**
-     * Getter for CurrentPage.
-     * Current Page
-     * @return Returns the Integer
-     */
-    @JsonGetter("CurrentPage")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Integer getCurrentPage() {
-        return currentPage;
-    }
-
-    /**
-     * Setter for CurrentPage.
-     * Current Page
-     * @param currentPage Value for Integer
-     */
-    @JsonSetter("CurrentPage")
-    public void setCurrentPage(Integer currentPage) {
-        this.currentPage = currentPage;
-    }
-
-    /**
-     * Getter for RowCount.
-     * Total row count matched for the given input criteria
-     * @return Returns the Integer
-     */
-    @JsonGetter("RowCount")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Integer getRowCount() {
-        return rowCount;
-    }
-
-    /**
-     * Setter for RowCount.
-     * Total row count matched for the given input criteria
-     * @param rowCount Value for Integer
-     */
-    @JsonSetter("RowCount")
-    public void setRowCount(Integer rowCount) {
-        this.rowCount = rowCount;
-    }
-
-    /**
-     * Getter for TotalPages.
-     * Calculated page count based on page size from the incoming API request and total number of
-     * rows matched for the given input criteria
-     * @return Returns the Integer
-     */
-    @JsonGetter("TotalPages")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Integer getTotalPages() {
-        return totalPages;
-    }
-
-    /**
-     * Setter for TotalPages.
-     * Calculated page count based on page size from the incoming API request and total number of
-     * rows matched for the given input criteria
-     * @param totalPages Value for Integer
-     */
-    @JsonSetter("TotalPages")
-    public void setTotalPages(Integer totalPages) {
-        this.totalPages = totalPages;
-    }
-
-    /**
      * Converts this MultiPricedTransactionResponse into string format.
      * @return String representation of this class
      */
     @Override
     public String toString() {
-        return "MultiPricedTransactionResponse [" + "transactions=" + transactions + ", error="
-                + error + ", requestId=" + requestId + ", currentPage=" + currentPage
-                + ", rowCount=" + rowCount + ", totalPages=" + totalPages + "]";
+        return "MultiPricedTransactionResponse [" + "transactions=" + transactions + "]";
     }
 
     /**
@@ -195,12 +68,7 @@ public class MultiPricedTransactionResponse {
      */
     public Builder toBuilder() {
         Builder builder = new Builder()
-                .transactions(getTransactions())
-                .error(getError())
-                .requestId(getRequestId())
-                .currentPage(getCurrentPage())
-                .rowCount(getRowCount())
-                .totalPages(getTotalPages());
+                .transactions(getTransactions());
         return builder;
     }
 
@@ -209,11 +77,6 @@ public class MultiPricedTransactionResponse {
      */
     public static class Builder {
         private List<MultiPricedTransactionResponseTransactionsItems> transactions;
-        private ErrorStatus error;
-        private String requestId;
-        private Integer currentPage;
-        private Integer rowCount;
-        private Integer totalPages;
 
 
 
@@ -230,62 +93,11 @@ public class MultiPricedTransactionResponse {
         }
 
         /**
-         * Setter for error.
-         * @param  error  ErrorStatus value for error.
-         * @return Builder
-         */
-        public Builder error(ErrorStatus error) {
-            this.error = error;
-            return this;
-        }
-
-        /**
-         * Setter for requestId.
-         * @param  requestId  String value for requestId.
-         * @return Builder
-         */
-        public Builder requestId(String requestId) {
-            this.requestId = requestId;
-            return this;
-        }
-
-        /**
-         * Setter for currentPage.
-         * @param  currentPage  Integer value for currentPage.
-         * @return Builder
-         */
-        public Builder currentPage(Integer currentPage) {
-            this.currentPage = currentPage;
-            return this;
-        }
-
-        /**
-         * Setter for rowCount.
-         * @param  rowCount  Integer value for rowCount.
-         * @return Builder
-         */
-        public Builder rowCount(Integer rowCount) {
-            this.rowCount = rowCount;
-            return this;
-        }
-
-        /**
-         * Setter for totalPages.
-         * @param  totalPages  Integer value for totalPages.
-         * @return Builder
-         */
-        public Builder totalPages(Integer totalPages) {
-            this.totalPages = totalPages;
-            return this;
-        }
-
-        /**
          * Builds a new {@link MultiPricedTransactionResponse} object using the set fields.
          * @return {@link MultiPricedTransactionResponse}
          */
         public MultiPricedTransactionResponse build() {
-            return new MultiPricedTransactionResponse(transactions, error, requestId, currentPage,
-                    rowCount, totalPages);
+            return new MultiPricedTransactionResponse(transactions);
         }
     }
 }

@@ -42,12 +42,11 @@ public final class OAuthAuthorizationController extends BaseController {
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
-    public OAuthToken requestTokenBearerToken(
+    public OAuthToken requestToken(
             final String authorization,
             final String scope,
             final Map<String, Object> fieldParameters) throws ApiException, IOException {
-        return prepareRequestTokenBearerTokenRequest(authorization, scope,
-                fieldParameters).execute();
+        return prepareRequestTokenRequest(authorization, scope, fieldParameters).execute();
     }
 
     /**
@@ -57,25 +56,24 @@ public final class OAuthAuthorizationController extends BaseController {
      * @param    fieldParameters    Additional optional form parameters are supported by this endpoint
      * @return    Returns the OAuthToken response from the API call
      */
-    public CompletableFuture<OAuthToken> requestTokenBearerTokenAsync(
+    public CompletableFuture<OAuthToken> requestTokenAsync(
             final String authorization,
             final String scope,
             final Map<String, Object> fieldParameters) {
-        try { 
-            return prepareRequestTokenBearerTokenRequest(authorization, scope,
-            fieldParameters).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+        try {
+            return prepareRequestTokenRequest(authorization, scope, fieldParameters).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
     /**
-     * Builds the ApiCall object for requestTokenBearerToken.
+     * Builds the ApiCall object for requestToken.
      */
-    private ApiCall<OAuthToken, ApiException> prepareRequestTokenBearerTokenRequest(
+    private ApiCall<OAuthToken, ApiException> prepareRequestTokenRequest(
             final String authorization,
             final String scope,
-            final Map<String, Object> fieldParameters) throws IOException {
+            final Map<String, Object> fieldParameters) {
         return new ApiCall.Builder<OAuthToken, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder

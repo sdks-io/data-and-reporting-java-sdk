@@ -12,8 +12,7 @@
 | `Configuration` | [`List<BonusConfiguration>`](../../doc/models/bonus-configuration.md) | Optional | - | List<BonusConfiguration> getConfiguration() | setConfiguration(List<BonusConfiguration> configuration) |
 | `CurrentPeriodConsumption` | [`List<PricingCurrentVolume>`](../../doc/models/pricing-current-volume.md) | Optional | - | List<PricingCurrentVolume> getCurrentPeriodConsumption() | setCurrentPeriodConsumption(List<PricingCurrentVolume> currentPeriodConsumption) |
 | `History` | [`List<PricingHistory>`](../../doc/models/pricing-history.md) | Optional | - | List<PricingHistory> getHistory() | setHistory(List<PricingHistory> history) |
-| `Error` | [`ErrorStatus`](../../doc/models/error-status.md) | Optional | - | ErrorStatus getError() | setError(ErrorStatus error) |
-| `RequestId` | `String` | Optional | API Request Id | String getRequestId() | setRequestId(String requestId) |
+| `Warnings` | [`List<Warning>`](../../doc/models/warning.md) | Optional | A list of Warning entity.<br>This entity will hold the details of the scheduled System Outages of any dependent applications of this service.<br>Note: If there is no scheduled outage information available, in the configuration in AMS, for this service, this parameter won’t be present in output. | List<Warning> getWarnings() | setWarnings(List<Warning> warnings) |
 
 ## Example (as JSON)
 
@@ -67,11 +66,16 @@
       "TotalVolume": 24.18
     }
   ],
-  "Error": {
-    "Code": "Code4",
-    "Description": "Description2"
-  },
-  "RequestId": "RequestId6"
+  "Warnings": [
+    {
+      "Message": "Message0",
+      "Type": "Type4"
+    },
+    {
+      "Message": "Message0",
+      "Type": "Type4"
+    }
+  ]
 }
 ```
 

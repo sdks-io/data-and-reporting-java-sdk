@@ -18,7 +18,7 @@
 | `DailyVolumeLimit` | `Double` | Optional | Maximum volume of fuel that can be bought on the card in a day. | Double getDailyVolumeLimit() | setDailyVolumeLimit(Double dailyVolumeLimit) |
 | `WeeklyVolumeLimit` | `Double` | Optional | Maximum volume of fuel that can be bought on the card in a week. | Double getWeeklyVolumeLimit() | setWeeklyVolumeLimit(Double weeklyVolumeLimit) |
 | `MonthlyVolumeLimit` | `Double` | Optional | Maximum volume of fuel that can be bought on the card in a month. | Double getMonthlyVolumeLimit() | setMonthlyVolumeLimit(Double monthlyVolumeLimit) |
-| `AnnualVolumeLimit` | `Double` | Optional | Maximum volume of fuel that can be bought on the card in a year.<br>**Default**: `0d` | Double getAnnualVolumeLimit() | setAnnualVolumeLimit(Double annualVolumeLimit) |
+| `AnnualVolumeLimit` | `Double` | Optional | Maximum volume of fuel that can be bought on the card in a year.<br><br>**Default**: `0d` | Double getAnnualVolumeLimit() | setAnnualVolumeLimit(Double annualVolumeLimit) |
 | `LifeTimeVolumeLimit` | `Double` | Optional | Maximum volume of fuel that can be bought on the card in the card’s life time. | Double getLifeTimeVolumeLimit() | setLifeTimeVolumeLimit(Double lifeTimeVolumeLimit) |
 | `TransactionSpendLimit` | `Double` | Optional | Maximum amount that can be spend on the card in a transaction. | Double getTransactionSpendLimit() | setTransactionSpendLimit(Double transactionSpendLimit) |
 | `TransactionVolumeLimit` | `Double` | Optional | Maximum volume of fuel that can be bought on the card in a transaction. | Double getTransactionVolumeLimit() | setTransactionVolumeLimit(Double transactionVolumeLimit) |

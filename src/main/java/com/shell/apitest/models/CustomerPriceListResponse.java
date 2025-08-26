@@ -15,9 +15,7 @@ import java.util.List;
  * This is a model class for CustomerPriceListResponse type.
  */
 public class CustomerPriceListResponse {
-    private String requestId;
     private List<PriceList> priceList;
-    private ErrorStatus error;
 
     /**
      * Default constructor.
@@ -27,40 +25,11 @@ public class CustomerPriceListResponse {
 
     /**
      * Initialization constructor.
-     * @param  requestId  String value for requestId.
      * @param  priceList  List of PriceList value for priceList.
-     * @param  error  ErrorStatus value for error.
      */
     public CustomerPriceListResponse(
-            String requestId,
-            List<PriceList> priceList,
-            ErrorStatus error) {
-        this.requestId = requestId;
+            List<PriceList> priceList) {
         this.priceList = priceList;
-        this.error = error;
-    }
-
-    /**
-     * Getter for RequestId.
-     * UUID (according to RFC 4122 standards) for requests and responses. This will be played back
-     * in the response from the request.
-     * @return Returns the String
-     */
-    @JsonGetter("RequestId")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public String getRequestId() {
-        return requestId;
-    }
-
-    /**
-     * Setter for RequestId.
-     * UUID (according to RFC 4122 standards) for requests and responses. This will be played back
-     * in the response from the request.
-     * @param requestId Value for String
-     */
-    @JsonSetter("RequestId")
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
     }
 
     /**
@@ -83,32 +52,12 @@ public class CustomerPriceListResponse {
     }
 
     /**
-     * Getter for Error.
-     * @return Returns the ErrorStatus
-     */
-    @JsonGetter("Error")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public ErrorStatus getError() {
-        return error;
-    }
-
-    /**
-     * Setter for Error.
-     * @param error Value for ErrorStatus
-     */
-    @JsonSetter("Error")
-    public void setError(ErrorStatus error) {
-        this.error = error;
-    }
-
-    /**
      * Converts this CustomerPriceListResponse into string format.
      * @return String representation of this class
      */
     @Override
     public String toString() {
-        return "CustomerPriceListResponse [" + "requestId=" + requestId + ", priceList=" + priceList
-                + ", error=" + error + "]";
+        return "CustomerPriceListResponse [" + "priceList=" + priceList + "]";
     }
 
     /**
@@ -118,9 +67,7 @@ public class CustomerPriceListResponse {
      */
     public Builder toBuilder() {
         Builder builder = new Builder()
-                .requestId(getRequestId())
-                .priceList(getPriceList())
-                .error(getError());
+                .priceList(getPriceList());
         return builder;
     }
 
@@ -128,21 +75,9 @@ public class CustomerPriceListResponse {
      * Class to build instances of {@link CustomerPriceListResponse}.
      */
     public static class Builder {
-        private String requestId;
         private List<PriceList> priceList;
-        private ErrorStatus error;
 
 
-
-        /**
-         * Setter for requestId.
-         * @param  requestId  String value for requestId.
-         * @return Builder
-         */
-        public Builder requestId(String requestId) {
-            this.requestId = requestId;
-            return this;
-        }
 
         /**
          * Setter for priceList.
@@ -155,21 +90,11 @@ public class CustomerPriceListResponse {
         }
 
         /**
-         * Setter for error.
-         * @param  error  ErrorStatus value for error.
-         * @return Builder
-         */
-        public Builder error(ErrorStatus error) {
-            this.error = error;
-            return this;
-        }
-
-        /**
          * Builds a new {@link CustomerPriceListResponse} object using the set fields.
          * @return {@link CustomerPriceListResponse}
          */
         public CustomerPriceListResponse build() {
-            return new CustomerPriceListResponse(requestId, priceList, error);
+            return new CustomerPriceListResponse(priceList);
         }
     }
 }

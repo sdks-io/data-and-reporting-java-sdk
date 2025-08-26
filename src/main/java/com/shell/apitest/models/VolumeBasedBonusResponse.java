@@ -18,8 +18,6 @@ public class VolumeBasedBonusResponse {
     private List<BonusConfiguration> configuration;
     private List<CurrentVolume> currentPeriodConsumption;
     private List<BonusHistory> historicalBonusPaid;
-    private ErrorStatus error;
-    private String requestId;
 
     /**
      * Default constructor.
@@ -32,20 +30,14 @@ public class VolumeBasedBonusResponse {
      * @param  configuration  List of BonusConfiguration value for configuration.
      * @param  currentPeriodConsumption  List of CurrentVolume value for currentPeriodConsumption.
      * @param  historicalBonusPaid  List of BonusHistory value for historicalBonusPaid.
-     * @param  error  ErrorStatus value for error.
-     * @param  requestId  String value for requestId.
      */
     public VolumeBasedBonusResponse(
             List<BonusConfiguration> configuration,
             List<CurrentVolume> currentPeriodConsumption,
-            List<BonusHistory> historicalBonusPaid,
-            ErrorStatus error,
-            String requestId) {
+            List<BonusHistory> historicalBonusPaid) {
         this.configuration = configuration;
         this.currentPeriodConsumption = currentPeriodConsumption;
         this.historicalBonusPaid = historicalBonusPaid;
-        this.error = error;
-        this.requestId = requestId;
     }
 
     /**
@@ -106,46 +98,6 @@ public class VolumeBasedBonusResponse {
     }
 
     /**
-     * Getter for Error.
-     * @return Returns the ErrorStatus
-     */
-    @JsonGetter("Error")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public ErrorStatus getError() {
-        return error;
-    }
-
-    /**
-     * Setter for Error.
-     * @param error Value for ErrorStatus
-     */
-    @JsonSetter("Error")
-    public void setError(ErrorStatus error) {
-        this.error = error;
-    }
-
-    /**
-     * Getter for RequestId.
-     * API Request Id
-     * @return Returns the String
-     */
-    @JsonGetter("RequestId")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public String getRequestId() {
-        return requestId;
-    }
-
-    /**
-     * Setter for RequestId.
-     * API Request Id
-     * @param requestId Value for String
-     */
-    @JsonSetter("RequestId")
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
-    /**
      * Converts this VolumeBasedBonusResponse into string format.
      * @return String representation of this class
      */
@@ -153,8 +105,7 @@ public class VolumeBasedBonusResponse {
     public String toString() {
         return "VolumeBasedBonusResponse [" + "configuration=" + configuration
                 + ", currentPeriodConsumption=" + currentPeriodConsumption
-                + ", historicalBonusPaid=" + historicalBonusPaid + ", error=" + error
-                + ", requestId=" + requestId + "]";
+                + ", historicalBonusPaid=" + historicalBonusPaid + "]";
     }
 
     /**
@@ -166,9 +117,7 @@ public class VolumeBasedBonusResponse {
         Builder builder = new Builder()
                 .configuration(getConfiguration())
                 .currentPeriodConsumption(getCurrentPeriodConsumption())
-                .historicalBonusPaid(getHistoricalBonusPaid())
-                .error(getError())
-                .requestId(getRequestId());
+                .historicalBonusPaid(getHistoricalBonusPaid());
         return builder;
     }
 
@@ -179,8 +128,6 @@ public class VolumeBasedBonusResponse {
         private List<BonusConfiguration> configuration;
         private List<CurrentVolume> currentPeriodConsumption;
         private List<BonusHistory> historicalBonusPaid;
-        private ErrorStatus error;
-        private String requestId;
 
 
 
@@ -216,32 +163,12 @@ public class VolumeBasedBonusResponse {
         }
 
         /**
-         * Setter for error.
-         * @param  error  ErrorStatus value for error.
-         * @return Builder
-         */
-        public Builder error(ErrorStatus error) {
-            this.error = error;
-            return this;
-        }
-
-        /**
-         * Setter for requestId.
-         * @param  requestId  String value for requestId.
-         * @return Builder
-         */
-        public Builder requestId(String requestId) {
-            this.requestId = requestId;
-            return this;
-        }
-
-        /**
          * Builds a new {@link VolumeBasedBonusResponse} object using the set fields.
          * @return {@link VolumeBasedBonusResponse}
          */
         public VolumeBasedBonusResponse build() {
             return new VolumeBasedBonusResponse(configuration, currentPeriodConsumption,
-                    historicalBonusPaid, error, requestId);
+                    historicalBonusPaid);
         }
     }
 }

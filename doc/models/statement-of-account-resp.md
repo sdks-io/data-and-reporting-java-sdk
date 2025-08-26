@@ -9,7 +9,7 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `LastStatementOfAccount` | [`LastStatementOfAccount`](../../doc/models/last-statement-of-account.md) | Optional | Latest statement of the account generated for the given Payer. | LastStatementOfAccount getLastStatementOfAccount() | setLastStatementOfAccount(LastStatementOfAccount lastStatementOfAccount) |
+| `LastStatementOfAccount` | [`LastStatementOfAccount2`](../../doc/models/last-statement-of-account-2.md) | Optional | - | LastStatementOfAccount2 getLastStatementOfAccount() | setLastStatementOfAccount(LastStatementOfAccount2 lastStatementOfAccount) |
 | `MonthlyInvoiceTrend` | [`List<MonthlyInvoiceTrend>`](../../doc/models/monthly-invoice-trend.md) | Optional | - | List<MonthlyInvoiceTrend> getMonthlyInvoiceTrend() | setMonthlyInvoiceTrend(List<MonthlyInvoiceTrend> monthlyInvoiceTrend) |
 | `PastStatementOfAccounts` | [`List<PastStatementOfAccounts>`](../../doc/models/past-statement-of-accounts.md) | Optional | - | List<PastStatementOfAccounts> getPastStatementOfAccounts() | setPastStatementOfAccounts(List<PastStatementOfAccounts> pastStatementOfAccounts) |
 | `PaymentsSinceLastSOA` | [`List<PaymentsSinceLastSOA>`](../../doc/models/payments-since-last-soa.md) | Optional | - | List<PaymentsSinceLastSOA> getPaymentsSinceLastSOA() | setPaymentsSinceLastSOA(List<PaymentsSinceLastSOA> paymentsSinceLastSOA) |

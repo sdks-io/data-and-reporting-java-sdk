@@ -24,11 +24,9 @@ public class AuditRequest {
     private OptionalNullable<Integer> colCoCode;
     private OptionalNullable<Integer> colCoId;
     private Accounts accounts;
-    private Integer pageSize;
     private List<String> requestedOperation;
     private OptionalNullable<String> sortOrder;
     private OptionalNullable<String> searchText;
-    private OptionalNullable<Integer> currentPage;
     private OptionalNullable<String> fromDate;
     private OptionalNullable<String> toDate;
 
@@ -47,11 +45,9 @@ public class AuditRequest {
      * @param  colCoCode  Integer value for colCoCode.
      * @param  colCoId  Integer value for colCoId.
      * @param  accounts  Accounts value for accounts.
-     * @param  pageSize  Integer value for pageSize.
      * @param  requestedOperation  List of String value for requestedOperation.
      * @param  sortOrder  String value for sortOrder.
      * @param  searchText  String value for searchText.
-     * @param  currentPage  Integer value for currentPage.
      * @param  fromDate  String value for fromDate.
      * @param  toDate  String value for toDate.
      */
@@ -63,11 +59,9 @@ public class AuditRequest {
             Integer colCoCode,
             Integer colCoId,
             Accounts accounts,
-            Integer pageSize,
             List<String> requestedOperation,
             String sortOrder,
             String searchText,
-            Integer currentPage,
             String fromDate,
             String toDate) {
         this.status = status;
@@ -77,11 +71,9 @@ public class AuditRequest {
         this.colCoCode = OptionalNullable.of(colCoCode);
         this.colCoId = OptionalNullable.of(colCoId);
         this.accounts = accounts;
-        this.pageSize = pageSize;
         this.requestedOperation = requestedOperation;
         this.sortOrder = OptionalNullable.of(sortOrder);
         this.searchText = OptionalNullable.of(searchText);
-        this.currentPage = OptionalNullable.of(currentPage);
         this.fromDate = OptionalNullable.of(fromDate);
         this.toDate = OptionalNullable.of(toDate);
     }
@@ -95,11 +87,9 @@ public class AuditRequest {
      * @param  colCoCode  Integer value for colCoCode.
      * @param  colCoId  Integer value for colCoId.
      * @param  accounts  Accounts value for accounts.
-     * @param  pageSize  Integer value for pageSize.
      * @param  requestedOperation  List of String value for requestedOperation.
      * @param  sortOrder  String value for sortOrder.
      * @param  searchText  String value for searchText.
-     * @param  currentPage  Integer value for currentPage.
      * @param  fromDate  String value for fromDate.
      * @param  toDate  String value for toDate.
      */
@@ -107,9 +97,8 @@ public class AuditRequest {
     protected AuditRequest(String status, OptionalNullable<String> payerNumber,
             OptionalNullable<Integer> payerId, OptionalNullable<String> accountNumber,
             OptionalNullable<Integer> colCoCode, OptionalNullable<Integer> colCoId,
-            Accounts accounts, Integer pageSize, List<String> requestedOperation,
-            OptionalNullable<String> sortOrder, OptionalNullable<String> searchText,
-            OptionalNullable<Integer> currentPage, OptionalNullable<String> fromDate,
+            Accounts accounts, List<String> requestedOperation, OptionalNullable<String> sortOrder,
+            OptionalNullable<String> searchText, OptionalNullable<String> fromDate,
             OptionalNullable<String> toDate) {
         this.status = status;
         this.payerNumber = payerNumber;
@@ -118,11 +107,9 @@ public class AuditRequest {
         this.colCoCode = colCoCode;
         this.colCoId = colCoId;
         this.accounts = accounts;
-        this.pageSize = pageSize;
         this.requestedOperation = requestedOperation;
         this.sortOrder = sortOrder;
         this.searchText = searchText;
-        this.currentPage = currentPage;
         this.fromDate = fromDate;
         this.toDate = toDate;
     }
@@ -379,32 +366,11 @@ public class AuditRequest {
     }
 
     /**
-     * Getter for PageSize.
-     * Page Size – Number of records to show on a page Optional Default value 50
-     * @return Returns the Integer
-     */
-    @JsonGetter("PageSize")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Integer getPageSize() {
-        return pageSize;
-    }
-
-    /**
-     * Setter for PageSize.
-     * Page Size – Number of records to show on a page Optional Default value 50
-     * @param pageSize Value for Integer
-     */
-    @JsonSetter("PageSize")
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    /**
      * Getter for RequestedOperation.
-     * To search for requests submitted until this date. Optional Format: yyyyMMdd Example: 20200130
-     * If ToDate is not provided and FromDate is provided, then ToDate will be considered as current
-     * date or 30 days from FromDate, whichever is earlier. However, when both FromDate and ToDate
-     * is not provided then last 30 days will be considered for filtering.
+     * Type of requests to be fetched. Optional Allowed values: • OrderCard • CreateCardGroup •
+     * PINReminder • MoveCard • UpdateCardStatus • UpdateCardGroup • AutoRenew • BulkCardOrder •
+     * BulkCardBlock • BulkCardOrderMultiAccount • MobilePaymentRegistration • UpdateCompanyInfo •
+     * BCOSummary • BCOMultiAccountSummary • BCBSummary • FundTransfer • DeliveryAddressUpdate
      * @return Returns the List of String
      */
     @JsonGetter("RequestedOperation")
@@ -415,10 +381,10 @@ public class AuditRequest {
 
     /**
      * Setter for RequestedOperation.
-     * To search for requests submitted until this date. Optional Format: yyyyMMdd Example: 20200130
-     * If ToDate is not provided and FromDate is provided, then ToDate will be considered as current
-     * date or 30 days from FromDate, whichever is earlier. However, when both FromDate and ToDate
-     * is not provided then last 30 days will be considered for filtering.
+     * Type of requests to be fetched. Optional Allowed values: • OrderCard • CreateCardGroup •
+     * PINReminder • MoveCard • UpdateCardStatus • UpdateCardGroup • AutoRenew • BulkCardOrder •
+     * BulkCardBlock • BulkCardOrderMultiAccount • MobilePaymentRegistration • UpdateCompanyInfo •
+     * BCOSummary • BCOMultiAccountSummary • BCBSummary • FundTransfer • DeliveryAddressUpdate
      * @param requestedOperation Value for List of String
      */
     @JsonSetter("RequestedOperation")
@@ -518,45 +484,6 @@ public class AuditRequest {
      */
     public void unsetSearchText() {
         searchText = null;
-    }
-
-    /**
-     * Internal Getter for CurrentPage.
-     * Page Number (as shown to the users) Optional Default value 1
-     * @return Returns the Internal Integer
-     */
-    @JsonGetter("CurrentPage")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<Integer> internalGetCurrentPage() {
-        return this.currentPage;
-    }
-
-    /**
-     * Getter for CurrentPage.
-     * Page Number (as shown to the users) Optional Default value 1
-     * @return Returns the Integer
-     */
-    public Integer getCurrentPage() {
-        return OptionalNullable.getFrom(currentPage);
-    }
-
-    /**
-     * Setter for CurrentPage.
-     * Page Number (as shown to the users) Optional Default value 1
-     * @param currentPage Value for Integer
-     */
-    @JsonSetter("CurrentPage")
-    public void setCurrentPage(Integer currentPage) {
-        this.currentPage = OptionalNullable.of(currentPage);
-    }
-
-    /**
-     * UnSetter for CurrentPage.
-     * Page Number (as shown to the users) Optional Default value 1
-     */
-    public void unsetCurrentPage() {
-        currentPage = null;
     }
 
     /**
@@ -673,10 +600,9 @@ public class AuditRequest {
     public String toString() {
         return "AuditRequest [" + "status=" + status + ", payerNumber=" + payerNumber + ", payerId="
                 + payerId + ", accountNumber=" + accountNumber + ", colCoCode=" + colCoCode
-                + ", colCoId=" + colCoId + ", accounts=" + accounts + ", pageSize=" + pageSize
-                + ", requestedOperation=" + requestedOperation + ", sortOrder=" + sortOrder
-                + ", searchText=" + searchText + ", currentPage=" + currentPage + ", fromDate="
-                + fromDate + ", toDate=" + toDate + "]";
+                + ", colCoId=" + colCoId + ", accounts=" + accounts + ", requestedOperation="
+                + requestedOperation + ", sortOrder=" + sortOrder + ", searchText=" + searchText
+                + ", fromDate=" + fromDate + ", toDate=" + toDate + "]";
     }
 
     /**
@@ -688,7 +614,6 @@ public class AuditRequest {
         Builder builder = new Builder()
                 .status(getStatus())
                 .accounts(getAccounts())
-                .pageSize(getPageSize())
                 .requestedOperation(getRequestedOperation());
         builder.payerNumber = internalGetPayerNumber();
         builder.payerId = internalGetPayerId();
@@ -697,7 +622,6 @@ public class AuditRequest {
         builder.colCoId = internalGetColCoId();
         builder.sortOrder = internalGetSortOrder();
         builder.searchText = internalGetSearchText();
-        builder.currentPage = internalGetCurrentPage();
         builder.fromDate = internalGetFromDate();
         builder.toDate = internalGetToDate();
         return builder;
@@ -714,11 +638,9 @@ public class AuditRequest {
         private OptionalNullable<Integer> colCoCode;
         private OptionalNullable<Integer> colCoId;
         private Accounts accounts;
-        private Integer pageSize;
         private List<String> requestedOperation;
         private OptionalNullable<String> sortOrder;
         private OptionalNullable<String> searchText;
-        private OptionalNullable<Integer> currentPage;
         private OptionalNullable<String> fromDate;
         private OptionalNullable<String> toDate;
 
@@ -840,16 +762,6 @@ public class AuditRequest {
         }
 
         /**
-         * Setter for pageSize.
-         * @param  pageSize  Integer value for pageSize.
-         * @return Builder
-         */
-        public Builder pageSize(Integer pageSize) {
-            this.pageSize = pageSize;
-            return this;
-        }
-
-        /**
          * Setter for requestedOperation.
          * @param  requestedOperation  List of String value for requestedOperation.
          * @return Builder
@@ -898,25 +810,6 @@ public class AuditRequest {
         }
 
         /**
-         * Setter for currentPage.
-         * @param  currentPage  Integer value for currentPage.
-         * @return Builder
-         */
-        public Builder currentPage(Integer currentPage) {
-            this.currentPage = OptionalNullable.of(currentPage);
-            return this;
-        }
-
-        /**
-         * UnSetter for currentPage.
-         * @return Builder
-         */
-        public Builder unsetCurrentPage() {
-            currentPage = null;
-            return this;
-        }
-
-        /**
          * Setter for fromDate.
          * @param  fromDate  String value for fromDate.
          * @return Builder
@@ -960,8 +853,7 @@ public class AuditRequest {
          */
         public AuditRequest build() {
             return new AuditRequest(status, payerNumber, payerId, accountNumber, colCoCode, colCoId,
-                    accounts, pageSize, requestedOperation, sortOrder, searchText, currentPage,
-                    fromDate, toDate);
+                    accounts, requestedOperation, sortOrder, searchText, fromDate, toDate);
         }
     }
 }

@@ -9,7 +9,7 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `IsDefault` | `Boolean` | Optional | Whether this payer is the default payer of the user.<br>**Default**: `false` | Boolean getIsDefault() | setIsDefault(Boolean isDefault) |
+| `IsDefault` | `Boolean` | Optional | Whether this payer is the default payer of the user.<br><br>**Default**: `false` | Boolean getIsDefault() | setIsDefault(Boolean isDefault) |
 | `ColcoId` | `Integer` | Optional | Collecting company id. | Integer getColcoId() | setColcoId(Integer colcoId) |
 | `ColcoCode` | `Integer` | Optional | Collecting company code.<br>Example:<br>86-Philippines<br>5-UK | Integer getColcoCode() | setColcoCode(Integer colcoCode) |
 | `ColCoCountryCode` | `String` | Optional | The 2-character ISO Code for the customer and card owning country | String getColCoCountryCode() | setColCoCountryCode(String colCoCountryCode) |

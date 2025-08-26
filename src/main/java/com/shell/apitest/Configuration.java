@@ -6,10 +6,7 @@
 
 package com.shell.apitest;
 
-import com.shell.apitest.authentication.BasicAuthCredentials;
-import com.shell.apitest.authentication.BasicAuthModel;
-import com.shell.apitest.authentication.BearerTokenCredentials;
-import com.shell.apitest.authentication.BearerTokenModel;
+import com.shell.apitest.authentication.ClientCredentialsAuthModel;
 import com.shell.apitest.http.client.ReadonlyHttpClientConfiguration;
 
 /**
@@ -36,28 +33,16 @@ public interface Configuration {
     long timeout();
 
     /**
-     * The credentials to use with BasicAuth.
-     * @return basicAuthCredentials
+     * The credentials to use with ClientCredentialsAuth.
+     * @return clientCredentialsAuth
      */
-    BasicAuthCredentials getBasicAuthCredentials();
+    ClientCredentialsAuth getClientCredentialsAuth();
 
     /**
-     * The auth credential model for BasicAuth.
-     * @return the instance of BasicAuthModel
+     * The auth credential model for ClientCredentialsAuth.
+     * @return the instance of ClientCredentialsAuthModel
      */
-    BasicAuthModel getBasicAuthModel();
-
-    /**
-     * The credentials to use with BearerToken.
-     * @return bearerTokenCredentials
-     */
-    BearerTokenCredentials getBearerTokenCredentials();
-
-    /**
-     * The auth credential model for BearerToken.
-     * @return the instance of BearerTokenModel
-     */
-    BearerTokenModel getBearerTokenModel();
+    ClientCredentialsAuthModel getClientCredentialsAuthModel();
 
     /**
      * Get base URI by current environment.

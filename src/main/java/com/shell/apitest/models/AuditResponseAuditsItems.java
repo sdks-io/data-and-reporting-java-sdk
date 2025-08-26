@@ -47,6 +47,8 @@ public class AuditResponseAuditsItems {
     private OptionalNullable<String> submittedOn;
     private OptionalNullable<Integer> subRequestReference;
     private OptionalNullable<String> userDisplayName;
+    private OptionalNullable<String> pANID;
+    private OptionalNullable<String> maskedPAN;
 
     /**
      * Default constructor.
@@ -87,6 +89,8 @@ public class AuditResponseAuditsItems {
      * @param  submittedOn  String value for submittedOn.
      * @param  subRequestReference  Integer value for subRequestReference.
      * @param  userDisplayName  String value for userDisplayName.
+     * @param  pANID  String value for pANID.
+     * @param  maskedPAN  String value for maskedPAN.
      */
     public AuditResponseAuditsItems(
             Integer accountId,
@@ -119,7 +123,9 @@ public class AuditResponseAuditsItems {
             String status,
             String submittedOn,
             Integer subRequestReference,
-            String userDisplayName) {
+            String userDisplayName,
+            String pANID,
+            String maskedPAN) {
         this.accountId = OptionalNullable.of(accountId);
         this.accountNumber = OptionalNullable.of(accountNumber);
         this.additionalInformation1 = OptionalNullable.of(additionalInformation1);
@@ -151,6 +157,8 @@ public class AuditResponseAuditsItems {
         this.submittedOn = OptionalNullable.of(submittedOn);
         this.subRequestReference = OptionalNullable.of(subRequestReference);
         this.userDisplayName = OptionalNullable.of(userDisplayName);
+        this.pANID = OptionalNullable.of(pANID);
+        this.maskedPAN = OptionalNullable.of(maskedPAN);
     }
 
     /**
@@ -186,6 +194,8 @@ public class AuditResponseAuditsItems {
      * @param  submittedOn  String value for submittedOn.
      * @param  subRequestReference  Integer value for subRequestReference.
      * @param  userDisplayName  String value for userDisplayName.
+     * @param  pANID  String value for pANID.
+     * @param  maskedPAN  String value for maskedPAN.
      */
 
     protected AuditResponseAuditsItems(OptionalNullable<Integer> accountId,
@@ -207,7 +217,8 @@ public class AuditResponseAuditsItems {
             OptionalNullable<String> requestedOperation, OptionalNullable<Integer> requestReference,
             OptionalNullable<String> requestType, OptionalNullable<String> status,
             OptionalNullable<String> submittedOn, OptionalNullable<Integer> subRequestReference,
-            OptionalNullable<String> userDisplayName) {
+            OptionalNullable<String> userDisplayName, OptionalNullable<String> pANID,
+            OptionalNullable<String> maskedPAN) {
         this.accountId = accountId;
         this.accountNumber = accountNumber;
         this.additionalInformation1 = additionalInformation1;
@@ -239,6 +250,8 @@ public class AuditResponseAuditsItems {
         this.submittedOn = submittedOn;
         this.subRequestReference = subRequestReference;
         this.userDisplayName = userDisplayName;
+        this.pANID = pANID;
+        this.maskedPAN = maskedPAN;
     }
 
     /**
@@ -1481,6 +1494,88 @@ public class AuditResponseAuditsItems {
     }
 
     /**
+     * Internal Getter for PANID.
+     * PAN ID of the card. This will be null when the PAN is not available in the request.
+     * @return Returns the Internal String
+     */
+    @JsonGetter("PANID")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetPANID() {
+        return this.pANID;
+    }
+
+    /**
+     * Getter for PANID.
+     * PAN ID of the card. This will be null when the PAN is not available in the request.
+     * @return Returns the String
+     */
+    public String getPANID() {
+        return OptionalNullable.getFrom(pANID);
+    }
+
+    /**
+     * Setter for PANID.
+     * PAN ID of the card. This will be null when the PAN is not available in the request.
+     * @param pANID Value for String
+     */
+    @JsonSetter("PANID")
+    public void setPANID(String pANID) {
+        this.pANID = OptionalNullable.of(pANID);
+    }
+
+    /**
+     * UnSetter for PANID.
+     * PAN ID of the card. This will be null when the PAN is not available in the request.
+     */
+    public void unsetPANID() {
+        pANID = null;
+    }
+
+    /**
+     * Internal Getter for MaskedPAN.
+     * Masked PAN of the card. This will be null when the Masked PAN is not available in the
+     * request.
+     * @return Returns the Internal String
+     */
+    @JsonGetter("MaskedPAN")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetMaskedPAN() {
+        return this.maskedPAN;
+    }
+
+    /**
+     * Getter for MaskedPAN.
+     * Masked PAN of the card. This will be null when the Masked PAN is not available in the
+     * request.
+     * @return Returns the String
+     */
+    public String getMaskedPAN() {
+        return OptionalNullable.getFrom(maskedPAN);
+    }
+
+    /**
+     * Setter for MaskedPAN.
+     * Masked PAN of the card. This will be null when the Masked PAN is not available in the
+     * request.
+     * @param maskedPAN Value for String
+     */
+    @JsonSetter("MaskedPAN")
+    public void setMaskedPAN(String maskedPAN) {
+        this.maskedPAN = OptionalNullable.of(maskedPAN);
+    }
+
+    /**
+     * UnSetter for MaskedPAN.
+     * Masked PAN of the card. This will be null when the Masked PAN is not available in the
+     * request.
+     */
+    public void unsetMaskedPAN() {
+        maskedPAN = null;
+    }
+
+    /**
      * Converts this AuditResponseAuditsItems into string format.
      * @return String representation of this class
      */
@@ -1501,7 +1596,8 @@ public class AuditResponseAuditsItems {
                 + requestedBy + ", requestedOperation=" + requestedOperation + ", requestReference="
                 + requestReference + ", requestType=" + requestType + ", status=" + status
                 + ", submittedOn=" + submittedOn + ", subRequestReference=" + subRequestReference
-                + ", userDisplayName=" + userDisplayName + "]";
+                + ", userDisplayName=" + userDisplayName + ", pANID=" + pANID + ", maskedPAN="
+                + maskedPAN + "]";
     }
 
     /**
@@ -1542,6 +1638,8 @@ public class AuditResponseAuditsItems {
         builder.submittedOn = internalGetSubmittedOn();
         builder.subRequestReference = internalGetSubRequestReference();
         builder.userDisplayName = internalGetUserDisplayName();
+        builder.pANID = internalGetPANID();
+        builder.maskedPAN = internalGetMaskedPAN();
         return builder;
     }
 
@@ -1580,6 +1678,8 @@ public class AuditResponseAuditsItems {
         private OptionalNullable<String> submittedOn;
         private OptionalNullable<Integer> subRequestReference;
         private OptionalNullable<String> userDisplayName;
+        private OptionalNullable<String> pANID;
+        private OptionalNullable<String> maskedPAN;
 
 
 
@@ -2164,6 +2264,44 @@ public class AuditResponseAuditsItems {
         }
 
         /**
+         * Setter for pANID.
+         * @param  pANID  String value for pANID.
+         * @return Builder
+         */
+        public Builder pANID(String pANID) {
+            this.pANID = OptionalNullable.of(pANID);
+            return this;
+        }
+
+        /**
+         * UnSetter for pANID.
+         * @return Builder
+         */
+        public Builder unsetPANID() {
+            pANID = null;
+            return this;
+        }
+
+        /**
+         * Setter for maskedPAN.
+         * @param  maskedPAN  String value for maskedPAN.
+         * @return Builder
+         */
+        public Builder maskedPAN(String maskedPAN) {
+            this.maskedPAN = OptionalNullable.of(maskedPAN);
+            return this;
+        }
+
+        /**
+         * UnSetter for maskedPAN.
+         * @return Builder
+         */
+        public Builder unsetMaskedPAN() {
+            maskedPAN = null;
+            return this;
+        }
+
+        /**
          * Builds a new {@link AuditResponseAuditsItems} object using the set fields.
          * @return {@link AuditResponseAuditsItems}
          */
@@ -2175,7 +2313,7 @@ public class AuditResponseAuditsItems {
                     cardId, colCoCode, colCoId, errorCode, errorString, globalRequestID, pAN,
                     payerId, payerNumber, processedOn, requestedBy, requestedOperation,
                     requestReference, requestType, status, submittedOn, subRequestReference,
-                    userDisplayName);
+                    userDisplayName, pANID, maskedPAN);
         }
     }
 }

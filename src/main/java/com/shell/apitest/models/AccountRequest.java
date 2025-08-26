@@ -536,8 +536,8 @@ public class AccountRequest {
 
     /**
      * Internal Getter for ColCoId.
-     * Collecting Company Id (in GFN) of the selected payer. Optional if ColCoCode or
-     * ColCoCountryCode is passed else Mandatory.
+     * Collecting Company Id of the selected payer. Optional if ColCoCode or ColCoCountryCode is
+     * passed else Mandatory.
      * @return Returns the Internal Integer
      */
     @JsonGetter("ColCoId")
@@ -549,8 +549,8 @@ public class AccountRequest {
 
     /**
      * Getter for ColCoId.
-     * Collecting Company Id (in GFN) of the selected payer. Optional if ColCoCode or
-     * ColCoCountryCode is passed else Mandatory.
+     * Collecting Company Id of the selected payer. Optional if ColCoCode or ColCoCountryCode is
+     * passed else Mandatory.
      * @return Returns the Integer
      */
     public Integer getColCoId() {
@@ -559,8 +559,8 @@ public class AccountRequest {
 
     /**
      * Setter for ColCoId.
-     * Collecting Company Id (in GFN) of the selected payer. Optional if ColCoCode or
-     * ColCoCountryCode is passed else Mandatory.
+     * Collecting Company Id of the selected payer. Optional if ColCoCode or ColCoCountryCode is
+     * passed else Mandatory.
      * @param colCoId Value for Integer
      */
     @JsonSetter("ColCoId")
@@ -570,8 +570,8 @@ public class AccountRequest {
 
     /**
      * UnSetter for ColCoId.
-     * Collecting Company Id (in GFN) of the selected payer. Optional if ColCoCode or
-     * ColCoCountryCode is passed else Mandatory.
+     * Collecting Company Id of the selected payer. Optional if ColCoCode or ColCoCountryCode is
+     * passed else Mandatory.
      */
     public void unsetColCoId() {
         colCoId = null;

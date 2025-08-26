@@ -24,8 +24,6 @@ public class CardGroupRequest {
     private List<Accounts> account;
     private OptionalNullable<String> cardGroupName;
     private OptionalNullable<String> status;
-    private Integer currentPage;
-    private Integer pageSize;
 
     /**
      * Default constructor.
@@ -42,8 +40,6 @@ public class CardGroupRequest {
      * @param  account  List of Accounts value for account.
      * @param  cardGroupName  String value for cardGroupName.
      * @param  status  String value for status.
-     * @param  currentPage  Integer value for currentPage.
-     * @param  pageSize  Integer value for pageSize.
      */
     public CardGroupRequest(
             Integer colCoId,
@@ -52,9 +48,7 @@ public class CardGroupRequest {
             String payerNumber,
             List<Accounts> account,
             String cardGroupName,
-            String status,
-            Integer currentPage,
-            Integer pageSize) {
+            String status) {
         this.colCoId = OptionalNullable.of(colCoId);
         this.colCoCode = OptionalNullable.of(colCoCode);
         this.payerId = OptionalNullable.of(payerId);
@@ -62,8 +56,6 @@ public class CardGroupRequest {
         this.account = account;
         this.cardGroupName = OptionalNullable.of(cardGroupName);
         this.status = OptionalNullable.of(status);
-        this.currentPage = currentPage;
-        this.pageSize = pageSize;
     }
 
     /**
@@ -75,15 +67,12 @@ public class CardGroupRequest {
      * @param  account  List of Accounts value for account.
      * @param  cardGroupName  String value for cardGroupName.
      * @param  status  String value for status.
-     * @param  currentPage  Integer value for currentPage.
-     * @param  pageSize  Integer value for pageSize.
      */
 
     protected CardGroupRequest(OptionalNullable<Integer> colCoId,
             OptionalNullable<Integer> colCoCode, OptionalNullable<Integer> payerId,
             OptionalNullable<String> payerNumber, List<Accounts> account,
-            OptionalNullable<String> cardGroupName, OptionalNullable<String> status,
-            Integer currentPage, Integer pageSize) {
+            OptionalNullable<String> cardGroupName, OptionalNullable<String> status) {
         this.colCoId = colCoId;
         this.colCoCode = colCoCode;
         this.payerId = payerId;
@@ -91,8 +80,6 @@ public class CardGroupRequest {
         this.account = account;
         this.cardGroupName = cardGroupName;
         this.status = status;
-        this.currentPage = currentPage;
-        this.pageSize = pageSize;
     }
 
     /**
@@ -373,50 +360,6 @@ public class CardGroupRequest {
     }
 
     /**
-     * Getter for CurrentPage.
-     * Page Number (as shown to the users) Optional Default value 1
-     * @return Returns the Integer
-     */
-    @JsonGetter("CurrentPage")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Integer getCurrentPage() {
-        return currentPage;
-    }
-
-    /**
-     * Setter for CurrentPage.
-     * Page Number (as shown to the users) Optional Default value 1
-     * @param currentPage Value for Integer
-     */
-    @JsonSetter("CurrentPage")
-    public void setCurrentPage(Integer currentPage) {
-        this.currentPage = currentPage;
-    }
-
-    /**
-     * Getter for PageSize.
-     * Page Size – Number of records to show on a page. Optional Default value 50. Return all rows
-     * if -1 is supplied as page size.
-     * @return Returns the Integer
-     */
-    @JsonGetter("PageSize")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Integer getPageSize() {
-        return pageSize;
-    }
-
-    /**
-     * Setter for PageSize.
-     * Page Size – Number of records to show on a page. Optional Default value 50. Return all rows
-     * if -1 is supplied as page size.
-     * @param pageSize Value for Integer
-     */
-    @JsonSetter("PageSize")
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    /**
      * Converts this CardGroupRequest into string format.
      * @return String representation of this class
      */
@@ -424,8 +367,7 @@ public class CardGroupRequest {
     public String toString() {
         return "CardGroupRequest [" + "colCoId=" + colCoId + ", colCoCode=" + colCoCode
                 + ", payerId=" + payerId + ", payerNumber=" + payerNumber + ", account=" + account
-                + ", cardGroupName=" + cardGroupName + ", status=" + status + ", currentPage="
-                + currentPage + ", pageSize=" + pageSize + "]";
+                + ", cardGroupName=" + cardGroupName + ", status=" + status + "]";
     }
 
     /**
@@ -435,9 +377,7 @@ public class CardGroupRequest {
      */
     public Builder toBuilder() {
         Builder builder = new Builder()
-                .account(getAccount())
-                .currentPage(getCurrentPage())
-                .pageSize(getPageSize());
+                .account(getAccount());
         builder.colCoId = internalGetColCoId();
         builder.colCoCode = internalGetColCoCode();
         builder.payerId = internalGetPayerId();
@@ -458,8 +398,6 @@ public class CardGroupRequest {
         private List<Accounts> account;
         private OptionalNullable<String> cardGroupName;
         private OptionalNullable<String> status;
-        private Integer currentPage;
-        private Integer pageSize;
 
 
 
@@ -588,32 +526,12 @@ public class CardGroupRequest {
         }
 
         /**
-         * Setter for currentPage.
-         * @param  currentPage  Integer value for currentPage.
-         * @return Builder
-         */
-        public Builder currentPage(Integer currentPage) {
-            this.currentPage = currentPage;
-            return this;
-        }
-
-        /**
-         * Setter for pageSize.
-         * @param  pageSize  Integer value for pageSize.
-         * @return Builder
-         */
-        public Builder pageSize(Integer pageSize) {
-            this.pageSize = pageSize;
-            return this;
-        }
-
-        /**
          * Builds a new {@link CardGroupRequest} object using the set fields.
          * @return {@link CardGroupRequest}
          */
         public CardGroupRequest build() {
             return new CardGroupRequest(colCoId, colCoCode, payerId, payerNumber, account,
-                    cardGroupName, status, currentPage, pageSize);
+                    cardGroupName, status);
         }
     }
 }

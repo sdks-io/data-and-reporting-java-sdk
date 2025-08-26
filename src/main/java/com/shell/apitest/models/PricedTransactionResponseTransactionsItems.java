@@ -142,8 +142,6 @@ public class PricedTransactionResponseTransactionsItems {
     private OptionalNullable<Double> customerRetailValueTotalGross;
     private OptionalNullable<Double> customerRetailValueTotalNet;
     private OptionalNullable<String> transactionTypeDescription;
-    private ErrorStatus error;
-    private String requestId;
 
     /**
      * Default constructor.
@@ -282,8 +280,6 @@ public class PricedTransactionResponseTransactionsItems {
      * @param  customerRetailValueTotalGross  Double value for customerRetailValueTotalGross.
      * @param  customerRetailValueTotalNet  Double value for customerRetailValueTotalNet.
      * @param  transactionTypeDescription  String value for transactionTypeDescription.
-     * @param  error  ErrorStatus value for error.
-     * @param  requestId  String value for requestId.
      */
     public PricedTransactionResponseTransactionsItems(
             String type,
@@ -409,9 +405,7 @@ public class PricedTransactionResponseTransactionsItems {
             Double customerRetailPriceUnitGross,
             Double customerRetailValueTotalGross,
             Double customerRetailValueTotalNet,
-            String transactionTypeDescription,
-            ErrorStatus error,
-            String requestId) {
+            String transactionTypeDescription) {
         this.type = OptionalNullable.of(type);
         this.cardId = OptionalNullable.of(cardId);
         this.cardPAN = OptionalNullable.of(cardPAN);
@@ -541,8 +535,6 @@ public class PricedTransactionResponseTransactionsItems {
         this.customerRetailValueTotalGross = OptionalNullable.of(customerRetailValueTotalGross);
         this.customerRetailValueTotalNet = OptionalNullable.of(customerRetailValueTotalNet);
         this.transactionTypeDescription = OptionalNullable.of(transactionTypeDescription);
-        this.error = error;
-        this.requestId = requestId;
     }
 
     /**
@@ -676,8 +668,6 @@ public class PricedTransactionResponseTransactionsItems {
      * @param  customerRetailValueTotalGross  Double value for customerRetailValueTotalGross.
      * @param  customerRetailValueTotalNet  Double value for customerRetailValueTotalNet.
      * @param  transactionTypeDescription  String value for transactionTypeDescription.
-     * @param  error  ErrorStatus value for error.
-     * @param  requestId  String value for requestId.
      */
 
     protected PricedTransactionResponseTransactionsItems(OptionalNullable<String> type,
@@ -758,8 +748,7 @@ public class PricedTransactionResponseTransactionsItems {
             OptionalNullable<Double> customerRetailPriceUnitGross,
             OptionalNullable<Double> customerRetailValueTotalGross,
             OptionalNullable<Double> customerRetailValueTotalNet,
-            OptionalNullable<String> transactionTypeDescription, ErrorStatus error,
-            String requestId) {
+            OptionalNullable<String> transactionTypeDescription) {
         this.type = type;
         this.cardId = cardId;
         this.cardPAN = cardPAN;
@@ -884,8 +873,6 @@ public class PricedTransactionResponseTransactionsItems {
         this.customerRetailValueTotalGross = customerRetailValueTotalGross;
         this.customerRetailValueTotalNet = customerRetailValueTotalNet;
         this.transactionTypeDescription = transactionTypeDescription;
-        this.error = error;
-        this.requestId = requestId;
     }
 
     /**
@@ -5845,46 +5832,6 @@ public class PricedTransactionResponseTransactionsItems {
     }
 
     /**
-     * Getter for Error.
-     * @return Returns the ErrorStatus
-     */
-    @JsonGetter("Error")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public ErrorStatus getError() {
-        return error;
-    }
-
-    /**
-     * Setter for Error.
-     * @param error Value for ErrorStatus
-     */
-    @JsonSetter("Error")
-    public void setError(ErrorStatus error) {
-        this.error = error;
-    }
-
-    /**
-     * Getter for RequestId.
-     * API Request Id
-     * @return Returns the String
-     */
-    @JsonGetter("RequestId")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public String getRequestId() {
-        return requestId;
-    }
-
-    /**
-     * Setter for RequestId.
-     * API Request Id
-     * @param requestId Value for String
-     */
-    @JsonSetter("RequestId")
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
-    /**
      * Converts this PricedTransactionResponseTransactionsItems into string format.
      * @return String representation of this class
      */
@@ -5963,8 +5910,7 @@ public class PricedTransactionResponseTransactionsItems {
                 + customerRetailPriceUnitGross + ", customerRetailValueTotalGross="
                 + customerRetailValueTotalGross + ", customerRetailValueTotalNet="
                 + customerRetailValueTotalNet + ", transactionTypeDescription="
-                + transactionTypeDescription + ", error=" + error + ", requestId=" + requestId
-                + "]";
+                + transactionTypeDescription + "]";
     }
 
     /**
@@ -5974,9 +5920,7 @@ public class PricedTransactionResponseTransactionsItems {
      */
     public Builder toBuilder() {
         Builder builder = new Builder()
-                .location(getLocation())
-                .error(getError())
-                .requestId(getRequestId());
+                .location(getLocation());
         builder.type = internalGetType();
         builder.cardId = internalGetCardId();
         builder.cardPAN = internalGetCardPAN();
@@ -6235,8 +6179,6 @@ public class PricedTransactionResponseTransactionsItems {
         private OptionalNullable<Double> customerRetailValueTotalGross;
         private OptionalNullable<Double> customerRetailValueTotalNet;
         private OptionalNullable<String> transactionTypeDescription;
-        private ErrorStatus error;
-        private String requestId;
 
 
 
@@ -8608,26 +8550,6 @@ public class PricedTransactionResponseTransactionsItems {
         }
 
         /**
-         * Setter for error.
-         * @param  error  ErrorStatus value for error.
-         * @return Builder
-         */
-        public Builder error(ErrorStatus error) {
-            this.error = error;
-            return this;
-        }
-
-        /**
-         * Setter for requestId.
-         * @param  requestId  String value for requestId.
-         * @return Builder
-         */
-        public Builder requestId(String requestId) {
-            this.requestId = requestId;
-            return this;
-        }
-
-        /**
          * Builds a new {@link PricedTransactionResponseTransactionsItems} object using the set
          * fields.
          * @return {@link PricedTransactionResponseTransactionsItems}
@@ -8664,7 +8586,7 @@ public class PricedTransactionResponseTransactionsItems {
                     delcoListPriceUnitNet, delcoRetailPriceUnitNet, delcoRetailPriceUnitGross,
                     delcoRetailValueTotalNet, delcoRetailValueTotalGross,
                     customerRetailPriceUnitGross, customerRetailValueTotalGross,
-                    customerRetailValueTotalNet, transactionTypeDescription, error, requestId);
+                    customerRetailValueTotalNet, transactionTypeDescription);
         }
     }
 }

@@ -27,8 +27,6 @@
 | `ProductCode` | `String` | Optional | Product Code<br>Optional<br>Example:<br><br>1. Service fee<br>2. Invoice production fee<br>3. Account fee<br>4. Transaction fee<br>5. Card membership fee | String getProductCode() | setProductCode(String productCode) |
 | `LineItemDescription` | `String` | Optional | Line item description.<br>Optional<br>Minimum of 4 characters should be provided else not considered<br>Those fee items that have the entered value at any part of the line item description will be returned. | String getLineItemDescription() | setLineItemDescription(String lineItemDescription) |
 | `SortOrder` | `String` | Optional | Allowed Sorting Options:<br>•    FeeDateAscending<br>•    FeeDateDescending<br>•    NetAmountAscending<br>•    NetAmountDescending<br>Optional.<br>Default: 1 | String getSortOrder() | setSortOrder(String sortOrder) |
-| `CurrentPage` | `Integer` | Optional | Page Number | Integer getCurrentPage() | setCurrentPage(Integer currentPage) |
-| `PageSize` | `Integer` | Optional | Page Size – Number of records to show on a page | Integer getPageSize() | setPageSize(Integer pageSize) |
 
 ## Example (as JSON)
 

@@ -15,9 +15,10 @@ import java.util.List;
  * This is a model class for FuelConsumptionResponse type.
  */
 public class FuelConsumptionResponse {
-    private List<FuelConsumptionData> fuelConsumption;
-    private ErrorStatus error;
     private String requestId;
+    private String status;
+    private List<FuelConsumptionData> data;
+    private List<Warning> warnings;
 
     /**
      * Default constructor.
@@ -27,60 +28,25 @@ public class FuelConsumptionResponse {
 
     /**
      * Initialization constructor.
-     * @param  fuelConsumption  List of FuelConsumptionData value for fuelConsumption.
-     * @param  error  ErrorStatus value for error.
      * @param  requestId  String value for requestId.
+     * @param  status  String value for status.
+     * @param  data  List of FuelConsumptionData value for data.
+     * @param  warnings  List of Warning value for warnings.
      */
     public FuelConsumptionResponse(
-            List<FuelConsumptionData> fuelConsumption,
-            ErrorStatus error,
-            String requestId) {
-        this.fuelConsumption = fuelConsumption;
-        this.error = error;
+            String requestId,
+            String status,
+            List<FuelConsumptionData> data,
+            List<Warning> warnings) {
         this.requestId = requestId;
-    }
-
-    /**
-     * Getter for FuelConsumption.
-     * @return Returns the List of FuelConsumptionData
-     */
-    @JsonGetter("FuelConsumption")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public List<FuelConsumptionData> getFuelConsumption() {
-        return fuelConsumption;
-    }
-
-    /**
-     * Setter for FuelConsumption.
-     * @param fuelConsumption Value for List of FuelConsumptionData
-     */
-    @JsonSetter("FuelConsumption")
-    public void setFuelConsumption(List<FuelConsumptionData> fuelConsumption) {
-        this.fuelConsumption = fuelConsumption;
-    }
-
-    /**
-     * Getter for Error.
-     * @return Returns the ErrorStatus
-     */
-    @JsonGetter("Error")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public ErrorStatus getError() {
-        return error;
-    }
-
-    /**
-     * Setter for Error.
-     * @param error Value for ErrorStatus
-     */
-    @JsonSetter("Error")
-    public void setError(ErrorStatus error) {
-        this.error = error;
+        this.status = status;
+        this.data = data;
+        this.warnings = warnings;
     }
 
     /**
      * Getter for RequestId.
-     * API Request Id
+     * Unique identifier for the request. This will be played back in the response from the request.
      * @return Returns the String
      */
     @JsonGetter("RequestId")
@@ -91,7 +57,7 @@ public class FuelConsumptionResponse {
 
     /**
      * Setter for RequestId.
-     * API Request Id
+     * Unique identifier for the request. This will be played back in the response from the request.
      * @param requestId Value for String
      */
     @JsonSetter("RequestId")
@@ -100,13 +66,80 @@ public class FuelConsumptionResponse {
     }
 
     /**
+     * Getter for Status.
+     * Status of the request
+     * @return Returns the String
+     */
+    @JsonGetter("Status")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public String getStatus() {
+        return status;
+    }
+
+    /**
+     * Setter for Status.
+     * Status of the request
+     * @param status Value for String
+     */
+    @JsonSetter("Status")
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * Getter for Data.
+     * @return Returns the List of FuelConsumptionData
+     */
+    @JsonGetter("Data")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public List<FuelConsumptionData> getData() {
+        return data;
+    }
+
+    /**
+     * Setter for Data.
+     * @param data Value for List of FuelConsumptionData
+     */
+    @JsonSetter("Data")
+    public void setData(List<FuelConsumptionData> data) {
+        this.data = data;
+    }
+
+    /**
+     * Getter for Warnings.
+     * A list of Warning entity. This entity will hold the details of the scheduled System Outages
+     * of any dependent applications of this service. Note: If there is no scheduled outage
+     * information available, in the configuration in AMS, for this service, this parameter won’t be
+     * present in output.
+     * @return Returns the List of Warning
+     */
+    @JsonGetter("Warnings")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public List<Warning> getWarnings() {
+        return warnings;
+    }
+
+    /**
+     * Setter for Warnings.
+     * A list of Warning entity. This entity will hold the details of the scheduled System Outages
+     * of any dependent applications of this service. Note: If there is no scheduled outage
+     * information available, in the configuration in AMS, for this service, this parameter won’t be
+     * present in output.
+     * @param warnings Value for List of Warning
+     */
+    @JsonSetter("Warnings")
+    public void setWarnings(List<Warning> warnings) {
+        this.warnings = warnings;
+    }
+
+    /**
      * Converts this FuelConsumptionResponse into string format.
      * @return String representation of this class
      */
     @Override
     public String toString() {
-        return "FuelConsumptionResponse [" + "fuelConsumption=" + fuelConsumption + ", error="
-                + error + ", requestId=" + requestId + "]";
+        return "FuelConsumptionResponse [" + "requestId=" + requestId + ", status=" + status
+                + ", data=" + data + ", warnings=" + warnings + "]";
     }
 
     /**
@@ -116,9 +149,10 @@ public class FuelConsumptionResponse {
      */
     public Builder toBuilder() {
         Builder builder = new Builder()
-                .fuelConsumption(getFuelConsumption())
-                .error(getError())
-                .requestId(getRequestId());
+                .requestId(getRequestId())
+                .status(getStatus())
+                .data(getData())
+                .warnings(getWarnings());
         return builder;
     }
 
@@ -126,31 +160,12 @@ public class FuelConsumptionResponse {
      * Class to build instances of {@link FuelConsumptionResponse}.
      */
     public static class Builder {
-        private List<FuelConsumptionData> fuelConsumption;
-        private ErrorStatus error;
         private String requestId;
+        private String status;
+        private List<FuelConsumptionData> data;
+        private List<Warning> warnings;
 
 
-
-        /**
-         * Setter for fuelConsumption.
-         * @param  fuelConsumption  List of FuelConsumptionData value for fuelConsumption.
-         * @return Builder
-         */
-        public Builder fuelConsumption(List<FuelConsumptionData> fuelConsumption) {
-            this.fuelConsumption = fuelConsumption;
-            return this;
-        }
-
-        /**
-         * Setter for error.
-         * @param  error  ErrorStatus value for error.
-         * @return Builder
-         */
-        public Builder error(ErrorStatus error) {
-            this.error = error;
-            return this;
-        }
 
         /**
          * Setter for requestId.
@@ -163,11 +178,41 @@ public class FuelConsumptionResponse {
         }
 
         /**
+         * Setter for status.
+         * @param  status  String value for status.
+         * @return Builder
+         */
+        public Builder status(String status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Setter for data.
+         * @param  data  List of FuelConsumptionData value for data.
+         * @return Builder
+         */
+        public Builder data(List<FuelConsumptionData> data) {
+            this.data = data;
+            return this;
+        }
+
+        /**
+         * Setter for warnings.
+         * @param  warnings  List of Warning value for warnings.
+         * @return Builder
+         */
+        public Builder warnings(List<Warning> warnings) {
+            this.warnings = warnings;
+            return this;
+        }
+
+        /**
          * Builds a new {@link FuelConsumptionResponse} object using the set fields.
          * @return {@link FuelConsumptionResponse}
          */
         public FuelConsumptionResponse build() {
-            return new FuelConsumptionResponse(fuelConsumption, error, requestId);
+            return new FuelConsumptionResponse(requestId, status, data, warnings);
         }
     }
 }

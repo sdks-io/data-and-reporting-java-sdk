@@ -9,7 +9,7 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `ColCoId` | `String` | Optional | Collecting company id. | String getColCoId() | setColCoId(String colCoId) |
+| `ColCoId` | `Integer` | Optional | Collecting company id. | Integer getColCoId() | setColCoId(Integer colCoId) |
 | `ColCoCode` | `Integer` | Optional | Collecting company Code | Integer getColCoCode() | setColCoCode(Integer colCoCode) |
 | `AccountGroupId` | `String` | Optional | Identifier for the EID account group configured for the user. | String getAccountGroupId() | setAccountGroupId(String accountGroupId) |
 
@@ -17,7 +17,7 @@
 
 ```json
 {
-  "ColCoId": "14",
+  "ColCoId": 14,
   "ColCoCode": 14,
   "AccountGroupId": "345"
 }

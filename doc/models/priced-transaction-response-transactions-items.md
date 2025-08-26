@@ -133,8 +133,6 @@
 | `CustomerRetailValueTotalGross` | `Double` | Optional | Retail gross price (or gross pump price) in customer currency | Double getCustomerRetailValueTotalGross() | setCustomerRetailValueTotalGross(Double customerRetailValueTotalGross) |
 | `CustomerRetailValueTotalNet` | `Double` | Optional | Retail gross price (or gross pump price) in customer currency<br>Retail net price (or net pump price) in customer currency | Double getCustomerRetailValueTotalNet() | setCustomerRetailValueTotalNet(Double customerRetailValueTotalNet) |
 | `TransactionTypeDescription` | `String` | Optional | Transaction Type Description<br>Note: - The value could be null/blank for fees item | String getTransactionTypeDescription() | setTransactionTypeDescription(String transactionTypeDescription) |
-| `Error` | [`ErrorStatus`](../../doc/models/error-status.md) | Optional | - | ErrorStatus getError() | setError(ErrorStatus error) |
-| `RequestId` | `String` | Optional | API Request Id | String getRequestId() | setRequestId(String requestId) |
 
 ## Example (as JSON)
 

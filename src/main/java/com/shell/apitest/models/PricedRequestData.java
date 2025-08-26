@@ -336,8 +336,6 @@ public class PricedRequestData {
 
     /**
      * Getter for InvoiceStatus.
-     * Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U – Un-Invoiced,
-     * A – All
      * @return Returns the PricedTransactionReqV2InvoiceStatusEnum
      */
     @JsonGetter("InvoiceStatus")
@@ -347,8 +345,6 @@ public class PricedRequestData {
 
     /**
      * Setter for InvoiceStatus.
-     * Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U – Un-Invoiced,
-     * A – All
      * @param invoiceStatus Value for PricedTransactionReqV2InvoiceStatusEnum
      */
     @JsonSetter("InvoiceStatus")
@@ -1182,8 +1178,6 @@ public class PricedRequestData {
 
     /**
      * Getter for Period.
-     * Pass below one of the value as per the required transaction period 1. Last 7 Days 2. Last 30
-     * Days 3. Last 90 Days
      * @return Returns the PricedTransactionReqV2PeriodEnum
      */
     @JsonGetter("Period")
@@ -1194,8 +1188,6 @@ public class PricedRequestData {
 
     /**
      * Setter for Period.
-     * Pass below one of the value as per the required transaction period 1. Last 7 Days 2. Last 30
-     * Days 3. Last 90 Days
      * @param period Value for PricedTransactionReqV2PeriodEnum
      */
     @JsonSetter("Period")

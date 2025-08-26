@@ -15,12 +15,14 @@ import java.util.List;
  * This is a model class for AuditResponse type.
  */
 public class AuditResponse {
-    private List<AuditResponseAuditsItems> audits;
-    private Integer currentPage;
-    private Integer rowCount;
-    private Integer totalPages;
-    private ErrorStatus error;
     private String requestId;
+    private String status;
+    private List<AuditArrayElements> data;
+    private Integer page;
+    private Integer totalRecords;
+    private Integer totalPages;
+    private Integer pageSize;
+    private List<Warning> warnings;
 
     /**
      * Default constructor.
@@ -30,93 +32,142 @@ public class AuditResponse {
 
     /**
      * Initialization constructor.
-     * @param  audits  List of AuditResponseAuditsItems value for audits.
-     * @param  currentPage  Integer value for currentPage.
-     * @param  rowCount  Integer value for rowCount.
-     * @param  totalPages  Integer value for totalPages.
-     * @param  error  ErrorStatus value for error.
      * @param  requestId  String value for requestId.
+     * @param  status  String value for status.
+     * @param  data  List of AuditArrayElements value for data.
+     * @param  page  Integer value for page.
+     * @param  totalRecords  Integer value for totalRecords.
+     * @param  totalPages  Integer value for totalPages.
+     * @param  pageSize  Integer value for pageSize.
+     * @param  warnings  List of Warning value for warnings.
      */
     public AuditResponse(
-            List<AuditResponseAuditsItems> audits,
-            Integer currentPage,
-            Integer rowCount,
+            String requestId,
+            String status,
+            List<AuditArrayElements> data,
+            Integer page,
+            Integer totalRecords,
             Integer totalPages,
-            ErrorStatus error,
-            String requestId) {
-        this.audits = audits;
-        this.currentPage = currentPage;
-        this.rowCount = rowCount;
+            Integer pageSize,
+            List<Warning> warnings) {
+        this.requestId = requestId;
+        this.status = status;
+        this.data = data;
+        this.page = page;
+        this.totalRecords = totalRecords;
         this.totalPages = totalPages;
-        this.error = error;
+        this.pageSize = pageSize;
+        this.warnings = warnings;
+    }
+
+    /**
+     * Getter for RequestId.
+     * Unique identifier for the request. This will be played back in the response from the request.
+     * @return Returns the String
+     */
+    @JsonGetter("RequestId")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public String getRequestId() {
+        return requestId;
+    }
+
+    /**
+     * Setter for RequestId.
+     * Unique identifier for the request. This will be played back in the response from the request.
+     * @param requestId Value for String
+     */
+    @JsonSetter("RequestId")
+    public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
 
     /**
-     * Getter for Audits.
-     * @return Returns the List of AuditResponseAuditsItems
+     * Getter for Status.
+     * Status of the request
+     * @return Returns the String
      */
-    @JsonGetter("Audits")
+    @JsonGetter("Status")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public List<AuditResponseAuditsItems> getAudits() {
-        return audits;
+    public String getStatus() {
+        return status;
     }
 
     /**
-     * Setter for Audits.
-     * @param audits Value for List of AuditResponseAuditsItems
+     * Setter for Status.
+     * Status of the request
+     * @param status Value for String
      */
-    @JsonSetter("Audits")
-    public void setAudits(List<AuditResponseAuditsItems> audits) {
-        this.audits = audits;
+    @JsonSetter("Status")
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     /**
-     * Getter for CurrentPage.
+     * Getter for Data.
+     * @return Returns the List of AuditArrayElements
+     */
+    @JsonGetter("Data")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public List<AuditArrayElements> getData() {
+        return data;
+    }
+
+    /**
+     * Setter for Data.
+     * @param data Value for List of AuditArrayElements
+     */
+    @JsonSetter("Data")
+    public void setData(List<AuditArrayElements> data) {
+        this.data = data;
+    }
+
+    /**
+     * Getter for Page.
      * Current Page
      * @return Returns the Integer
      */
-    @JsonGetter("CurrentPage")
+    @JsonGetter("Page")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Integer getCurrentPage() {
-        return currentPage;
+    public Integer getPage() {
+        return page;
     }
 
     /**
-     * Setter for CurrentPage.
+     * Setter for Page.
      * Current Page
-     * @param currentPage Value for Integer
+     * @param page Value for Integer
      */
-    @JsonSetter("CurrentPage")
-    public void setCurrentPage(Integer currentPage) {
-        this.currentPage = currentPage;
+    @JsonSetter("Page")
+    public void setPage(Integer page) {
+        this.page = page;
     }
 
     /**
-     * Getter for RowCount.
+     * Getter for TotalRecords.
      * Total row count matched for the given input criteria
      * @return Returns the Integer
      */
-    @JsonGetter("RowCount")
+    @JsonGetter("TotalRecords")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Integer getRowCount() {
-        return rowCount;
+    public Integer getTotalRecords() {
+        return totalRecords;
     }
 
     /**
-     * Setter for RowCount.
+     * Setter for TotalRecords.
      * Total row count matched for the given input criteria
-     * @param rowCount Value for Integer
+     * @param totalRecords Value for Integer
      */
-    @JsonSetter("RowCount")
-    public void setRowCount(Integer rowCount) {
-        this.rowCount = rowCount;
+    @JsonSetter("TotalRecords")
+    public void setTotalRecords(Integer totalRecords) {
+        this.totalRecords = totalRecords;
     }
 
     /**
      * Getter for TotalPages.
      * Calculated page count based on page size from the incoming API request and total number of
-     * rows matched for the given input criteria
+     * rows matched for the given input criteria. Return 1 if the page size is -1 as all records are
+     * returned.
      * @return Returns the Integer
      */
     @JsonGetter("TotalPages")
@@ -128,7 +179,8 @@ public class AuditResponse {
     /**
      * Setter for TotalPages.
      * Calculated page count based on page size from the incoming API request and total number of
-     * rows matched for the given input criteria
+     * rows matched for the given input criteria. Return 1 if the page size is -1 as all records are
+     * returned.
      * @param totalPages Value for Integer
      */
     @JsonSetter("TotalPages")
@@ -137,43 +189,51 @@ public class AuditResponse {
     }
 
     /**
-     * Getter for Error.
-     * @return Returns the ErrorStatus
+     * Getter for PageSize.
+     * Page Size – Number of records to show on current page.
+     * @return Returns the Integer
      */
-    @JsonGetter("Error")
+    @JsonGetter("PageSize")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public ErrorStatus getError() {
-        return error;
+    public Integer getPageSize() {
+        return pageSize;
     }
 
     /**
-     * Setter for Error.
-     * @param error Value for ErrorStatus
+     * Setter for PageSize.
+     * Page Size – Number of records to show on current page.
+     * @param pageSize Value for Integer
      */
-    @JsonSetter("Error")
-    public void setError(ErrorStatus error) {
-        this.error = error;
+    @JsonSetter("PageSize")
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
     }
 
     /**
-     * Getter for RequestId.
-     * API RequestId
-     * @return Returns the String
+     * Getter for Warnings.
+     * A list of Warning entity. This entity will hold the details of the scheduled System Outages
+     * of any dependent applications of this service. Note: If there is no scheduled outage
+     * information available, in the configuration in AMS, for this service, this parameter won’t be
+     * present in output.
+     * @return Returns the List of Warning
      */
-    @JsonGetter("RequestId")
+    @JsonGetter("Warnings")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public String getRequestId() {
-        return requestId;
+    public List<Warning> getWarnings() {
+        return warnings;
     }
 
     /**
-     * Setter for RequestId.
-     * API RequestId
-     * @param requestId Value for String
+     * Setter for Warnings.
+     * A list of Warning entity. This entity will hold the details of the scheduled System Outages
+     * of any dependent applications of this service. Note: If there is no scheduled outage
+     * information available, in the configuration in AMS, for this service, this parameter won’t be
+     * present in output.
+     * @param warnings Value for List of Warning
      */
-    @JsonSetter("RequestId")
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
+    @JsonSetter("Warnings")
+    public void setWarnings(List<Warning> warnings) {
+        this.warnings = warnings;
     }
 
     /**
@@ -182,9 +242,9 @@ public class AuditResponse {
      */
     @Override
     public String toString() {
-        return "AuditResponse [" + "audits=" + audits + ", currentPage=" + currentPage
-                + ", rowCount=" + rowCount + ", totalPages=" + totalPages + ", error=" + error
-                + ", requestId=" + requestId + "]";
+        return "AuditResponse [" + "requestId=" + requestId + ", status=" + status + ", data="
+                + data + ", page=" + page + ", totalRecords=" + totalRecords + ", totalPages="
+                + totalPages + ", pageSize=" + pageSize + ", warnings=" + warnings + "]";
     }
 
     /**
@@ -194,12 +254,14 @@ public class AuditResponse {
      */
     public Builder toBuilder() {
         Builder builder = new Builder()
-                .audits(getAudits())
-                .currentPage(getCurrentPage())
-                .rowCount(getRowCount())
+                .requestId(getRequestId())
+                .status(getStatus())
+                .data(getData())
+                .page(getPage())
+                .totalRecords(getTotalRecords())
                 .totalPages(getTotalPages())
-                .error(getError())
-                .requestId(getRequestId());
+                .pageSize(getPageSize())
+                .warnings(getWarnings());
         return builder;
     }
 
@@ -207,42 +269,64 @@ public class AuditResponse {
      * Class to build instances of {@link AuditResponse}.
      */
     public static class Builder {
-        private List<AuditResponseAuditsItems> audits;
-        private Integer currentPage;
-        private Integer rowCount;
-        private Integer totalPages;
-        private ErrorStatus error;
         private String requestId;
+        private String status;
+        private List<AuditArrayElements> data;
+        private Integer page;
+        private Integer totalRecords;
+        private Integer totalPages;
+        private Integer pageSize;
+        private List<Warning> warnings;
 
 
 
         /**
-         * Setter for audits.
-         * @param  audits  List of AuditResponseAuditsItems value for audits.
+         * Setter for requestId.
+         * @param  requestId  String value for requestId.
          * @return Builder
          */
-        public Builder audits(List<AuditResponseAuditsItems> audits) {
-            this.audits = audits;
+        public Builder requestId(String requestId) {
+            this.requestId = requestId;
             return this;
         }
 
         /**
-         * Setter for currentPage.
-         * @param  currentPage  Integer value for currentPage.
+         * Setter for status.
+         * @param  status  String value for status.
          * @return Builder
          */
-        public Builder currentPage(Integer currentPage) {
-            this.currentPage = currentPage;
+        public Builder status(String status) {
+            this.status = status;
             return this;
         }
 
         /**
-         * Setter for rowCount.
-         * @param  rowCount  Integer value for rowCount.
+         * Setter for data.
+         * @param  data  List of AuditArrayElements value for data.
          * @return Builder
          */
-        public Builder rowCount(Integer rowCount) {
-            this.rowCount = rowCount;
+        public Builder data(List<AuditArrayElements> data) {
+            this.data = data;
+            return this;
+        }
+
+        /**
+         * Setter for page.
+         * @param  page  Integer value for page.
+         * @return Builder
+         */
+        public Builder page(Integer page) {
+            this.page = page;
+            return this;
+        }
+
+        /**
+         * Setter for totalRecords.
+         * @param  totalRecords  Integer value for totalRecords.
+         * @return Builder
+         */
+        public Builder totalRecords(Integer totalRecords) {
+            this.totalRecords = totalRecords;
             return this;
         }
 
@@ -257,22 +341,22 @@ public class AuditResponse {
         }
 
         /**
-         * Setter for error.
-         * @param  error  ErrorStatus value for error.
+         * Setter for pageSize.
+         * @param  pageSize  Integer value for pageSize.
          * @return Builder
          */
-        public Builder error(ErrorStatus error) {
-            this.error = error;
+        public Builder pageSize(Integer pageSize) {
+            this.pageSize = pageSize;
             return this;
         }
 
         /**
-         * Setter for requestId.
-         * @param  requestId  String value for requestId.
+         * Setter for warnings.
+         * @param  warnings  List of Warning value for warnings.
          * @return Builder
          */
-        public Builder requestId(String requestId) {
-            this.requestId = requestId;
+        public Builder warnings(List<Warning> warnings) {
+            this.warnings = warnings;
             return this;
         }
 
@@ -281,7 +365,8 @@ public class AuditResponse {
          * @return {@link AuditResponse}
          */
         public AuditResponse build() {
-            return new AuditResponse(audits, currentPage, rowCount, totalPages, error, requestId);
+            return new AuditResponse(requestId, status, data, page, totalRecords, totalPages,
+                    pageSize, warnings);
         }
     }
 }

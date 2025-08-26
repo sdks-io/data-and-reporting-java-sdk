@@ -6,39 +6,37 @@
 
 package com.shell.apitest.controllers;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.shell.apitest.ApiHelper;
 import com.shell.apitest.Server;
 import com.shell.apitest.exceptions.ApiException;
-import com.shell.apitest.exceptions.DefaultErrorException;
 import com.shell.apitest.exceptions.ErrorObjectException;
-import com.shell.apitest.exceptions.ErrorUserAccessError1Exception;
 import com.shell.apitest.http.request.HttpMethod;
-import com.shell.apitest.models.CardUsageSummaryRequest;
-import com.shell.apitest.models.CardUsageSummaryResponse;
+import com.shell.apitest.models.CardUsageSummaryReq;
+import com.shell.apitest.models.CardUsageSummaryRes;
 import com.shell.apitest.models.FeeSummaryResponse;
-import com.shell.apitest.models.FuelConsumptionRequest;
+import com.shell.apitest.models.FuelConsumptionReq;
 import com.shell.apitest.models.FuelConsumptionResponse;
-import com.shell.apitest.models.MultiPricedTransactionRequest;
-import com.shell.apitest.models.MultiPricedTransactionResponse;
-import com.shell.apitest.models.PriceTransSummaryRequest;
-import com.shell.apitest.models.PriceTransactionRequest;
-import com.shell.apitest.models.PricedTransSummaryResponse;
+import com.shell.apitest.models.MultiPricedTransactionReq;
+import com.shell.apitest.models.MultiPricedTransactionRes;
+import com.shell.apitest.models.PriceTransSummaryReq;
+import com.shell.apitest.models.PriceTransactionReq;
+import com.shell.apitest.models.PricedTransSummaryResp;
 import com.shell.apitest.models.PricedTransactionRequestV2;
-import com.shell.apitest.models.PricedTransactionResponse;
+import com.shell.apitest.models.PricedTransactionRes;
 import com.shell.apitest.models.PricedTransactionResponseV2;
 import com.shell.apitest.models.RecentTransactionRequest;
 import com.shell.apitest.models.RecentTransactionsResponse;
-import com.shell.apitest.models.TransactionExceptionsRequest;
-import com.shell.apitest.models.TransactionExceptionsResponse;
-import com.shell.apitest.models.TransactionFeesRequest;
-import com.shell.apitest.models.TransactionFeesResponse;
+import com.shell.apitest.models.TransactionExceptionsReq;
+import com.shell.apitest.models.TransactionExceptionsRes;
+import com.shell.apitest.models.TransactionFeesReq;
+import com.shell.apitest.models.TransactionFeesRes;
+import com.shell.apitest.models.TransactionFeesSummaryReq;
 import com.shell.apitest.models.UpdateOdometerRequest;
-import com.shell.apitest.models.UpdateOdometerResponse;
-import com.shell.apitest.models.VolumeBasedBonusRequest;
-import com.shell.apitest.models.VolumeBasedBonusResponse;
-import com.shell.apitest.models.VolumeBasedPricingRequest;
-import com.shell.apitest.models.VolumeBasedPricingResponse;
+import com.shell.apitest.models.UpdateOdometerResp;
+import com.shell.apitest.models.VolumeBasedBonusReq;
+import com.shell.apitest.models.VolumeBasedBonusRes;
+import com.shell.apitest.models.VolumeBasedPricingReq;
+import com.shell.apitest.models.VolumeBasedPricingRes;
 import io.apimatic.core.ApiCall;
 import io.apimatic.core.ErrorCase;
 import io.apimatic.core.GlobalConfiguration;
@@ -78,20 +76,17 @@ public final class TransactionController extends BaseController {
      * operation can fetch transactions that are old up to 24 (configurable) months. However, the
      * date range between any of the ‘From’ and ‘To’ dates in the above combination cannot be more
      * than 210 (configurable) days.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: Priced Transaction Request Body
-     * @return    Returns the PricedTransactionResponse response from the API call
+     * @return    Returns the PricedTransactionRes response from the API call
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
-    public PricedTransactionResponse pricedTransactions(
-            final String apikey,
+    public PricedTransactionRes pricedTransactions(
             final String requestId,
-            final PriceTransactionRequest body) throws ApiException, IOException {
-        return preparePricedTransactionsRequest(apikey, requestId, body).execute();
+            final PriceTransactionReq body) throws ApiException, IOException {
+        return preparePricedTransactionsRequest(requestId, body).execute();
     }
 
     /**
@@ -113,67 +108,61 @@ public final class TransactionController extends BaseController {
      * operation can fetch transactions that are old up to 24 (configurable) months. However, the
      * date range between any of the ‘From’ and ‘To’ dates in the above combination cannot be more
      * than 210 (configurable) days.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: Priced Transaction Request Body
-     * @return    Returns the PricedTransactionResponse response from the API call
+     * @return    Returns the PricedTransactionRes response from the API call
      */
-    public CompletableFuture<PricedTransactionResponse> pricedTransactionsAsync(
-            final String apikey,
+    public CompletableFuture<PricedTransactionRes> pricedTransactionsAsync(
             final String requestId,
-            final PriceTransactionRequest body) {
-        try { 
-            return preparePricedTransactionsRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final PriceTransactionReq body) {
+        try {
+            return preparePricedTransactionsRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
     /**
      * Builds the ApiCall object for pricedTransactions.
      */
-    private ApiCall<PricedTransactionResponse, ApiException> preparePricedTransactionsRequest(
-            final String apikey,
+    private ApiCall<PricedTransactionRes, ApiException> preparePricedTransactionsRequest(
             final String requestId,
-            final PriceTransactionRequest body) throws JsonProcessingException, IOException {
-        return new ApiCall.Builder<PricedTransactionResponse, ApiException>()
+            final PriceTransactionReq body) {
+        return new ApiCall.Builder<PricedTransactionRes, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/transaction/pricedtransactions")
+                        .path("/transaction-data/v1/pricedtransaction")
                         .bodyParam(param -> param.value(body).isRequired(false))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
-                                response -> ApiHelper.deserialize(response, PricedTransactionResponse.class))
+                                response -> ApiHelper.deserialize(response, PricedTransactionRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -195,20 +184,17 @@ public final class TransactionController extends BaseController {
      * parameters at a time. For example, if InvoiceNumber and Period are provided in the input then
      * Period is ignored and transactions associated to the given invoice number are returned. If
      * none of the above parameters are provided then last 7 days transactions will be fetched.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: PricedSummary RequestBody
-     * @return    Returns the PricedTransSummaryResponse response from the API call
+     * @return    Returns the PricedTransSummaryResp response from the API call
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
-    public PricedTransSummaryResponse pricedTransactionsSummary(
-            final String apikey,
+    public PricedTransSummaryResp pricedTransactionsSummary(
             final String requestId,
-            final PriceTransSummaryRequest body) throws ApiException, IOException {
-        return preparePricedTransactionsSummaryRequest(apikey, requestId, body).execute();
+            final PriceTransSummaryReq body) throws ApiException, IOException {
+        return preparePricedTransactionsSummaryRequest(requestId, body).execute();
     }
 
     /**
@@ -228,67 +214,61 @@ public final class TransactionController extends BaseController {
      * parameters at a time. For example, if InvoiceNumber and Period are provided in the input then
      * Period is ignored and transactions associated to the given invoice number are returned. If
      * none of the above parameters are provided then last 7 days transactions will be fetched.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: PricedSummary RequestBody
-     * @return    Returns the PricedTransSummaryResponse response from the API call
+     * @return    Returns the PricedTransSummaryResp response from the API call
      */
-    public CompletableFuture<PricedTransSummaryResponse> pricedTransactionsSummaryAsync(
-            final String apikey,
+    public CompletableFuture<PricedTransSummaryResp> pricedTransactionsSummaryAsync(
             final String requestId,
-            final PriceTransSummaryRequest body) {
-        try { 
-            return preparePricedTransactionsSummaryRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final PriceTransSummaryReq body) {
+        try {
+            return preparePricedTransactionsSummaryRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
     /**
      * Builds the ApiCall object for pricedTransactionsSummary.
      */
-    private ApiCall<PricedTransSummaryResponse, ApiException> preparePricedTransactionsSummaryRequest(
-            final String apikey,
+    private ApiCall<PricedTransSummaryResp, ApiException> preparePricedTransactionsSummaryRequest(
             final String requestId,
-            final PriceTransSummaryRequest body) throws JsonProcessingException, IOException {
-        return new ApiCall.Builder<PricedTransSummaryResponse, ApiException>()
+            final PriceTransSummaryReq body) {
+        return new ApiCall.Builder<PricedTransSummaryResp, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/transaction/pricedtransactionssummary")
+                        .path("/transaction-data/v1/pricedtransactionssummary")
                         .bodyParam(param -> param.value(body).isRequired(false))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
-                                response -> ApiHelper.deserialize(response, PricedTransSummaryResponse.class))
+                                response -> ApiHelper.deserialize(response, PricedTransSummaryResp.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -309,20 +289,17 @@ public final class TransactionController extends BaseController {
      * parameters at a time. For example, if InvoiceNumber and Period are provided in the input then
      * Period is ignored and transactions associated to the given invoice number are returned. If
      * none of the above parameters are provided then last 7 days transactions will be fetched.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: MultiPayer RequestBody
-     * @return    Returns the MultiPricedTransactionResponse response from the API call
+     * @return    Returns the MultiPricedTransactionRes response from the API call
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
-    public MultiPricedTransactionResponse multipricedTransactions(
-            final String apikey,
+    public MultiPricedTransactionRes multipricedTransactions(
             final String requestId,
-            final MultiPricedTransactionRequest body) throws ApiException, IOException {
-        return prepareMultipricedTransactionsRequest(apikey, requestId, body).execute();
+            final MultiPricedTransactionReq body) throws ApiException, IOException {
+        return prepareMultipricedTransactionsRequest(requestId, body).execute();
     }
 
     /**
@@ -341,67 +318,61 @@ public final class TransactionController extends BaseController {
      * parameters at a time. For example, if InvoiceNumber and Period are provided in the input then
      * Period is ignored and transactions associated to the given invoice number are returned. If
      * none of the above parameters are provided then last 7 days transactions will be fetched.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: MultiPayer RequestBody
-     * @return    Returns the MultiPricedTransactionResponse response from the API call
+     * @return    Returns the MultiPricedTransactionRes response from the API call
      */
-    public CompletableFuture<MultiPricedTransactionResponse> multipricedTransactionsAsync(
-            final String apikey,
+    public CompletableFuture<MultiPricedTransactionRes> multipricedTransactionsAsync(
             final String requestId,
-            final MultiPricedTransactionRequest body) {
-        try { 
-            return prepareMultipricedTransactionsRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final MultiPricedTransactionReq body) {
+        try {
+            return prepareMultipricedTransactionsRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
     /**
      * Builds the ApiCall object for multipricedTransactions.
      */
-    private ApiCall<MultiPricedTransactionResponse, ApiException> prepareMultipricedTransactionsRequest(
-            final String apikey,
+    private ApiCall<MultiPricedTransactionRes, ApiException> prepareMultipricedTransactionsRequest(
             final String requestId,
-            final MultiPricedTransactionRequest body) throws JsonProcessingException, IOException {
-        return new ApiCall.Builder<MultiPricedTransactionResponse, ApiException>()
+            final MultiPricedTransactionReq body) {
+        return new ApiCall.Builder<MultiPricedTransactionRes, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/transaction/multipayerspricedtransactions")
+                        .path("/transaction-data/v1/multipayerspricedtransactions")
                         .bodyParam(param -> param.value(body).isRequired(false))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
-                                response -> ApiHelper.deserialize(response, MultiPricedTransactionResponse.class))
+                                response -> ApiHelper.deserialize(response, MultiPricedTransactionRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -410,87 +381,78 @@ public final class TransactionController extends BaseController {
      * This operation is to provide the expenditure analysis for a card for the past 7 months. The
      * response contains a daily summary of the transactions (billed &amp; unbilled) from 1st of the
      * last 7 months for the requested card grouped by card, site-group and product.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: Card Usage Summary RequestBody
-     * @return    Returns the CardUsageSummaryResponse response from the API call
+     * @return    Returns the CardUsageSummaryRes response from the API call
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
-    public CardUsageSummaryResponse cardUsageSummary(
-            final String apikey,
+    public CardUsageSummaryRes cardUsageSummary(
             final String requestId,
-            final CardUsageSummaryRequest body) throws ApiException, IOException {
-        return prepareCardUsageSummaryRequest(apikey, requestId, body).execute();
+            final CardUsageSummaryReq body) throws ApiException, IOException {
+        return prepareCardUsageSummaryRequest(requestId, body).execute();
     }
 
     /**
      * This operation is to provide the expenditure analysis for a card for the past 7 months. The
      * response contains a daily summary of the transactions (billed &amp; unbilled) from 1st of the
      * last 7 months for the requested card grouped by card, site-group and product.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: Card Usage Summary RequestBody
-     * @return    Returns the CardUsageSummaryResponse response from the API call
+     * @return    Returns the CardUsageSummaryRes response from the API call
      */
-    public CompletableFuture<CardUsageSummaryResponse> cardUsageSummaryAsync(
-            final String apikey,
+    public CompletableFuture<CardUsageSummaryRes> cardUsageSummaryAsync(
             final String requestId,
-            final CardUsageSummaryRequest body) {
-        try { 
-            return prepareCardUsageSummaryRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final CardUsageSummaryReq body) {
+        try {
+            return prepareCardUsageSummaryRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
     /**
      * Builds the ApiCall object for cardUsageSummary.
      */
-    private ApiCall<CardUsageSummaryResponse, ApiException> prepareCardUsageSummaryRequest(
-            final String apikey,
+    private ApiCall<CardUsageSummaryRes, ApiException> prepareCardUsageSummaryRequest(
             final String requestId,
-            final CardUsageSummaryRequest body) throws JsonProcessingException, IOException {
-        return new ApiCall.Builder<CardUsageSummaryResponse, ApiException>()
+            final CardUsageSummaryReq body) {
+        return new ApiCall.Builder<CardUsageSummaryRes, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/transaction/cardusagesummary")
+                        .path("/transaction-data/v1/cardusagesummary")
                         .bodyParam(param -> param.value(body).isRequired(false))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
-                                response -> ApiHelper.deserialize(response, CardUsageSummaryResponse.class))
+                                response -> ApiHelper.deserialize(response, CardUsageSummaryRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -500,20 +462,17 @@ public final class TransactionController extends BaseController {
      * given payer and that are active on the current date. - This API also returns the details of
      * the monthly breakup of current period consumption as well as the details of the previously
      * calculated bonus and consumption of the applicable payers.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: VolumeBasedBonus RequestBody
-     * @return    Returns the VolumeBasedBonusResponse response from the API call
+     * @return    Returns the VolumeBasedBonusRes response from the API call
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
-    public VolumeBasedBonusResponse volumeBasedBonus(
-            final String apikey,
+    public VolumeBasedBonusRes volumeBasedBonus(
             final String requestId,
-            final VolumeBasedBonusRequest body) throws ApiException, IOException {
-        return prepareVolumeBasedBonusRequest(apikey, requestId, body).execute();
+            final VolumeBasedBonusReq body) throws ApiException, IOException {
+        return prepareVolumeBasedBonusRequest(requestId, body).execute();
     }
 
     /**
@@ -521,67 +480,61 @@ public final class TransactionController extends BaseController {
      * given payer and that are active on the current date. - This API also returns the details of
      * the monthly breakup of current period consumption as well as the details of the previously
      * calculated bonus and consumption of the applicable payers.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: VolumeBasedBonus RequestBody
-     * @return    Returns the VolumeBasedBonusResponse response from the API call
+     * @return    Returns the VolumeBasedBonusRes response from the API call
      */
-    public CompletableFuture<VolumeBasedBonusResponse> volumeBasedBonusAsync(
-            final String apikey,
+    public CompletableFuture<VolumeBasedBonusRes> volumeBasedBonusAsync(
             final String requestId,
-            final VolumeBasedBonusRequest body) {
-        try { 
-            return prepareVolumeBasedBonusRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final VolumeBasedBonusReq body) {
+        try {
+            return prepareVolumeBasedBonusRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
     /**
      * Builds the ApiCall object for volumeBasedBonus.
      */
-    private ApiCall<VolumeBasedBonusResponse, ApiException> prepareVolumeBasedBonusRequest(
-            final String apikey,
+    private ApiCall<VolumeBasedBonusRes, ApiException> prepareVolumeBasedBonusRequest(
             final String requestId,
-            final VolumeBasedBonusRequest body) throws JsonProcessingException, IOException {
-        return new ApiCall.Builder<VolumeBasedBonusResponse, ApiException>()
+            final VolumeBasedBonusReq body) {
+        return new ApiCall.Builder<VolumeBasedBonusRes, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/transaction/volumebasedbonus")
+                        .path("/transaction-data/v1/volumebasedbonuss")
                         .bodyParam(param -> param.value(body).isRequired(false))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
-                                response -> ApiHelper.deserialize(response, VolumeBasedBonusResponse.class))
+                                response -> ApiHelper.deserialize(response, VolumeBasedBonusRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -590,87 +543,78 @@ public final class TransactionController extends BaseController {
      * - This API will return the details of the in arrear fee rule applied to the payer along with
      * details of locations, products, tiers as applied. - It will also show historical and current
      * volume consumption and related tier applied for the following month.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: VolumeBasedPricing RequestBody
-     * @return    Returns the VolumeBasedPricingResponse response from the API call
+     * @return    Returns the VolumeBasedPricingRes response from the API call
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
-    public VolumeBasedPricingResponse volumeBasedPricing(
-            final String apikey,
+    public VolumeBasedPricingRes volumeBasedPricing(
             final String requestId,
-            final VolumeBasedPricingRequest body) throws ApiException, IOException {
-        return prepareVolumeBasedPricingRequest(apikey, requestId, body).execute();
+            final VolumeBasedPricingReq body) throws ApiException, IOException {
+        return prepareVolumeBasedPricingRequest(requestId, body).execute();
     }
 
     /**
      * - This API will return the details of the in arrear fee rule applied to the payer along with
      * details of locations, products, tiers as applied. - It will also show historical and current
      * volume consumption and related tier applied for the following month.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: VolumeBasedPricing RequestBody
-     * @return    Returns the VolumeBasedPricingResponse response from the API call
+     * @return    Returns the VolumeBasedPricingRes response from the API call
      */
-    public CompletableFuture<VolumeBasedPricingResponse> volumeBasedPricingAsync(
-            final String apikey,
+    public CompletableFuture<VolumeBasedPricingRes> volumeBasedPricingAsync(
             final String requestId,
-            final VolumeBasedPricingRequest body) {
-        try { 
-            return prepareVolumeBasedPricingRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final VolumeBasedPricingReq body) {
+        try {
+            return prepareVolumeBasedPricingRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
     /**
      * Builds the ApiCall object for volumeBasedPricing.
      */
-    private ApiCall<VolumeBasedPricingResponse, ApiException> prepareVolumeBasedPricingRequest(
-            final String apikey,
+    private ApiCall<VolumeBasedPricingRes, ApiException> prepareVolumeBasedPricingRequest(
             final String requestId,
-            final VolumeBasedPricingRequest body) throws JsonProcessingException, IOException {
-        return new ApiCall.Builder<VolumeBasedPricingResponse, ApiException>()
+            final VolumeBasedPricingReq body) {
+        return new ApiCall.Builder<VolumeBasedPricingRes, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/transaction/volumebasedpricing")
+                        .path("/transaction-data/v1/volumebasedpricing")
                         .bodyParam(param -> param.value(body).isRequired(false))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
-                                response -> ApiHelper.deserialize(response, VolumeBasedPricingResponse.class))
+                                response -> ApiHelper.deserialize(response, VolumeBasedPricingRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -682,20 +626,17 @@ public final class TransactionController extends BaseController {
      * Supported operations * Get fees by invoice status * Get fees by date period * Get fees by
      * account * Get fees by card Id or PAN * Get fees by fee type charges * Get fees including
      * cancelled items * Get fees by line item description * Get fees by product.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: Transaction Fees RequestBody
-     * @return    Returns the TransactionFeesResponse response from the API call
+     * @return    Returns the TransactionFeesRes response from the API call
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
-    public TransactionFeesResponse fees(
-            final String apikey,
+    public TransactionFeesRes fees(
             final String requestId,
-            final TransactionFeesRequest body) throws ApiException, IOException {
-        return prepareFeesRequest(apikey, requestId, body).execute();
+            final TransactionFeesReq body) throws ApiException, IOException {
+        return prepareFeesRequest(requestId, body).execute();
     }
 
     /**
@@ -705,67 +646,61 @@ public final class TransactionController extends BaseController {
      * Supported operations * Get fees by invoice status * Get fees by date period * Get fees by
      * account * Get fees by card Id or PAN * Get fees by fee type charges * Get fees including
      * cancelled items * Get fees by line item description * Get fees by product.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: Transaction Fees RequestBody
-     * @return    Returns the TransactionFeesResponse response from the API call
+     * @return    Returns the TransactionFeesRes response from the API call
      */
-    public CompletableFuture<TransactionFeesResponse> feesAsync(
-            final String apikey,
+    public CompletableFuture<TransactionFeesRes> feesAsync(
             final String requestId,
-            final TransactionFeesRequest body) {
-        try { 
-            return prepareFeesRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final TransactionFeesReq body) {
+        try {
+            return prepareFeesRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
     /**
      * Builds the ApiCall object for fees.
      */
-    private ApiCall<TransactionFeesResponse, ApiException> prepareFeesRequest(
-            final String apikey,
+    private ApiCall<TransactionFeesRes, ApiException> prepareFeesRequest(
             final String requestId,
-            final TransactionFeesRequest body) throws JsonProcessingException, IOException {
-        return new ApiCall.Builder<TransactionFeesResponse, ApiException>()
+            final TransactionFeesReq body) {
+        return new ApiCall.Builder<TransactionFeesRes, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/transaction/fees")
+                        .path("/transaction-data/v1/fees")
                         .bodyParam(param -> param.value(body).isRequired(false))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
-                                response -> ApiHelper.deserialize(response, TransactionFeesResponse.class))
+                                response -> ApiHelper.deserialize(response, TransactionFeesRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -777,8 +712,6 @@ public final class TransactionController extends BaseController {
      * #### Supported operations * Get fees by invoice status * Get fees by date period * Get fees
      * by account * Get fees by card Id or PAN * Get fees by fee type charges * Get fees including
      * cancelled items * Get fees by line item description * Get fees by product.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: FeeSummary RequestBody
@@ -787,10 +720,9 @@ public final class TransactionController extends BaseController {
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
     public FeeSummaryResponse feeSummaryResponse(
-            final String apikey,
             final String requestId,
-            final TransactionFeesRequest body) throws ApiException, IOException {
-        return prepareFeeSummaryResponseRequest(apikey, requestId, body).execute();
+            final TransactionFeesSummaryReq body) throws ApiException, IOException {
+        return prepareFeeSummaryResponseRequest(requestId, body).execute();
     }
 
     /**
@@ -800,21 +732,18 @@ public final class TransactionController extends BaseController {
      * #### Supported operations * Get fees by invoice status * Get fees by date period * Get fees
      * by account * Get fees by card Id or PAN * Get fees by fee type charges * Get fees including
      * cancelled items * Get fees by line item description * Get fees by product.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: FeeSummary RequestBody
      * @return    Returns the FeeSummaryResponse response from the API call
      */
     public CompletableFuture<FeeSummaryResponse> feeSummaryResponseAsync(
-            final String apikey,
             final String requestId,
-            final TransactionFeesRequest body) {
-        try { 
-            return prepareFeeSummaryResponseRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final TransactionFeesSummaryReq body) {
+        try {
+            return prepareFeeSummaryResponseRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
@@ -822,45 +751,42 @@ public final class TransactionController extends BaseController {
      * Builds the ApiCall object for feeSummaryResponse.
      */
     private ApiCall<FeeSummaryResponse, ApiException> prepareFeeSummaryResponseRequest(
-            final String apikey,
             final String requestId,
-            final TransactionFeesRequest body) throws JsonProcessingException, IOException {
+            final TransactionFeesSummaryReq body) {
         return new ApiCall.Builder<FeeSummaryResponse, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/transaction/feessummary")
+                        .path("/transaction-data/v1/feessummary")
                         .bodyParam(param -> param.value(body).isRequired(false))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
                                 response -> ApiHelper.deserialize(response, FeeSummaryResponse.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -870,8 +796,6 @@ public final class TransactionController extends BaseController {
      * used over a given period and the total volume used by a card - This operation response will
      * contains card &amp; transaction details for given period aggregated by payer, account, cardGroup,
      * PAN, DriverName and VRN.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: FuelConsumption RequestBody
@@ -880,10 +804,9 @@ public final class TransactionController extends BaseController {
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
     public FuelConsumptionResponse fuelConsumption(
-            final String apikey,
             final String requestId,
-            final FuelConsumptionRequest body) throws ApiException, IOException {
-        return prepareFuelConsumptionRequest(apikey, requestId, body).execute();
+            final FuelConsumptionReq body) throws ApiException, IOException {
+        return prepareFuelConsumptionRequest(requestId, body).execute();
     }
 
     /**
@@ -891,21 +814,18 @@ public final class TransactionController extends BaseController {
      * used over a given period and the total volume used by a card - This operation response will
      * contains card &amp; transaction details for given period aggregated by payer, account, cardGroup,
      * PAN, DriverName and VRN.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: FuelConsumption RequestBody
      * @return    Returns the FuelConsumptionResponse response from the API call
      */
     public CompletableFuture<FuelConsumptionResponse> fuelConsumptionAsync(
-            final String apikey,
             final String requestId,
-            final FuelConsumptionRequest body) {
-        try { 
-            return prepareFuelConsumptionRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final FuelConsumptionReq body) {
+        try {
+            return prepareFuelConsumptionRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
@@ -913,45 +833,42 @@ public final class TransactionController extends BaseController {
      * Builds the ApiCall object for fuelConsumption.
      */
     private ApiCall<FuelConsumptionResponse, ApiException> prepareFuelConsumptionRequest(
-            final String apikey,
             final String requestId,
-            final FuelConsumptionRequest body) throws JsonProcessingException, IOException {
+            final FuelConsumptionReq body) {
         return new ApiCall.Builder<FuelConsumptionResponse, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/transaction/fuelconsumption")
+                        .path("/transaction-data/v1/fuelconsumption")
                         .bodyParam(param -> param.value(body).isRequired(false))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
                                 response -> ApiHelper.deserialize(response, FuelConsumptionResponse.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -960,87 +877,78 @@ public final class TransactionController extends BaseController {
      * - This API allows the users to update the odometer readings on the sales items (transaction
      * data) - This is an asynchronous operation. If opted, the user will be notified on completion
      * of processing.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: updateOdometer RequestBody
-     * @return    Returns the UpdateOdometerResponse response from the API call
+     * @return    Returns the UpdateOdometerResp response from the API call
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
-    public UpdateOdometerResponse updateOdometer(
-            final String apikey,
+    public UpdateOdometerResp updateOdometer(
             final String requestId,
             final UpdateOdometerRequest body) throws ApiException, IOException {
-        return prepareUpdateOdometerRequest(apikey, requestId, body).execute();
+        return prepareUpdateOdometerRequest(requestId, body).execute();
     }
 
     /**
      * - This API allows the users to update the odometer readings on the sales items (transaction
      * data) - This is an asynchronous operation. If opted, the user will be notified on completion
      * of processing.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: updateOdometer RequestBody
-     * @return    Returns the UpdateOdometerResponse response from the API call
+     * @return    Returns the UpdateOdometerResp response from the API call
      */
-    public CompletableFuture<UpdateOdometerResponse> updateOdometerAsync(
-            final String apikey,
+    public CompletableFuture<UpdateOdometerResp> updateOdometerAsync(
             final String requestId,
             final UpdateOdometerRequest body) {
-        try { 
-            return prepareUpdateOdometerRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+        try {
+            return prepareUpdateOdometerRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
     /**
      * Builds the ApiCall object for updateOdometer.
      */
-    private ApiCall<UpdateOdometerResponse, ApiException> prepareUpdateOdometerRequest(
-            final String apikey,
+    private ApiCall<UpdateOdometerResp, ApiException> prepareUpdateOdometerRequest(
             final String requestId,
-            final UpdateOdometerRequest body) throws JsonProcessingException, IOException {
-        return new ApiCall.Builder<UpdateOdometerResponse, ApiException>()
+            final UpdateOdometerRequest body) {
+        return new ApiCall.Builder<UpdateOdometerResp, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/transaction/updateodometer")
+                        .path("/transaction-data/v1/updateodometer")
                         .bodyParam(param -> param.value(body).isRequired(false))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
-                                response -> ApiHelper.deserialize(response, UpdateOdometerResponse.class))
+                                response -> ApiHelper.deserialize(response, UpdateOdometerResp.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -1050,20 +958,17 @@ public final class TransactionController extends BaseController {
      * given conditions for the Requested period. - This API will return the Transactions related
      * exceptions when the OutputType input parameter is passed as ‘Transaction’ else will return
      * the Cards related exceptions.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: Transaction Exceptions RequestBody
-     * @return    Returns the TransactionExceptionsResponse response from the API call
+     * @return    Returns the TransactionExceptionsRes response from the API call
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
-    public TransactionExceptionsResponse transactionExceptions(
-            final String apikey,
+    public TransactionExceptionsRes transactionExceptions(
             final String requestId,
-            final TransactionExceptionsRequest body) throws ApiException, IOException {
-        return prepareTransactionExceptionsRequest(apikey, requestId, body).execute();
+            final TransactionExceptionsReq body) throws ApiException, IOException {
+        return prepareTransactionExceptionsRequest(requestId, body).execute();
     }
 
     /**
@@ -1071,67 +976,61 @@ public final class TransactionController extends BaseController {
      * given conditions for the Requested period. - This API will return the Transactions related
      * exceptions when the OutputType input parameter is passed as ‘Transaction’ else will return
      * the Cards related exceptions.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: Transaction Exceptions RequestBody
-     * @return    Returns the TransactionExceptionsResponse response from the API call
+     * @return    Returns the TransactionExceptionsRes response from the API call
      */
-    public CompletableFuture<TransactionExceptionsResponse> transactionExceptionsAsync(
-            final String apikey,
+    public CompletableFuture<TransactionExceptionsRes> transactionExceptionsAsync(
             final String requestId,
-            final TransactionExceptionsRequest body) {
-        try { 
-            return prepareTransactionExceptionsRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final TransactionExceptionsReq body) {
+        try {
+            return prepareTransactionExceptionsRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
     /**
      * Builds the ApiCall object for transactionExceptions.
      */
-    private ApiCall<TransactionExceptionsResponse, ApiException> prepareTransactionExceptionsRequest(
-            final String apikey,
+    private ApiCall<TransactionExceptionsRes, ApiException> prepareTransactionExceptionsRequest(
             final String requestId,
-            final TransactionExceptionsRequest body) throws JsonProcessingException, IOException {
-        return new ApiCall.Builder<TransactionExceptionsResponse, ApiException>()
+            final TransactionExceptionsReq body) {
+        return new ApiCall.Builder<TransactionExceptionsRes, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/transaction/exceptions")
+                        .path("/transaction-data/v1/exceptions")
                         .bodyParam(param -> param.value(body).isRequired(false))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
-                                response -> ApiHelper.deserialize(response, TransactionExceptionsResponse.class))
+                                response -> ApiHelper.deserialize(response, TransactionExceptionsRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -1175,10 +1074,10 @@ public final class TransactionController extends BaseController {
     public CompletableFuture<RecentTransactionsResponse> recentTransactionsNewAsync(
             final String requestId,
             final RecentTransactionRequest body) {
-        try { 
-            return prepareRecentTransactionsNewRequest(requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+        try {
+            return prepareRecentTransactionsNewRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
@@ -1187,7 +1086,7 @@ public final class TransactionController extends BaseController {
      */
     private ApiCall<RecentTransactionsResponse, ApiException> prepareRecentTransactionsNewRequest(
             final String requestId,
-            final RecentTransactionRequest body) throws JsonProcessingException, IOException {
+            final RecentTransactionRequest body) {
         return new ApiCall.Builder<RecentTransactionsResponse, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
@@ -1275,10 +1174,10 @@ public final class TransactionController extends BaseController {
     public CompletableFuture<PricedTransactionResponseV2> pricedTransactionsV2Async(
             final String requestId,
             final PricedTransactionRequestV2 body) {
-        try { 
-            return preparePricedTransactionsV2Request(requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+        try {
+            return preparePricedTransactionsV2Request(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
@@ -1287,7 +1186,7 @@ public final class TransactionController extends BaseController {
      */
     private ApiCall<PricedTransactionResponseV2, ApiException> preparePricedTransactionsV2Request(
             final String requestId,
-            final PricedTransactionRequestV2 body) throws JsonProcessingException, IOException {
+            final PricedTransactionRequestV2 body) {
         return new ApiCall.Builder<PricedTransactionResponseV2, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder

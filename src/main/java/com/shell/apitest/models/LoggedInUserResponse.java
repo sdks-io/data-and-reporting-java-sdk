@@ -40,8 +40,6 @@ public class LoggedInUserResponse {
     private OptionalNullable<Integer> payerCount;
     private OptionalNullable<Integer> accountCount;
     private OptionalNullable<Integer> cardCount;
-    private ErrorStatus error;
-    private String requestId;
 
     /**
      * Default constructor.
@@ -77,8 +75,6 @@ public class LoggedInUserResponse {
      * @param  payerCount  Integer value for payerCount.
      * @param  accountCount  Integer value for accountCount.
      * @param  cardCount  Integer value for cardCount.
-     * @param  error  ErrorStatus value for error.
-     * @param  requestId  String value for requestId.
      */
     public LoggedInUserResponse(
             String userName,
@@ -103,9 +99,7 @@ public class LoggedInUserResponse {
             String userClassificationByShell,
             Integer payerCount,
             Integer accountCount,
-            Integer cardCount,
-            ErrorStatus error,
-            String requestId) {
+            Integer cardCount) {
         this.userName = OptionalNullable.of(userName);
         this.displayName = OptionalNullable.of(displayName);
         this.idMSSOID = OptionalNullable.of(idMSSOID);
@@ -129,8 +123,6 @@ public class LoggedInUserResponse {
         this.payerCount = OptionalNullable.of(payerCount);
         this.accountCount = OptionalNullable.of(accountCount);
         this.cardCount = OptionalNullable.of(cardCount);
-        this.error = error;
-        this.requestId = requestId;
     }
 
     /**
@@ -158,8 +150,6 @@ public class LoggedInUserResponse {
      * @param  payerCount  Integer value for payerCount.
      * @param  accountCount  Integer value for accountCount.
      * @param  cardCount  Integer value for cardCount.
-     * @param  error  ErrorStatus value for error.
-     * @param  requestId  String value for requestId.
      */
 
     protected LoggedInUserResponse(OptionalNullable<String> userName,
@@ -174,7 +164,7 @@ public class LoggedInUserResponse {
             OptionalNullable<String> userClassificationBySystem,
             OptionalNullable<String> userClassificationByShell,
             OptionalNullable<Integer> payerCount, OptionalNullable<Integer> accountCount,
-            OptionalNullable<Integer> cardCount, ErrorStatus error, String requestId) {
+            OptionalNullable<Integer> cardCount) {
         this.userName = userName;
         this.displayName = displayName;
         this.idMSSOID = idMSSOID;
@@ -198,8 +188,6 @@ public class LoggedInUserResponse {
         this.payerCount = payerCount;
         this.accountCount = accountCount;
         this.cardCount = cardCount;
-        this.error = error;
-        this.requestId = requestId;
     }
 
     /**
@@ -992,46 +980,6 @@ public class LoggedInUserResponse {
     }
 
     /**
-     * Getter for Error.
-     * @return Returns the ErrorStatus
-     */
-    @JsonGetter("Error")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public ErrorStatus getError() {
-        return error;
-    }
-
-    /**
-     * Setter for Error.
-     * @param error Value for ErrorStatus
-     */
-    @JsonSetter("Error")
-    public void setError(ErrorStatus error) {
-        this.error = error;
-    }
-
-    /**
-     * Getter for RequestId.
-     * Request Id of the API call
-     * @return Returns the String
-     */
-    @JsonGetter("RequestId")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public String getRequestId() {
-        return requestId;
-    }
-
-    /**
-     * Setter for RequestId.
-     * Request Id of the API call
-     * @param requestId Value for String
-     */
-    @JsonSetter("RequestId")
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
-    /**
      * Converts this LoggedInUserResponse into string format.
      * @return String representation of this class
      */
@@ -1047,8 +995,7 @@ public class LoggedInUserResponse {
                 + collectingCompanies + ", eIDAccessDetails=" + eIDAccessDetails
                 + ", userClassificationBySystem=" + userClassificationBySystem
                 + ", userClassificationByShell=" + userClassificationByShell + ", payerCount="
-                + payerCount + ", accountCount=" + accountCount + ", cardCount=" + cardCount
-                + ", error=" + error + ", requestId=" + requestId + "]";
+                + payerCount + ", accountCount=" + accountCount + ", cardCount=" + cardCount + "]";
     }
 
     /**
@@ -1065,9 +1012,7 @@ public class LoggedInUserResponse {
                 .payers(getPayers())
                 .accounts(getAccounts())
                 .collectingCompanies(getCollectingCompanies())
-                .eIDAccessDetails(getEIDAccessDetails())
-                .error(getError())
-                .requestId(getRequestId());
+                .eIDAccessDetails(getEIDAccessDetails());
         builder.userName = internalGetUserName();
         builder.displayName = internalGetDisplayName();
         builder.idMSSOID = internalGetIdMSSOID();
@@ -1113,8 +1058,6 @@ public class LoggedInUserResponse {
         private OptionalNullable<Integer> payerCount;
         private OptionalNullable<Integer> accountCount;
         private OptionalNullable<Integer> cardCount;
-        private ErrorStatus error;
-        private String requestId;
 
 
 
@@ -1484,26 +1427,6 @@ public class LoggedInUserResponse {
         }
 
         /**
-         * Setter for error.
-         * @param  error  ErrorStatus value for error.
-         * @return Builder
-         */
-        public Builder error(ErrorStatus error) {
-            this.error = error;
-            return this;
-        }
-
-        /**
-         * Setter for requestId.
-         * @param  requestId  String value for requestId.
-         * @return Builder
-         */
-        public Builder requestId(String requestId) {
-            this.requestId = requestId;
-            return this;
-        }
-
-        /**
          * Builds a new {@link LoggedInUserResponse} object using the set fields.
          * @return {@link LoggedInUserResponse}
          */
@@ -1512,8 +1435,7 @@ public class LoggedInUserResponse {
                     isSuperAdmin, dateFormat, timeFormat, weekBegins, displayWeek, cSVSeparator,
                     decimalSeparator, reportFormat, hasAPIAccess, roles, payers, accounts,
                     collectingCompanies, eIDAccessDetails, userClassificationBySystem,
-                    userClassificationByShell, payerCount, accountCount, cardCount, error,
-                    requestId);
+                    userClassificationByShell, payerCount, accountCount, cardCount);
         }
     }
 }

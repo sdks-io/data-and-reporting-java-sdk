@@ -9,8 +9,8 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `PageSize` | `int` | Required | Specify the number of records to returned; Max 1000<br>**Constraints**: `>= 1`, `<= 1000` | int getPageSize() | setPageSize(int pageSize) |
-| `Page` | `int` | Required | Specify the page of results to be returned.<br>**Constraints**: `<= 1` | int getPage() | setPage(int page) |
+| `PageSize` | `int` | Required | Specify the number of records to returned; Max 1000<br><br>**Constraints**: `>= 1`, `<= 1000` | int getPageSize() | setPageSize(int pageSize) |
+| `Page` | `int` | Required | Specify the page of results to be returned.<br><br>**Constraints**: `<= 1` | int getPage() | setPage(int page) |
 | `Filters` | [`RecentTransactionReq`](../../doc/models/recent-transaction-req.md) | Required | - | RecentTransactionReq getFilters() | setFilters(RecentTransactionReq filters) |
 
 ## Example (as JSON)

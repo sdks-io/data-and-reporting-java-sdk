@@ -77,8 +77,8 @@ public class CustomerDetailRequest {
 
     /**
      * Internal Getter for ColCoId.
-     * Collecting Company Id (in GFN) of the selected payer. Optional if ColCoCode is passed else
-     * Mandatory. Example: 1-Philippines 5-UK
+     * Collecting Company Id of the selected payer. Optional if ColCoCode is passed else Mandatory.
+     * Example: 1-Philippines 5-UK
      * @return Returns the Internal Integer
      */
     @JsonGetter("ColCoId")
@@ -90,8 +90,8 @@ public class CustomerDetailRequest {
 
     /**
      * Getter for ColCoId.
-     * Collecting Company Id (in GFN) of the selected payer. Optional if ColCoCode is passed else
-     * Mandatory. Example: 1-Philippines 5-UK
+     * Collecting Company Id of the selected payer. Optional if ColCoCode is passed else Mandatory.
+     * Example: 1-Philippines 5-UK
      * @return Returns the Integer
      */
     public Integer getColCoId() {
@@ -100,8 +100,8 @@ public class CustomerDetailRequest {
 
     /**
      * Setter for ColCoId.
-     * Collecting Company Id (in GFN) of the selected payer. Optional if ColCoCode is passed else
-     * Mandatory. Example: 1-Philippines 5-UK
+     * Collecting Company Id of the selected payer. Optional if ColCoCode is passed else Mandatory.
+     * Example: 1-Philippines 5-UK
      * @param colCoId Value for Integer
      */
     @JsonSetter("ColCoId")
@@ -111,8 +111,8 @@ public class CustomerDetailRequest {
 
     /**
      * UnSetter for ColCoId.
-     * Collecting Company Id (in GFN) of the selected payer. Optional if ColCoCode is passed else
-     * Mandatory. Example: 1-Philippines 5-UK
+     * Collecting Company Id of the selected payer. Optional if ColCoCode is passed else Mandatory.
+     * Example: 1-Philippines 5-UK
      */
     public void unsetColCoId() {
         colCoId = null;
@@ -211,7 +211,7 @@ public class CustomerDetailRequest {
     /**
      * Internal Getter for PayerNumber.
      * Payer Number of the selected payer. Optional if PayerId is passed else Mandatory Example:
-     * GB000000123
+     * DE00001067
      * @return Returns the Internal String
      */
     @JsonGetter("PayerNumber")
@@ -224,7 +224,7 @@ public class CustomerDetailRequest {
     /**
      * Getter for PayerNumber.
      * Payer Number of the selected payer. Optional if PayerId is passed else Mandatory Example:
-     * GB000000123
+     * DE00001067
      * @return Returns the String
      */
     public String getPayerNumber() {
@@ -234,7 +234,7 @@ public class CustomerDetailRequest {
     /**
      * Setter for PayerNumber.
      * Payer Number of the selected payer. Optional if PayerId is passed else Mandatory Example:
-     * GB000000123
+     * DE00001067
      * @param payerNumber Value for String
      */
     @JsonSetter("PayerNumber")
@@ -245,7 +245,7 @@ public class CustomerDetailRequest {
     /**
      * UnSetter for PayerNumber.
      * Payer Number of the selected payer. Optional if PayerId is passed else Mandatory Example:
-     * GB000000123
+     * DE00001067
      */
     public void unsetPayerNumber() {
         payerNumber = null;

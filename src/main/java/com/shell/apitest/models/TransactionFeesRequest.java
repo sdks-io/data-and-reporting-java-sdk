@@ -35,8 +35,6 @@ public class TransactionFeesRequest {
     private OptionalNullable<String> productCode;
     private OptionalNullable<String> lineItemDescription;
     private OptionalNullable<String> sortOrder;
-    private OptionalNullable<Integer> currentPage;
-    private OptionalNullable<Integer> pageSize;
 
     /**
      * Default constructor.
@@ -64,8 +62,6 @@ public class TransactionFeesRequest {
      * @param  productCode  String value for productCode.
      * @param  lineItemDescription  String value for lineItemDescription.
      * @param  sortOrder  String value for sortOrder.
-     * @param  currentPage  Integer value for currentPage.
-     * @param  pageSize  Integer value for pageSize.
      */
     public TransactionFeesRequest(
             Integer colCoId,
@@ -85,9 +81,7 @@ public class TransactionFeesRequest {
             Integer productId,
             String productCode,
             String lineItemDescription,
-            String sortOrder,
-            Integer currentPage,
-            Integer pageSize) {
+            String sortOrder) {
         this.colCoId = OptionalNullable.of(colCoId);
         this.colCoCode = OptionalNullable.of(colCoCode);
         this.payerId = OptionalNullable.of(payerId);
@@ -106,8 +100,6 @@ public class TransactionFeesRequest {
         this.productCode = OptionalNullable.of(productCode);
         this.lineItemDescription = OptionalNullable.of(lineItemDescription);
         this.sortOrder = OptionalNullable.of(sortOrder);
-        this.currentPage = OptionalNullable.of(currentPage);
-        this.pageSize = OptionalNullable.of(pageSize);
     }
 
     /**
@@ -130,8 +122,6 @@ public class TransactionFeesRequest {
      * @param  productCode  String value for productCode.
      * @param  lineItemDescription  String value for lineItemDescription.
      * @param  sortOrder  String value for sortOrder.
-     * @param  currentPage  Integer value for currentPage.
-     * @param  pageSize  Integer value for pageSize.
      */
 
     protected TransactionFeesRequest(OptionalNullable<Integer> colCoId,
@@ -143,8 +133,7 @@ public class TransactionFeesRequest {
             OptionalNullable<String> toDate, OptionalNullable<Integer> period,
             OptionalNullable<Boolean> includeCancelledItems, OptionalNullable<Integer> productId,
             OptionalNullable<String> productCode, OptionalNullable<String> lineItemDescription,
-            OptionalNullable<String> sortOrder, OptionalNullable<Integer> currentPage,
-            OptionalNullable<Integer> pageSize) {
+            OptionalNullable<String> sortOrder) {
         this.colCoId = colCoId;
         this.colCoCode = colCoCode;
         this.payerId = payerId;
@@ -163,8 +152,6 @@ public class TransactionFeesRequest {
         this.productCode = productCode;
         this.lineItemDescription = lineItemDescription;
         this.sortOrder = sortOrder;
-        this.currentPage = currentPage;
-        this.pageSize = pageSize;
     }
 
     /**
@@ -930,84 +917,6 @@ public class TransactionFeesRequest {
     }
 
     /**
-     * Internal Getter for CurrentPage.
-     * Page Number
-     * @return Returns the Internal Integer
-     */
-    @JsonGetter("CurrentPage")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<Integer> internalGetCurrentPage() {
-        return this.currentPage;
-    }
-
-    /**
-     * Getter for CurrentPage.
-     * Page Number
-     * @return Returns the Integer
-     */
-    public Integer getCurrentPage() {
-        return OptionalNullable.getFrom(currentPage);
-    }
-
-    /**
-     * Setter for CurrentPage.
-     * Page Number
-     * @param currentPage Value for Integer
-     */
-    @JsonSetter("CurrentPage")
-    public void setCurrentPage(Integer currentPage) {
-        this.currentPage = OptionalNullable.of(currentPage);
-    }
-
-    /**
-     * UnSetter for CurrentPage.
-     * Page Number
-     */
-    public void unsetCurrentPage() {
-        currentPage = null;
-    }
-
-    /**
-     * Internal Getter for PageSize.
-     * Page Size – Number of records to show on a page
-     * @return Returns the Internal Integer
-     */
-    @JsonGetter("PageSize")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<Integer> internalGetPageSize() {
-        return this.pageSize;
-    }
-
-    /**
-     * Getter for PageSize.
-     * Page Size – Number of records to show on a page
-     * @return Returns the Integer
-     */
-    public Integer getPageSize() {
-        return OptionalNullable.getFrom(pageSize);
-    }
-
-    /**
-     * Setter for PageSize.
-     * Page Size – Number of records to show on a page
-     * @param pageSize Value for Integer
-     */
-    @JsonSetter("PageSize")
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = OptionalNullable.of(pageSize);
-    }
-
-    /**
-     * UnSetter for PageSize.
-     * Page Size – Number of records to show on a page
-     */
-    public void unsetPageSize() {
-        pageSize = null;
-    }
-
-    /**
      * Converts this TransactionFeesRequest into string format.
      * @return String representation of this class
      */
@@ -1020,8 +929,7 @@ public class TransactionFeesRequest {
                 + fromDate + ", toDate=" + toDate + ", period=" + period
                 + ", includeCancelledItems=" + includeCancelledItems + ", productId=" + productId
                 + ", productCode=" + productCode + ", lineItemDescription=" + lineItemDescription
-                + ", sortOrder=" + sortOrder + ", currentPage=" + currentPage + ", pageSize="
-                + pageSize + "]";
+                + ", sortOrder=" + sortOrder + "]";
     }
 
     /**
@@ -1049,8 +957,6 @@ public class TransactionFeesRequest {
         builder.productCode = internalGetProductCode();
         builder.lineItemDescription = internalGetLineItemDescription();
         builder.sortOrder = internalGetSortOrder();
-        builder.currentPage = internalGetCurrentPage();
-        builder.pageSize = internalGetPageSize();
         return builder;
     }
 
@@ -1076,8 +982,6 @@ public class TransactionFeesRequest {
         private OptionalNullable<String> productCode;
         private OptionalNullable<String> lineItemDescription;
         private OptionalNullable<String> sortOrder;
-        private OptionalNullable<Integer> currentPage;
-        private OptionalNullable<Integer> pageSize;
 
 
 
@@ -1415,44 +1319,6 @@ public class TransactionFeesRequest {
         }
 
         /**
-         * Setter for currentPage.
-         * @param  currentPage  Integer value for currentPage.
-         * @return Builder
-         */
-        public Builder currentPage(Integer currentPage) {
-            this.currentPage = OptionalNullable.of(currentPage);
-            return this;
-        }
-
-        /**
-         * UnSetter for currentPage.
-         * @return Builder
-         */
-        public Builder unsetCurrentPage() {
-            currentPage = null;
-            return this;
-        }
-
-        /**
-         * Setter for pageSize.
-         * @param  pageSize  Integer value for pageSize.
-         * @return Builder
-         */
-        public Builder pageSize(Integer pageSize) {
-            this.pageSize = OptionalNullable.of(pageSize);
-            return this;
-        }
-
-        /**
-         * UnSetter for pageSize.
-         * @return Builder
-         */
-        public Builder unsetPageSize() {
-            pageSize = null;
-            return this;
-        }
-
-        /**
          * Builds a new {@link TransactionFeesRequest} object using the set fields.
          * @return {@link TransactionFeesRequest}
          */
@@ -1460,7 +1326,7 @@ public class TransactionFeesRequest {
             return new TransactionFeesRequest(colCoId, colCoCode, payerId, payerNumber, accounts,
                     cardId, cardPAN, invoiceStatus, feeTypeGroup, feeTypeId, fromDate, toDate,
                     period, includeCancelledItems, productId, productCode, lineItemDescription,
-                    sortOrder, currentPage, pageSize);
+                    sortOrder);
         }
     }
 }

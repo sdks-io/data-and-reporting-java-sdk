@@ -9,8 +9,8 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `ColCoId` | `String` | Optional | Collecting company ID. | String getColCoId() | setColCoId(String colCoId) |
-| `ColCoCode` | `String` | Optional | Collecting company code. | String getColCoCode() | setColCoCode(String colCoCode) |
+| `ColCoId` | `Integer` | Optional | Collecting company ID. | Integer getColCoId() | setColCoId(Integer colCoId) |
+| `ColCoCode` | `Integer` | Optional | Collecting company code. | Integer getColCoCode() | setColCoCode(Integer colCoCode) |
 | `ColCoCountryName` | `String` | Optional | Collecting company’s Country name. ex: United Kingdom | String getColCoCountryName() | setColCoCountryName(String colCoCountryName) |
 | `IssuingCountryNumber` | `String` | Optional | Issuing Country Number.<br><br>ex: 032 - Czech Republic | String getIssuingCountryNumber() | setIssuingCountryNumber(String issuingCountryNumber) |
 
@@ -18,8 +18,8 @@
 
 ```json
 {
-  "ColCoId": "14",
-  "ColCoCode": "14",
+  "ColCoId": 14,
+  "ColCoCode": 14,
   "ColCoCountryName": "DE",
   "IssuingCountryNumber": "DE"
 }

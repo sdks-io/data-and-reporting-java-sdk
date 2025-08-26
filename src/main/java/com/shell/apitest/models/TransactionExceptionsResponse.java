@@ -19,8 +19,6 @@ import java.util.List;
 public class TransactionExceptionsResponse {
     private List<CardExceptions> cardExceptions;
     private OptionalNullable<List<TransactionExceptions>> transactionExceptions;
-    private ErrorStatus error;
-    private String requestId;
 
     /**
      * Default constructor.
@@ -32,35 +30,24 @@ public class TransactionExceptionsResponse {
      * Initialization constructor.
      * @param  cardExceptions  List of CardExceptions value for cardExceptions.
      * @param  transactionExceptions  List of TransactionExceptions value for transactionExceptions.
-     * @param  error  ErrorStatus value for error.
-     * @param  requestId  String value for requestId.
      */
     public TransactionExceptionsResponse(
             List<CardExceptions> cardExceptions,
-            List<TransactionExceptions> transactionExceptions,
-            ErrorStatus error,
-            String requestId) {
+            List<TransactionExceptions> transactionExceptions) {
         this.cardExceptions = cardExceptions;
         this.transactionExceptions = OptionalNullable.of(transactionExceptions);
-        this.error = error;
-        this.requestId = requestId;
     }
 
     /**
      * Initialization constructor.
      * @param  cardExceptions  List of CardExceptions value for cardExceptions.
      * @param  transactionExceptions  List of TransactionExceptions value for transactionExceptions.
-     * @param  error  ErrorStatus value for error.
-     * @param  requestId  String value for requestId.
      */
 
     protected TransactionExceptionsResponse(List<CardExceptions> cardExceptions,
-            OptionalNullable<List<TransactionExceptions>> transactionExceptions, ErrorStatus error,
-            String requestId) {
+            OptionalNullable<List<TransactionExceptions>> transactionExceptions) {
         this.cardExceptions = cardExceptions;
         this.transactionExceptions = transactionExceptions;
-        this.error = error;
-        this.requestId = requestId;
     }
 
     /**
@@ -118,54 +105,13 @@ public class TransactionExceptionsResponse {
     }
 
     /**
-     * Getter for Error.
-     * @return Returns the ErrorStatus
-     */
-    @JsonGetter("Error")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public ErrorStatus getError() {
-        return error;
-    }
-
-    /**
-     * Setter for Error.
-     * @param error Value for ErrorStatus
-     */
-    @JsonSetter("Error")
-    public void setError(ErrorStatus error) {
-        this.error = error;
-    }
-
-    /**
-     * Getter for RequestId.
-     * API Request Id
-     * @return Returns the String
-     */
-    @JsonGetter("RequestId")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public String getRequestId() {
-        return requestId;
-    }
-
-    /**
-     * Setter for RequestId.
-     * API Request Id
-     * @param requestId Value for String
-     */
-    @JsonSetter("RequestId")
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
-    /**
      * Converts this TransactionExceptionsResponse into string format.
      * @return String representation of this class
      */
     @Override
     public String toString() {
         return "TransactionExceptionsResponse [" + "cardExceptions=" + cardExceptions
-                + ", transactionExceptions=" + transactionExceptions + ", error=" + error
-                + ", requestId=" + requestId + "]";
+                + ", transactionExceptions=" + transactionExceptions + "]";
     }
 
     /**
@@ -175,9 +121,7 @@ public class TransactionExceptionsResponse {
      */
     public Builder toBuilder() {
         Builder builder = new Builder()
-                .cardExceptions(getCardExceptions())
-                .error(getError())
-                .requestId(getRequestId());
+                .cardExceptions(getCardExceptions());
         builder.transactionExceptions = internalGetTransactionExceptions();
         return builder;
     }
@@ -188,8 +132,6 @@ public class TransactionExceptionsResponse {
     public static class Builder {
         private List<CardExceptions> cardExceptions;
         private OptionalNullable<List<TransactionExceptions>> transactionExceptions;
-        private ErrorStatus error;
-        private String requestId;
 
 
 
@@ -224,32 +166,11 @@ public class TransactionExceptionsResponse {
         }
 
         /**
-         * Setter for error.
-         * @param  error  ErrorStatus value for error.
-         * @return Builder
-         */
-        public Builder error(ErrorStatus error) {
-            this.error = error;
-            return this;
-        }
-
-        /**
-         * Setter for requestId.
-         * @param  requestId  String value for requestId.
-         * @return Builder
-         */
-        public Builder requestId(String requestId) {
-            this.requestId = requestId;
-            return this;
-        }
-
-        /**
          * Builds a new {@link TransactionExceptionsResponse} object using the set fields.
          * @return {@link TransactionExceptionsResponse}
          */
         public TransactionExceptionsResponse build() {
-            return new TransactionExceptionsResponse(cardExceptions, transactionExceptions, error,
-                    requestId);
+            return new TransactionExceptionsResponse(cardExceptions, transactionExceptions);
         }
     }
 }

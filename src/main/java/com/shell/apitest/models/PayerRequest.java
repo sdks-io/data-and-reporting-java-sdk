@@ -19,8 +19,6 @@ public class PayerRequest {
     private Boolean returnBasicDetailsOnly;
     private Boolean includeAddresses;
     private Boolean includeBonusParameters;
-    private Integer currentPage;
-    private Integer pageSize;
 
     /**
      * Default constructor.
@@ -37,22 +35,16 @@ public class PayerRequest {
      * @param  returnBasicDetailsOnly  Boolean value for returnBasicDetailsOnly.
      * @param  includeAddresses  Boolean value for includeAddresses.
      * @param  includeBonusParameters  Boolean value for includeBonusParameters.
-     * @param  currentPage  Integer value for currentPage.
-     * @param  pageSize  Integer value for pageSize.
      */
     public PayerRequest(
             List<Payers> payers,
             Boolean returnBasicDetailsOnly,
             Boolean includeAddresses,
-            Boolean includeBonusParameters,
-            Integer currentPage,
-            Integer pageSize) {
+            Boolean includeBonusParameters) {
         this.payers = payers;
         this.returnBasicDetailsOnly = returnBasicDetailsOnly;
         this.includeAddresses = includeAddresses;
         this.includeBonusParameters = includeBonusParameters;
-        this.currentPage = currentPage;
-        this.pageSize = pageSize;
     }
 
     /**
@@ -148,52 +140,6 @@ public class PayerRequest {
     }
 
     /**
-     * Getter for CurrentPage.
-     * Page Number
-     * @return Returns the Integer
-     */
-    @JsonGetter("CurrentPage")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Integer getCurrentPage() {
-        return currentPage;
-    }
-
-    /**
-     * Setter for CurrentPage.
-     * Page Number
-     * @param currentPage Value for Integer
-     */
-    @JsonSetter("CurrentPage")
-    public void setCurrentPage(Integer currentPage) {
-        this.currentPage = currentPage;
-    }
-
-    /**
-     * Getter for PageSize.
-     * Page Size – Number of records to show on a page Default value 50 Return 250 rows only in the
-     * response if -1 is supplied as page size. Note: • Max page size is 250, if the user provided
-     * value is more than 250 then it will throw error. • This value is configurable.
-     * @return Returns the Integer
-     */
-    @JsonGetter("PageSize")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Integer getPageSize() {
-        return pageSize;
-    }
-
-    /**
-     * Setter for PageSize.
-     * Page Size – Number of records to show on a page Default value 50 Return 250 rows only in the
-     * response if -1 is supplied as page size. Note: • Max page size is 250, if the user provided
-     * value is more than 250 then it will throw error. • This value is configurable.
-     * @param pageSize Value for Integer
-     */
-    @JsonSetter("PageSize")
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    /**
      * Converts this PayerRequest into string format.
      * @return String representation of this class
      */
@@ -201,8 +147,7 @@ public class PayerRequest {
     public String toString() {
         return "PayerRequest [" + "payers=" + payers + ", returnBasicDetailsOnly="
                 + returnBasicDetailsOnly + ", includeAddresses=" + includeAddresses
-                + ", includeBonusParameters=" + includeBonusParameters + ", currentPage="
-                + currentPage + ", pageSize=" + pageSize + "]";
+                + ", includeBonusParameters=" + includeBonusParameters + "]";
     }
 
     /**
@@ -215,9 +160,7 @@ public class PayerRequest {
                 .payers(getPayers())
                 .returnBasicDetailsOnly(getReturnBasicDetailsOnly())
                 .includeAddresses(getIncludeAddresses())
-                .includeBonusParameters(getIncludeBonusParameters())
-                .currentPage(getCurrentPage())
-                .pageSize(getPageSize());
+                .includeBonusParameters(getIncludeBonusParameters());
         return builder;
     }
 
@@ -229,8 +172,6 @@ public class PayerRequest {
         private Boolean returnBasicDetailsOnly = false;
         private Boolean includeAddresses = false;
         private Boolean includeBonusParameters = false;
-        private Integer currentPage;
-        private Integer pageSize;
 
 
 
@@ -275,32 +216,12 @@ public class PayerRequest {
         }
 
         /**
-         * Setter for currentPage.
-         * @param  currentPage  Integer value for currentPage.
-         * @return Builder
-         */
-        public Builder currentPage(Integer currentPage) {
-            this.currentPage = currentPage;
-            return this;
-        }
-
-        /**
-         * Setter for pageSize.
-         * @param  pageSize  Integer value for pageSize.
-         * @return Builder
-         */
-        public Builder pageSize(Integer pageSize) {
-            this.pageSize = pageSize;
-            return this;
-        }
-
-        /**
          * Builds a new {@link PayerRequest} object using the set fields.
          * @return {@link PayerRequest}
          */
         public PayerRequest build() {
             return new PayerRequest(payers, returnBasicDetailsOnly, includeAddresses,
-                    includeBonusParameters, currentPage, pageSize);
+                    includeBonusParameters);
         }
     }
 }

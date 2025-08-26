@@ -6,29 +6,27 @@
 
 package com.shell.apitest.controllers;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.shell.apitest.ApiHelper;
 import com.shell.apitest.Server;
 import com.shell.apitest.exceptions.ApiException;
-import com.shell.apitest.exceptions.DefaultErrorException;
-import com.shell.apitest.exceptions.ErrorUserAccessError1Exception;
+import com.shell.apitest.exceptions.ErrorObjectException;
 import com.shell.apitest.http.request.HttpMethod;
-import com.shell.apitest.models.AccountRequest;
-import com.shell.apitest.models.AccountResponse;
-import com.shell.apitest.models.AuditRequest;
+import com.shell.apitest.models.AccountReq;
+import com.shell.apitest.models.AccountRes;
+import com.shell.apitest.models.AuditReq;
 import com.shell.apitest.models.AuditResponse;
-import com.shell.apitest.models.CardGroupRequest;
-import com.shell.apitest.models.CardGroupResponse;
-import com.shell.apitest.models.CardTypeRequest;
-import com.shell.apitest.models.CardTypeResponse;
-import com.shell.apitest.models.CustomerDetailRequest;
-import com.shell.apitest.models.CustomerDetailResponse;
-import com.shell.apitest.models.CustomerPriceListRequest;
-import com.shell.apitest.models.CustomerPriceListResponse;
-import com.shell.apitest.models.FleetmanagementV1UserLoggedinuserRequest;
-import com.shell.apitest.models.LoggedInUserResponse;
-import com.shell.apitest.models.PayerRequest;
-import com.shell.apitest.models.PayerResponse;
+import com.shell.apitest.models.CardGroupReq;
+import com.shell.apitest.models.CardGroupRes;
+import com.shell.apitest.models.CardTypeReq;
+import com.shell.apitest.models.CardTypeRes;
+import com.shell.apitest.models.CustomerPriceListReq;
+import com.shell.apitest.models.CustomerPriceListRes;
+import com.shell.apitest.models.CustomerReq;
+import com.shell.apitest.models.CustomerRes;
+import com.shell.apitest.models.LoggedInUserReq;
+import com.shell.apitest.models.LoggedInUserRes;
+import com.shell.apitest.models.PayerReq;
+import com.shell.apitest.models.PayerRes;
 import io.apimatic.core.ApiCall;
 import io.apimatic.core.ErrorCase;
 import io.apimatic.core.GlobalConfiguration;
@@ -50,92 +48,85 @@ public final class CustomerController extends BaseController {
     }
 
     /**
-     * This API allows querying the user data of the logged in user.&lt;/br&gt; This API will return the
-     * user access details such as payers and/or accounts. &lt;/br&gt; This API will also validate that
-     * logged in user has access to the requested API, on failure it will return HasAPIAccess flag
-     * as false in response.&lt;/br&gt;.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
+     * This operation allows querying the user data of the logged in user. This operation should be
+     * called only after successful authentication of the end user in client application. This
+     * operation will return the user access details such as payers and/or accounts. This operation
+     * will also validate that logged in user has access to the requested operation, on failure it
+     * will return HasAPIAccess flag as false in the response.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
-     * @param  body  Optional parameter: Logged in user request body
-     * @return    Returns the LoggedInUserResponse response from the API call
+     * @param  body  Required parameter:
+     * @return    Returns the LoggedInUserRes response from the API call
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
-    public LoggedInUserResponse loggedinUser(
-            final String apikey,
+    public LoggedInUserRes userLoggedinuser(
             final String requestId,
-            final FleetmanagementV1UserLoggedinuserRequest body) throws ApiException, IOException {
-        return prepareLoggedinUserRequest(apikey, requestId, body).execute();
+            final LoggedInUserReq body) throws ApiException, IOException {
+        return prepareUserLoggedinuserRequest(requestId, body).execute();
     }
 
     /**
-     * This API allows querying the user data of the logged in user.&lt;/br&gt; This API will return the
-     * user access details such as payers and/or accounts. &lt;/br&gt; This API will also validate that
-     * logged in user has access to the requested API, on failure it will return HasAPIAccess flag
-     * as false in response.&lt;/br&gt;.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
+     * This operation allows querying the user data of the logged in user. This operation should be
+     * called only after successful authentication of the end user in client application. This
+     * operation will return the user access details such as payers and/or accounts. This operation
+     * will also validate that logged in user has access to the requested operation, on failure it
+     * will return HasAPIAccess flag as false in the response.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
-     * @param  body  Optional parameter: Logged in user request body
-     * @return    Returns the LoggedInUserResponse response from the API call
+     * @param  body  Required parameter:
+     * @return    Returns the LoggedInUserRes response from the API call
      */
-    public CompletableFuture<LoggedInUserResponse> loggedinUserAsync(
-            final String apikey,
+    public CompletableFuture<LoggedInUserRes> userLoggedinuserAsync(
             final String requestId,
-            final FleetmanagementV1UserLoggedinuserRequest body) {
-        try { 
-            return prepareLoggedinUserRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final LoggedInUserReq body) {
+        try {
+            return prepareUserLoggedinuserRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
     /**
-     * Builds the ApiCall object for loggedinUser.
+     * Builds the ApiCall object for userLoggedinuser.
      */
-    private ApiCall<LoggedInUserResponse, ApiException> prepareLoggedinUserRequest(
-            final String apikey,
+    private ApiCall<LoggedInUserRes, ApiException> prepareUserLoggedinuserRequest(
             final String requestId,
-            final FleetmanagementV1UserLoggedinuserRequest body) throws JsonProcessingException, IOException {
-        return new ApiCall.Builder<LoggedInUserResponse, ApiException>()
+            final LoggedInUserReq body) {
+        return new ApiCall.Builder<LoggedInUserRes, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/user/loggedinuser")
-                        .bodyParam(param -> param.value(body).isRequired(false))
+                        .path("/user-management/v1/loggedinuser")
+                        .bodyParam(param -> param.value(body))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
-                                response -> ApiHelper.deserialize(response, LoggedInUserResponse.class))
+                                response -> ApiHelper.deserialize(response, LoggedInUserRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -146,20 +137,17 @@ public final class CustomerController extends BaseController {
      * is applicable only when all the payers passed in the input are from the same ColCo. However,
      * paging will be ignored and the API will return all the matching data by merging the data
      * queried from each ColCo when payers passed in the input are from multiple ColCos.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
-     * @param  body  Optional parameter: Serach payers request body
-     * @return    Returns the PayerResponse response from the API call
+     * @param  body  Required parameter:
+     * @return    Returns the PayerRes response from the API call
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
-    public PayerResponse payers(
-            final String apikey,
+    public PayerRes customerpayers(
             final String requestId,
-            final PayerRequest body) throws ApiException, IOException {
-        return preparePayersRequest(apikey, requestId, body).execute();
+            final PayerReq body) throws ApiException, IOException {
+        return prepareCustomerpayersRequest(requestId, body).execute();
     }
 
     /**
@@ -168,67 +156,61 @@ public final class CustomerController extends BaseController {
      * is applicable only when all the payers passed in the input are from the same ColCo. However,
      * paging will be ignored and the API will return all the matching data by merging the data
      * queried from each ColCo when payers passed in the input are from multiple ColCos.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
-     * @param  body  Optional parameter: Serach payers request body
-     * @return    Returns the PayerResponse response from the API call
+     * @param  body  Required parameter:
+     * @return    Returns the PayerRes response from the API call
      */
-    public CompletableFuture<PayerResponse> payersAsync(
-            final String apikey,
+    public CompletableFuture<PayerRes> customerpayersAsync(
             final String requestId,
-            final PayerRequest body) {
-        try { 
-            return preparePayersRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final PayerReq body) {
+        try {
+            return prepareCustomerpayersRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
     /**
-     * Builds the ApiCall object for payers.
+     * Builds the ApiCall object for customerpayers.
      */
-    private ApiCall<PayerResponse, ApiException> preparePayersRequest(
-            final String apikey,
+    private ApiCall<PayerRes, ApiException> prepareCustomerpayersRequest(
             final String requestId,
-            final PayerRequest body) throws JsonProcessingException, IOException {
-        return new ApiCall.Builder<PayerResponse, ApiException>()
+            final PayerReq body) {
+        return new ApiCall.Builder<PayerRes, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/customer/payers")
-                        .bodyParam(param -> param.value(body).isRequired(false))
+                        .path("/customer-management/v1/payers")
+                        .bodyParam(param -> param.value(body))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
-                                response -> ApiHelper.deserialize(response, PayerResponse.class))
+                                response -> ApiHelper.deserialize(response, PayerRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -236,456 +218,321 @@ public final class CustomerController extends BaseController {
     /**
      * This API allows querying the card delivery addresses of a given account from the Shell Cards
      * Platform. Only active delivery addresses will be returned.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
-     * @param  body  Optional parameter: Customerdetails request body
-     * @return    Returns the CustomerDetailResponse response from the API call
+     * @param  body  Required parameter:
+     * @return    Returns the CustomerRes response from the API call
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
-    public CustomerDetailResponse customer(
-            final String apikey,
+    public CustomerRes customerdetail(
             final String requestId,
-            final CustomerDetailRequest body) throws ApiException, IOException {
-        return prepareCustomerRequest(apikey, requestId, body).execute();
+            final CustomerReq body) throws ApiException, IOException {
+        return prepareCustomerdetailRequest(requestId, body).execute();
     }
 
     /**
      * This API allows querying the card delivery addresses of a given account from the Shell Cards
      * Platform. Only active delivery addresses will be returned.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
-     * @param  body  Optional parameter: Customerdetails request body
-     * @return    Returns the CustomerDetailResponse response from the API call
+     * @param  body  Required parameter:
+     * @return    Returns the CustomerRes response from the API call
      */
-    public CompletableFuture<CustomerDetailResponse> customerAsync(
-            final String apikey,
+    public CompletableFuture<CustomerRes> customerdetailAsync(
             final String requestId,
-            final CustomerDetailRequest body) {
-        try { 
-            return prepareCustomerRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final CustomerReq body) {
+        try {
+            return prepareCustomerdetailRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
     /**
-     * Builds the ApiCall object for customer.
+     * Builds the ApiCall object for customerdetail.
      */
-    private ApiCall<CustomerDetailResponse, ApiException> prepareCustomerRequest(
-            final String apikey,
+    private ApiCall<CustomerRes, ApiException> prepareCustomerdetailRequest(
             final String requestId,
-            final CustomerDetailRequest body) throws JsonProcessingException, IOException {
-        return new ApiCall.Builder<CustomerDetailResponse, ApiException>()
+            final CustomerReq body) {
+        return new ApiCall.Builder<CustomerRes, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/customer/customer")
-                        .bodyParam(param -> param.value(body).isRequired(false))
+                        .path("/customer-management/v1/customer")
+                        .bodyParam(param -> param.value(body))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
-                                response -> ApiHelper.deserialize(response, CustomerDetailResponse.class))
+                                response -> ApiHelper.deserialize(response, CustomerRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
-                        .globalErrorCase(GLOBAL_ERROR_CASES))
-                .build();
-    }
-
-    /**
-     * - This operation fetches the International and National Price List and discount values set on
-     * pump prices &amp; List Prices - It allows searching price list and discount values set on pump
-     * prices that are applicable for a given customer **Note**: Accounts with cancelled status will
-     * not be considered for this operation for the configured - When the search is based on
-     * customer specific price list then the customer price list is returned based on the associated
-     * pricing customer. - The discount values set on pump prices, which are returned by the
-     * operation are always customer specific values based on the customer associated price rules.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
-     * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
-     *         requests and responses. This will be played back in the response from the request.
-     * @param  body  Optional parameter: Customerdetails request body
-     * @return    Returns the CustomerPriceListResponse response from the API call
-     * @throws    ApiException    Represents error response from the server.
-     * @throws    IOException    Signals that an I/O exception of some sort has occurred.
-     */
-    public CustomerPriceListResponse customerPriceList(
-            final String apikey,
-            final String requestId,
-            final CustomerPriceListRequest body) throws ApiException, IOException {
-        return prepareCustomerPriceListRequest(apikey, requestId, body).execute();
-    }
-
-    /**
-     * - This operation fetches the International and National Price List and discount values set on
-     * pump prices &amp; List Prices - It allows searching price list and discount values set on pump
-     * prices that are applicable for a given customer **Note**: Accounts with cancelled status will
-     * not be considered for this operation for the configured - When the search is based on
-     * customer specific price list then the customer price list is returned based on the associated
-     * pricing customer. - The discount values set on pump prices, which are returned by the
-     * operation are always customer specific values based on the customer associated price rules.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
-     * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
-     *         requests and responses. This will be played back in the response from the request.
-     * @param  body  Optional parameter: Customerdetails request body
-     * @return    Returns the CustomerPriceListResponse response from the API call
-     */
-    public CompletableFuture<CustomerPriceListResponse> customerPriceListAsync(
-            final String apikey,
-            final String requestId,
-            final CustomerPriceListRequest body) {
-        try { 
-            return prepareCustomerPriceListRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
-        }
-    }
-
-    /**
-     * Builds the ApiCall object for customerPriceList.
-     */
-    private ApiCall<CustomerPriceListResponse, ApiException> prepareCustomerPriceListRequest(
-            final String apikey,
-            final String requestId,
-            final CustomerPriceListRequest body) throws JsonProcessingException, IOException {
-        return new ApiCall.Builder<CustomerPriceListResponse, ApiException>()
-                .globalConfig(getGlobalConfiguration())
-                .requestBuilder(requestBuilder -> requestBuilder
-                        .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v2/customer/pricelist")
-                        .bodyParam(param -> param.value(body).isRequired(false))
-                        .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
-                        .headerParam(param -> param.key("RequestId")
-                                .value(requestId).isRequired(false))
-                        .headerParam(param -> param.key("Content-Type")
-                                .value("application/json").isRequired(false))
-                        .headerParam(param -> param.key("accept").value("application/json"))
-                        .withAuth(auth -> auth
-                                .add("BasicAuth"))
-                        .httpMethod(HttpMethod.POST))
-                .responseHandler(responseHandler -> responseHandler
-                        .deserializer(
-                                response -> ApiHelper.deserialize(response, CustomerPriceListResponse.class))
-                        .nullify404(false)
-                        .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
-                        .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
-                        .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
-                        .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
-                        .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
 
     /**
      * This API allows querying the customer account details from the Shell Cards Platform. It
-     * provides a flexible search criterion and supports paging".
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
+     * provides a flexible search criterion and supports pagination.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
-     * @param  body  Optional parameter: Example:
-     * @return    Returns the AccountResponse response from the API call
+     * @param  body  Required parameter:
+     * @return    Returns the AccountRes response from the API call
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
-    public AccountResponse accounts(
-            final String apikey,
+    public AccountRes postCardAccounts(
             final String requestId,
-            final AccountRequest body) throws ApiException, IOException {
-        return prepareAccountsRequest(apikey, requestId, body).execute();
+            final AccountReq body) throws ApiException, IOException {
+        return preparePostCardAccountsRequest(requestId, body).execute();
     }
 
     /**
      * This API allows querying the customer account details from the Shell Cards Platform. It
-     * provides a flexible search criterion and supports paging".
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
+     * provides a flexible search criterion and supports pagination.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
-     * @param  body  Optional parameter: Example:
-     * @return    Returns the AccountResponse response from the API call
+     * @param  body  Required parameter:
+     * @return    Returns the AccountRes response from the API call
      */
-    public CompletableFuture<AccountResponse> accountsAsync(
-            final String apikey,
+    public CompletableFuture<AccountRes> postCardAccountsAsync(
             final String requestId,
-            final AccountRequest body) {
-        try { 
-            return prepareAccountsRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final AccountReq body) {
+        try {
+            return preparePostCardAccountsRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
     /**
-     * Builds the ApiCall object for accounts.
+     * Builds the ApiCall object for postCardAccounts.
      */
-    private ApiCall<AccountResponse, ApiException> prepareAccountsRequest(
-            final String apikey,
+    private ApiCall<AccountRes, ApiException> preparePostCardAccountsRequest(
             final String requestId,
-            final AccountRequest body) throws JsonProcessingException, IOException {
-        return new ApiCall.Builder<AccountResponse, ApiException>()
+            final AccountReq body) {
+        return new ApiCall.Builder<AccountRes, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/customer/accounts")
-                        .bodyParam(param -> param.value(body).isRequired(false))
+                        .path("/customer-management/v1/accounts")
+                        .bodyParam(param -> param.value(body))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
-                                response -> ApiHelper.deserialize(response, AccountResponse.class))
+                                response -> ApiHelper.deserialize(response, AccountRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
 
     /**
-     * This operation allows querying card types that are associated to the given account and are
-     * allowed to be shown to users.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
+     * This API provides allows querying the active card types that are associated to the given
+     * account. The API returns the card type configurations, purchase categories associated with
+     * the card type and the card type restriction limits.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
-     * @param  body  Optional parameter: Get CardType Request Body
-     * @return    Returns the CardTypeResponse response from the API call
+     * @param  body  Required parameter:
+     * @return    Returns the CardTypeRes response from the API call
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
-    public CardTypeResponse cardType(
-            final String apikey,
+    public CardTypeRes customercardtypev(
             final String requestId,
-            final CardTypeRequest body) throws ApiException, IOException {
-        return prepareCardTypeRequest(apikey, requestId, body).execute();
+            final CardTypeReq body) throws ApiException, IOException {
+        return prepareCustomercardtypevRequest(requestId, body).execute();
     }
 
     /**
-     * This operation allows querying card types that are associated to the given account and are
-     * allowed to be shown to users.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
+     * This API provides allows querying the active card types that are associated to the given
+     * account. The API returns the card type configurations, purchase categories associated with
+     * the card type and the card type restriction limits.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
-     * @param  body  Optional parameter: Get CardType Request Body
-     * @return    Returns the CardTypeResponse response from the API call
+     * @param  body  Required parameter:
+     * @return    Returns the CardTypeRes response from the API call
      */
-    public CompletableFuture<CardTypeResponse> cardTypeAsync(
-            final String apikey,
+    public CompletableFuture<CardTypeRes> customercardtypevAsync(
             final String requestId,
-            final CardTypeRequest body) {
-        try { 
-            return prepareCardTypeRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final CardTypeReq body) {
+        try {
+            return prepareCustomercardtypevRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
     /**
-     * Builds the ApiCall object for cardType.
+     * Builds the ApiCall object for customercardtypev.
      */
-    private ApiCall<CardTypeResponse, ApiException> prepareCardTypeRequest(
-            final String apikey,
+    private ApiCall<CardTypeRes, ApiException> prepareCustomercardtypevRequest(
             final String requestId,
-            final CardTypeRequest body) throws JsonProcessingException, IOException {
-        return new ApiCall.Builder<CardTypeResponse, ApiException>()
+            final CardTypeReq body) {
+        return new ApiCall.Builder<CardTypeRes, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v2/customer/cardtype")
-                        .bodyParam(param -> param.value(body).isRequired(false))
+                        .path("/customer-management/v1/cardtype")
+                        .bodyParam(param -> param.value(body))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
-                                response -> ApiHelper.deserialize(response, CardTypeResponse.class))
+                                response -> ApiHelper.deserialize(response, CardTypeRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
 
     /**
-     * This operation allows querying the card group details . It provides flexible search criteria
-     * and supports paging.\\ When the card group type is configured as ‘Vertical’ in cards
-     * platform, this operation will return all card groups from the given account or if no account
-     * is passed in the input, then will return card groups from all the accounts under the payer.
-     * When the card group type is configured as ‘Horizontal’ in cards platform, this API will
-     * return all card groups configured directly under the payer. Accounts with cancelled status
-     * will not be considered for cardgroups search for the configured (E.g., SFH) set of client
-     * apps.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
+     * This API allows querying the card group details from the Shell Cards Platform. It provides
+     * flexible search criteria and supports paging. When the account is not passed in the input and
+     * card group type is configured as â€˜Verticalâ€™ in the cards platform, this API will return
+     * all card groups from the payer as well as from all the accounts under the payer. When the
+     * account is not passed in the input and card group type is configured as â€˜Horizontalâ€™ in
+     * cards platform, this API will return all card groups configured directly under the payer.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
-     * @param  body  Optional parameter: Request Body
-     * @return    Returns the CardGroupResponse response from the API call
+     * @param  body  Required parameter:
+     * @return    Returns the CardGroupRes response from the API call
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
-    public CardGroupResponse cardGroups(
-            final String apikey,
+    public CardGroupRes cardgroups(
             final String requestId,
-            final CardGroupRequest body) throws ApiException, IOException {
-        return prepareCardGroupsRequest(apikey, requestId, body).execute();
+            final CardGroupReq body) throws ApiException, IOException {
+        return prepareCardgroupsRequest(requestId, body).execute();
     }
 
     /**
-     * This operation allows querying the card group details . It provides flexible search criteria
-     * and supports paging.\\ When the card group type is configured as ‘Vertical’ in cards
-     * platform, this operation will return all card groups from the given account or if no account
-     * is passed in the input, then will return card groups from all the accounts under the payer.
-     * When the card group type is configured as ‘Horizontal’ in cards platform, this API will
-     * return all card groups configured directly under the payer. Accounts with cancelled status
-     * will not be considered for cardgroups search for the configured (E.g., SFH) set of client
-     * apps.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
+     * This API allows querying the card group details from the Shell Cards Platform. It provides
+     * flexible search criteria and supports paging. When the account is not passed in the input and
+     * card group type is configured as â€˜Verticalâ€™ in the cards platform, this API will return
+     * all card groups from the payer as well as from all the accounts under the payer. When the
+     * account is not passed in the input and card group type is configured as â€˜Horizontalâ€™ in
+     * cards platform, this API will return all card groups configured directly under the payer.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
-     * @param  body  Optional parameter: Request Body
-     * @return    Returns the CardGroupResponse response from the API call
+     * @param  body  Required parameter:
+     * @return    Returns the CardGroupRes response from the API call
      */
-    public CompletableFuture<CardGroupResponse> cardGroupsAsync(
-            final String apikey,
+    public CompletableFuture<CardGroupRes> cardgroupsAsync(
             final String requestId,
-            final CardGroupRequest body) {
-        try { 
-            return prepareCardGroupsRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final CardGroupReq body) {
+        try {
+            return prepareCardgroupsRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
     /**
-     * Builds the ApiCall object for cardGroups.
+     * Builds the ApiCall object for cardgroups.
      */
-    private ApiCall<CardGroupResponse, ApiException> prepareCardGroupsRequest(
-            final String apikey,
+    private ApiCall<CardGroupRes, ApiException> prepareCardgroupsRequest(
             final String requestId,
-            final CardGroupRequest body) throws JsonProcessingException, IOException {
-        return new ApiCall.Builder<CardGroupResponse, ApiException>()
+            final CardGroupReq body) {
+        return new ApiCall.Builder<CardGroupRes, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/customer/cardgroups")
-                        .bodyParam(param -> param.value(body).isRequired(false))
+                        .path("/customer-management/v1/cardgroups")
+                        .bodyParam(param -> param.value(body))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
-                                response -> ApiHelper.deserialize(response, CardGroupResponse.class))
+                                response -> ApiHelper.deserialize(response, CardGroupRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -695,10 +542,8 @@ public final class CustomerController extends BaseController {
      * users of a given customer The audit data includes details of below API operations * Order
      * Card * Create Card Group * PIN reminder * Move Cards * Update Card Status * Update Card Group
      * * Auto renew * Bulk card order * Bulk card block * Bulk Card Order (Multi Account) *
-     * BCOSummary * BCOMultiAccountSummary * BCBSummary * Mobile Payment * Registration * Fund
+     * BCOSummary * BCOMultiAccountSummary * BCBSummary * Mobile Payment Registration * Fund
      * Transfer (Scheduled &amp; Realtime) * Delivery Address Update.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: request body
@@ -707,10 +552,9 @@ public final class CustomerController extends BaseController {
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
     public AuditResponse auditReport(
-            final String apikey,
             final String requestId,
-            final AuditRequest body) throws ApiException, IOException {
-        return prepareAuditReportRequest(apikey, requestId, body).execute();
+            final AuditReq body) throws ApiException, IOException {
+        return prepareAuditReportRequest(requestId, body).execute();
     }
 
     /**
@@ -718,23 +562,20 @@ public final class CustomerController extends BaseController {
      * users of a given customer The audit data includes details of below API operations * Order
      * Card * Create Card Group * PIN reminder * Move Cards * Update Card Status * Update Card Group
      * * Auto renew * Bulk card order * Bulk card block * Bulk Card Order (Multi Account) *
-     * BCOSummary * BCOMultiAccountSummary * BCBSummary * Mobile Payment * Registration * Fund
+     * BCOSummary * BCOMultiAccountSummary * BCBSummary * Mobile Payment Registration * Fund
      * Transfer (Scheduled &amp; Realtime) * Delivery Address Update.
-     * @param  apikey  Required parameter: This is the API key of the specific environment which
-     *         needs to be passed by the client.
      * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
      *         requests and responses. This will be played back in the response from the request.
      * @param  body  Optional parameter: request body
      * @return    Returns the AuditResponse response from the API call
      */
     public CompletableFuture<AuditResponse> auditReportAsync(
-            final String apikey,
             final String requestId,
-            final AuditRequest body) {
-        try { 
-            return prepareAuditReportRequest(apikey, requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final AuditReq body) {
+        try {
+            return prepareAuditReportRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
@@ -742,45 +583,130 @@ public final class CustomerController extends BaseController {
      * Builds the ApiCall object for auditReport.
      */
     private ApiCall<AuditResponse, ApiException> prepareAuditReportRequest(
-            final String apikey,
             final String requestId,
-            final AuditRequest body) throws JsonProcessingException, IOException {
+            final AuditReq body) {
         return new ApiCall.Builder<AuditResponse, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/fleetmanagement/v1/customer/auditreport")
+                        .path("/customer-management/v1/auditreport")
                         .bodyParam(param -> param.value(body).isRequired(false))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
-                        .headerParam(param -> param.key("apikey")
-                                .value(apikey).isRequired(false))
                         .headerParam(param -> param.key("RequestId")
                                 .value(requestId).isRequired(false))
                         .headerParam(param -> param.key("Content-Type")
                                 .value("application/json").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .withAuth(auth -> auth
-                                .add("BasicAuth"))
+                                .add("BearerToken"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler
                         .deserializer(
                                 response -> ApiHelper.deserialize(response, AuditResponse.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
+                        .localErrorCase("401",
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
+                        .localErrorCase("403",
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
+                        .localErrorCase("404",
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
+                        .localErrorCase("500",
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
+                        .globalErrorCase(GLOBAL_ERROR_CASES))
+                .build();
+    }
+
+    /**
+     * - This operation fetches the International and National Price List and discount values set on
+     * pump prices &amp; List Prices - It allows searching price list and discount values set on pump
+     * prices that are applicable for a given customer **Note**: Accounts with cancelled status will
+     * not be considered for this operation for the configured - When the search is based on
+     * customer specific price list then the customer price list is returned based on the associated
+     * pricing customer. - The discount values set on pump prices, which are returned by the
+     * operation are always customer specific values based on the customer associated price rules.
+     * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
+     *         requests and responses. This will be played back in the response from the request.
+     * @param  body  Optional parameter: Customerdetails request body
+     * @return    Returns the CustomerPriceListRes response from the API call
+     * @throws    ApiException    Represents error response from the server.
+     * @throws    IOException    Signals that an I/O exception of some sort has occurred.
+     */
+    public CustomerPriceListRes customerPriceList(
+            final String requestId,
+            final CustomerPriceListReq body) throws ApiException, IOException {
+        return prepareCustomerPriceListRequest(requestId, body).execute();
+    }
+
+    /**
+     * - This operation fetches the International and National Price List and discount values set on
+     * pump prices &amp; List Prices - It allows searching price list and discount values set on pump
+     * prices that are applicable for a given customer **Note**: Accounts with cancelled status will
+     * not be considered for this operation for the configured - When the search is based on
+     * customer specific price list then the customer price list is returned based on the associated
+     * pricing customer. - The discount values set on pump prices, which are returned by the
+     * operation are always customer specific values based on the customer associated price rules.
+     * @param  requestId  Required parameter: Mandatory UUID (according to RFC 4122 standards) for
+     *         requests and responses. This will be played back in the response from the request.
+     * @param  body  Optional parameter: Customerdetails request body
+     * @return    Returns the CustomerPriceListRes response from the API call
+     */
+    public CompletableFuture<CustomerPriceListRes> customerPriceListAsync(
+            final String requestId,
+            final CustomerPriceListReq body) {
+        try {
+            return prepareCustomerPriceListRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
+        }
+    }
+
+    /**
+     * Builds the ApiCall object for customerPriceList.
+     */
+    private ApiCall<CustomerPriceListRes, ApiException> prepareCustomerPriceListRequest(
+            final String requestId,
+            final CustomerPriceListReq body) {
+        return new ApiCall.Builder<CustomerPriceListRes, ApiException>()
+                .globalConfig(getGlobalConfiguration())
+                .requestBuilder(requestBuilder -> requestBuilder
+                        .server(Server.SHELL.value())
+                        .path("/customer-management/v1/pricelist")
+                        .bodyParam(param -> param.value(body).isRequired(false))
+                        .bodySerializer(() ->  ApiHelper.serialize(body))
+                        .headerParam(param -> param.key("RequestId")
+                                .value(requestId).isRequired(false))
+                        .headerParam(param -> param.key("Content-Type")
+                                .value("application/json").isRequired(false))
+                        .headerParam(param -> param.key("accept").value("application/json"))
+                        .withAuth(auth -> auth
+                                .add("BearerToken"))
+                        .httpMethod(HttpMethod.POST))
+                .responseHandler(responseHandler -> responseHandler
+                        .deserializer(
+                                response -> ApiHelper.deserialize(response, CustomerPriceListRes.class))
+                        .nullify404(false)
+                        .localErrorCase("400",
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("403",
-                                 ErrorCase.setReason("The server understood the request but refuses to authorize it.",
-                                (reason, context) -> new ErrorUserAccessError1Exception(reason, context)))
+                                 ErrorCase.setReason("Forbidden",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition the prevented it from fulfilling the request.",
-                                (reason, context) -> new DefaultErrorException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new ErrorObjectException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }

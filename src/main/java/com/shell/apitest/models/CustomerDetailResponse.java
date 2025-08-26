@@ -42,8 +42,6 @@ public class CustomerDetailResponse {
     private OptionalNullable<String> status;
     private OptionalNullable<Integer> defaultPINAdviceType;
     private List<PINAdviceTypes> pINAdviceTypes;
-    private ErrorStatus error;
-    private OptionalNullable<String> requestId;
     private Boolean pINChangeAllowedByCardholder;
     private Boolean pINChangeAllowedFromFleetPIN;
 
@@ -80,8 +78,6 @@ public class CustomerDetailResponse {
      * @param  status  String value for status.
      * @param  defaultPINAdviceType  Integer value for defaultPINAdviceType.
      * @param  pINAdviceTypes  List of PINAdviceTypes value for pINAdviceTypes.
-     * @param  error  ErrorStatus value for error.
-     * @param  requestId  String value for requestId.
      * @param  pINChangeAllowedByCardholder  Boolean value for pINChangeAllowedByCardholder.
      * @param  pINChangeAllowedFromFleetPIN  Boolean value for pINChangeAllowedFromFleetPIN.
      */
@@ -111,8 +107,6 @@ public class CustomerDetailResponse {
             String status,
             Integer defaultPINAdviceType,
             List<PINAdviceTypes> pINAdviceTypes,
-            ErrorStatus error,
-            String requestId,
             Boolean pINChangeAllowedByCardholder,
             Boolean pINChangeAllowedFromFleetPIN) {
         this.accountId = OptionalNullable.of(accountId);
@@ -140,8 +134,6 @@ public class CustomerDetailResponse {
         this.status = OptionalNullable.of(status);
         this.defaultPINAdviceType = OptionalNullable.of(defaultPINAdviceType);
         this.pINAdviceTypes = pINAdviceTypes;
-        this.error = error;
-        this.requestId = OptionalNullable.of(requestId);
         this.pINChangeAllowedByCardholder = pINChangeAllowedByCardholder;
         this.pINChangeAllowedFromFleetPIN = pINChangeAllowedFromFleetPIN;
     }
@@ -173,8 +165,6 @@ public class CustomerDetailResponse {
      * @param  status  String value for status.
      * @param  defaultPINAdviceType  Integer value for defaultPINAdviceType.
      * @param  pINAdviceTypes  List of PINAdviceTypes value for pINAdviceTypes.
-     * @param  error  ErrorStatus value for error.
-     * @param  requestId  String value for requestId.
      * @param  pINChangeAllowedByCardholder  Boolean value for pINChangeAllowedByCardholder.
      * @param  pINChangeAllowedFromFleetPIN  Boolean value for pINChangeAllowedFromFleetPIN.
      */
@@ -192,8 +182,7 @@ public class CustomerDetailResponse {
             OptionalNullable<Integer> payerId, OptionalNullable<String> payerName,
             OptionalNullable<String> payerNumber, OptionalNullable<Boolean> selfSelectedPin,
             OptionalNullable<String> status, OptionalNullable<Integer> defaultPINAdviceType,
-            List<PINAdviceTypes> pINAdviceTypes, ErrorStatus error,
-            OptionalNullable<String> requestId, Boolean pINChangeAllowedByCardholder,
+            List<PINAdviceTypes> pINAdviceTypes, Boolean pINChangeAllowedByCardholder,
             Boolean pINChangeAllowedFromFleetPIN) {
         this.accountId = accountId;
         this.accountName = accountName;
@@ -220,8 +209,6 @@ public class CustomerDetailResponse {
         this.status = status;
         this.defaultPINAdviceType = defaultPINAdviceType;
         this.pINAdviceTypes = pINAdviceTypes;
-        this.error = error;
-        this.requestId = requestId;
         this.pINChangeAllowedByCardholder = pINChangeAllowedByCardholder;
         this.pINChangeAllowedFromFleetPIN = pINChangeAllowedFromFleetPIN;
     }
@@ -1100,64 +1087,6 @@ public class CustomerDetailResponse {
     }
 
     /**
-     * Getter for Error.
-     * @return Returns the ErrorStatus
-     */
-    @JsonGetter("Error")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public ErrorStatus getError() {
-        return error;
-    }
-
-    /**
-     * Setter for Error.
-     * @param error Value for ErrorStatus
-     */
-    @JsonSetter("Error")
-    public void setError(ErrorStatus error) {
-        this.error = error;
-    }
-
-    /**
-     * Internal Getter for RequestId.
-     * API Request id
-     * @return Returns the Internal String
-     */
-    @JsonGetter("RequestId")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<String> internalGetRequestId() {
-        return this.requestId;
-    }
-
-    /**
-     * Getter for RequestId.
-     * API Request id
-     * @return Returns the String
-     */
-    public String getRequestId() {
-        return OptionalNullable.getFrom(requestId);
-    }
-
-    /**
-     * Setter for RequestId.
-     * API Request id
-     * @param requestId Value for String
-     */
-    @JsonSetter("RequestId")
-    public void setRequestId(String requestId) {
-        this.requestId = OptionalNullable.of(requestId);
-    }
-
-    /**
-     * UnSetter for RequestId.
-     * API Request id
-     */
-    public void unsetRequestId() {
-        requestId = null;
-    }
-
-    /**
      * Getter for PINChangeAllowedByCardholder.
      * PIN change allowed for card holder or not.
      * @return Returns the Boolean
@@ -1218,8 +1147,7 @@ public class CustomerDetailResponse {
                 + ", payerId=" + payerId + ", payerName=" + payerName + ", payerNumber="
                 + payerNumber + ", selfSelectedPin=" + selfSelectedPin + ", status=" + status
                 + ", defaultPINAdviceType=" + defaultPINAdviceType + ", pINAdviceTypes="
-                + pINAdviceTypes + ", error=" + error + ", requestId=" + requestId
-                + ", pINChangeAllowedByCardholder=" + pINChangeAllowedByCardholder
+                + pINAdviceTypes + ", pINChangeAllowedByCardholder=" + pINChangeAllowedByCardholder
                 + ", pINChangeAllowedFromFleetPIN=" + pINChangeAllowedFromFleetPIN + "]";
     }
 
@@ -1236,7 +1164,6 @@ public class CustomerDetailResponse {
                 .deliveryAddresses(getDeliveryAddresses())
                 .fleetPin(getFleetPin())
                 .pINAdviceTypes(getPINAdviceTypes())
-                .error(getError())
                 .pINChangeAllowedByCardholder(getPINChangeAllowedByCardholder())
                 .pINChangeAllowedFromFleetPIN(getPINChangeAllowedFromFleetPIN());
         builder.accountId = internalGetAccountId();
@@ -1258,7 +1185,6 @@ public class CustomerDetailResponse {
         builder.selfSelectedPin = internalGetSelfSelectedPin();
         builder.status = internalGetStatus();
         builder.defaultPINAdviceType = internalGetDefaultPINAdviceType();
-        builder.requestId = internalGetRequestId();
         return builder;
     }
 
@@ -1291,8 +1217,6 @@ public class CustomerDetailResponse {
         private OptionalNullable<String> status;
         private OptionalNullable<Integer> defaultPINAdviceType;
         private List<PINAdviceTypes> pINAdviceTypes;
-        private ErrorStatus error;
-        private OptionalNullable<String> requestId;
         private Boolean pINChangeAllowedByCardholder;
         private Boolean pINChangeAllowedFromFleetPIN;
 
@@ -1720,35 +1644,6 @@ public class CustomerDetailResponse {
         }
 
         /**
-         * Setter for error.
-         * @param  error  ErrorStatus value for error.
-         * @return Builder
-         */
-        public Builder error(ErrorStatus error) {
-            this.error = error;
-            return this;
-        }
-
-        /**
-         * Setter for requestId.
-         * @param  requestId  String value for requestId.
-         * @return Builder
-         */
-        public Builder requestId(String requestId) {
-            this.requestId = OptionalNullable.of(requestId);
-            return this;
-        }
-
-        /**
-         * UnSetter for requestId.
-         * @return Builder
-         */
-        public Builder unsetRequestId() {
-            requestId = null;
-            return this;
-        }
-
-        /**
          * Setter for pINChangeAllowedByCardholder.
          * @param  pINChangeAllowedByCardholder  Boolean value for pINChangeAllowedByCardholder.
          * @return Builder
@@ -1778,7 +1673,7 @@ public class CustomerDetailResponse {
                     cardGroupPosition, correspondenceAddress, deliveryAddresses, fleetPin, fullName,
                     invoiceCustomerId, invoiceCustomerShortName, isInvoicePoint,
                     marketingSegmentation, vATNumber, payerId, payerName, payerNumber,
-                    selfSelectedPin, status, defaultPINAdviceType, pINAdviceTypes, error, requestId,
+                    selfSelectedPin, status, defaultPINAdviceType, pINAdviceTypes,
                     pINChangeAllowedByCardholder, pINChangeAllowedFromFleetPIN);
         }
     }

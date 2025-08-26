@@ -6,7 +6,6 @@
 
 package com.shell.apitest.controllers;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.shell.apitest.ApiHelper;
 import com.shell.apitest.Server;
 import com.shell.apitest.exceptions.ApiException;
@@ -88,10 +87,10 @@ public final class InvoiceController extends BaseController {
     public CompletableFuture<InvoiceSearchResponse> invoiceSearchAsync(
             final String requestId,
             final InvoiceSearchRequest body) {
-        try { 
-            return prepareInvoiceSearchRequest(requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+        try {
+            return prepareInvoiceSearchRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
@@ -100,7 +99,7 @@ public final class InvoiceController extends BaseController {
      */
     private ApiCall<InvoiceSearchResponse, ApiException> prepareInvoiceSearchRequest(
             final String requestId,
-            final InvoiceSearchRequest body) throws JsonProcessingException, IOException {
+            final InvoiceSearchRequest body) {
         return new ApiCall.Builder<InvoiceSearchResponse, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
@@ -176,10 +175,10 @@ public final class InvoiceController extends BaseController {
     public CompletableFuture<InvoiceSummaryResponse> invoiceSummaryAsync(
             final String requestId,
             final InvoiceSummaryRequest body) {
-        try { 
-            return prepareInvoiceSummaryRequest(requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+        try {
+            return prepareInvoiceSummaryRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
@@ -188,7 +187,7 @@ public final class InvoiceController extends BaseController {
      */
     private ApiCall<InvoiceSummaryResponse, ApiException> prepareInvoiceSummaryRequest(
             final String requestId,
-            final InvoiceSummaryRequest body) throws JsonProcessingException, IOException {
+            final InvoiceSummaryRequest body) {
         return new ApiCall.Builder<InvoiceSummaryResponse, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
@@ -262,10 +261,10 @@ public final class InvoiceController extends BaseController {
     public CompletableFuture<StatementOfAccountResponse> statementOfAccountAsync(
             final String requestId,
             final StatementOfAccountRequest body) {
-        try { 
-            return prepareStatementOfAccountRequest(requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+        try {
+            return prepareStatementOfAccountRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
@@ -274,7 +273,7 @@ public final class InvoiceController extends BaseController {
      */
     private ApiCall<StatementOfAccountResponse, ApiException> prepareStatementOfAccountRequest(
             final String requestId,
-            final StatementOfAccountRequest body) throws JsonProcessingException, IOException {
+            final StatementOfAccountRequest body) {
         return new ApiCall.Builder<StatementOfAccountResponse, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
@@ -340,10 +339,10 @@ public final class InvoiceController extends BaseController {
     public CompletableFuture<InvoiceDatesResponseData> datesAsync(
             final String requestId,
             final InvoiceDatesRequest body) {
-        try { 
-            return prepareDatesRequest(requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+        try {
+            return prepareDatesRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
@@ -352,7 +351,7 @@ public final class InvoiceController extends BaseController {
      */
     private ApiCall<InvoiceDatesResponseData, ApiException> prepareDatesRequest(
             final String requestId,
-            final InvoiceDatesRequest body) throws JsonProcessingException, IOException {
+            final InvoiceDatesRequest body) {
         return new ApiCall.Builder<InvoiceDatesResponseData, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
@@ -416,10 +415,10 @@ public final class InvoiceController extends BaseController {
     public CompletableFuture<SearchStatementOfAccountResponse> searchStatementOfAccountAsync(
             final String requestId,
             final SearchStatementOfAccountRequest body) {
-        try { 
-            return prepareSearchStatementOfAccountRequest(requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+        try {
+            return prepareSearchStatementOfAccountRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
@@ -428,7 +427,7 @@ public final class InvoiceController extends BaseController {
      */
     private ApiCall<SearchStatementOfAccountResponse, ApiException> prepareSearchStatementOfAccountRequest(
             final String requestId,
-            final SearchStatementOfAccountRequest body) throws JsonProcessingException, IOException {
+            final SearchStatementOfAccountRequest body) {
         return new ApiCall.Builder<SearchStatementOfAccountResponse, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
@@ -494,10 +493,10 @@ public final class InvoiceController extends BaseController {
     public CompletableFuture<SearchDocumentsResponse> searchDocumentsAsync(
             final String requestId,
             final SearchDocumentsRequest body) {
-        try { 
-            return prepareSearchDocumentsRequest(requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+        try {
+            return prepareSearchDocumentsRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
@@ -506,7 +505,7 @@ public final class InvoiceController extends BaseController {
      */
     private ApiCall<SearchDocumentsResponse, ApiException> prepareSearchDocumentsRequest(
             final String requestId,
-            final SearchDocumentsRequest body) throws JsonProcessingException, IOException {
+            final SearchDocumentsRequest body) {
         return new ApiCall.Builder<SearchDocumentsResponse, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
@@ -572,10 +571,10 @@ public final class InvoiceController extends BaseController {
     public CompletableFuture<EIDDocumentResponse> eidSearchAsync(
             final String requestId,
             final EIDSearchRequest body) {
-        try { 
-            return prepareEidSearchRequest(requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+        try {
+            return prepareEidSearchRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
@@ -584,7 +583,7 @@ public final class InvoiceController extends BaseController {
      */
     private ApiCall<EIDDocumentResponse, ApiException> prepareEidSearchRequest(
             final String requestId,
-            final EIDSearchRequest body) throws JsonProcessingException, IOException {
+            final EIDSearchRequest body) {
         return new ApiCall.Builder<EIDDocumentResponse, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
@@ -650,10 +649,10 @@ public final class InvoiceController extends BaseController {
     public CompletableFuture<InputStream> downloadAsync(
             final String requestId,
             final InvoiceDownloadRequest body) {
-        try { 
-            return prepareDownloadRequest(requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+        try {
+            return prepareDownloadRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
@@ -662,7 +661,7 @@ public final class InvoiceController extends BaseController {
      */
     private ApiCall<InputStream, ApiException> prepareDownloadRequest(
             final String requestId,
-            final InvoiceDownloadRequest body) throws JsonProcessingException, IOException {
+            final InvoiceDownloadRequest body) {
         return new ApiCall.Builder<InputStream, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
@@ -729,10 +728,10 @@ public final class InvoiceController extends BaseController {
     public CompletableFuture<InputStream> eidDownloadAsync(
             final String requestId,
             final EIDDownloadRequest body) {
-        try { 
-            return prepareEidDownloadRequest(requestId, body).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+        try {
+            return prepareEidDownloadRequest(requestId, body).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
@@ -741,7 +740,7 @@ public final class InvoiceController extends BaseController {
      */
     private ApiCall<InputStream, ApiException> prepareEidDownloadRequest(
             final String requestId,
-            final EIDDownloadRequest body) throws JsonProcessingException, IOException {
+            final EIDDownloadRequest body) {
         return new ApiCall.Builder<InputStream, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder

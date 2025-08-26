@@ -15,9 +15,10 @@ import java.util.List;
  * This is a model class for FeeSummaryResponse type.
  */
 public class FeeSummaryResponse {
-    private List<FeeItemSummaryAllOf0> feeItemsSummary;
     private String requestId;
-    private ErrorStatus error;
+    private String status;
+    private List<FeeItemSummaryAllOf0> data;
+    private List<Warning> warnings;
 
     /**
      * Default constructor.
@@ -27,43 +28,25 @@ public class FeeSummaryResponse {
 
     /**
      * Initialization constructor.
-     * @param  feeItemsSummary  List of FeeItemSummaryAllOf0 value for feeItemsSummary.
      * @param  requestId  String value for requestId.
-     * @param  error  ErrorStatus value for error.
+     * @param  status  String value for status.
+     * @param  data  List of FeeItemSummaryAllOf0 value for data.
+     * @param  warnings  List of Warning value for warnings.
      */
     public FeeSummaryResponse(
-            List<FeeItemSummaryAllOf0> feeItemsSummary,
             String requestId,
-            ErrorStatus error) {
-        this.feeItemsSummary = feeItemsSummary;
+            String status,
+            List<FeeItemSummaryAllOf0> data,
+            List<Warning> warnings) {
         this.requestId = requestId;
-        this.error = error;
-    }
-
-    /**
-     * Getter for FeeItemsSummary.
-     * @return Returns the List of FeeItemSummaryAllOf0
-     */
-    @JsonGetter("FeeItemsSummary")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public List<FeeItemSummaryAllOf0> getFeeItemsSummary() {
-        return feeItemsSummary;
-    }
-
-    /**
-     * Setter for FeeItemsSummary.
-     * @param feeItemsSummary Value for List of FeeItemSummaryAllOf0
-     */
-    @JsonSetter("FeeItemsSummary")
-    public void setFeeItemsSummary(List<FeeItemSummaryAllOf0> feeItemsSummary) {
-        this.feeItemsSummary = feeItemsSummary;
+        this.status = status;
+        this.data = data;
+        this.warnings = warnings;
     }
 
     /**
      * Getter for RequestId.
-     * A unique request id in GUID format. The value is written to the Shell API Platform audit log
-     * for end to end traceability of a request. If a value is not provided by an API client, then a
-     * GUID is automatically populated by the Shell API Platform and returned in the API response.
+     * Unique identifier for the request. This will be played back in the response from the request.
      * @return Returns the String
      */
     @JsonGetter("RequestId")
@@ -74,9 +57,7 @@ public class FeeSummaryResponse {
 
     /**
      * Setter for RequestId.
-     * A unique request id in GUID format. The value is written to the Shell API Platform audit log
-     * for end to end traceability of a request. If a value is not provided by an API client, then a
-     * GUID is automatically populated by the Shell API Platform and returned in the API response.
+     * Unique identifier for the request. This will be played back in the response from the request.
      * @param requestId Value for String
      */
     @JsonSetter("RequestId")
@@ -85,22 +66,70 @@ public class FeeSummaryResponse {
     }
 
     /**
-     * Getter for Error.
-     * @return Returns the ErrorStatus
+     * Getter for Status.
+     * Status of the request
+     * @return Returns the String
      */
-    @JsonGetter("Error")
+    @JsonGetter("Status")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public ErrorStatus getError() {
-        return error;
+    public String getStatus() {
+        return status;
     }
 
     /**
-     * Setter for Error.
-     * @param error Value for ErrorStatus
+     * Setter for Status.
+     * Status of the request
+     * @param status Value for String
      */
-    @JsonSetter("Error")
-    public void setError(ErrorStatus error) {
-        this.error = error;
+    @JsonSetter("Status")
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * Getter for Data.
+     * @return Returns the List of FeeItemSummaryAllOf0
+     */
+    @JsonGetter("Data")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public List<FeeItemSummaryAllOf0> getData() {
+        return data;
+    }
+
+    /**
+     * Setter for Data.
+     * @param data Value for List of FeeItemSummaryAllOf0
+     */
+    @JsonSetter("Data")
+    public void setData(List<FeeItemSummaryAllOf0> data) {
+        this.data = data;
+    }
+
+    /**
+     * Getter for Warnings.
+     * A list of Warning entity. This entity will hold the details of the scheduled System Outages
+     * of any dependent applications of this service. Note: If there is no scheduled outage
+     * information available, in the configuration in AMS, for this service, this parameter won’t be
+     * present in output.
+     * @return Returns the List of Warning
+     */
+    @JsonGetter("Warnings")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public List<Warning> getWarnings() {
+        return warnings;
+    }
+
+    /**
+     * Setter for Warnings.
+     * A list of Warning entity. This entity will hold the details of the scheduled System Outages
+     * of any dependent applications of this service. Note: If there is no scheduled outage
+     * information available, in the configuration in AMS, for this service, this parameter won’t be
+     * present in output.
+     * @param warnings Value for List of Warning
+     */
+    @JsonSetter("Warnings")
+    public void setWarnings(List<Warning> warnings) {
+        this.warnings = warnings;
     }
 
     /**
@@ -109,8 +138,8 @@ public class FeeSummaryResponse {
      */
     @Override
     public String toString() {
-        return "FeeSummaryResponse [" + "feeItemsSummary=" + feeItemsSummary + ", requestId="
-                + requestId + ", error=" + error + "]";
+        return "FeeSummaryResponse [" + "requestId=" + requestId + ", status=" + status + ", data="
+                + data + ", warnings=" + warnings + "]";
     }
 
     /**
@@ -120,9 +149,10 @@ public class FeeSummaryResponse {
      */
     public Builder toBuilder() {
         Builder builder = new Builder()
-                .feeItemsSummary(getFeeItemsSummary())
                 .requestId(getRequestId())
-                .error(getError());
+                .status(getStatus())
+                .data(getData())
+                .warnings(getWarnings());
         return builder;
     }
 
@@ -130,21 +160,12 @@ public class FeeSummaryResponse {
      * Class to build instances of {@link FeeSummaryResponse}.
      */
     public static class Builder {
-        private List<FeeItemSummaryAllOf0> feeItemsSummary;
         private String requestId;
-        private ErrorStatus error;
+        private String status;
+        private List<FeeItemSummaryAllOf0> data;
+        private List<Warning> warnings;
 
 
-
-        /**
-         * Setter for feeItemsSummary.
-         * @param  feeItemsSummary  List of FeeItemSummaryAllOf0 value for feeItemsSummary.
-         * @return Builder
-         */
-        public Builder feeItemsSummary(List<FeeItemSummaryAllOf0> feeItemsSummary) {
-            this.feeItemsSummary = feeItemsSummary;
-            return this;
-        }
 
         /**
          * Setter for requestId.
@@ -157,12 +178,32 @@ public class FeeSummaryResponse {
         }
 
         /**
-         * Setter for error.
-         * @param  error  ErrorStatus value for error.
+         * Setter for status.
+         * @param  status  String value for status.
          * @return Builder
          */
-        public Builder error(ErrorStatus error) {
-            this.error = error;
+        public Builder status(String status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Setter for data.
+         * @param  data  List of FeeItemSummaryAllOf0 value for data.
+         * @return Builder
+         */
+        public Builder data(List<FeeItemSummaryAllOf0> data) {
+            this.data = data;
+            return this;
+        }
+
+        /**
+         * Setter for warnings.
+         * @param  warnings  List of Warning value for warnings.
+         * @return Builder
+         */
+        public Builder warnings(List<Warning> warnings) {
+            this.warnings = warnings;
             return this;
         }
 
@@ -171,7 +212,7 @@ public class FeeSummaryResponse {
          * @return {@link FeeSummaryResponse}
          */
         public FeeSummaryResponse build() {
-            return new FeeSummaryResponse(feeItemsSummary, requestId, error);
+            return new FeeSummaryResponse(requestId, status, data, warnings);
         }
     }
 }

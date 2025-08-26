@@ -34,7 +34,7 @@
 | `TokenTypeId` | `Integer` | Optional | Token type identifier. | Integer getTokenTypeId() | setTokenTypeId(Integer tokenTypeId) |
 | `TokenTypeName` | `String` | Optional | Token Type Name. | String getTokenTypeName() | setTokenTypeName(String tokenTypeName) |
 | `UsageRestrictions` | [`CardUsageRestrictions`](../../doc/models/card-usage-restrictions.md) | Optional | - | CardUsageRestrictions getUsageRestrictions() | setUsageRestrictions(CardUsageRestrictions usageRestrictions) |
-| `EMVContactless` | `Boolean` | Optional | Is Europay, MasterCard, and Visa Contactless enabled or not | Boolean getEMVContactless() | setEMVContactless(Boolean eMVContactless) |
+| `EMVContactless` | `Boolean` | Optional | Is Europay, MasterCard, and Visa Contactless enabled or not. | Boolean getEMVContactless() | setEMVContactless(Boolean eMVContactless) |
 | `RFID` | `Boolean` | Optional | Whether the card type is enabled for RFID (Radio Frequency Identification) | Boolean getRFID() | setRFID(Boolean rFID) |
 | `PINChangeSupported` | `Boolean` | Optional | PIN change supported or not. | Boolean getPINChangeSupported() | setPINChangeSupported(Boolean pINChangeSupported) |
 | `RequirePIN` | `Boolean` | Optional | Whether a PIN is mandatory for the cards of this card type. | Boolean getRequirePIN() | setRequirePIN(Boolean requirePIN) |

@@ -16,8 +16,8 @@ import io.apimatic.core.types.OptionalNullable;
  * This is a model class for ColCoAccess type.
  */
 public class ColCoAccess {
-    private OptionalNullable<String> colCoId;
-    private OptionalNullable<String> colCoCode;
+    private OptionalNullable<Integer> colCoId;
+    private OptionalNullable<Integer> colCoCode;
     private OptionalNullable<String> colCoCountryName;
     private OptionalNullable<String> issuingCountryNumber;
 
@@ -29,14 +29,14 @@ public class ColCoAccess {
 
     /**
      * Initialization constructor.
-     * @param  colCoId  String value for colCoId.
-     * @param  colCoCode  String value for colCoCode.
+     * @param  colCoId  Integer value for colCoId.
+     * @param  colCoCode  Integer value for colCoCode.
      * @param  colCoCountryName  String value for colCoCountryName.
      * @param  issuingCountryNumber  String value for issuingCountryNumber.
      */
     public ColCoAccess(
-            String colCoId,
-            String colCoCode,
+            Integer colCoId,
+            Integer colCoCode,
             String colCoCountryName,
             String issuingCountryNumber) {
         this.colCoId = OptionalNullable.of(colCoId);
@@ -47,13 +47,13 @@ public class ColCoAccess {
 
     /**
      * Initialization constructor.
-     * @param  colCoId  String value for colCoId.
-     * @param  colCoCode  String value for colCoCode.
+     * @param  colCoId  Integer value for colCoId.
+     * @param  colCoCode  Integer value for colCoCode.
      * @param  colCoCountryName  String value for colCoCountryName.
      * @param  issuingCountryNumber  String value for issuingCountryNumber.
      */
 
-    protected ColCoAccess(OptionalNullable<String> colCoId, OptionalNullable<String> colCoCode,
+    protected ColCoAccess(OptionalNullable<Integer> colCoId, OptionalNullable<Integer> colCoCode,
             OptionalNullable<String> colCoCountryName,
             OptionalNullable<String> issuingCountryNumber) {
         this.colCoId = colCoId;
@@ -65,31 +65,31 @@ public class ColCoAccess {
     /**
      * Internal Getter for ColCoId.
      * Collecting company ID.
-     * @return Returns the Internal String
+     * @return Returns the Internal Integer
      */
     @JsonGetter("ColCoId")
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<String> internalGetColCoId() {
+    protected OptionalNullable<Integer> internalGetColCoId() {
         return this.colCoId;
     }
 
     /**
      * Getter for ColCoId.
      * Collecting company ID.
-     * @return Returns the String
+     * @return Returns the Integer
      */
-    public String getColCoId() {
+    public Integer getColCoId() {
         return OptionalNullable.getFrom(colCoId);
     }
 
     /**
      * Setter for ColCoId.
      * Collecting company ID.
-     * @param colCoId Value for String
+     * @param colCoId Value for Integer
      */
     @JsonSetter("ColCoId")
-    public void setColCoId(String colCoId) {
+    public void setColCoId(Integer colCoId) {
         this.colCoId = OptionalNullable.of(colCoId);
     }
 
@@ -104,31 +104,31 @@ public class ColCoAccess {
     /**
      * Internal Getter for ColCoCode.
      * Collecting company code.
-     * @return Returns the Internal String
+     * @return Returns the Internal Integer
      */
     @JsonGetter("ColCoCode")
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<String> internalGetColCoCode() {
+    protected OptionalNullable<Integer> internalGetColCoCode() {
         return this.colCoCode;
     }
 
     /**
      * Getter for ColCoCode.
      * Collecting company code.
-     * @return Returns the String
+     * @return Returns the Integer
      */
-    public String getColCoCode() {
+    public Integer getColCoCode() {
         return OptionalNullable.getFrom(colCoCode);
     }
 
     /**
      * Setter for ColCoCode.
      * Collecting company code.
-     * @param colCoCode Value for String
+     * @param colCoCode Value for Integer
      */
     @JsonSetter("ColCoCode")
-    public void setColCoCode(String colCoCode) {
+    public void setColCoCode(Integer colCoCode) {
         this.colCoCode = OptionalNullable.of(colCoCode);
     }
 
@@ -247,8 +247,8 @@ public class ColCoAccess {
      * Class to build instances of {@link ColCoAccess}.
      */
     public static class Builder {
-        private OptionalNullable<String> colCoId;
-        private OptionalNullable<String> colCoCode;
+        private OptionalNullable<Integer> colCoId;
+        private OptionalNullable<Integer> colCoCode;
         private OptionalNullable<String> colCoCountryName;
         private OptionalNullable<String> issuingCountryNumber;
 
@@ -256,10 +256,10 @@ public class ColCoAccess {
 
         /**
          * Setter for colCoId.
-         * @param  colCoId  String value for colCoId.
+         * @param  colCoId  Integer value for colCoId.
          * @return Builder
          */
-        public Builder colCoId(String colCoId) {
+        public Builder colCoId(Integer colCoId) {
             this.colCoId = OptionalNullable.of(colCoId);
             return this;
         }
@@ -275,10 +275,10 @@ public class ColCoAccess {
 
         /**
          * Setter for colCoCode.
-         * @param  colCoCode  String value for colCoCode.
+         * @param  colCoCode  Integer value for colCoCode.
          * @return Builder
          */
-        public Builder colCoCode(String colCoCode) {
+        public Builder colCoCode(Integer colCoCode) {
             this.colCoCode = OptionalNullable.of(colCoCode);
             return this;
         }

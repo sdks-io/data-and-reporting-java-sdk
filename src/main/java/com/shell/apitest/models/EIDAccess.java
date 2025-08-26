@@ -16,7 +16,7 @@ import io.apimatic.core.types.OptionalNullable;
  * This is a model class for EIDAccess type.
  */
 public class EIDAccess {
-    private OptionalNullable<String> colCoId;
+    private OptionalNullable<Integer> colCoId;
     private OptionalNullable<Integer> colCoCode;
     private OptionalNullable<String> accountGroupId;
 
@@ -28,12 +28,12 @@ public class EIDAccess {
 
     /**
      * Initialization constructor.
-     * @param  colCoId  String value for colCoId.
+     * @param  colCoId  Integer value for colCoId.
      * @param  colCoCode  Integer value for colCoCode.
      * @param  accountGroupId  String value for accountGroupId.
      */
     public EIDAccess(
-            String colCoId,
+            Integer colCoId,
             Integer colCoCode,
             String accountGroupId) {
         this.colCoId = OptionalNullable.of(colCoId);
@@ -43,12 +43,12 @@ public class EIDAccess {
 
     /**
      * Initialization constructor.
-     * @param  colCoId  String value for colCoId.
+     * @param  colCoId  Integer value for colCoId.
      * @param  colCoCode  Integer value for colCoCode.
      * @param  accountGroupId  String value for accountGroupId.
      */
 
-    protected EIDAccess(OptionalNullable<String> colCoId, OptionalNullable<Integer> colCoCode,
+    protected EIDAccess(OptionalNullable<Integer> colCoId, OptionalNullable<Integer> colCoCode,
             OptionalNullable<String> accountGroupId) {
         this.colCoId = colCoId;
         this.colCoCode = colCoCode;
@@ -58,31 +58,31 @@ public class EIDAccess {
     /**
      * Internal Getter for ColCoId.
      * Collecting company id.
-     * @return Returns the Internal String
+     * @return Returns the Internal Integer
      */
     @JsonGetter("ColCoId")
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<String> internalGetColCoId() {
+    protected OptionalNullable<Integer> internalGetColCoId() {
         return this.colCoId;
     }
 
     /**
      * Getter for ColCoId.
      * Collecting company id.
-     * @return Returns the String
+     * @return Returns the Integer
      */
-    public String getColCoId() {
+    public Integer getColCoId() {
         return OptionalNullable.getFrom(colCoId);
     }
 
     /**
      * Setter for ColCoId.
      * Collecting company id.
-     * @param colCoId Value for String
+     * @param colCoId Value for Integer
      */
     @JsonSetter("ColCoId")
-    public void setColCoId(String colCoId) {
+    public void setColCoId(Integer colCoId) {
         this.colCoId = OptionalNullable.of(colCoId);
     }
 
@@ -199,7 +199,7 @@ public class EIDAccess {
      * Class to build instances of {@link EIDAccess}.
      */
     public static class Builder {
-        private OptionalNullable<String> colCoId;
+        private OptionalNullable<Integer> colCoId;
         private OptionalNullable<Integer> colCoCode;
         private OptionalNullable<String> accountGroupId;
 
@@ -207,10 +207,10 @@ public class EIDAccess {
 
         /**
          * Setter for colCoId.
-         * @param  colCoId  String value for colCoId.
+         * @param  colCoId  Integer value for colCoId.
          * @return Builder
          */
-        public Builder colCoId(String colCoId) {
+        public Builder colCoId(Integer colCoId) {
             this.colCoId = OptionalNullable.of(colCoId);
             return this;
         }

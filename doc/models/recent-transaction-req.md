@@ -10,10 +10,10 @@
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `ColCoCode` | `Integer` | Required | Three character Collecting Company Code (Shell Code) of the selected payer | Integer getColCoCode() | setColCoCode(Integer colCoCode) |
-| `PayerNumber` | `String` | Required | Unique Identifier for the customer at payment point.<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `10` | String getPayerNumber() | setPayerNumber(String payerNumber) |
+| `PayerNumber` | `String` | Required | Unique Identifier for the customer at payment point.<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `10` | String getPayerNumber() | setPayerNumber(String payerNumber) |
 | `AccountNumber` | `String` | Optional | Customer account number. | String getAccountNumber() | setAccountNumber(String accountNumber) |
 | `ProductCode` | `String` | Optional | Global product code | String getProductCode() | setProductCode(String productCode) |
-| `PurchasedInCountry` | `String` | Optional | Delco country<br>**Constraints**: *Minimum Length*: `2`, *Maximum Length*: `2` | String getPurchasedInCountry() | setPurchasedInCountry(String purchasedInCountry) |
+| `PurchasedInCountry` | `String` | Optional | Delco country<br><br>**Constraints**: *Minimum Length*: `2`, *Maximum Length*: `2` | String getPurchasedInCountry() | setPurchasedInCountry(String purchasedInCountry) |
 | `CardPAN` | `String` | Optional | Card identifier number masked | String getCardPAN() | setCardPAN(String cardPAN) |
 | `FromDateTime` | `String` | Optional | Start date and time of transactions | String getFromDateTime() | setFromDateTime(String fromDateTime) |
 | `ToDateTime` | `String` | Optional | End date and time of transactions. Mandatory if FromDateTime is provided. | String getToDateTime() | setToDateTime(String toDateTime) |

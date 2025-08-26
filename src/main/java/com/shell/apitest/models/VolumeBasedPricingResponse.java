@@ -18,8 +18,7 @@ public class VolumeBasedPricingResponse {
     private List<BonusConfiguration> configuration;
     private List<PricingCurrentVolume> currentPeriodConsumption;
     private List<PricingHistory> history;
-    private ErrorStatus error;
-    private String requestId;
+    private List<Warning> warnings;
 
     /**
      * Default constructor.
@@ -33,20 +32,17 @@ public class VolumeBasedPricingResponse {
      * @param  currentPeriodConsumption  List of PricingCurrentVolume value for
      *         currentPeriodConsumption.
      * @param  history  List of PricingHistory value for history.
-     * @param  error  ErrorStatus value for error.
-     * @param  requestId  String value for requestId.
+     * @param  warnings  List of Warning value for warnings.
      */
     public VolumeBasedPricingResponse(
             List<BonusConfiguration> configuration,
             List<PricingCurrentVolume> currentPeriodConsumption,
             List<PricingHistory> history,
-            ErrorStatus error,
-            String requestId) {
+            List<Warning> warnings) {
         this.configuration = configuration;
         this.currentPeriodConsumption = currentPeriodConsumption;
         this.history = history;
-        this.error = error;
-        this.requestId = requestId;
+        this.warnings = warnings;
     }
 
     /**
@@ -107,43 +103,30 @@ public class VolumeBasedPricingResponse {
     }
 
     /**
-     * Getter for Error.
-     * @return Returns the ErrorStatus
+     * Getter for Warnings.
+     * A list of Warning entity. This entity will hold the details of the scheduled System Outages
+     * of any dependent applications of this service. Note: If there is no scheduled outage
+     * information available, in the configuration in AMS, for this service, this parameter won’t be
+     * present in output.
+     * @return Returns the List of Warning
      */
-    @JsonGetter("Error")
+    @JsonGetter("Warnings")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public ErrorStatus getError() {
-        return error;
+    public List<Warning> getWarnings() {
+        return warnings;
     }
 
     /**
-     * Setter for Error.
-     * @param error Value for ErrorStatus
+     * Setter for Warnings.
+     * A list of Warning entity. This entity will hold the details of the scheduled System Outages
+     * of any dependent applications of this service. Note: If there is no scheduled outage
+     * information available, in the configuration in AMS, for this service, this parameter won’t be
+     * present in output.
+     * @param warnings Value for List of Warning
      */
-    @JsonSetter("Error")
-    public void setError(ErrorStatus error) {
-        this.error = error;
-    }
-
-    /**
-     * Getter for RequestId.
-     * API Request Id
-     * @return Returns the String
-     */
-    @JsonGetter("RequestId")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public String getRequestId() {
-        return requestId;
-    }
-
-    /**
-     * Setter for RequestId.
-     * API Request Id
-     * @param requestId Value for String
-     */
-    @JsonSetter("RequestId")
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
+    @JsonSetter("Warnings")
+    public void setWarnings(List<Warning> warnings) {
+        this.warnings = warnings;
     }
 
     /**
@@ -154,7 +137,7 @@ public class VolumeBasedPricingResponse {
     public String toString() {
         return "VolumeBasedPricingResponse [" + "configuration=" + configuration
                 + ", currentPeriodConsumption=" + currentPeriodConsumption + ", history=" + history
-                + ", error=" + error + ", requestId=" + requestId + "]";
+                + ", warnings=" + warnings + "]";
     }
 
     /**
@@ -167,8 +150,7 @@ public class VolumeBasedPricingResponse {
                 .configuration(getConfiguration())
                 .currentPeriodConsumption(getCurrentPeriodConsumption())
                 .history(getHistory())
-                .error(getError())
-                .requestId(getRequestId());
+                .warnings(getWarnings());
         return builder;
     }
 
@@ -179,8 +161,7 @@ public class VolumeBasedPricingResponse {
         private List<BonusConfiguration> configuration;
         private List<PricingCurrentVolume> currentPeriodConsumption;
         private List<PricingHistory> history;
-        private ErrorStatus error;
-        private String requestId;
+        private List<Warning> warnings;
 
 
 
@@ -217,22 +198,12 @@ public class VolumeBasedPricingResponse {
         }
 
         /**
-         * Setter for error.
-         * @param  error  ErrorStatus value for error.
+         * Setter for warnings.
+         * @param  warnings  List of Warning value for warnings.
          * @return Builder
          */
-        public Builder error(ErrorStatus error) {
-            this.error = error;
-            return this;
-        }
-
-        /**
-         * Setter for requestId.
-         * @param  requestId  String value for requestId.
-         * @return Builder
-         */
-        public Builder requestId(String requestId) {
-            this.requestId = requestId;
+        public Builder warnings(List<Warning> warnings) {
+            this.warnings = warnings;
             return this;
         }
 
@@ -242,7 +213,7 @@ public class VolumeBasedPricingResponse {
          */
         public VolumeBasedPricingResponse build() {
             return new VolumeBasedPricingResponse(configuration, currentPeriodConsumption, history,
-                    error, requestId);
+                    warnings);
         }
     }
 }

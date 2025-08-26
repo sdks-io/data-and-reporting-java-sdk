@@ -8,8 +8,7 @@ package com.shell.apitest.controllers;
 
 import com.shell.apitest.Environment;
 import com.shell.apitest.ShellDataReportingAPIsClient;
-import com.shell.apitest.authentication.BasicAuthModel;
-import com.shell.apitest.authentication.BearerTokenModel;
+import com.shell.apitest.authentication.ClientCredentialsAuthModel;
 import com.shell.apitest.testing.HttpCallbackCatcher;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -64,20 +63,13 @@ public class BaseControllerTest {
 
         final String environment = System.getenv("SHELL_DATA_REPORTING_AP_IS_LIB_ENVIRONMENT");
         final String timeout = System.getenv("SHELL_DATA_REPORTING_AP_IS_LIB_TIMEOUT");
-        final String username = System.getenv("SHELL_DATA_REPORTING_AP_IS_LIB_USERNAME");
-        final String password = System.getenv("SHELL_DATA_REPORTING_AP_IS_LIB_PASSWORD");
         final String oAuthClientId =
                 System.getenv("SHELL_DATA_REPORTING_AP_IS_LIB_O_AUTH_CLIENT_ID");
         final String oAuthClientSecret =
                 System.getenv("SHELL_DATA_REPORTING_AP_IS_LIB_O_AUTH_CLIENT_SECRET");
 
-        if (username != null && password != null) {
-            builder.basicAuthCredentials(new BasicAuthModel
-                    .Builder(username, password)
-                    .build());
-        }
         if (oAuthClientId != null && oAuthClientSecret != null) {
-            builder.bearerTokenCredentials(new BearerTokenModel
+            builder.clientCredentialsAuth(new ClientCredentialsAuthModel
                     .Builder(oAuthClientId, oAuthClientSecret)
                     .build());
         }
@@ -91,7 +83,6 @@ public class BaseControllerTest {
         return builder.build();
     }
 
-    
     /**
      * Create test configuration.
      */

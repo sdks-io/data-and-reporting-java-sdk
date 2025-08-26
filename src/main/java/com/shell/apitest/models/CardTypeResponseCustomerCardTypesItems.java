@@ -976,7 +976,7 @@ public class CardTypeResponseCustomerCardTypesItems {
 
     /**
      * Getter for EMVContactless.
-     * Is Europay, MasterCard, and Visa Contactless enabled or not
+     * Is Europay, MasterCard, and Visa Contactless enabled or not.
      * @return Returns the Boolean
      */
     @JsonGetter("EMVContactless")
@@ -987,7 +987,7 @@ public class CardTypeResponseCustomerCardTypesItems {
 
     /**
      * Setter for EMVContactless.
-     * Is Europay, MasterCard, and Visa Contactless enabled or not
+     * Is Europay, MasterCard, and Visa Contactless enabled or not.
      * @param eMVContactless Value for Boolean
      */
     @JsonSetter("EMVContactless")

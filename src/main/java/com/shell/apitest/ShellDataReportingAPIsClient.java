@@ -6,12 +6,8 @@
 
 package com.shell.apitest;
 
-import com.shell.apitest.authentication.BasicAuthCredentials;
-import com.shell.apitest.authentication.BasicAuthManager;
-import com.shell.apitest.authentication.BasicAuthModel;
-import com.shell.apitest.authentication.BearerTokenCredentials;
-import com.shell.apitest.authentication.BearerTokenManager;
-import com.shell.apitest.authentication.BearerTokenModel;
+import com.shell.apitest.authentication.ClientCredentialsAuthManager;
+import com.shell.apitest.authentication.ClientCredentialsAuthModel;
 import com.shell.apitest.controllers.CustomerController;
 import com.shell.apitest.controllers.InvoiceController;
 import com.shell.apitest.controllers.OAuthAuthorizationController;
@@ -65,24 +61,14 @@ public final class ShellDataReportingAPIsClient implements Configuration {
     private final ReadonlyHttpClientConfiguration httpClientConfig;
 
     /**
-     * BasicAuthManager.
+     * ClientCredentialsAuthManager.
      */
-    private BasicAuthManager basicAuthManager;
+    private ClientCredentialsAuthManager clientCredentialsAuthManager;
 
     /**
-     * The instance of BasicAuthModel.
+     * The instance of ClientCredentialsAuthModel.
      */
-    private BasicAuthModel basicAuthModel;
-
-    /**
-     * BearerTokenManager.
-     */
-    private BearerTokenManager bearerTokenManager;
-
-    /**
-     * The instance of BearerTokenModel.
-     */
-    private BearerTokenModel bearerTokenModel;
+    private ClientCredentialsAuthModel clientCredentialsAuthModel;
 
     /**
      * Map of authentication Managers.
@@ -95,21 +81,18 @@ public final class ShellDataReportingAPIsClient implements Configuration {
     private final HttpCallback httpCallback;
 
     private ShellDataReportingAPIsClient(Environment environment, HttpClient httpClient,
-            ReadonlyHttpClientConfiguration httpClientConfig, BasicAuthModel basicAuthModel,
-            BearerTokenModel bearerTokenModel, HttpCallback httpCallback) {
+            ReadonlyHttpClientConfiguration httpClientConfig,
+            ClientCredentialsAuthModel clientCredentialsAuthModel, HttpCallback httpCallback) {
         this.environment = environment;
         this.httpClient = httpClient;
         this.httpClientConfig = httpClientConfig;
         this.httpCallback = httpCallback;
 
-        this.basicAuthModel = basicAuthModel;
-        this.bearerTokenModel = bearerTokenModel;
+        this.clientCredentialsAuthModel = clientCredentialsAuthModel;
 
-        this.basicAuthManager = new BasicAuthManager(basicAuthModel);
-        this.authentications.put("BasicAuth", basicAuthManager);
-
-        this.bearerTokenManager = new BearerTokenManager(bearerTokenModel);
-        this.authentications.put("BearerToken", bearerTokenManager);
+        this.clientCredentialsAuthManager = new ClientCredentialsAuthManager(
+                clientCredentialsAuthModel);
+        this.authentications.put("BearerToken", clientCredentialsAuthManager);
 
         GlobalConfiguration globalConfig = new GlobalConfiguration.Builder()
                 .httpClient(httpClient).baseUri(server -> getBaseUri(server))
@@ -118,7 +101,7 @@ public final class ShellDataReportingAPIsClient implements Configuration {
                 .callback(httpCallback)
                 .userAgent(userAgent)
                 .build();
-        this.bearerTokenManager.applyGlobalConfiguration(globalConfig);
+        this.clientCredentialsAuthManager.applyGlobalConfiguration(globalConfig);
 
         customer = new CustomerController(globalConfig);
         transaction = new TransactionController(globalConfig);
@@ -190,34 +173,19 @@ public final class ShellDataReportingAPIsClient implements Configuration {
     }
 
     /**
-     * The credentials to use with BasicAuth.
-     * @return basicAuthCredentials
+     * The credentials to use with ClientCredentialsAuth.
+     * @return clientCredentialsAuth
      */
-    public BasicAuthCredentials getBasicAuthCredentials() {
-        return basicAuthManager;
+    public ClientCredentialsAuth getClientCredentialsAuth() {
+        return clientCredentialsAuthManager;
     }
 
     /**
-     * The auth credential model for BasicAuth.
-     * @return the instance of BasicAuthModel
+     * The auth credential model for ClientCredentialsAuth.
+     * @return the instance of ClientCredentialsAuthModel
      */
-    public BasicAuthModel getBasicAuthModel() {
-        return basicAuthModel;
-    }
-    /**
-     * The credentials to use with BearerToken.
-     * @return bearerTokenCredentials
-     */
-    public BearerTokenCredentials getBearerTokenCredentials() {
-        return bearerTokenManager;
-    }
-
-    /**
-     * The auth credential model for BearerToken.
-     * @return the instance of BearerTokenModel
-     */
-    public BearerTokenModel getBearerTokenModel() {
-        return bearerTokenModel;
+    public ClientCredentialsAuthModel getClientCredentialsAuthModel() {
+        return clientCredentialsAuthModel;
     }
     /**
      * The timeout to use for making HTTP requests.
@@ -309,9 +277,7 @@ public final class ShellDataReportingAPIsClient implements Configuration {
         Builder builder = new Builder();
         builder.environment = getEnvironment();
         builder.httpClient = getHttpClient();
-        builder.basicAuthCredentials(getBasicAuthModel()
-                .toBuilder().build());
-        builder.bearerTokenCredentials(getBearerTokenModel()
+        builder.clientCredentialsAuth(getClientCredentialsAuthModel()
                 .toBuilder().build());
         builder.httpCallback = httpCallback;
         builder.httpClientConfig(() -> ((HttpClientConfiguration) httpClientConfig).newBuilder());
@@ -325,30 +291,21 @@ public final class ShellDataReportingAPIsClient implements Configuration {
 
         private Environment environment = Environment.SIT;
         private HttpClient httpClient;
-        private BasicAuthModel basicAuthModel = new BasicAuthModel.Builder("", "").build();
-        private BearerTokenModel bearerTokenModel = new BearerTokenModel.Builder("", "").build();
+        private ClientCredentialsAuthModel clientCredentialsAuthModel =
+                new ClientCredentialsAuthModel.Builder("", "").build();
         private HttpCallback httpCallback = null;
         private HttpClientConfiguration.Builder httpClientConfigBuilder =
                 new HttpClientConfiguration.Builder();
 
 
         /**
-         * Credentials setter for BasicAuthCredentials.
-         * @param basicAuthModel The instance of BasicAuthModel.
+         * Credentials setter for ClientCredentialsAuth.
+         * @param clientCredentialsAuthModel The instance of ClientCredentialsAuthModel.
          * @return The current instance of builder.
          */
-        public Builder basicAuthCredentials(BasicAuthModel basicAuthModel) {
-            this.basicAuthModel = basicAuthModel;
-            return this;
-        }
-
-        /**
-         * Credentials setter for BearerTokenCredentials.
-         * @param bearerTokenModel The instance of BearerTokenModel.
-         * @return The current instance of builder.
-         */
-        public Builder bearerTokenCredentials(BearerTokenModel bearerTokenModel) {
-            this.bearerTokenModel = bearerTokenModel;
+        public Builder clientCredentialsAuth(
+                ClientCredentialsAuthModel clientCredentialsAuthModel) {
+            this.clientCredentialsAuthModel = clientCredentialsAuthModel;
             return this;
         }
 
@@ -418,7 +375,7 @@ public final class ShellDataReportingAPIsClient implements Configuration {
             httpClient = new OkClient(httpClientConfig.getConfiguration(), compatibilityFactory);
 
             return new ShellDataReportingAPIsClient(environment, httpClient, httpClientConfig,
-                    basicAuthModel, bearerTokenModel, httpCallback);
+                    clientCredentialsAuthModel, httpCallback);
         }
     }
 }

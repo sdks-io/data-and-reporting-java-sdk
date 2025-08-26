@@ -17,8 +17,6 @@ import java.util.List;
 public class UpdateOdometerResponse {
     private Integer serviceReference;
     private List<UpdateOdometerReference> updateOdometerReferences;
-    private ErrorStatus error;
-    private String requestId;
 
     /**
      * Default constructor.
@@ -31,18 +29,12 @@ public class UpdateOdometerResponse {
      * @param  serviceReference  Integer value for serviceReference.
      * @param  updateOdometerReferences  List of UpdateOdometerReference value for
      *         updateOdometerReferences.
-     * @param  error  ErrorStatus value for error.
-     * @param  requestId  String value for requestId.
      */
     public UpdateOdometerResponse(
             Integer serviceReference,
-            List<UpdateOdometerReference> updateOdometerReferences,
-            ErrorStatus error,
-            String requestId) {
+            List<UpdateOdometerReference> updateOdometerReferences) {
         this.serviceReference = serviceReference;
         this.updateOdometerReferences = updateOdometerReferences;
-        this.error = error;
-        this.requestId = requestId;
     }
 
     /**
@@ -86,54 +78,13 @@ public class UpdateOdometerResponse {
     }
 
     /**
-     * Getter for Error.
-     * @return Returns the ErrorStatus
-     */
-    @JsonGetter("Error")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public ErrorStatus getError() {
-        return error;
-    }
-
-    /**
-     * Setter for Error.
-     * @param error Value for ErrorStatus
-     */
-    @JsonSetter("Error")
-    public void setError(ErrorStatus error) {
-        this.error = error;
-    }
-
-    /**
-     * Getter for RequestId.
-     * API Request Id
-     * @return Returns the String
-     */
-    @JsonGetter("RequestId")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public String getRequestId() {
-        return requestId;
-    }
-
-    /**
-     * Setter for RequestId.
-     * API Request Id
-     * @param requestId Value for String
-     */
-    @JsonSetter("RequestId")
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
-    /**
      * Converts this UpdateOdometerResponse into string format.
      * @return String representation of this class
      */
     @Override
     public String toString() {
         return "UpdateOdometerResponse [" + "serviceReference=" + serviceReference
-                + ", updateOdometerReferences=" + updateOdometerReferences + ", error=" + error
-                + ", requestId=" + requestId + "]";
+                + ", updateOdometerReferences=" + updateOdometerReferences + "]";
     }
 
     /**
@@ -144,9 +95,7 @@ public class UpdateOdometerResponse {
     public Builder toBuilder() {
         Builder builder = new Builder()
                 .serviceReference(getServiceReference())
-                .updateOdometerReferences(getUpdateOdometerReferences())
-                .error(getError())
-                .requestId(getRequestId());
+                .updateOdometerReferences(getUpdateOdometerReferences());
         return builder;
     }
 
@@ -156,8 +105,6 @@ public class UpdateOdometerResponse {
     public static class Builder {
         private Integer serviceReference;
         private List<UpdateOdometerReference> updateOdometerReferences;
-        private ErrorStatus error;
-        private String requestId;
 
 
 
@@ -184,32 +131,11 @@ public class UpdateOdometerResponse {
         }
 
         /**
-         * Setter for error.
-         * @param  error  ErrorStatus value for error.
-         * @return Builder
-         */
-        public Builder error(ErrorStatus error) {
-            this.error = error;
-            return this;
-        }
-
-        /**
-         * Setter for requestId.
-         * @param  requestId  String value for requestId.
-         * @return Builder
-         */
-        public Builder requestId(String requestId) {
-            this.requestId = requestId;
-            return this;
-        }
-
-        /**
          * Builds a new {@link UpdateOdometerResponse} object using the set fields.
          * @return {@link UpdateOdometerResponse}
          */
         public UpdateOdometerResponse build() {
-            return new UpdateOdometerResponse(serviceReference, updateOdometerReferences, error,
-                    requestId);
+            return new UpdateOdometerResponse(serviceReference, updateOdometerReferences);
         }
     }
 }

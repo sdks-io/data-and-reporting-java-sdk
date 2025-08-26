@@ -16,8 +16,6 @@ import java.util.List;
  */
 public class CardUsageSummaryResponse {
     private List<UsageSummary> usageSummary;
-    private String requestId;
-    private ErrorStatus error;
 
     /**
      * Default constructor.
@@ -28,16 +26,10 @@ public class CardUsageSummaryResponse {
     /**
      * Initialization constructor.
      * @param  usageSummary  List of UsageSummary value for usageSummary.
-     * @param  requestId  String value for requestId.
-     * @param  error  ErrorStatus value for error.
      */
     public CardUsageSummaryResponse(
-            List<UsageSummary> usageSummary,
-            String requestId,
-            ErrorStatus error) {
+            List<UsageSummary> usageSummary) {
         this.usageSummary = usageSummary;
-        this.requestId = requestId;
-        this.error = error;
     }
 
     /**
@@ -60,53 +52,12 @@ public class CardUsageSummaryResponse {
     }
 
     /**
-     * Getter for RequestId.
-     * API Request Id
-     * @return Returns the String
-     */
-    @JsonGetter("RequestId")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public String getRequestId() {
-        return requestId;
-    }
-
-    /**
-     * Setter for RequestId.
-     * API Request Id
-     * @param requestId Value for String
-     */
-    @JsonSetter("RequestId")
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
-    /**
-     * Getter for Error.
-     * @return Returns the ErrorStatus
-     */
-    @JsonGetter("Error")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public ErrorStatus getError() {
-        return error;
-    }
-
-    /**
-     * Setter for Error.
-     * @param error Value for ErrorStatus
-     */
-    @JsonSetter("Error")
-    public void setError(ErrorStatus error) {
-        this.error = error;
-    }
-
-    /**
      * Converts this CardUsageSummaryResponse into string format.
      * @return String representation of this class
      */
     @Override
     public String toString() {
-        return "CardUsageSummaryResponse [" + "usageSummary=" + usageSummary + ", requestId="
-                + requestId + ", error=" + error + "]";
+        return "CardUsageSummaryResponse [" + "usageSummary=" + usageSummary + "]";
     }
 
     /**
@@ -116,9 +67,7 @@ public class CardUsageSummaryResponse {
      */
     public Builder toBuilder() {
         Builder builder = new Builder()
-                .usageSummary(getUsageSummary())
-                .requestId(getRequestId())
-                .error(getError());
+                .usageSummary(getUsageSummary());
         return builder;
     }
 
@@ -127,8 +76,6 @@ public class CardUsageSummaryResponse {
      */
     public static class Builder {
         private List<UsageSummary> usageSummary;
-        private String requestId;
-        private ErrorStatus error;
 
 
 
@@ -143,31 +90,11 @@ public class CardUsageSummaryResponse {
         }
 
         /**
-         * Setter for requestId.
-         * @param  requestId  String value for requestId.
-         * @return Builder
-         */
-        public Builder requestId(String requestId) {
-            this.requestId = requestId;
-            return this;
-        }
-
-        /**
-         * Setter for error.
-         * @param  error  ErrorStatus value for error.
-         * @return Builder
-         */
-        public Builder error(ErrorStatus error) {
-            this.error = error;
-            return this;
-        }
-
-        /**
          * Builds a new {@link CardUsageSummaryResponse} object using the set fields.
          * @return {@link CardUsageSummaryResponse}
          */
         public CardUsageSummaryResponse build() {
-            return new CardUsageSummaryResponse(usageSummary, requestId, error);
+            return new CardUsageSummaryResponse(usageSummary);
         }
     }
 }

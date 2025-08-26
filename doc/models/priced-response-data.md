@@ -9,36 +9,36 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `AccountName` | `String` | Optional | Name of the account<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `36` | String getAccountName() | setAccountName(String accountName) |
+| `AccountName` | `String` | Optional | Name of the account<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `36` | String getAccountName() | setAccountName(String accountName) |
 | `AccountId` | `Integer` | Optional | Account Id (i.e. Customer Id of the Sub Account in GFN) of the selected account. | Integer getAccountId() | setAccountId(Integer accountId) |
 | `AccountNumber` | `String` | Optional | AccountNumber of the selected account. | String getAccountNumber() | setAccountNumber(String accountNumber) |
-| `AccountShortName` | `String` | Optional | Nick name of the account<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `25` | String getAccountShortName() | setAccountShortName(String accountShortName) |
-| `Additional1` | `String` | Optional | Addtional SerialId or endpoint Id<br>**Constraints**: *Minimum Length*: `14`, *Maximum Length*: `20` | String getAdditional1() | setAdditional1(String additional1) |
-| `Additional2` | `String` | Optional | Addtional SerialId or endpoint Id<br>**Constraints**: *Minimum Length*: `14`, *Maximum Length*: `20` | String getAdditional2() | setAdditional2(String additional2) |
-| `Additional3` | `String` | Optional | Addtional SerialId or endpoint Id<br>**Constraints**: *Minimum Length*: `14`, *Maximum Length*: `20` | String getAdditional3() | setAdditional3(String additional3) |
-| `Additional4` | `String` | Optional | Addtional SerialId or endpoint Id<br>**Constraints**: *Minimum Length*: `14`, *Maximum Length*: `20` | String getAdditional4() | setAdditional4(String additional4) |
-| `AllowClearing` | `String` | Optional | Allow clearings<br>**Constraints**: *Minimum Length*: `4`, *Maximum Length*: `25` | String getAllowClearing() | setAllowClearing(String allowClearing) |
-| `AuthorisationCode` | `Integer` | Optional | Autorization code<br>**Constraints**: `>= 1`, `<= 999999` | Integer getAuthorisationCode() | setAuthorisationCode(Integer authorisationCode) |
-| `TransactionStatus` | `String` | Optional | Status of the transaction<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getTransactionStatus() | setTransactionStatus(String transactionStatus) |
-| `DriverName` | `String` | Optional | Driver Name of Card record<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `25` | String getDriverName() | setDriverName(String driverName) |
-| `CardExpiryPeriod` | `Integer` | Optional | Expiry period of the card<br>**Constraints**: `>= 1`, `<= 9999` | Integer getCardExpiryPeriod() | setCardExpiryPeriod(Integer cardExpiryPeriod) |
+| `AccountShortName` | `String` | Optional | Nick name of the account<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `25` | String getAccountShortName() | setAccountShortName(String accountShortName) |
+| `Additional1` | `String` | Optional | Addtional SerialId or endpoint Id<br><br>**Constraints**: *Minimum Length*: `14`, *Maximum Length*: `20` | String getAdditional1() | setAdditional1(String additional1) |
+| `Additional2` | `String` | Optional | Addtional SerialId or endpoint Id<br><br>**Constraints**: *Minimum Length*: `14`, *Maximum Length*: `20` | String getAdditional2() | setAdditional2(String additional2) |
+| `Additional3` | `String` | Optional | Addtional SerialId or endpoint Id<br><br>**Constraints**: *Minimum Length*: `14`, *Maximum Length*: `20` | String getAdditional3() | setAdditional3(String additional3) |
+| `Additional4` | `String` | Optional | Addtional SerialId or endpoint Id<br><br>**Constraints**: *Minimum Length*: `14`, *Maximum Length*: `20` | String getAdditional4() | setAdditional4(String additional4) |
+| `AllowClearing` | `String` | Optional | Allow clearings<br><br>**Constraints**: *Minimum Length*: `4`, *Maximum Length*: `25` | String getAllowClearing() | setAllowClearing(String allowClearing) |
+| `AuthorisationCode` | `Integer` | Optional | Autorization code<br><br>**Constraints**: `>= 1`, `<= 999999` | Integer getAuthorisationCode() | setAuthorisationCode(Integer authorisationCode) |
+| `TransactionStatus` | `String` | Optional | Status of the transaction<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getTransactionStatus() | setTransactionStatus(String transactionStatus) |
+| `DriverName` | `String` | Optional | Driver Name of Card record<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `25` | String getDriverName() | setDriverName(String driverName) |
+| `CardExpiryPeriod` | `Integer` | Optional | Expiry period of the card<br><br>**Constraints**: `>= 1`, `<= 9999` | Integer getCardExpiryPeriod() | setCardExpiryPeriod(Integer cardExpiryPeriod) |
 | `CardExpiry` | `String` | Optional | Card Expiry Date | String getCardExpiry() | setCardExpiry(String cardExpiry) |
-| `CardGroupId` | `Integer` | Optional | Card Group Code<br>**Constraints**: `>= 1`, `<= 99999` | Integer getCardGroupId() | setCardGroupId(Integer cardGroupId) |
+| `CardGroupId` | `Integer` | Optional | Card Group Code<br><br>**Constraints**: `>= 1`, `<= 99999` | Integer getCardGroupId() | setCardGroupId(Integer cardGroupId) |
 | `CardGroupName` | `String` | Optional | Group nmae of the card | String getCardGroupName() | setCardGroupName(String cardGroupName) |
-| `IssuerCode` | `Integer` | Optional | Issuer code<br>**Constraints**: `>= 1`, `<= 9999` | Integer getIssuerCode() | setIssuerCode(Integer issuerCode) |
-| `CardPAN` | `String` | Optional | Full Card PAN<br>**Constraints**: *Minimum Length*: `19`, *Maximum Length*: `19` | String getCardPAN() | setCardPAN(String cardPAN) |
-| `ReleaseCode` | `Integer` | Optional | Release code<br>**Constraints**: `>= 1`, `<= 10` | Integer getReleaseCode() | setReleaseCode(Integer releaseCode) |
-| `CardSequenceNumber` | `Integer` | Optional | Sequesnce number of the card<br>**Constraints**: `>= 1`, `<= 999` | Integer getCardSequenceNumber() | setCardSequenceNumber(Integer cardSequenceNumber) |
-| `CardType` | `String` | Optional | Type of card<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `50` | String getCardType() | setCardType(String cardType) |
-| `ColCoCode` | `String` | Optional | Collecting Company Code (Shell Code) of the selected payer.<br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` | String getColCoCode() | setColCoCode(String colCoCode) |
+| `IssuerCode` | `Integer` | Optional | Issuer code<br><br>**Constraints**: `>= 1`, `<= 9999` | Integer getIssuerCode() | setIssuerCode(Integer issuerCode) |
+| `CardPAN` | `String` | Optional | Full Card PAN<br><br>**Constraints**: *Minimum Length*: `19`, *Maximum Length*: `19` | String getCardPAN() | setCardPAN(String cardPAN) |
+| `ReleaseCode` | `Integer` | Optional | Release code<br><br>**Constraints**: `>= 1`, `<= 10` | Integer getReleaseCode() | setReleaseCode(Integer releaseCode) |
+| `CardSequenceNumber` | `Integer` | Optional | Sequesnce number of the card<br><br>**Constraints**: `>= 1`, `<= 999` | Integer getCardSequenceNumber() | setCardSequenceNumber(Integer cardSequenceNumber) |
+| `CardType` | `String` | Optional | Type of card<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `50` | String getCardType() | setCardType(String cardType) |
+| `ColCoCode` | `String` | Optional | Collecting Company Code (Shell Code) of the selected payer.<br><br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` | String getColCoCode() | setColCoCode(String colCoCode) |
 | `UnitDiscountInvoiceCurrency` | `Double` | Optional | Unit discount Invoice currency | Double getUnitDiscountInvoiceCurrency() | setUnitDiscountInvoiceCurrency(Double unitDiscountInvoiceCurrency) |
 | `ColCoExchangeRate` | `Double` | Optional | Colco exchange rate | Double getColCoExchangeRate() | setColCoExchangeRate(Double colCoExchangeRate) |
-| `InvoiceCurrencySymbol` | `String` | Optional | Currency symbol on which the invoice was raised<br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` | String getInvoiceCurrencySymbol() | setInvoiceCurrencySymbol(String invoiceCurrencySymbol) |
+| `InvoiceCurrencySymbol` | `String` | Optional | Currency symbol on which the invoice was raised<br><br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` | String getInvoiceCurrencySymbol() | setInvoiceCurrencySymbol(String invoiceCurrencySymbol) |
 | `CorrectionFlag` | `Boolean` | Optional | Is there any correction | Boolean getCorrectionFlag() | setCorrectionFlag(Boolean correctionFlag) |
-| `CRMNumber` | `Double` | Optional | CRM number<br>**Constraints**: `>= 10`, `<= 10` | Double getCRMNumber() | setCRMNumber(Double cRMNumber) |
-| `CustomerCountry` | `String` | Optional | Customer country<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `30` | String getCustomerCountry() | setCustomerCountry(String customerCountry) |
-| `CustomerCurrencyCode` | `String` | Optional | Curreny which customer uses to transact.<br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` | String getCustomerCurrencyCode() | setCustomerCurrencyCode(String customerCurrencyCode) |
-| `CustomerCurrencySymbol` | `String` | Optional | Custome currency symbol<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getCustomerCurrencySymbol() | setCustomerCurrencySymbol(String customerCurrencySymbol) |
+| `CRMNumber` | `Double` | Optional | CRM number<br><br>**Constraints**: `>= 10`, `<= 10` | Double getCRMNumber() | setCRMNumber(Double cRMNumber) |
+| `CustomerCountry` | `String` | Optional | Customer country<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `30` | String getCustomerCountry() | setCustomerCountry(String customerCountry) |
+| `CustomerCurrencyCode` | `String` | Optional | Curreny which customer uses to transact.<br><br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` | String getCustomerCurrencyCode() | setCustomerCurrencyCode(String customerCurrencyCode) |
+| `CustomerCurrencySymbol` | `String` | Optional | Custome currency symbol<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getCustomerCurrencySymbol() | setCustomerCurrencySymbol(String customerCurrencySymbol) |
 | `RebateonNetAmountInCustomerCurrency` | `Double` | Optional | Rebate on net amount in customer currency | Double getRebateonNetAmountInCustomerCurrency() | setRebateonNetAmountInCustomerCurrency(Double rebateonNetAmountInCustomerCurrency) |
 | `EffectiveDiscountInCustomerCurrency` | `Double` | Optional | Effective discount in customers currency | Double getEffectiveDiscountInCustomerCurrency() | setEffectiveDiscountInCustomerCurrency(Double effectiveDiscountInCustomerCurrency) |
 | `EffectiveUnitDiscountInCustomerCurrency` | `Double` | Optional | effectiive unit discount in customers currency | Double getEffectiveUnitDiscountInCustomerCurrency() | setEffectiveUnitDiscountInCustomerCurrency(Double effectiveUnitDiscountInCustomerCurrency) |
@@ -68,42 +68,42 @@
 | `DelcoRetailValueTotalNet` | `Double` | Optional | Delco per unit price after tax | Double getDelcoRetailValueTotalNet() | setDelcoRetailValueTotalNet(Double delcoRetailValueTotalNet) |
 | `TransactionCurrencySymbol` | `String` | Optional | Currency used for transaction. | String getTransactionCurrencySymbol() | setTransactionCurrencySymbol(String transactionCurrencySymbol) |
 | `DiscountType` | `String` | Optional | Type of discount available | String getDiscountType() | setDiscountType(String discountType) |
-| `DisputeStatus` | `Boolean` | Optional | Is there any dispute status?True or False<br>**Default**: `false` | Boolean getDisputeStatus() | setDisputeStatus(Boolean disputeStatus) |
-| `IsShellSite` | `Boolean` | Optional | Is it a shell sites?True or False<br>**Default**: `false` | Boolean getIsShellSite() | setIsShellSite(Boolean isShellSite) |
+| `DisputeStatus` | `Boolean` | Optional | Is there any dispute status?True or False<br><br>**Default**: `false` | Boolean getDisputeStatus() | setDisputeStatus(Boolean disputeStatus) |
+| `IsShellSite` | `Boolean` | Optional | Is it a shell sites?True or False<br><br>**Default**: `false` | Boolean getIsShellSite() | setIsShellSite(Boolean isShellSite) |
 | `FleetIdInput` | `String` | Optional | Fleet identifier | String getFleetIdInput() | setFleetIdInput(String fleetIdInput) |
 | `IncomingProductCode` | `Integer` | Optional | In coming product code | Integer getIncomingProductCode() | setIncomingProductCode(Integer incomingProductCode) |
 | `PostingDate` | `String` | Optional | Date of Posting | String getPostingDate() | setPostingDate(String postingDate) |
 | `PostingTime` | `String` | Optional | Time whern posting happened | String getPostingTime() | setPostingTime(String postingTime) |
 | `ProductCode` | `Integer` | Optional | Product Code - 21 Unleaded - High octane,22 Unleaded - Medium octane,23 Unleaded - Low octane,24 Unleaded Environmental | Integer getProductCode() | setProductCode(Integer productCode) |
-| `ProductName` | `String` | Optional | Name of the product<br>**Constraints**: *Minimum Length*: `8`, *Maximum Length*: `30` | String getProductName() | setProductName(String productName) |
+| `ProductName` | `String` | Optional | Name of the product<br><br>**Constraints**: *Minimum Length*: `8`, *Maximum Length*: `30` | String getProductName() | setProductName(String productName) |
 | `ProductGroupId` | `Integer` | Optional | Id of the product to which group it belongs | Integer getProductGroupId() | setProductGroupId(Integer productGroupId) |
-| `IncomingCurrencyCode` | `String` | Optional | In coming currecncy code<br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` | String getIncomingCurrencyCode() | setIncomingCurrencyCode(String incomingCurrencyCode) |
+| `IncomingCurrencyCode` | `String` | Optional | In coming currecncy code<br><br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` | String getIncomingCurrencyCode() | setIncomingCurrencyCode(String incomingCurrencyCode) |
 | `IncomingSiteDescription` | `String` | Optional | In coming Site description | String getIncomingSiteDescription() | setIncomingSiteDescription(String incomingSiteDescription) |
-| `Location` | `String` | Optional | Location of the Shell site<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getLocation() | setLocation(String location) |
-| `SiteName` | `String` | Optional | Shell site name<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getSiteName() | setSiteName(String siteName) |
+| `Location` | `String` | Optional | Location of the Shell site<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getLocation() | setLocation(String location) |
+| `SiteName` | `String` | Optional | Shell site name<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getSiteName() | setSiteName(String siteName) |
 | `SiteCode` | `Integer` | Optional | Shell site code | Integer getSiteCode() | setSiteCode(Integer siteCode) |
 | `IncomingSiteNumber` | `Integer` | Optional | In coming site number | Integer getIncomingSiteNumber() | setIncomingSiteNumber(Integer incomingSiteNumber) |
-| `InvoiceCurrencyCode` | `String` | Optional | Currency code on which the invoice is raised<br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` | String getInvoiceCurrencyCode() | setInvoiceCurrencyCode(String invoiceCurrencyCode) |
+| `InvoiceCurrencyCode` | `String` | Optional | Currency code on which the invoice is raised<br><br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` | String getInvoiceCurrencyCode() | setInvoiceCurrencyCode(String invoiceCurrencyCode) |
 | `InvoiceDate` | `String` | Optional | Date on which the invoice was raised | String getInvoiceDate() | setInvoiceDate(String invoiceDate) |
 | `InvoiceNumber` | `Double` | Optional | Invoice number | Double getInvoiceNumber() | setInvoiceNumber(Double invoiceNumber) |
 | `FuelProduct` | `Boolean` | Optional | Is it a fuel product? True or False | Boolean getFuelProduct() | setFuelProduct(Boolean fuelProduct) |
-| `VATApplicable` | `String` | Optional | Is VAT applicable?Y or N<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getVATApplicable() | setVATApplicable(String vATApplicable) |
-| `PayerName` | `String` | Optional | Name of the payer<br>**Constraints**: *Minimum Length*: `20`, *Maximum Length*: `50` | String getPayerName() | setPayerName(String payerName) |
-| `PayerNumber` | `String` | Optional | Payer account number<br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `15` | String getPayerNumber() | setPayerNumber(String payerNumber) |
-| `ParentCustomerNumber` | `String` | Optional | Parent account number of the payer<br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `15` | String getParentCustomerNumber() | setParentCustomerNumber(String parentCustomerNumber) |
+| `VATApplicable` | `String` | Optional | Is VAT applicable?Y or N<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getVATApplicable() | setVATApplicable(String vATApplicable) |
+| `PayerName` | `String` | Optional | Name of the payer<br><br>**Constraints**: *Minimum Length*: `20`, *Maximum Length*: `50` | String getPayerName() | setPayerName(String payerName) |
+| `PayerNumber` | `String` | Optional | Payer account number<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `15` | String getPayerNumber() | setPayerNumber(String payerNumber) |
+| `ParentCustomerNumber` | `String` | Optional | Parent account number of the payer<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `15` | String getParentCustomerNumber() | setParentCustomerNumber(String parentCustomerNumber) |
 | `PayerGroup` | `String` | Optional | The group which the payer belongs to | String getPayerGroup() | setPayerGroup(String payerGroup) |
-| `PayerGroupName` | `String` | Optional | Name of the group to which the payer belongs to.<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getPayerGroupName() | setPayerGroupName(String payerGroupName) |
+| `PayerGroupName` | `String` | Optional | Name of the group to which the payer belongs to.<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getPayerGroupName() | setPayerGroupName(String payerGroupName) |
 | `CheckDigit` | `Integer` | Optional | Check digit | Integer getCheckDigit() | setCheckDigit(Integer checkDigit) |
 | `NetInvoiceIndicator` | `String` | Optional | After tax net invoice number | String getNetInvoiceIndicator() | setNetInvoiceIndicator(String netInvoiceIndicator) |
 | `DelcoCode` | `Integer` | Optional | Delco code | Integer getDelcoCode() | setDelcoCode(Integer delcoCode) |
-| `NetworkCode` | `Integer` | Optional | Network  code of the payer<br>**Constraints**: `>= 3`, `<= 3` | Integer getNetworkCode() | setNetworkCode(Integer networkCode) |
-| `PurchasedInCountry` | `String` | Optional | Country of purchase<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getPurchasedInCountry() | setPurchasedInCountry(String purchasedInCountry) |
-| `SiteCountry` | `String` | Optional | Country where the site exists<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getSiteCountry() | setSiteCountry(String siteCountry) |
-| `VATCountry` | `String` | Optional | Country where VAT is applicable<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getVATCountry() | setVATCountry(String vATCountry) |
-| `DelcoName` | `String` | Optional | Name of the delivery company<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getDelcoName() | setDelcoName(String delcoName) |
-| `Network` | `String` | Optional | Network of the Delivery company<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `25` | String getNetwork() | setNetwork(String network) |
+| `NetworkCode` | `Integer` | Optional | Network  code of the payer<br><br>**Constraints**: `>= 3`, `<= 3` | Integer getNetworkCode() | setNetworkCode(Integer networkCode) |
+| `PurchasedInCountry` | `String` | Optional | Country of purchase<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getPurchasedInCountry() | setPurchasedInCountry(String purchasedInCountry) |
+| `SiteCountry` | `String` | Optional | Country where the site exists<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getSiteCountry() | setSiteCountry(String siteCountry) |
+| `VATCountry` | `String` | Optional | Country where VAT is applicable<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getVATCountry() | setVATCountry(String vATCountry) |
+| `DelcoName` | `String` | Optional | Name of the delivery company<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getDelcoName() | setDelcoName(String delcoName) |
+| `Network` | `String` | Optional | Network of the Delivery company<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `25` | String getNetwork() | setNetwork(String network) |
 | `OdometerInput` | `Integer` | Optional | Odometet input | Integer getOdometerInput() | setOdometerInput(Integer odometerInput) |
-| `OriginalSalesItemId` | `String` | Optional | Original item identifier for sales<br>**Constraints**: *Minimum Length*: `4`, *Maximum Length*: `25` | String getOriginalSalesItemId() | setOriginalSalesItemId(String originalSalesItemId) |
+| `OriginalSalesItemId` | `String` | Optional | Original item identifier for sales<br><br>**Constraints**: *Minimum Length*: `4`, *Maximum Length*: `25` | String getOriginalSalesItemId() | setOriginalSalesItemId(String originalSalesItemId) |
 | `FleetIDDescription` | `String` | Optional | Fleet identifier description | String getFleetIDDescription() | setFleetIDDescription(String fleetIDDescription) |
 | `ParentCustomerId` | `Integer` | Optional | Identifier of parent customer | Integer getParentCustomerId() | setParentCustomerId(Integer parentCustomerId) |
 | `PINIndicator` | `String` | Optional | PIN indicator | String getPINIndicator() | setPINIndicator(String pINIndicator) |
@@ -121,8 +121,8 @@
 | `EuroRebateAmount` | `Double` | Optional | Rebate amount in Euros | Double getEuroRebateAmount() | setEuroRebateAmount(Double euroRebateAmount) |
 | `NetEuroAmount` | `Double` | Optional | Net amount in Euros | Double getNetEuroAmount() | setNetEuroAmount(Double netEuroAmount) |
 | `EuroVATAmount` | `Double` | Optional | Vat amount in Euros | Double getEuroVATAmount() | setEuroVATAmount(Double euroVATAmount) |
-| `ParentCustomerName` | `String` | Optional | Customers parent name<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getParentCustomerName() | setParentCustomerName(String parentCustomerName) |
-| `IsInvoiced` | `Boolean` | Optional | Is invoice raised<br>**Default**: `false` | Boolean getIsInvoiced() | setIsInvoiced(Boolean isInvoiced) |
+| `ParentCustomerName` | `String` | Optional | Customers parent name<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getParentCustomerName() | setParentCustomerName(String parentCustomerName) |
+| `IsInvoiced` | `Boolean` | Optional | Is invoice raised<br><br>**Default**: `false` | Boolean getIsInvoiced() | setIsInvoiced(Boolean isInvoiced) |
 | `TransactionCurrencyCode` | `String` | Optional | Transaction currency code | String getTransactionCurrencyCode() | setTransactionCurrencyCode(String transactionCurrencyCode) |
 | `CreditDebitCode` | `String` | Optional | Is it Credit or debit C for credit D for Debit | String getCreditDebitCode() | setCreditDebitCode(String creditDebitCode) |
 | `TransactionDate` | `String` | Optional | Date of transaction | String getTransactionDate() | setTransactionDate(String transactionDate) |
@@ -136,37 +136,37 @@
 | `VATCategory` | `String` | Optional | To which category and counry does the  VAT come under | String getVATCategory() | setVATCategory(String vATCategory) |
 | `VATRate` | `Double` | Optional | VAT rate | Double getVATRate() | setVATRate(Double vATRate) |
 | `VehicleRegistration` | `String` | Optional | Vehicle registration number | String getVehicleRegistration() | setVehicleRegistration(String vehicleRegistration) |
-| `IsCancelled` | `String` | Optional | Check if the pruchase is cancelled<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getIsCancelled() | setIsCancelled(String isCancelled) |
+| `IsCancelled` | `String` | Optional | Check if the pruchase is cancelled<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getIsCancelled() | setIsCancelled(String isCancelled) |
 | `ColCoGrossAmount` | `Double` | Optional | Gross amount from Colco | Double getColCoGrossAmount() | setColCoGrossAmount(Double colCoGrossAmount) |
 | `ColCoNetAmount` | `Double` | Optional | Net amount from Colco | Double getColCoNetAmount() | setColCoNetAmount(Double colCoNetAmount) |
 | `ColCoVATAmount` | `Double` | Optional | Colco VAT amount | Double getColCoVATAmount() | setColCoVATAmount(Double colCoVATAmount) |
-| `OriginalCurrencySymbol` | `String` | Optional | Original currency code<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getOriginalCurrencySymbol() | setOriginalCurrencySymbol(String originalCurrencySymbol) |
-| `OriginalCurrencyCode` | `String` | Optional | Original currency code<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getOriginalCurrencyCode() | setOriginalCurrencyCode(String originalCurrencyCode) |
+| `OriginalCurrencySymbol` | `String` | Optional | Original currency code<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getOriginalCurrencySymbol() | setOriginalCurrencySymbol(String originalCurrencySymbol) |
+| `OriginalCurrencyCode` | `String` | Optional | Original currency code<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getOriginalCurrencyCode() | setOriginalCurrencyCode(String originalCurrencyCode) |
 | `OriginalVATAmount` | `Double` | Optional | Original VAT amount | Double getOriginalVATAmount() | setOriginalVATAmount(Double originalVATAmount) |
-| `EmbossText` | `String` | Optional | Comapany name embosses in text<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getEmbossText() | setEmbossText(String embossText) |
+| `EmbossText` | `String` | Optional | Comapany name embosses in text<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getEmbossText() | setEmbossText(String embossText) |
 | `OriginalExchangeRate` | `Double` | Optional | Orginal exchange rate | Double getOriginalExchangeRate() | setOriginalExchangeRate(Double originalExchangeRate) |
 | `OriginalTransactionItemInvoiceDate` | `String` | Optional | Original treansaction date | String getOriginalTransactionItemInvoiceDate() | setOriginalTransactionItemInvoiceDate(String originalTransactionItemInvoiceDate) |
-| `FeeTypeId` | `Integer` | Optional | Fee type identifier<br>**Constraints**: `>= 1`, `<= 1` | Integer getFeeTypeId() | setFeeTypeId(Integer feeTypeId) |
-| `LineItemDescription` | `Boolean` | Optional | Line item identifier of the product<br>**Default**: `false` | Boolean getLineItemDescription() | setLineItemDescription(Boolean lineItemDescription) |
-| `FeeRuleDescription` | `String` | Optional | Fee rule description<br>**Constraints**: *Minimum Length*: `8`, *Maximum Length*: `25` | String getFeeRuleDescription() | setFeeRuleDescription(String feeRuleDescription) |
-| `Frequency` | `Integer` | Optional | Frequency of transaction<br>**Constraints**: `>= 1`, `<= 1` | Integer getFrequency() | setFrequency(Integer frequency) |
-| `FeeRuleId` | `Integer` | Optional | Fee rule identifier<br>**Constraints**: `>= 1`, `<= 1` | Integer getFeeRuleId() | setFeeRuleId(Integer feeRuleId) |
+| `FeeTypeId` | `Integer` | Optional | Fee type identifier<br><br>**Constraints**: `>= 1`, `<= 1` | Integer getFeeTypeId() | setFeeTypeId(Integer feeTypeId) |
+| `LineItemDescription` | `Boolean` | Optional | Line item identifier of the product<br><br>**Default**: `false` | Boolean getLineItemDescription() | setLineItemDescription(Boolean lineItemDescription) |
+| `FeeRuleDescription` | `String` | Optional | Fee rule description<br><br>**Constraints**: *Minimum Length*: `8`, *Maximum Length*: `25` | String getFeeRuleDescription() | setFeeRuleDescription(String feeRuleDescription) |
+| `Frequency` | `Integer` | Optional | Frequency of transaction<br><br>**Constraints**: `>= 1`, `<= 1` | Integer getFrequency() | setFrequency(Integer frequency) |
+| `FeeRuleId` | `Integer` | Optional | Fee rule identifier<br><br>**Constraints**: `>= 1`, `<= 1` | Integer getFeeRuleId() | setFeeRuleId(Integer feeRuleId) |
 | `SystemEntryDate` | `String` | Optional | Entry date in the system | String getSystemEntryDate() | setSystemEntryDate(String systemEntryDate) |
 | `SystemEntryTime` | `String` | Optional | Entry time in the system | String getSystemEntryTime() | setSystemEntryTime(String systemEntryTime) |
-| `IsManual` | `String` | Optional | Checking if its manual<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getIsManual() | setIsManual(String isManual) |
-| `OriginalTransactionItemId` | `String` | Optional | Is it manual<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getOriginalTransactionItemId() | setOriginalTransactionItemId(String originalTransactionItemId) |
+| `IsManual` | `String` | Optional | Checking if its manual<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getIsManual() | setIsManual(String isManual) |
+| `OriginalTransactionItemId` | `String` | Optional | Is it manual<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getOriginalTransactionItemId() | setOriginalTransactionItemId(String originalTransactionItemId) |
 | `OriginalTransactionItemInvoiceNumber` | `Integer` | Optional | Original invoice transaction number | Integer getOriginalTransactionItemInvoiceNumber() | setOriginalTransactionItemInvoiceNumber(Integer originalTransactionItemInvoiceNumber) |
 | `OriginalTransactionItemInvoiceId` | `Integer` | Optional | Original Invoice transaction Identifier | Integer getOriginalTransactionItemInvoiceId() | setOriginalTransactionItemInvoiceId(Integer originalTransactionItemInvoiceId) |
-| `PayerShortName` | `String` | Optional | Payers short name<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getPayerShortName() | setPayerShortName(String payerShortName) |
-| `ReverseCharge` | `String` | Optional | Is reverse charge?<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getReverseCharge() | setReverseCharge(String reverseCharge) |
+| `PayerShortName` | `String` | Optional | Payers short name<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getPayerShortName() | setPayerShortName(String payerShortName) |
+| `ReverseCharge` | `String` | Optional | Is reverse charge?<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getReverseCharge() | setReverseCharge(String reverseCharge) |
 | `OriginalGrossAmount` | `Double` | Optional | Original gross amount | Double getOriginalGrossAmount() | setOriginalGrossAmount(Double originalGrossAmount) |
 | `OriginalNetAmount` | `Double` | Optional | Original Net amount | Double getOriginalNetAmount() | setOriginalNetAmount(Double originalNetAmount) |
-| `UnitOfMeasure` | `String` | Optional | Unit of measure<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getUnitOfMeasure() | setUnitOfMeasure(String unitOfMeasure) |
-| `RoadType` | `String` | Optional | Type of road<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getRoadType() | setRoadType(String roadType) |
-| `CustomerCountryIsoCode` | `String` | Optional | Customer country ISO Code<br>**Constraints**: *Minimum Length*: `2`, *Maximum Length*: `2` | String getCustomerCountryIsoCode() | setCustomerCountryIsoCode(String customerCountryIsoCode) |
-| `EVOperator` | `String` | Optional | EvOperator Name<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `20` | String getEVOperator() | setEVOperator(String eVOperator) |
-| `EVSerialId` | `String` | Optional | Ev Operator identifier<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getEVSerialId() | setEVSerialId(String eVSerialId) |
-| `EVChargePointSerial` | `String` | Optional | EV Charging point iserial identifier<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getEVChargePointSerial() | setEVChargePointSerial(String eVChargePointSerial) |
+| `UnitOfMeasure` | `String` | Optional | Unit of measure<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | String getUnitOfMeasure() | setUnitOfMeasure(String unitOfMeasure) |
+| `RoadType` | `String` | Optional | Type of road<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getRoadType() | setRoadType(String roadType) |
+| `CustomerCountryIsoCode` | `String` | Optional | Customer country ISO Code<br><br>**Constraints**: *Minimum Length*: `2`, *Maximum Length*: `2` | String getCustomerCountryIsoCode() | setCustomerCountryIsoCode(String customerCountryIsoCode) |
+| `EVOperator` | `String` | Optional | EvOperator Name<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `20` | String getEVOperator() | setEVOperator(String eVOperator) |
+| `EVSerialId` | `String` | Optional | Ev Operator identifier<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getEVSerialId() | setEVSerialId(String eVSerialId) |
+| `EVChargePointSerial` | `String` | Optional | EV Charging point iserial identifier<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` | String getEVChargePointSerial() | setEVChargePointSerial(String eVChargePointSerial) |
 | `EVChargePointConnectorType` | `Integer` | Optional | Ev chariging connector type | Integer getEVChargePointConnectorType() | setEVChargePointConnectorType(Integer eVChargePointConnectorType) |
 | `EVChargePointConnectorTypeDescription` | `String` | Optional | EV charging point connector type description | String getEVChargePointConnectorTypeDescription() | setEVChargePointConnectorTypeDescription(String eVChargePointConnectorTypeDescription) |
 | `EVChargeDuration` | `String` | Optional | Ev charging Duration | String getEVChargeDuration() | setEVChargeDuration(String eVChargeDuration) |
