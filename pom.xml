@@ -8,7 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.sdks</groupId>
   <artifactId>data-and-reporting-sdk</artifactId>
-  <version>2.0.0</version>
+  <version>2.0.2</version>
   <packaging>jar</packaging>
   <name>Data And Reporting SDK</name>
   <description>Data And Reporting product consists of API's which provides details of transaction and invoice informations about shell cards. The Shell Card Transaction and Invoice API is REST-based and employs Basic authentication in Version 1 and Oauth authentication in Version 2 end points. The API endpoints accept JSON-encoded request bodies, return JSON-encoded responses and use standard HTTP response codes. All resources are located in the Shell Card Platform. The Shell Card Platform is the overall platform that encompasses all the internal Shell systems used to manage resources.</description>
@@ -35,7 +35,7 @@
     <snapshotRepository>
       <id>ossrh</id>
       <name>Repository Snapshot Server</name>
-      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+      <url>https://central.sonatype.com</url>
     </snapshotRepository>
   </distributionManagement>
   <dependencies>
