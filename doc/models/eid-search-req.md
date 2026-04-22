@@ -16,7 +16,6 @@
 | `FromDate` | `String` | Optional | EID date searched from this date.<br>Optional. | String getFromDate() | setFromDate(String fromDate) |
 | `ToDate` | `String` | Optional | Invoice date searched until this date.<br>Optional. | String getToDate() | setToDate(String toDate) |
 | `InvoiceType` | `String` | Optional | Invoice type.<br>Optional.<br>Possible values:<br>•    NAT (National)<br>•    INT (International) | String getInvoiceType() | setInvoiceType(String invoiceType) |
-| `InvoiceStatus` | `String` | Optional | Status of the document.<br>Optional.<br>Possible values:<br>•    NEW<br>•    VIEWED<br>•    DOWNLOADED<br>•    RESTORED | String getInvoiceStatus() | setInvoiceStatus(String invoiceStatus) |
 | `SortBy` | `List<String>` | Optional | Sort option –<br>•    InvoiceNumber ASC<br>•    InvoiceDate ASC<br>•    InvoiceNumber DESC<br>•    InvoiceDate DESC<br>Optional | List<String> getSortBy() | setSortBy(List<String> sortBy) |
 
 ## Example (as JSON)
@@ -33,7 +32,9 @@
   "FromDate": "FromDate4",
   "ToDate": "ToDate4",
   "InvoiceType": "InvoiceType6",
-  "InvoiceStatus": "InvoiceStatus2"
+  "SortBy": [
+    "SortBy1"
+  ]
 }
 ```
 

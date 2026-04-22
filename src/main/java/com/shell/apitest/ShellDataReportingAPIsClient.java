@@ -15,6 +15,7 @@ import com.shell.apitest.controllers.TransactionController;
 import com.shell.apitest.http.client.HttpCallback;
 import com.shell.apitest.http.client.HttpClientConfiguration;
 import com.shell.apitest.http.client.ReadonlyHttpClientConfiguration;
+import com.shell.apitest.models.OAuthToken;
 import io.apimatic.core.GlobalConfiguration;
 import io.apimatic.coreinterfaces.authentication.Authentication;
 import io.apimatic.coreinterfaces.compatibility.CompatibilityFactory;
@@ -22,6 +23,7 @@ import io.apimatic.coreinterfaces.http.HttpClient;
 import io.apimatic.okhttpclient.adapter.OkClient;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -297,6 +299,39 @@ public final class ShellDataReportingAPIsClient implements Configuration {
         private HttpClientConfiguration.Builder httpClientConfigBuilder =
                 new HttpClientConfiguration.Builder();
 
+
+        /**
+         * Credentials setter for ClientCredentialsAuth.
+         * @param oAuthClientId String value for oAuthClientId.
+         * @param oAuthClientSecret String value for oAuthClientSecret.
+         * @deprecated This builder method is deprecated.
+         * Use {@link #clientCredentialsAuth(ClientCredentialsAuthModel) clientCredentialsAuth} instead.
+         * @return The current instance of builder.
+         */
+        @Deprecated
+        public Builder clientCredentialsAuthCredentials(String oAuthClientId,
+                String oAuthClientSecret) {
+            clientCredentialsAuthModel = clientCredentialsAuthModel.toBuilder()
+                .oAuthClientId(oAuthClientId)
+                .oAuthClientSecret(oAuthClientSecret)
+                .build();
+            return this;
+        }
+
+        /**
+         * Credentials setter for ClientCredentialsAuth.
+         * @param oAuthToken OAuthToken value for oAuthToken.
+         * @deprecated This builder method is deprecated.
+         * Use {@link #clientCredentialsAuth(ClientCredentialsAuthModel) clientCredentialsAuth} instead.
+         * @return Builder
+         */
+        @Deprecated
+        public Builder oAuthToken(OAuthToken oAuthToken) {
+            clientCredentialsAuthModel = clientCredentialsAuthModel.toBuilder()
+                .oAuthToken(oAuthToken)
+                .build();
+            return this;
+        }
 
         /**
          * Credentials setter for ClientCredentialsAuth.

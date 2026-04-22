@@ -14,7 +14,7 @@
 | `AccountNumber` | `String` | Optional | Customer account number. | String getAccountNumber() | setAccountNumber(String accountNumber) |
 | `ProductCode` | `String` | Optional | Global product code | String getProductCode() | setProductCode(String productCode) |
 | `PurchasedInCountry` | `String` | Optional | Delco country<br><br>**Constraints**: *Minimum Length*: `2`, *Maximum Length*: `2` | String getPurchasedInCountry() | setPurchasedInCountry(String purchasedInCountry) |
-| `CardPAN` | `String` | Optional | Card identifier number masked | String getCardPAN() | setCardPAN(String cardPAN) |
+| `CardPAN` | `String` | Optional | Card PAN Number without masked | String getCardPAN() | setCardPAN(String cardPAN) |
 | `FromDateTime` | `String` | Optional | Start date and time of transactions | String getFromDateTime() | setFromDateTime(String fromDateTime) |
 | `ToDateTime` | `String` | Optional | End date and time of transactions. Mandatory if FromDateTime is provided. | String getToDateTime() | setToDateTime(String toDateTime) |
 | `TransactionStatus` | `String` | Optional | Status of transaction. DO NOT pass the value if includeDeclines is passed | String getTransactionStatus() | setTransactionStatus(String transactionStatus) |
@@ -34,7 +34,7 @@
   "AccountNumber": "GB00001233",
   "ProductCode": "22",
   "PurchasedInCountry": "GB",
-  "CardPAN": "700205******890645",
+  "CardPAN": "7002051006629890645",
   "FromDateTime": "2020-11-09 13:56:03.000",
   "ToDateTime": "2020-12-09 13:56:03.000",
   "TransactionStatus": "APPROVED",

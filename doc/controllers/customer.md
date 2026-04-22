@@ -56,8 +56,28 @@ customerController.userLoggedinuserAsync(requestId, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof UserManagementV1Loggedinuser400ErrorException) {
+        UserManagementV1Loggedinuser400ErrorException userManagementV1Loggedinuser400ErrorException = (UserManagementV1Loggedinuser400ErrorException) cause;
+        userManagementV1Loggedinuser400ErrorException.printStackTrace();
+    } else if (cause instanceof UserManagementV1Loggedinuser401ErrorException) {
+        UserManagementV1Loggedinuser401ErrorException userManagementV1Loggedinuser401ErrorException = (UserManagementV1Loggedinuser401ErrorException) cause;
+        userManagementV1Loggedinuser401ErrorException.printStackTrace();
+    } else if (cause instanceof UserManagementV1Loggedinuser403ErrorException) {
+        UserManagementV1Loggedinuser403ErrorException userManagementV1Loggedinuser403ErrorException = (UserManagementV1Loggedinuser403ErrorException) cause;
+        userManagementV1Loggedinuser403ErrorException.printStackTrace();
+    } else if (cause instanceof UserManagementV1Loggedinuser404ErrorException) {
+        UserManagementV1Loggedinuser404ErrorException userManagementV1Loggedinuser404ErrorException = (UserManagementV1Loggedinuser404ErrorException) cause;
+        userManagementV1Loggedinuser404ErrorException.printStackTrace();
+    } else if (cause instanceof UserManagementV1Loggedinuser500ErrorException) {
+        UserManagementV1Loggedinuser500ErrorException userManagementV1Loggedinuser500ErrorException = (UserManagementV1Loggedinuser500ErrorException) cause;
+        userManagementV1Loggedinuser500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -66,11 +86,11 @@ customerController.userLoggedinuserAsync(requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`UserManagementV1Loggedinuser400ErrorException`](../../doc/models/user-management-v1-loggedinuser-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`UserManagementV1Loggedinuser401ErrorException`](../../doc/models/user-management-v1-loggedinuser-401-error-exception.md) |
+| 403 | Forbidden | [`UserManagementV1Loggedinuser403ErrorException`](../../doc/models/user-management-v1-loggedinuser-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`UserManagementV1Loggedinuser404ErrorException`](../../doc/models/user-management-v1-loggedinuser-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`UserManagementV1Loggedinuser500ErrorException`](../../doc/models/user-management-v1-loggedinuser-500-error-exception.md) |
 
 
 # Customerpayers
@@ -117,8 +137,28 @@ customerController.customerpayersAsync(requestId, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof CustomerManagementV1Payers400ErrorException) {
+        CustomerManagementV1Payers400ErrorException customerManagementV1Payers400ErrorException = (CustomerManagementV1Payers400ErrorException) cause;
+        customerManagementV1Payers400ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Payers401ErrorException) {
+        CustomerManagementV1Payers401ErrorException customerManagementV1Payers401ErrorException = (CustomerManagementV1Payers401ErrorException) cause;
+        customerManagementV1Payers401ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Payers403ErrorException) {
+        CustomerManagementV1Payers403ErrorException customerManagementV1Payers403ErrorException = (CustomerManagementV1Payers403ErrorException) cause;
+        customerManagementV1Payers403ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Payers404ErrorException) {
+        CustomerManagementV1Payers404ErrorException customerManagementV1Payers404ErrorException = (CustomerManagementV1Payers404ErrorException) cause;
+        customerManagementV1Payers404ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Payers500ErrorException) {
+        CustomerManagementV1Payers500ErrorException customerManagementV1Payers500ErrorException = (CustomerManagementV1Payers500ErrorException) cause;
+        customerManagementV1Payers500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -127,11 +167,11 @@ customerController.customerpayersAsync(requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Payers400ErrorException`](../../doc/models/customer-management-v1-payers-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Payers401ErrorException`](../../doc/models/customer-management-v1-payers-401-error-exception.md) |
+| 403 | Forbidden | [`CustomerManagementV1Payers403ErrorException`](../../doc/models/customer-management-v1-payers-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Payers404ErrorException`](../../doc/models/customer-management-v1-payers-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Payers500ErrorException`](../../doc/models/customer-management-v1-payers-500-error-exception.md) |
 
 
 # Customerdetail
@@ -166,8 +206,28 @@ customerController.customerdetailAsync(requestId, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof CustomerManagementV1Customer400ErrorException) {
+        CustomerManagementV1Customer400ErrorException customerManagementV1Customer400ErrorException = (CustomerManagementV1Customer400ErrorException) cause;
+        customerManagementV1Customer400ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Customer401ErrorException) {
+        CustomerManagementV1Customer401ErrorException customerManagementV1Customer401ErrorException = (CustomerManagementV1Customer401ErrorException) cause;
+        customerManagementV1Customer401ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Customer403ErrorException) {
+        CustomerManagementV1Customer403ErrorException customerManagementV1Customer403ErrorException = (CustomerManagementV1Customer403ErrorException) cause;
+        customerManagementV1Customer403ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Customer404ErrorException) {
+        CustomerManagementV1Customer404ErrorException customerManagementV1Customer404ErrorException = (CustomerManagementV1Customer404ErrorException) cause;
+        customerManagementV1Customer404ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Customer500ErrorException) {
+        CustomerManagementV1Customer500ErrorException customerManagementV1Customer500ErrorException = (CustomerManagementV1Customer500ErrorException) cause;
+        customerManagementV1Customer500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -176,11 +236,11 @@ customerController.customerdetailAsync(requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Customer400ErrorException`](../../doc/models/customer-management-v1-customer-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Customer401ErrorException`](../../doc/models/customer-management-v1-customer-401-error-exception.md) |
+| 403 | Forbidden | [`CustomerManagementV1Customer403ErrorException`](../../doc/models/customer-management-v1-customer-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Customer404ErrorException`](../../doc/models/customer-management-v1-customer-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Customer500ErrorException`](../../doc/models/customer-management-v1-customer-500-error-exception.md) |
 
 
 # Post-Card-Accounts
@@ -217,8 +277,28 @@ customerController.postCardAccountsAsync(requestId, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof CustomerManagementV1Accounts400ErrorException) {
+        CustomerManagementV1Accounts400ErrorException customerManagementV1Accounts400ErrorException = (CustomerManagementV1Accounts400ErrorException) cause;
+        customerManagementV1Accounts400ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Accounts401ErrorException) {
+        CustomerManagementV1Accounts401ErrorException customerManagementV1Accounts401ErrorException = (CustomerManagementV1Accounts401ErrorException) cause;
+        customerManagementV1Accounts401ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Accounts403ErrorException) {
+        CustomerManagementV1Accounts403ErrorException customerManagementV1Accounts403ErrorException = (CustomerManagementV1Accounts403ErrorException) cause;
+        customerManagementV1Accounts403ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Accounts404ErrorException) {
+        CustomerManagementV1Accounts404ErrorException customerManagementV1Accounts404ErrorException = (CustomerManagementV1Accounts404ErrorException) cause;
+        customerManagementV1Accounts404ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Accounts500ErrorException) {
+        CustomerManagementV1Accounts500ErrorException customerManagementV1Accounts500ErrorException = (CustomerManagementV1Accounts500ErrorException) cause;
+        customerManagementV1Accounts500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -227,11 +307,11 @@ customerController.postCardAccountsAsync(requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Accounts400ErrorException`](../../doc/models/customer-management-v1-accounts-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Accounts401ErrorException`](../../doc/models/customer-management-v1-accounts-401-error-exception.md) |
+| 403 | Forbidden | [`CustomerManagementV1Accounts403ErrorException`](../../doc/models/customer-management-v1-accounts-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Accounts404ErrorException`](../../doc/models/customer-management-v1-accounts-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Accounts500ErrorException`](../../doc/models/customer-management-v1-accounts-500-error-exception.md) |
 
 
 # Customercardtypev
@@ -268,8 +348,28 @@ customerController.customercardtypevAsync(requestId, body).thenAccept(result -> 
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof CustomerManagementV2Cardtype400ErrorException) {
+        CustomerManagementV2Cardtype400ErrorException customerManagementV2Cardtype400ErrorException = (CustomerManagementV2Cardtype400ErrorException) cause;
+        customerManagementV2Cardtype400ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV2Cardtype401ErrorException) {
+        CustomerManagementV2Cardtype401ErrorException customerManagementV2Cardtype401ErrorException = (CustomerManagementV2Cardtype401ErrorException) cause;
+        customerManagementV2Cardtype401ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV2Cardtype403ErrorException) {
+        CustomerManagementV2Cardtype403ErrorException customerManagementV2Cardtype403ErrorException = (CustomerManagementV2Cardtype403ErrorException) cause;
+        customerManagementV2Cardtype403ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV2Cardtype404ErrorException) {
+        CustomerManagementV2Cardtype404ErrorException customerManagementV2Cardtype404ErrorException = (CustomerManagementV2Cardtype404ErrorException) cause;
+        customerManagementV2Cardtype404ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV2Cardtype500ErrorException) {
+        CustomerManagementV2Cardtype500ErrorException customerManagementV2Cardtype500ErrorException = (CustomerManagementV2Cardtype500ErrorException) cause;
+        customerManagementV2Cardtype500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -278,11 +378,11 @@ customerController.customercardtypevAsync(requestId, body).thenAccept(result -> 
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV2Cardtype400ErrorException`](../../doc/models/customer-management-v2-cardtype-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV2Cardtype401ErrorException`](../../doc/models/customer-management-v2-cardtype-401-error-exception.md) |
+| 403 | Forbidden | [`CustomerManagementV2Cardtype403ErrorException`](../../doc/models/customer-management-v2-cardtype-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV2Cardtype404ErrorException`](../../doc/models/customer-management-v2-cardtype-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV2Cardtype500ErrorException`](../../doc/models/customer-management-v2-cardtype-500-error-exception.md) |
 
 
 # Cardgroups
@@ -328,8 +428,28 @@ customerController.cardgroupsAsync(requestId, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof CustomerManagementV1Cardgroups400ErrorException) {
+        CustomerManagementV1Cardgroups400ErrorException customerManagementV1Cardgroups400ErrorException = (CustomerManagementV1Cardgroups400ErrorException) cause;
+        customerManagementV1Cardgroups400ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Cardgroups401ErrorException) {
+        CustomerManagementV1Cardgroups401ErrorException customerManagementV1Cardgroups401ErrorException = (CustomerManagementV1Cardgroups401ErrorException) cause;
+        customerManagementV1Cardgroups401ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Cardgroups403ErrorException) {
+        CustomerManagementV1Cardgroups403ErrorException customerManagementV1Cardgroups403ErrorException = (CustomerManagementV1Cardgroups403ErrorException) cause;
+        customerManagementV1Cardgroups403ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Cardgroups404ErrorException) {
+        CustomerManagementV1Cardgroups404ErrorException customerManagementV1Cardgroups404ErrorException = (CustomerManagementV1Cardgroups404ErrorException) cause;
+        customerManagementV1Cardgroups404ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Cardgroups500ErrorException) {
+        CustomerManagementV1Cardgroups500ErrorException customerManagementV1Cardgroups500ErrorException = (CustomerManagementV1Cardgroups500ErrorException) cause;
+        customerManagementV1Cardgroups500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -338,11 +458,11 @@ customerController.cardgroupsAsync(requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Cardgroups400ErrorException`](../../doc/models/customer-management-v1-cardgroups-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Cardgroups401ErrorException`](../../doc/models/customer-management-v1-cardgroups-401-error-exception.md) |
+| 403 | Forbidden | [`CustomerManagementV1Cardgroups403ErrorException`](../../doc/models/customer-management-v1-cardgroups-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Cardgroups404ErrorException`](../../doc/models/customer-management-v1-cardgroups-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Cardgroups500ErrorException`](../../doc/models/customer-management-v1-cardgroups-500-error-exception.md) |
 
 
 # Audit Report
@@ -397,8 +517,28 @@ customerController.auditReportAsync(requestId, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof CustomerManagementV1Auditreport400ErrorException) {
+        CustomerManagementV1Auditreport400ErrorException customerManagementV1Auditreport400ErrorException = (CustomerManagementV1Auditreport400ErrorException) cause;
+        customerManagementV1Auditreport400ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Auditreport401ErrorException) {
+        CustomerManagementV1Auditreport401ErrorException customerManagementV1Auditreport401ErrorException = (CustomerManagementV1Auditreport401ErrorException) cause;
+        customerManagementV1Auditreport401ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Auditreport403ErrorException) {
+        CustomerManagementV1Auditreport403ErrorException customerManagementV1Auditreport403ErrorException = (CustomerManagementV1Auditreport403ErrorException) cause;
+        customerManagementV1Auditreport403ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Auditreport404ErrorException) {
+        CustomerManagementV1Auditreport404ErrorException customerManagementV1Auditreport404ErrorException = (CustomerManagementV1Auditreport404ErrorException) cause;
+        customerManagementV1Auditreport404ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Auditreport500ErrorException) {
+        CustomerManagementV1Auditreport500ErrorException customerManagementV1Auditreport500ErrorException = (CustomerManagementV1Auditreport500ErrorException) cause;
+        customerManagementV1Auditreport500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -407,11 +547,11 @@ customerController.auditReportAsync(requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Auditreport400ErrorException`](../../doc/models/customer-management-v1-auditreport-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Auditreport401ErrorException`](../../doc/models/customer-management-v1-auditreport-401-error-exception.md) |
+| 403 | Forbidden | [`CustomerManagementV1Auditreport403ErrorException`](../../doc/models/customer-management-v1-auditreport-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Auditreport404ErrorException`](../../doc/models/customer-management-v1-auditreport-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Auditreport500ErrorException`](../../doc/models/customer-management-v1-auditreport-500-error-exception.md) |
 
 
 # Customer Price List
@@ -449,8 +589,28 @@ customerController.customerPriceListAsync(requestId, null).thenAccept(result -> 
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof CustomerManagementV1Pricelist400ErrorException) {
+        CustomerManagementV1Pricelist400ErrorException customerManagementV1Pricelist400ErrorException = (CustomerManagementV1Pricelist400ErrorException) cause;
+        customerManagementV1Pricelist400ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Pricelist401ErrorException) {
+        CustomerManagementV1Pricelist401ErrorException customerManagementV1Pricelist401ErrorException = (CustomerManagementV1Pricelist401ErrorException) cause;
+        customerManagementV1Pricelist401ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Pricelist403ErrorException) {
+        CustomerManagementV1Pricelist403ErrorException customerManagementV1Pricelist403ErrorException = (CustomerManagementV1Pricelist403ErrorException) cause;
+        customerManagementV1Pricelist403ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Pricelist404ErrorException) {
+        CustomerManagementV1Pricelist404ErrorException customerManagementV1Pricelist404ErrorException = (CustomerManagementV1Pricelist404ErrorException) cause;
+        customerManagementV1Pricelist404ErrorException.printStackTrace();
+    } else if (cause instanceof CustomerManagementV1Pricelist500ErrorException) {
+        CustomerManagementV1Pricelist500ErrorException customerManagementV1Pricelist500ErrorException = (CustomerManagementV1Pricelist500ErrorException) cause;
+        customerManagementV1Pricelist500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -459,9 +619,9 @@ customerController.customerPriceListAsync(requestId, null).thenAccept(result -> 
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Pricelist400ErrorException`](../../doc/models/customer-management-v1-pricelist-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Pricelist401ErrorException`](../../doc/models/customer-management-v1-pricelist-401-error-exception.md) |
+| 403 | Forbidden | [`CustomerManagementV1Pricelist403ErrorException`](../../doc/models/customer-management-v1-pricelist-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Pricelist404ErrorException`](../../doc/models/customer-management-v1-pricelist-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Pricelist500ErrorException`](../../doc/models/customer-management-v1-pricelist-500-error-exception.md) |
 

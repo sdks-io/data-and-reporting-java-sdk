@@ -22,7 +22,6 @@ public class SearchDocReq {
     private List<String> accountNumberList;
     private OptionalNullable<String> invoiceNumber;
     private List<String> invoiceNumberList;
-    private OptionalNullable<String> invoiceStatus;
     private OptionalNullable<String> issuingDateFrom;
     private OptionalNullable<String> issuingDateTo;
     private OptionalNullable<String> dueDateFrom;
@@ -48,7 +47,6 @@ public class SearchDocReq {
      * @param  accountNumberList  List of String value for accountNumberList.
      * @param  invoiceNumber  String value for invoiceNumber.
      * @param  invoiceNumberList  List of String value for invoiceNumberList.
-     * @param  invoiceStatus  String value for invoiceStatus.
      * @param  issuingDateFrom  String value for issuingDateFrom.
      * @param  issuingDateTo  String value for issuingDateTo.
      * @param  dueDateFrom  String value for dueDateFrom.
@@ -66,7 +64,6 @@ public class SearchDocReq {
             List<String> accountNumberList,
             String invoiceNumber,
             List<String> invoiceNumberList,
-            String invoiceStatus,
             String issuingDateFrom,
             String issuingDateTo,
             String dueDateFrom,
@@ -81,7 +78,6 @@ public class SearchDocReq {
         this.accountNumberList = accountNumberList;
         this.invoiceNumber = OptionalNullable.of(invoiceNumber);
         this.invoiceNumberList = invoiceNumberList;
-        this.invoiceStatus = OptionalNullable.of(invoiceStatus);
         this.issuingDateFrom = OptionalNullable.of(issuingDateFrom);
         this.issuingDateTo = OptionalNullable.of(issuingDateTo);
         this.dueDateFrom = OptionalNullable.of(dueDateFrom);
@@ -102,7 +98,6 @@ public class SearchDocReq {
      * @param  accountNumberList  List of String value for accountNumberList.
      * @param  invoiceNumber  String value for invoiceNumber.
      * @param  invoiceNumberList  List of String value for invoiceNumberList.
-     * @param  invoiceStatus  String value for invoiceStatus.
      * @param  issuingDateFrom  String value for issuingDateFrom.
      * @param  issuingDateTo  String value for issuingDateTo.
      * @param  dueDateFrom  String value for dueDateFrom.
@@ -117,17 +112,16 @@ public class SearchDocReq {
     protected SearchDocReq(String payerNumber, Integer colCoCode,
             OptionalNullable<String> accountNumber, List<String> accountNumberList,
             OptionalNullable<String> invoiceNumber, List<String> invoiceNumberList,
-            OptionalNullable<String> invoiceStatus, OptionalNullable<String> issuingDateFrom,
-            OptionalNullable<String> issuingDateTo, OptionalNullable<String> dueDateFrom,
-            OptionalNullable<String> dueDateTo, OptionalNullable<String> grossAmount,
-            OptionalNullable<String> grossAmountOperator, OptionalNullable<String> documentType,
-            OptionalNullable<String> vATIssuerCountry, List<String> sortyBy) {
+            OptionalNullable<String> issuingDateFrom, OptionalNullable<String> issuingDateTo,
+            OptionalNullable<String> dueDateFrom, OptionalNullable<String> dueDateTo,
+            OptionalNullable<String> grossAmount, OptionalNullable<String> grossAmountOperator,
+            OptionalNullable<String> documentType, OptionalNullable<String> vATIssuerCountry,
+            List<String> sortyBy) {
         this.payerNumber = payerNumber;
         this.accountNumber = accountNumber;
         this.accountNumberList = accountNumberList;
         this.invoiceNumber = invoiceNumber;
         this.invoiceNumberList = invoiceNumberList;
-        this.invoiceStatus = invoiceStatus;
         this.issuingDateFrom = issuingDateFrom;
         this.issuingDateTo = issuingDateTo;
         this.dueDateFrom = dueDateFrom;
@@ -290,49 +284,6 @@ public class SearchDocReq {
     @JsonSetter("InvoiceNumberList")
     public void setInvoiceNumberList(List<String> invoiceNumberList) {
         this.invoiceNumberList = invoiceNumberList;
-    }
-
-    /**
-     * Internal Getter for InvoiceStatus.
-     * The status of the invoices Optional One of the following values: • NEW • VIEWED • DOWNLOADED
-     * • RESTORED
-     * @return Returns the Internal String
-     */
-    @JsonGetter("InvoiceStatus")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<String> internalGetInvoiceStatus() {
-        return this.invoiceStatus;
-    }
-
-    /**
-     * Getter for InvoiceStatus.
-     * The status of the invoices Optional One of the following values: • NEW • VIEWED • DOWNLOADED
-     * • RESTORED
-     * @return Returns the String
-     */
-    public String getInvoiceStatus() {
-        return OptionalNullable.getFrom(invoiceStatus);
-    }
-
-    /**
-     * Setter for InvoiceStatus.
-     * The status of the invoices Optional One of the following values: • NEW • VIEWED • DOWNLOADED
-     * • RESTORED
-     * @param invoiceStatus Value for String
-     */
-    @JsonSetter("InvoiceStatus")
-    public void setInvoiceStatus(String invoiceStatus) {
-        this.invoiceStatus = OptionalNullable.of(invoiceStatus);
-    }
-
-    /**
-     * UnSetter for InvoiceStatus.
-     * The status of the invoices Optional One of the following values: • NEW • VIEWED • DOWNLOADED
-     * • RESTORED
-     */
-    public void unsetInvoiceStatus() {
-        invoiceStatus = null;
     }
 
     /**
@@ -717,11 +668,11 @@ public class SearchDocReq {
         return "SearchDocReq [" + "payerNumber=" + payerNumber + ", colCoCode=" + colCoCode
                 + ", accountNumber=" + accountNumber + ", accountNumberList=" + accountNumberList
                 + ", invoiceNumber=" + invoiceNumber + ", invoiceNumberList=" + invoiceNumberList
-                + ", invoiceStatus=" + invoiceStatus + ", issuingDateFrom=" + issuingDateFrom
-                + ", issuingDateTo=" + issuingDateTo + ", dueDateFrom=" + dueDateFrom
-                + ", dueDateTo=" + dueDateTo + ", grossAmount=" + grossAmount
-                + ", grossAmountOperator=" + grossAmountOperator + ", documentType=" + documentType
-                + ", vATIssuerCountry=" + vATIssuerCountry + ", sortyBy=" + sortyBy + "]";
+                + ", issuingDateFrom=" + issuingDateFrom + ", issuingDateTo=" + issuingDateTo
+                + ", dueDateFrom=" + dueDateFrom + ", dueDateTo=" + dueDateTo + ", grossAmount="
+                + grossAmount + ", grossAmountOperator=" + grossAmountOperator + ", documentType="
+                + documentType + ", vATIssuerCountry=" + vATIssuerCountry + ", sortyBy=" + sortyBy
+                + "]";
     }
 
     /**
@@ -736,7 +687,6 @@ public class SearchDocReq {
                 .sortyBy(getSortyBy());
         builder.accountNumber = internalGetAccountNumber();
         builder.invoiceNumber = internalGetInvoiceNumber();
-        builder.invoiceStatus = internalGetInvoiceStatus();
         builder.issuingDateFrom = internalGetIssuingDateFrom();
         builder.issuingDateTo = internalGetIssuingDateTo();
         builder.dueDateFrom = internalGetDueDateFrom();
@@ -758,7 +708,6 @@ public class SearchDocReq {
         private List<String> accountNumberList;
         private OptionalNullable<String> invoiceNumber;
         private List<String> invoiceNumberList;
-        private OptionalNullable<String> invoiceStatus;
         private OptionalNullable<String> issuingDateFrom;
         private OptionalNullable<String> issuingDateTo;
         private OptionalNullable<String> dueDateFrom;
@@ -860,25 +809,6 @@ public class SearchDocReq {
          */
         public Builder invoiceNumberList(List<String> invoiceNumberList) {
             this.invoiceNumberList = invoiceNumberList;
-            return this;
-        }
-
-        /**
-         * Setter for invoiceStatus.
-         * @param  invoiceStatus  String value for invoiceStatus.
-         * @return Builder
-         */
-        public Builder invoiceStatus(String invoiceStatus) {
-            this.invoiceStatus = OptionalNullable.of(invoiceStatus);
-            return this;
-        }
-
-        /**
-         * UnSetter for invoiceStatus.
-         * @return Builder
-         */
-        public Builder unsetInvoiceStatus() {
-            invoiceStatus = null;
             return this;
         }
 
@@ -1050,9 +980,9 @@ public class SearchDocReq {
          */
         public SearchDocReq build() {
             return new SearchDocReq(payerNumber, colCoCode, accountNumber, accountNumberList,
-                    invoiceNumber, invoiceNumberList, invoiceStatus, issuingDateFrom, issuingDateTo,
-                    dueDateFrom, dueDateTo, grossAmount, grossAmountOperator, documentType,
-                    vATIssuerCountry, sortyBy);
+                    invoiceNumber, invoiceNumberList, issuingDateFrom, issuingDateTo, dueDateFrom,
+                    dueDateTo, grossAmount, grossAmountOperator, documentType, vATIssuerCountry,
+                    sortyBy);
         }
     }
 }

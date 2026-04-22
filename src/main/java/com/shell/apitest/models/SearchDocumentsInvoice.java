@@ -26,10 +26,10 @@ public class SearchDocumentsInvoice {
     private OptionalNullable<Double> netAmount;
     private OptionalNullable<Double> taxAmount;
     private OptionalNullable<String> currencyCode;
-    private OptionalNullable<String> invoiceStatus;
     private OptionalNullable<String> invoiceDate;
     private OptionalNullable<String> dueDate;
     private OptionalNullable<String> vATCountryISOCode;
+    private String ksefDocumentReference;
 
     /**
      * Default constructor.
@@ -49,10 +49,10 @@ public class SearchDocumentsInvoice {
      * @param  netAmount  Double value for netAmount.
      * @param  taxAmount  Double value for taxAmount.
      * @param  currencyCode  String value for currencyCode.
-     * @param  invoiceStatus  String value for invoiceStatus.
      * @param  invoiceDate  String value for invoiceDate.
      * @param  dueDate  String value for dueDate.
      * @param  vATCountryISOCode  String value for vATCountryISOCode.
+     * @param  ksefDocumentReference  String value for ksefDocumentReference.
      */
     public SearchDocumentsInvoice(
             Integer documentReference,
@@ -65,10 +65,10 @@ public class SearchDocumentsInvoice {
             Double netAmount,
             Double taxAmount,
             String currencyCode,
-            String invoiceStatus,
             String invoiceDate,
             String dueDate,
-            String vATCountryISOCode) {
+            String vATCountryISOCode,
+            String ksefDocumentReference) {
         this.documentReference = documentReference;
         this.invoiceNumber = OptionalNullable.of(invoiceNumber);
         this.payerName = OptionalNullable.of(payerName);
@@ -79,10 +79,10 @@ public class SearchDocumentsInvoice {
         this.netAmount = OptionalNullable.of(netAmount);
         this.taxAmount = OptionalNullable.of(taxAmount);
         this.currencyCode = OptionalNullable.of(currencyCode);
-        this.invoiceStatus = OptionalNullable.of(invoiceStatus);
         this.invoiceDate = OptionalNullable.of(invoiceDate);
         this.dueDate = OptionalNullable.of(dueDate);
         this.vATCountryISOCode = OptionalNullable.of(vATCountryISOCode);
+        this.ksefDocumentReference = ksefDocumentReference;
     }
 
     /**
@@ -97,10 +97,10 @@ public class SearchDocumentsInvoice {
      * @param  netAmount  Double value for netAmount.
      * @param  taxAmount  Double value for taxAmount.
      * @param  currencyCode  String value for currencyCode.
-     * @param  invoiceStatus  String value for invoiceStatus.
      * @param  invoiceDate  String value for invoiceDate.
      * @param  dueDate  String value for dueDate.
      * @param  vATCountryISOCode  String value for vATCountryISOCode.
+     * @param  ksefDocumentReference  String value for ksefDocumentReference.
      */
 
     protected SearchDocumentsInvoice(Integer documentReference,
@@ -108,9 +108,9 @@ public class SearchDocumentsInvoice {
             OptionalNullable<String> accountNumber, OptionalNullable<String> accountName,
             OptionalNullable<String> documentType, OptionalNullable<Double> grossAmount,
             OptionalNullable<Double> netAmount, OptionalNullable<Double> taxAmount,
-            OptionalNullable<String> currencyCode, OptionalNullable<String> invoiceStatus,
-            OptionalNullable<String> invoiceDate, OptionalNullable<String> dueDate,
-            OptionalNullable<String> vATCountryISOCode) {
+            OptionalNullable<String> currencyCode, OptionalNullable<String> invoiceDate,
+            OptionalNullable<String> dueDate, OptionalNullable<String> vATCountryISOCode,
+            String ksefDocumentReference) {
         this.documentReference = documentReference;
         this.invoiceNumber = invoiceNumber;
         this.payerName = payerName;
@@ -121,10 +121,10 @@ public class SearchDocumentsInvoice {
         this.netAmount = netAmount;
         this.taxAmount = taxAmount;
         this.currencyCode = currencyCode;
-        this.invoiceStatus = invoiceStatus;
         this.invoiceDate = invoiceDate;
         this.dueDate = dueDate;
         this.vATCountryISOCode = vATCountryISOCode;
+        this.ksefDocumentReference = ksefDocumentReference;
     }
 
     /**
@@ -494,41 +494,6 @@ public class SearchDocumentsInvoice {
     }
 
     /**
-     * Internal Getter for InvoiceStatus.
-     * @return Returns the Internal String
-     */
-    @JsonGetter("InvoiceStatus")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<String> internalGetInvoiceStatus() {
-        return this.invoiceStatus;
-    }
-
-    /**
-     * Getter for InvoiceStatus.
-     * @return Returns the String
-     */
-    public String getInvoiceStatus() {
-        return OptionalNullable.getFrom(invoiceStatus);
-    }
-
-    /**
-     * Setter for InvoiceStatus.
-     * @param invoiceStatus Value for String
-     */
-    @JsonSetter("InvoiceStatus")
-    public void setInvoiceStatus(String invoiceStatus) {
-        this.invoiceStatus = OptionalNullable.of(invoiceStatus);
-    }
-
-    /**
-     * UnSetter for InvoiceStatus.
-     */
-    public void unsetInvoiceStatus() {
-        invoiceStatus = null;
-    }
-
-    /**
      * Internal Getter for InvoiceDate.
      * @return Returns the Internal String
      */
@@ -634,6 +599,29 @@ public class SearchDocumentsInvoice {
     }
 
     /**
+     * Getter for KsefDocumentReference.
+     * Unique identifier for the invoice in KSeF system. This field is populated only when the
+     * invoice is registered in KSeF system.
+     * @return Returns the String
+     */
+    @JsonGetter("KsefDocumentReference")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public String getKsefDocumentReference() {
+        return ksefDocumentReference;
+    }
+
+    /**
+     * Setter for KsefDocumentReference.
+     * Unique identifier for the invoice in KSeF system. This field is populated only when the
+     * invoice is registered in KSeF system.
+     * @param ksefDocumentReference Value for String
+     */
+    @JsonSetter("KsefDocumentReference")
+    public void setKsefDocumentReference(String ksefDocumentReference) {
+        this.ksefDocumentReference = ksefDocumentReference;
+    }
+
+    /**
      * Converts this SearchDocumentsInvoice into string format.
      * @return String representation of this class
      */
@@ -644,8 +632,8 @@ public class SearchDocumentsInvoice {
                 + ", accountNumber=" + accountNumber + ", accountName=" + accountName
                 + ", documentType=" + documentType + ", grossAmount=" + grossAmount + ", netAmount="
                 + netAmount + ", taxAmount=" + taxAmount + ", currencyCode=" + currencyCode
-                + ", invoiceStatus=" + invoiceStatus + ", invoiceDate=" + invoiceDate + ", dueDate="
-                + dueDate + ", vATCountryISOCode=" + vATCountryISOCode + "]";
+                + ", invoiceDate=" + invoiceDate + ", dueDate=" + dueDate + ", vATCountryISOCode="
+                + vATCountryISOCode + ", ksefDocumentReference=" + ksefDocumentReference + "]";
     }
 
     /**
@@ -655,7 +643,8 @@ public class SearchDocumentsInvoice {
      */
     public Builder toBuilder() {
         Builder builder = new Builder()
-                .documentReference(getDocumentReference());
+                .documentReference(getDocumentReference())
+                .ksefDocumentReference(getKsefDocumentReference());
         builder.invoiceNumber = internalGetInvoiceNumber();
         builder.payerName = internalGetPayerName();
         builder.accountNumber = internalGetAccountNumber();
@@ -665,7 +654,6 @@ public class SearchDocumentsInvoice {
         builder.netAmount = internalGetNetAmount();
         builder.taxAmount = internalGetTaxAmount();
         builder.currencyCode = internalGetCurrencyCode();
-        builder.invoiceStatus = internalGetInvoiceStatus();
         builder.invoiceDate = internalGetInvoiceDate();
         builder.dueDate = internalGetDueDate();
         builder.vATCountryISOCode = internalGetVATCountryISOCode();
@@ -686,10 +674,10 @@ public class SearchDocumentsInvoice {
         private OptionalNullable<Double> netAmount;
         private OptionalNullable<Double> taxAmount;
         private OptionalNullable<String> currencyCode;
-        private OptionalNullable<String> invoiceStatus;
         private OptionalNullable<String> invoiceDate;
         private OptionalNullable<String> dueDate;
         private OptionalNullable<String> vATCountryISOCode;
+        private String ksefDocumentReference;
 
 
 
@@ -875,25 +863,6 @@ public class SearchDocumentsInvoice {
         }
 
         /**
-         * Setter for invoiceStatus.
-         * @param  invoiceStatus  String value for invoiceStatus.
-         * @return Builder
-         */
-        public Builder invoiceStatus(String invoiceStatus) {
-            this.invoiceStatus = OptionalNullable.of(invoiceStatus);
-            return this;
-        }
-
-        /**
-         * UnSetter for invoiceStatus.
-         * @return Builder
-         */
-        public Builder unsetInvoiceStatus() {
-            invoiceStatus = null;
-            return this;
-        }
-
-        /**
          * Setter for invoiceDate.
          * @param  invoiceDate  String value for invoiceDate.
          * @return Builder
@@ -951,13 +920,23 @@ public class SearchDocumentsInvoice {
         }
 
         /**
+         * Setter for ksefDocumentReference.
+         * @param  ksefDocumentReference  String value for ksefDocumentReference.
+         * @return Builder
+         */
+        public Builder ksefDocumentReference(String ksefDocumentReference) {
+            this.ksefDocumentReference = ksefDocumentReference;
+            return this;
+        }
+
+        /**
          * Builds a new {@link SearchDocumentsInvoice} object using the set fields.
          * @return {@link SearchDocumentsInvoice}
          */
         public SearchDocumentsInvoice build() {
             return new SearchDocumentsInvoice(documentReference, invoiceNumber, payerName,
                     accountNumber, accountName, documentType, grossAmount, netAmount, taxAmount,
-                    currencyCode, invoiceStatus, invoiceDate, dueDate, vATCountryISOCode);
+                    currencyCode, invoiceDate, dueDate, vATCountryISOCode, ksefDocumentReference);
         }
     }
 }

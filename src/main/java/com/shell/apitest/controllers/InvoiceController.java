@@ -9,7 +9,51 @@ package com.shell.apitest.controllers;
 import com.shell.apitest.ApiHelper;
 import com.shell.apitest.Server;
 import com.shell.apitest.exceptions.ApiException;
-import com.shell.apitest.exceptions.ErrorObjectException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Dates400ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Dates401ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Dates403ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Dates404ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Dates500ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Download400ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Download401ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Download403ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Download404ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Download500ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Eiddownload400ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Eiddownload401ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Eiddownload403ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Eiddownload404ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Eiddownload500ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Eidsearch400ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Eidsearch401ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Eidsearch403ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Eidsearch404ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Eidsearch500ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Search400ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Search401ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Search403ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Search404ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Search500ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Searchdocuments400ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Searchdocuments401ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Searchdocuments403ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Searchdocuments404ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Searchdocuments500ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Searchstatementofaccount400ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Searchstatementofaccount401ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Searchstatementofaccount403ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Searchstatementofaccount404ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Searchstatementofaccount500ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Statementofaccount400ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Statementofaccount401ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Statementofaccount403ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Statementofaccount404ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Statementofaccount500ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Summary400ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Summary401ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Summary403ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Summary404ErrorException;
+import com.shell.apitest.exceptions.InvoiceManagementV1Summary500ErrorException;
 import com.shell.apitest.http.request.HttpMethod;
 import com.shell.apitest.models.EIDDocumentResponse;
 import com.shell.apitest.models.EIDDownloadRequest;
@@ -121,19 +165,19 @@ public final class InvoiceController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Search400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Search401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Search403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Search404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Search500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -209,19 +253,19 @@ public final class InvoiceController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Summary400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Summary401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Summary403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Summary404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Summary500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -295,19 +339,19 @@ public final class InvoiceController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Statementofaccount400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Statementofaccount401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Statementofaccount403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Statementofaccount404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Statementofaccount500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -373,19 +417,19 @@ public final class InvoiceController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Dates400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Dates401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Dates403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Dates404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Dates500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -449,19 +493,19 @@ public final class InvoiceController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Searchstatementofaccount400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Searchstatementofaccount401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Searchstatementofaccount403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Searchstatementofaccount404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Searchstatementofaccount500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -527,19 +571,19 @@ public final class InvoiceController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Searchdocuments400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Searchdocuments401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Searchdocuments403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Searchdocuments404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Searchdocuments500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -605,19 +649,19 @@ public final class InvoiceController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Eidsearch400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Eidsearch401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Eidsearch403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Eidsearch404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Eidsearch500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -680,19 +724,19 @@ public final class InvoiceController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Download400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Download401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Download403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Download404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Download500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .endpointConfiguration(param -> param
                                 .hasBinaryResponse(true))
@@ -759,19 +803,19 @@ public final class InvoiceController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Eiddownload400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Eiddownload401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Eiddownload403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Eiddownload404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new InvoiceManagementV1Eiddownload500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .endpointConfiguration(param -> param
                                 .hasBinaryResponse(true))

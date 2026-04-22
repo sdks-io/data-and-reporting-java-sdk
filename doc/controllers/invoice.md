@@ -89,8 +89,28 @@ invoiceController.invoiceSearchAsync(requestId, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof InvoiceManagementV1Search400ErrorException) {
+        InvoiceManagementV1Search400ErrorException invoiceManagementV1Search400ErrorException = (InvoiceManagementV1Search400ErrorException) cause;
+        invoiceManagementV1Search400ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Search401ErrorException) {
+        InvoiceManagementV1Search401ErrorException invoiceManagementV1Search401ErrorException = (InvoiceManagementV1Search401ErrorException) cause;
+        invoiceManagementV1Search401ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Search403ErrorException) {
+        InvoiceManagementV1Search403ErrorException invoiceManagementV1Search403ErrorException = (InvoiceManagementV1Search403ErrorException) cause;
+        invoiceManagementV1Search403ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Search404ErrorException) {
+        InvoiceManagementV1Search404ErrorException invoiceManagementV1Search404ErrorException = (InvoiceManagementV1Search404ErrorException) cause;
+        invoiceManagementV1Search404ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Search500ErrorException) {
+        InvoiceManagementV1Search500ErrorException invoiceManagementV1Search500ErrorException = (InvoiceManagementV1Search500ErrorException) cause;
+        invoiceManagementV1Search500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -173,11 +193,11 @@ invoiceController.invoiceSearchAsync(requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Search400ErrorException`](../../doc/models/invoice-management-v1-search-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Search401ErrorException`](../../doc/models/invoice-management-v1-search-401-error-exception.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Search403ErrorException`](../../doc/models/invoice-management-v1-search-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Search404ErrorException`](../../doc/models/invoice-management-v1-search-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Search500ErrorException`](../../doc/models/invoice-management-v1-search-500-error-exception.md) |
 
 
 # Invoice Summary
@@ -242,8 +262,28 @@ invoiceController.invoiceSummaryAsync(requestId, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof InvoiceManagementV1Summary400ErrorException) {
+        InvoiceManagementV1Summary400ErrorException invoiceManagementV1Summary400ErrorException = (InvoiceManagementV1Summary400ErrorException) cause;
+        invoiceManagementV1Summary400ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Summary401ErrorException) {
+        InvoiceManagementV1Summary401ErrorException invoiceManagementV1Summary401ErrorException = (InvoiceManagementV1Summary401ErrorException) cause;
+        invoiceManagementV1Summary401ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Summary403ErrorException) {
+        InvoiceManagementV1Summary403ErrorException invoiceManagementV1Summary403ErrorException = (InvoiceManagementV1Summary403ErrorException) cause;
+        invoiceManagementV1Summary403ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Summary404ErrorException) {
+        InvoiceManagementV1Summary404ErrorException invoiceManagementV1Summary404ErrorException = (InvoiceManagementV1Summary404ErrorException) cause;
+        invoiceManagementV1Summary404ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Summary500ErrorException) {
+        InvoiceManagementV1Summary500ErrorException invoiceManagementV1Summary500ErrorException = (InvoiceManagementV1Summary500ErrorException) cause;
+        invoiceManagementV1Summary500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -271,11 +311,11 @@ invoiceController.invoiceSummaryAsync(requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Summary400ErrorException`](../../doc/models/invoice-management-v1-summary-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Summary401ErrorException`](../../doc/models/invoice-management-v1-summary-401-error-exception.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Summary403ErrorException`](../../doc/models/invoice-management-v1-summary-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Summary404ErrorException`](../../doc/models/invoice-management-v1-summary-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Summary500ErrorException`](../../doc/models/invoice-management-v1-summary-500-error-exception.md) |
 
 
 # Statement of Account
@@ -330,8 +370,28 @@ invoiceController.statementOfAccountAsync(requestId, body).thenAccept(result -> 
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof InvoiceManagementV1Statementofaccount400ErrorException) {
+        InvoiceManagementV1Statementofaccount400ErrorException invoiceManagementV1Statementofaccount400ErrorException = (InvoiceManagementV1Statementofaccount400ErrorException) cause;
+        invoiceManagementV1Statementofaccount400ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Statementofaccount401ErrorException) {
+        InvoiceManagementV1Statementofaccount401ErrorException invoiceManagementV1Statementofaccount401ErrorException = (InvoiceManagementV1Statementofaccount401ErrorException) cause;
+        invoiceManagementV1Statementofaccount401ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Statementofaccount403ErrorException) {
+        InvoiceManagementV1Statementofaccount403ErrorException invoiceManagementV1Statementofaccount403ErrorException = (InvoiceManagementV1Statementofaccount403ErrorException) cause;
+        invoiceManagementV1Statementofaccount403ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Statementofaccount404ErrorException) {
+        InvoiceManagementV1Statementofaccount404ErrorException invoiceManagementV1Statementofaccount404ErrorException = (InvoiceManagementV1Statementofaccount404ErrorException) cause;
+        invoiceManagementV1Statementofaccount404ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Statementofaccount500ErrorException) {
+        InvoiceManagementV1Statementofaccount500ErrorException invoiceManagementV1Statementofaccount500ErrorException = (InvoiceManagementV1Statementofaccount500ErrorException) cause;
+        invoiceManagementV1Statementofaccount500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -423,11 +483,11 @@ invoiceController.statementOfAccountAsync(requestId, body).thenAccept(result -> 
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Statementofaccount400ErrorException`](../../doc/models/invoice-management-v1-statementofaccount-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Statementofaccount401ErrorException`](../../doc/models/invoice-management-v1-statementofaccount-401-error-exception.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Statementofaccount403ErrorException`](../../doc/models/invoice-management-v1-statementofaccount-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Statementofaccount404ErrorException`](../../doc/models/invoice-management-v1-statementofaccount-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Statementofaccount500ErrorException`](../../doc/models/invoice-management-v1-statementofaccount-500-error-exception.md) |
 
 
 # Dates
@@ -474,8 +534,28 @@ invoiceController.datesAsync(requestId, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof InvoiceManagementV1Dates400ErrorException) {
+        InvoiceManagementV1Dates400ErrorException invoiceManagementV1Dates400ErrorException = (InvoiceManagementV1Dates400ErrorException) cause;
+        invoiceManagementV1Dates400ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Dates401ErrorException) {
+        InvoiceManagementV1Dates401ErrorException invoiceManagementV1Dates401ErrorException = (InvoiceManagementV1Dates401ErrorException) cause;
+        invoiceManagementV1Dates401ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Dates403ErrorException) {
+        InvoiceManagementV1Dates403ErrorException invoiceManagementV1Dates403ErrorException = (InvoiceManagementV1Dates403ErrorException) cause;
+        invoiceManagementV1Dates403ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Dates404ErrorException) {
+        InvoiceManagementV1Dates404ErrorException invoiceManagementV1Dates404ErrorException = (InvoiceManagementV1Dates404ErrorException) cause;
+        invoiceManagementV1Dates404ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Dates500ErrorException) {
+        InvoiceManagementV1Dates500ErrorException invoiceManagementV1Dates500ErrorException = (InvoiceManagementV1Dates500ErrorException) cause;
+        invoiceManagementV1Dates500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -503,11 +583,11 @@ invoiceController.datesAsync(requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Dates400ErrorException`](../../doc/models/invoice-management-v1-dates-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Dates401ErrorException`](../../doc/models/invoice-management-v1-dates-401-error-exception.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Dates403ErrorException`](../../doc/models/invoice-management-v1-dates-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Dates404ErrorException`](../../doc/models/invoice-management-v1-dates-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Dates500ErrorException`](../../doc/models/invoice-management-v1-dates-500-error-exception.md) |
 
 
 # Search Statement of Account
@@ -559,8 +639,28 @@ invoiceController.searchStatementOfAccountAsync(requestId, body).thenAccept(resu
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof InvoiceManagementV1Searchstatementofaccount400ErrorException) {
+        InvoiceManagementV1Searchstatementofaccount400ErrorException invoiceManagementV1Searchstatementofaccount400ErrorException = (InvoiceManagementV1Searchstatementofaccount400ErrorException) cause;
+        invoiceManagementV1Searchstatementofaccount400ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Searchstatementofaccount401ErrorException) {
+        InvoiceManagementV1Searchstatementofaccount401ErrorException invoiceManagementV1Searchstatementofaccount401ErrorException = (InvoiceManagementV1Searchstatementofaccount401ErrorException) cause;
+        invoiceManagementV1Searchstatementofaccount401ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Searchstatementofaccount403ErrorException) {
+        InvoiceManagementV1Searchstatementofaccount403ErrorException invoiceManagementV1Searchstatementofaccount403ErrorException = (InvoiceManagementV1Searchstatementofaccount403ErrorException) cause;
+        invoiceManagementV1Searchstatementofaccount403ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Searchstatementofaccount404ErrorException) {
+        InvoiceManagementV1Searchstatementofaccount404ErrorException invoiceManagementV1Searchstatementofaccount404ErrorException = (InvoiceManagementV1Searchstatementofaccount404ErrorException) cause;
+        invoiceManagementV1Searchstatementofaccount404ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Searchstatementofaccount500ErrorException) {
+        InvoiceManagementV1Searchstatementofaccount500ErrorException invoiceManagementV1Searchstatementofaccount500ErrorException = (InvoiceManagementV1Searchstatementofaccount500ErrorException) cause;
+        invoiceManagementV1Searchstatementofaccount500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -600,11 +700,11 @@ invoiceController.searchStatementOfAccountAsync(requestId, body).thenAccept(resu
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Searchstatementofaccount400ErrorException`](../../doc/models/invoice-management-v1-searchstatementofaccount-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Searchstatementofaccount401ErrorException`](../../doc/models/invoice-management-v1-searchstatementofaccount-401-error-exception.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Searchstatementofaccount403ErrorException`](../../doc/models/invoice-management-v1-searchstatementofaccount-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Searchstatementofaccount404ErrorException`](../../doc/models/invoice-management-v1-searchstatementofaccount-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Searchstatementofaccount500ErrorException`](../../doc/models/invoice-management-v1-searchstatementofaccount-500-error-exception.md) |
 
 
 # Search Documents
@@ -647,7 +747,6 @@ SearchDocumentsRequest body = new SearchDocumentsRequest.Builder()
             "6400013693",
             "9421000010"
         ))
-    .invoiceStatus("NEW")
     .issuingDateFrom("2023/05/01")
     .issuingDateTo("2023/06/30")
     .dueDateFrom("2023/05/04")
@@ -669,8 +768,28 @@ invoiceController.searchDocumentsAsync(requestId, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof InvoiceManagementV1Searchdocuments400ErrorException) {
+        InvoiceManagementV1Searchdocuments400ErrorException invoiceManagementV1Searchdocuments400ErrorException = (InvoiceManagementV1Searchdocuments400ErrorException) cause;
+        invoiceManagementV1Searchdocuments400ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Searchdocuments401ErrorException) {
+        InvoiceManagementV1Searchdocuments401ErrorException invoiceManagementV1Searchdocuments401ErrorException = (InvoiceManagementV1Searchdocuments401ErrorException) cause;
+        invoiceManagementV1Searchdocuments401ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Searchdocuments403ErrorException) {
+        InvoiceManagementV1Searchdocuments403ErrorException invoiceManagementV1Searchdocuments403ErrorException = (InvoiceManagementV1Searchdocuments403ErrorException) cause;
+        invoiceManagementV1Searchdocuments403ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Searchdocuments404ErrorException) {
+        InvoiceManagementV1Searchdocuments404ErrorException invoiceManagementV1Searchdocuments404ErrorException = (InvoiceManagementV1Searchdocuments404ErrorException) cause;
+        invoiceManagementV1Searchdocuments404ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Searchdocuments500ErrorException) {
+        InvoiceManagementV1Searchdocuments500ErrorException invoiceManagementV1Searchdocuments500ErrorException = (InvoiceManagementV1Searchdocuments500ErrorException) cause;
+        invoiceManagementV1Searchdocuments500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -681,7 +800,7 @@ invoiceController.searchDocumentsAsync(requestId, body).thenAccept(result -> {
 {
   "RequestId": "a8b81c1d-f44a-4365-8113-8958061c0b7e",
   "Status": "SUCCESS",
-  "Data": [
+  "Invoices": [
     {
       "DocumentReference": 311161,
       "InvoiceNumber": "6400013693",
@@ -693,7 +812,6 @@ invoiceController.searchDocumentsAsync(requestId, body).thenAccept(result -> {
       "NetAmount": 0,
       "TaxAmount": 0,
       "CurrencyCode": "EUR",
-      "InvoiceStatus": "NEW",
       "InvoiceDate": "2023/01/31",
       "DueDate": "2023/02/07",
       "VATCountryISOCode": "DE"
@@ -710,11 +828,11 @@ invoiceController.searchDocumentsAsync(requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Searchdocuments400ErrorException`](../../doc/models/invoice-management-v1-searchdocuments-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Searchdocuments401ErrorException`](../../doc/models/invoice-management-v1-searchdocuments-401-error-exception.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Searchdocuments403ErrorException`](../../doc/models/invoice-management-v1-searchdocuments-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Searchdocuments404ErrorException`](../../doc/models/invoice-management-v1-searchdocuments-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Searchdocuments500ErrorException`](../../doc/models/invoice-management-v1-searchdocuments-500-error-exception.md) |
 
 
 # Eid Search
@@ -754,7 +872,6 @@ EIDSearchRequest body = new EIDSearchRequest.Builder()
     .fromDate("2017/08/30")
     .toDate("2017/10/31")
     .invoiceType("NAT")
-    .invoiceStatus("NEW")
     .sortBy(Arrays.asList(
             "DocumentDate ASC"
         ))
@@ -767,8 +884,28 @@ invoiceController.eidSearchAsync(requestId, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof InvoiceManagementV1Eidsearch400ErrorException) {
+        InvoiceManagementV1Eidsearch400ErrorException invoiceManagementV1Eidsearch400ErrorException = (InvoiceManagementV1Eidsearch400ErrorException) cause;
+        invoiceManagementV1Eidsearch400ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Eidsearch401ErrorException) {
+        InvoiceManagementV1Eidsearch401ErrorException invoiceManagementV1Eidsearch401ErrorException = (InvoiceManagementV1Eidsearch401ErrorException) cause;
+        invoiceManagementV1Eidsearch401ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Eidsearch403ErrorException) {
+        InvoiceManagementV1Eidsearch403ErrorException invoiceManagementV1Eidsearch403ErrorException = (InvoiceManagementV1Eidsearch403ErrorException) cause;
+        invoiceManagementV1Eidsearch403ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Eidsearch404ErrorException) {
+        InvoiceManagementV1Eidsearch404ErrorException invoiceManagementV1Eidsearch404ErrorException = (InvoiceManagementV1Eidsearch404ErrorException) cause;
+        invoiceManagementV1Eidsearch404ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Eidsearch500ErrorException) {
+        InvoiceManagementV1Eidsearch500ErrorException invoiceManagementV1Eidsearch500ErrorException = (InvoiceManagementV1Eidsearch500ErrorException) cause;
+        invoiceManagementV1Eidsearch500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -779,7 +916,7 @@ invoiceController.eidSearchAsync(requestId, body).thenAccept(result -> {
 {
   "RequestId": "a0a1596f-b242-4672-b513-66c5e5554195",
   "Status": "SUCCESS",
-  "Data": [
+  "Document": [
     {
       "DocumentId": 15029,
       "AccountGroupId": "122",
@@ -789,7 +926,6 @@ invoiceController.eidSearchAsync(requestId, body).thenAccept(result -> {
       "DocumentDate": "2022/12/28",
       "NumberOfInvoices": 1,
       "FileSize": 1624,
-      "DocumentStatus": "DOWNLOADED",
       "DocumentName": "032_122_INT_28122022.TXT"
     }
   ],
@@ -806,11 +942,11 @@ invoiceController.eidSearchAsync(requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Eidsearch400ErrorException`](../../doc/models/invoice-management-v1-eidsearch-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Eidsearch401ErrorException`](../../doc/models/invoice-management-v1-eidsearch-401-error-exception.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Eidsearch403ErrorException`](../../doc/models/invoice-management-v1-eidsearch-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Eidsearch404ErrorException`](../../doc/models/invoice-management-v1-eidsearch-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Eidsearch500ErrorException`](../../doc/models/invoice-management-v1-eidsearch-500-error-exception.md) |
 
 
 # Download
@@ -857,8 +993,28 @@ invoiceController.downloadAsync(requestId, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof InvoiceManagementV1Download400ErrorException) {
+        InvoiceManagementV1Download400ErrorException invoiceManagementV1Download400ErrorException = (InvoiceManagementV1Download400ErrorException) cause;
+        invoiceManagementV1Download400ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Download401ErrorException) {
+        InvoiceManagementV1Download401ErrorException invoiceManagementV1Download401ErrorException = (InvoiceManagementV1Download401ErrorException) cause;
+        invoiceManagementV1Download401ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Download403ErrorException) {
+        InvoiceManagementV1Download403ErrorException invoiceManagementV1Download403ErrorException = (InvoiceManagementV1Download403ErrorException) cause;
+        invoiceManagementV1Download403ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Download404ErrorException) {
+        InvoiceManagementV1Download404ErrorException invoiceManagementV1Download404ErrorException = (InvoiceManagementV1Download404ErrorException) cause;
+        invoiceManagementV1Download404ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Download500ErrorException) {
+        InvoiceManagementV1Download500ErrorException invoiceManagementV1Download500ErrorException = (InvoiceManagementV1Download500ErrorException) cause;
+        invoiceManagementV1Download500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -867,11 +1023,11 @@ invoiceController.downloadAsync(requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Download400ErrorException`](../../doc/models/invoice-management-v1-download-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Download401ErrorException`](../../doc/models/invoice-management-v1-download-401-error-exception.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Download403ErrorException`](../../doc/models/invoice-management-v1-download-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Download404ErrorException`](../../doc/models/invoice-management-v1-download-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Download500ErrorException`](../../doc/models/invoice-management-v1-download-500-error-exception.md) |
 
 
 # Eid Download
@@ -919,8 +1075,28 @@ invoiceController.eidDownloadAsync(requestId, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof InvoiceManagementV1Eiddownload400ErrorException) {
+        InvoiceManagementV1Eiddownload400ErrorException invoiceManagementV1Eiddownload400ErrorException = (InvoiceManagementV1Eiddownload400ErrorException) cause;
+        invoiceManagementV1Eiddownload400ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Eiddownload401ErrorException) {
+        InvoiceManagementV1Eiddownload401ErrorException invoiceManagementV1Eiddownload401ErrorException = (InvoiceManagementV1Eiddownload401ErrorException) cause;
+        invoiceManagementV1Eiddownload401ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Eiddownload403ErrorException) {
+        InvoiceManagementV1Eiddownload403ErrorException invoiceManagementV1Eiddownload403ErrorException = (InvoiceManagementV1Eiddownload403ErrorException) cause;
+        invoiceManagementV1Eiddownload403ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Eiddownload404ErrorException) {
+        InvoiceManagementV1Eiddownload404ErrorException invoiceManagementV1Eiddownload404ErrorException = (InvoiceManagementV1Eiddownload404ErrorException) cause;
+        invoiceManagementV1Eiddownload404ErrorException.printStackTrace();
+    } else if (cause instanceof InvoiceManagementV1Eiddownload500ErrorException) {
+        InvoiceManagementV1Eiddownload500ErrorException invoiceManagementV1Eiddownload500ErrorException = (InvoiceManagementV1Eiddownload500ErrorException) cause;
+        invoiceManagementV1Eiddownload500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -929,9 +1105,9 @@ invoiceController.eidDownloadAsync(requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Eiddownload400ErrorException`](../../doc/models/invoice-management-v1-eiddownload-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Eiddownload401ErrorException`](../../doc/models/invoice-management-v1-eiddownload-401-error-exception.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Eiddownload403ErrorException`](../../doc/models/invoice-management-v1-eiddownload-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Eiddownload404ErrorException`](../../doc/models/invoice-management-v1-eiddownload-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Eiddownload500ErrorException`](../../doc/models/invoice-management-v1-eiddownload-500-error-exception.md) |
 

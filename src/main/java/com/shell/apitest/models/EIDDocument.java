@@ -24,7 +24,6 @@ public class EIDDocument {
     private OptionalNullable<String> documentDate;
     private OptionalNullable<Integer> numberOfInvoices;
     private OptionalNullable<Integer> fileSize;
-    private OptionalNullable<String> documentStatus;
     private OptionalNullable<String> documentName;
 
     /**
@@ -43,7 +42,6 @@ public class EIDDocument {
      * @param  documentDate  String value for documentDate.
      * @param  numberOfInvoices  Integer value for numberOfInvoices.
      * @param  fileSize  Integer value for fileSize.
-     * @param  documentStatus  String value for documentStatus.
      * @param  documentName  String value for documentName.
      */
     public EIDDocument(
@@ -55,7 +53,6 @@ public class EIDDocument {
             String documentDate,
             Integer numberOfInvoices,
             Integer fileSize,
-            String documentStatus,
             String documentName) {
         this.documentId = OptionalNullable.of(documentId);
         this.accountGroupId = OptionalNullable.of(accountGroupId);
@@ -65,7 +62,6 @@ public class EIDDocument {
         this.documentDate = OptionalNullable.of(documentDate);
         this.numberOfInvoices = OptionalNullable.of(numberOfInvoices);
         this.fileSize = OptionalNullable.of(fileSize);
-        this.documentStatus = OptionalNullable.of(documentStatus);
         this.documentName = OptionalNullable.of(documentName);
     }
 
@@ -79,7 +75,6 @@ public class EIDDocument {
      * @param  documentDate  String value for documentDate.
      * @param  numberOfInvoices  Integer value for numberOfInvoices.
      * @param  fileSize  Integer value for fileSize.
-     * @param  documentStatus  String value for documentStatus.
      * @param  documentName  String value for documentName.
      */
 
@@ -87,8 +82,7 @@ public class EIDDocument {
             OptionalNullable<String> accountGroupId, OptionalNullable<String> accountGroupName,
             OptionalNullable<String> documentType, OptionalNullable<String> documentFormat,
             OptionalNullable<String> documentDate, OptionalNullable<Integer> numberOfInvoices,
-            OptionalNullable<Integer> fileSize, OptionalNullable<String> documentStatus,
-            OptionalNullable<String> documentName) {
+            OptionalNullable<Integer> fileSize, OptionalNullable<String> documentName) {
         this.documentId = documentId;
         this.accountGroupId = accountGroupId;
         this.accountGroupName = accountGroupName;
@@ -97,7 +91,6 @@ public class EIDDocument {
         this.documentDate = documentDate;
         this.numberOfInvoices = numberOfInvoices;
         this.fileSize = fileSize;
-        this.documentStatus = documentStatus;
         this.documentName = documentName;
     }
 
@@ -418,45 +411,6 @@ public class EIDDocument {
     }
 
     /**
-     * Internal Getter for DocumentStatus.
-     * Document status. Possible values: • NEW • VIEWED • DOWNLOADED • RESTORED
-     * @return Returns the Internal String
-     */
-    @JsonGetter("DocumentStatus")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<String> internalGetDocumentStatus() {
-        return this.documentStatus;
-    }
-
-    /**
-     * Getter for DocumentStatus.
-     * Document status. Possible values: • NEW • VIEWED • DOWNLOADED • RESTORED
-     * @return Returns the String
-     */
-    public String getDocumentStatus() {
-        return OptionalNullable.getFrom(documentStatus);
-    }
-
-    /**
-     * Setter for DocumentStatus.
-     * Document status. Possible values: • NEW • VIEWED • DOWNLOADED • RESTORED
-     * @param documentStatus Value for String
-     */
-    @JsonSetter("DocumentStatus")
-    public void setDocumentStatus(String documentStatus) {
-        this.documentStatus = OptionalNullable.of(documentStatus);
-    }
-
-    /**
-     * UnSetter for DocumentStatus.
-     * Document status. Possible values: • NEW • VIEWED • DOWNLOADED • RESTORED
-     */
-    public void unsetDocumentStatus() {
-        documentStatus = null;
-    }
-
-    /**
      * Internal Getter for DocumentName.
      * Document file name.
      * @return Returns the Internal String
@@ -505,7 +459,7 @@ public class EIDDocument {
                 + ", accountGroupName=" + accountGroupName + ", documentType=" + documentType
                 + ", documentFormat=" + documentFormat + ", documentDate=" + documentDate
                 + ", numberOfInvoices=" + numberOfInvoices + ", fileSize=" + fileSize
-                + ", documentStatus=" + documentStatus + ", documentName=" + documentName + "]";
+                + ", documentName=" + documentName + "]";
     }
 
     /**
@@ -523,7 +477,6 @@ public class EIDDocument {
         builder.documentDate = internalGetDocumentDate();
         builder.numberOfInvoices = internalGetNumberOfInvoices();
         builder.fileSize = internalGetFileSize();
-        builder.documentStatus = internalGetDocumentStatus();
         builder.documentName = internalGetDocumentName();
         return builder;
     }
@@ -540,7 +493,6 @@ public class EIDDocument {
         private OptionalNullable<String> documentDate;
         private OptionalNullable<Integer> numberOfInvoices;
         private OptionalNullable<Integer> fileSize;
-        private OptionalNullable<String> documentStatus;
         private OptionalNullable<String> documentName;
 
 
@@ -698,25 +650,6 @@ public class EIDDocument {
         }
 
         /**
-         * Setter for documentStatus.
-         * @param  documentStatus  String value for documentStatus.
-         * @return Builder
-         */
-        public Builder documentStatus(String documentStatus) {
-            this.documentStatus = OptionalNullable.of(documentStatus);
-            return this;
-        }
-
-        /**
-         * UnSetter for documentStatus.
-         * @return Builder
-         */
-        public Builder unsetDocumentStatus() {
-            documentStatus = null;
-            return this;
-        }
-
-        /**
          * Setter for documentName.
          * @param  documentName  String value for documentName.
          * @return Builder
@@ -741,8 +674,7 @@ public class EIDDocument {
          */
         public EIDDocument build() {
             return new EIDDocument(documentId, accountGroupId, accountGroupName, documentType,
-                    documentFormat, documentDate, numberOfInvoices, fileSize, documentStatus,
-                    documentName);
+                    documentFormat, documentDate, numberOfInvoices, fileSize, documentName);
         }
     }
 }

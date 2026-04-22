@@ -15,9 +15,9 @@ Pass below one of the value as per the required transaction period
 
 | Name |
 |  --- |
-| `Enum1` |
-| `Enum2` |
-| `Enum3` |
+| `ENUM_1` |
+| `ENUM_2` |
+| `ENUM_3` |
 
 ## Example
 

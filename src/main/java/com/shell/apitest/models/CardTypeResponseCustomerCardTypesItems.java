@@ -17,41 +17,33 @@ import java.util.List;
  * This is a model class for CardTypeResponseCustomerCardTypesItems type.
  */
 public class CardTypeResponseCustomerCardTypesItems {
-    private Boolean canHavePIN;
-    private OptionalNullable<Integer> cardTypeId;
-    private OptionalNullable<String> cardTypeName;
-    private OptionalNullable<String> colCoCurrencyCode;
-    private OptionalNullable<Integer> customerCardTypeId;
-    private CardDayTimeRestrictions dayTimeRestrictions;
-    private OptionalNullable<Integer> defaultPurchaseCategoryId;
-    private OptionalNullable<String> embossAccountName;
-    private OptionalNullable<Integer> expiryPeriod;
+    private Integer cardTypeId;
+    private Integer tokenTypeId;
+    private String cardTypeName;
+    private String tokenTypeName;
+    private Integer pANLength;
+    private Integer expiryPeriod;
+    private Boolean isNational;
+    private Boolean isInternational;
     private Boolean isCRT;
     private Boolean isFleet;
-    private Boolean isInternational;
-    private Boolean isNational;
-    private Boolean isPartnerSitesIncluded;
     private Boolean isShellSitesOnly;
+    private Boolean isPartnerSitesIncluded;
+    private Boolean canHavePIN;
     private Boolean isVirtual;
-    private Boolean isVisibleToCustomers;
     private Boolean isActive;
-    private Boolean isCardAvailableForDownload;
-    private Boolean isCardVisibleToCustomers;
-    private OptionalNullable<Integer> pANLength;
+    private OptionalNullable<Boolean> isCardAvailableForDownload;
+    private String colCoCurrencyCode;
+    private String colCoCurrencySymbol;
+    private OptionalNullable<Boolean> eMVContactless;
+    private OptionalNullable<Boolean> rFID;
+    private OptionalNullable<Boolean> pINChangeSupported;
+    private OptionalNullable<Boolean> requirePIN;
+    private OptionalNullable<Boolean> offlinePIN;
+    private Integer mediumTypeID;
+    private String mediumType;
+    private List<CartTypeAccount> cartTypeAccounts;
     private OptionalNullable<List<PurchaseCategories>> purchaseCategories;
-    private OptionalNullable<Integer> tokenTypeId;
-    private OptionalNullable<String> tokenTypeName;
-    private CardUsageRestrictions usageRestrictions;
-    private Boolean eMVContactless;
-    private Boolean rFID;
-    private Boolean pINChangeSupported;
-    private Boolean requirePIN;
-    private Boolean offlinePIN;
-    private Boolean isDefault;
-    private Boolean applicationsToShowNPIITokens;
-    private OptionalNullable<Integer> mediumTypeID;
-    private OptionalNullable<String> mediumType;
-    private OptionalNullable<String> colCoCurrencySymbol;
 
     /**
      * Default constructor.
@@ -61,278 +53,202 @@ public class CardTypeResponseCustomerCardTypesItems {
 
     /**
      * Initialization constructor.
-     * @param  canHavePIN  Boolean value for canHavePIN.
      * @param  cardTypeId  Integer value for cardTypeId.
+     * @param  tokenTypeId  Integer value for tokenTypeId.
      * @param  cardTypeName  String value for cardTypeName.
-     * @param  colCoCurrencyCode  String value for colCoCurrencyCode.
-     * @param  customerCardTypeId  Integer value for customerCardTypeId.
-     * @param  dayTimeRestrictions  CardDayTimeRestrictions value for dayTimeRestrictions.
-     * @param  defaultPurchaseCategoryId  Integer value for defaultPurchaseCategoryId.
-     * @param  embossAccountName  String value for embossAccountName.
+     * @param  tokenTypeName  String value for tokenTypeName.
+     * @param  pANLength  Integer value for pANLength.
      * @param  expiryPeriod  Integer value for expiryPeriod.
+     * @param  isNational  Boolean value for isNational.
+     * @param  isInternational  Boolean value for isInternational.
      * @param  isCRT  Boolean value for isCRT.
      * @param  isFleet  Boolean value for isFleet.
-     * @param  isInternational  Boolean value for isInternational.
-     * @param  isNational  Boolean value for isNational.
-     * @param  isPartnerSitesIncluded  Boolean value for isPartnerSitesIncluded.
      * @param  isShellSitesOnly  Boolean value for isShellSitesOnly.
+     * @param  isPartnerSitesIncluded  Boolean value for isPartnerSitesIncluded.
+     * @param  canHavePIN  Boolean value for canHavePIN.
      * @param  isVirtual  Boolean value for isVirtual.
-     * @param  isVisibleToCustomers  Boolean value for isVisibleToCustomers.
      * @param  isActive  Boolean value for isActive.
      * @param  isCardAvailableForDownload  Boolean value for isCardAvailableForDownload.
-     * @param  isCardVisibleToCustomers  Boolean value for isCardVisibleToCustomers.
-     * @param  pANLength  Integer value for pANLength.
-     * @param  purchaseCategories  List of PurchaseCategories value for purchaseCategories.
-     * @param  tokenTypeId  Integer value for tokenTypeId.
-     * @param  tokenTypeName  String value for tokenTypeName.
-     * @param  usageRestrictions  CardUsageRestrictions value for usageRestrictions.
+     * @param  colCoCurrencyCode  String value for colCoCurrencyCode.
+     * @param  colCoCurrencySymbol  String value for colCoCurrencySymbol.
      * @param  eMVContactless  Boolean value for eMVContactless.
      * @param  rFID  Boolean value for rFID.
      * @param  pINChangeSupported  Boolean value for pINChangeSupported.
      * @param  requirePIN  Boolean value for requirePIN.
      * @param  offlinePIN  Boolean value for offlinePIN.
-     * @param  isDefault  Boolean value for isDefault.
-     * @param  applicationsToShowNPIITokens  Boolean value for applicationsToShowNPIITokens.
      * @param  mediumTypeID  Integer value for mediumTypeID.
      * @param  mediumType  String value for mediumType.
-     * @param  colCoCurrencySymbol  String value for colCoCurrencySymbol.
+     * @param  cartTypeAccounts  List of CartTypeAccount value for cartTypeAccounts.
+     * @param  purchaseCategories  List of PurchaseCategories value for purchaseCategories.
      */
     public CardTypeResponseCustomerCardTypesItems(
-            Boolean canHavePIN,
             Integer cardTypeId,
+            Integer tokenTypeId,
             String cardTypeName,
-            String colCoCurrencyCode,
-            Integer customerCardTypeId,
-            CardDayTimeRestrictions dayTimeRestrictions,
-            Integer defaultPurchaseCategoryId,
-            String embossAccountName,
+            String tokenTypeName,
+            Integer pANLength,
             Integer expiryPeriod,
+            Boolean isNational,
+            Boolean isInternational,
             Boolean isCRT,
             Boolean isFleet,
-            Boolean isInternational,
-            Boolean isNational,
-            Boolean isPartnerSitesIncluded,
             Boolean isShellSitesOnly,
+            Boolean isPartnerSitesIncluded,
+            Boolean canHavePIN,
             Boolean isVirtual,
-            Boolean isVisibleToCustomers,
             Boolean isActive,
             Boolean isCardAvailableForDownload,
-            Boolean isCardVisibleToCustomers,
-            Integer pANLength,
-            List<PurchaseCategories> purchaseCategories,
-            Integer tokenTypeId,
-            String tokenTypeName,
-            CardUsageRestrictions usageRestrictions,
+            String colCoCurrencyCode,
+            String colCoCurrencySymbol,
             Boolean eMVContactless,
             Boolean rFID,
             Boolean pINChangeSupported,
             Boolean requirePIN,
             Boolean offlinePIN,
-            Boolean isDefault,
-            Boolean applicationsToShowNPIITokens,
             Integer mediumTypeID,
             String mediumType,
-            String colCoCurrencySymbol) {
-        this.canHavePIN = canHavePIN;
-        this.cardTypeId = OptionalNullable.of(cardTypeId);
-        this.cardTypeName = OptionalNullable.of(cardTypeName);
-        this.colCoCurrencyCode = OptionalNullable.of(colCoCurrencyCode);
-        this.customerCardTypeId = OptionalNullable.of(customerCardTypeId);
-        this.dayTimeRestrictions = dayTimeRestrictions;
-        this.defaultPurchaseCategoryId = OptionalNullable.of(defaultPurchaseCategoryId);
-        this.embossAccountName = OptionalNullable.of(embossAccountName);
-        this.expiryPeriod = OptionalNullable.of(expiryPeriod);
+            List<CartTypeAccount> cartTypeAccounts,
+            List<PurchaseCategories> purchaseCategories) {
+        this.cardTypeId = cardTypeId;
+        this.tokenTypeId = tokenTypeId;
+        this.cardTypeName = cardTypeName;
+        this.tokenTypeName = tokenTypeName;
+        this.pANLength = pANLength;
+        this.expiryPeriod = expiryPeriod;
+        this.isNational = isNational;
+        this.isInternational = isInternational;
         this.isCRT = isCRT;
         this.isFleet = isFleet;
-        this.isInternational = isInternational;
-        this.isNational = isNational;
-        this.isPartnerSitesIncluded = isPartnerSitesIncluded;
         this.isShellSitesOnly = isShellSitesOnly;
+        this.isPartnerSitesIncluded = isPartnerSitesIncluded;
+        this.canHavePIN = canHavePIN;
         this.isVirtual = isVirtual;
-        this.isVisibleToCustomers = isVisibleToCustomers;
         this.isActive = isActive;
-        this.isCardAvailableForDownload = isCardAvailableForDownload;
-        this.isCardVisibleToCustomers = isCardVisibleToCustomers;
-        this.pANLength = OptionalNullable.of(pANLength);
+        this.isCardAvailableForDownload = OptionalNullable.of(isCardAvailableForDownload);
+        this.colCoCurrencyCode = colCoCurrencyCode;
+        this.colCoCurrencySymbol = colCoCurrencySymbol;
+        this.eMVContactless = OptionalNullable.of(eMVContactless);
+        this.rFID = OptionalNullable.of(rFID);
+        this.pINChangeSupported = OptionalNullable.of(pINChangeSupported);
+        this.requirePIN = OptionalNullable.of(requirePIN);
+        this.offlinePIN = OptionalNullable.of(offlinePIN);
+        this.mediumTypeID = mediumTypeID;
+        this.mediumType = mediumType;
+        this.cartTypeAccounts = cartTypeAccounts;
         this.purchaseCategories = OptionalNullable.of(purchaseCategories);
-        this.tokenTypeId = OptionalNullable.of(tokenTypeId);
-        this.tokenTypeName = OptionalNullable.of(tokenTypeName);
-        this.usageRestrictions = usageRestrictions;
-        this.eMVContactless = eMVContactless;
-        this.rFID = rFID;
-        this.pINChangeSupported = pINChangeSupported;
-        this.requirePIN = requirePIN;
-        this.offlinePIN = offlinePIN;
-        this.isDefault = isDefault;
-        this.applicationsToShowNPIITokens = applicationsToShowNPIITokens;
-        this.mediumTypeID = OptionalNullable.of(mediumTypeID);
-        this.mediumType = OptionalNullable.of(mediumType);
-        this.colCoCurrencySymbol = OptionalNullable.of(colCoCurrencySymbol);
     }
 
     /**
      * Initialization constructor.
-     * @param  canHavePIN  Boolean value for canHavePIN.
      * @param  cardTypeId  Integer value for cardTypeId.
+     * @param  tokenTypeId  Integer value for tokenTypeId.
      * @param  cardTypeName  String value for cardTypeName.
-     * @param  colCoCurrencyCode  String value for colCoCurrencyCode.
-     * @param  customerCardTypeId  Integer value for customerCardTypeId.
-     * @param  dayTimeRestrictions  CardDayTimeRestrictions value for dayTimeRestrictions.
-     * @param  defaultPurchaseCategoryId  Integer value for defaultPurchaseCategoryId.
-     * @param  embossAccountName  String value for embossAccountName.
+     * @param  tokenTypeName  String value for tokenTypeName.
+     * @param  pANLength  Integer value for pANLength.
      * @param  expiryPeriod  Integer value for expiryPeriod.
+     * @param  isNational  Boolean value for isNational.
+     * @param  isInternational  Boolean value for isInternational.
      * @param  isCRT  Boolean value for isCRT.
      * @param  isFleet  Boolean value for isFleet.
-     * @param  isInternational  Boolean value for isInternational.
-     * @param  isNational  Boolean value for isNational.
-     * @param  isPartnerSitesIncluded  Boolean value for isPartnerSitesIncluded.
      * @param  isShellSitesOnly  Boolean value for isShellSitesOnly.
+     * @param  isPartnerSitesIncluded  Boolean value for isPartnerSitesIncluded.
+     * @param  canHavePIN  Boolean value for canHavePIN.
      * @param  isVirtual  Boolean value for isVirtual.
-     * @param  isVisibleToCustomers  Boolean value for isVisibleToCustomers.
      * @param  isActive  Boolean value for isActive.
      * @param  isCardAvailableForDownload  Boolean value for isCardAvailableForDownload.
-     * @param  isCardVisibleToCustomers  Boolean value for isCardVisibleToCustomers.
-     * @param  pANLength  Integer value for pANLength.
-     * @param  purchaseCategories  List of PurchaseCategories value for purchaseCategories.
-     * @param  tokenTypeId  Integer value for tokenTypeId.
-     * @param  tokenTypeName  String value for tokenTypeName.
-     * @param  usageRestrictions  CardUsageRestrictions value for usageRestrictions.
+     * @param  colCoCurrencyCode  String value for colCoCurrencyCode.
+     * @param  colCoCurrencySymbol  String value for colCoCurrencySymbol.
      * @param  eMVContactless  Boolean value for eMVContactless.
      * @param  rFID  Boolean value for rFID.
      * @param  pINChangeSupported  Boolean value for pINChangeSupported.
      * @param  requirePIN  Boolean value for requirePIN.
      * @param  offlinePIN  Boolean value for offlinePIN.
-     * @param  isDefault  Boolean value for isDefault.
-     * @param  applicationsToShowNPIITokens  Boolean value for applicationsToShowNPIITokens.
      * @param  mediumTypeID  Integer value for mediumTypeID.
      * @param  mediumType  String value for mediumType.
-     * @param  colCoCurrencySymbol  String value for colCoCurrencySymbol.
+     * @param  cartTypeAccounts  List of CartTypeAccount value for cartTypeAccounts.
+     * @param  purchaseCategories  List of PurchaseCategories value for purchaseCategories.
      */
 
-    protected CardTypeResponseCustomerCardTypesItems(Boolean canHavePIN,
-            OptionalNullable<Integer> cardTypeId, OptionalNullable<String> cardTypeName,
-            OptionalNullable<String> colCoCurrencyCode,
-            OptionalNullable<Integer> customerCardTypeId,
-            CardDayTimeRestrictions dayTimeRestrictions,
-            OptionalNullable<Integer> defaultPurchaseCategoryId,
-            OptionalNullable<String> embossAccountName, OptionalNullable<Integer> expiryPeriod,
-            Boolean isCRT, Boolean isFleet, Boolean isInternational, Boolean isNational,
-            Boolean isPartnerSitesIncluded, Boolean isShellSitesOnly, Boolean isVirtual,
-            Boolean isVisibleToCustomers, Boolean isActive, Boolean isCardAvailableForDownload,
-            Boolean isCardVisibleToCustomers, OptionalNullable<Integer> pANLength,
-            OptionalNullable<List<PurchaseCategories>> purchaseCategories,
-            OptionalNullable<Integer> tokenTypeId, OptionalNullable<String> tokenTypeName,
-            CardUsageRestrictions usageRestrictions, Boolean eMVContactless, Boolean rFID,
-            Boolean pINChangeSupported, Boolean requirePIN, Boolean offlinePIN, Boolean isDefault,
-            Boolean applicationsToShowNPIITokens, OptionalNullable<Integer> mediumTypeID,
-            OptionalNullable<String> mediumType, OptionalNullable<String> colCoCurrencySymbol) {
-        this.canHavePIN = canHavePIN;
+    protected CardTypeResponseCustomerCardTypesItems(Integer cardTypeId, Integer tokenTypeId,
+            String cardTypeName, String tokenTypeName, Integer pANLength, Integer expiryPeriod,
+            Boolean isNational, Boolean isInternational, Boolean isCRT, Boolean isFleet,
+            Boolean isShellSitesOnly, Boolean isPartnerSitesIncluded, Boolean canHavePIN,
+            Boolean isVirtual, Boolean isActive,
+            OptionalNullable<Boolean> isCardAvailableForDownload, String colCoCurrencyCode,
+            String colCoCurrencySymbol, OptionalNullable<Boolean> eMVContactless,
+            OptionalNullable<Boolean> rFID, OptionalNullable<Boolean> pINChangeSupported,
+            OptionalNullable<Boolean> requirePIN, OptionalNullable<Boolean> offlinePIN,
+            Integer mediumTypeID, String mediumType, List<CartTypeAccount> cartTypeAccounts,
+            OptionalNullable<List<PurchaseCategories>> purchaseCategories) {
         this.cardTypeId = cardTypeId;
+        this.tokenTypeId = tokenTypeId;
         this.cardTypeName = cardTypeName;
-        this.colCoCurrencyCode = colCoCurrencyCode;
-        this.customerCardTypeId = customerCardTypeId;
-        this.dayTimeRestrictions = dayTimeRestrictions;
-        this.defaultPurchaseCategoryId = defaultPurchaseCategoryId;
-        this.embossAccountName = embossAccountName;
+        this.tokenTypeName = tokenTypeName;
+        this.pANLength = pANLength;
         this.expiryPeriod = expiryPeriod;
+        this.isNational = isNational;
+        this.isInternational = isInternational;
         this.isCRT = isCRT;
         this.isFleet = isFleet;
-        this.isInternational = isInternational;
-        this.isNational = isNational;
-        this.isPartnerSitesIncluded = isPartnerSitesIncluded;
         this.isShellSitesOnly = isShellSitesOnly;
+        this.isPartnerSitesIncluded = isPartnerSitesIncluded;
+        this.canHavePIN = canHavePIN;
         this.isVirtual = isVirtual;
-        this.isVisibleToCustomers = isVisibleToCustomers;
         this.isActive = isActive;
         this.isCardAvailableForDownload = isCardAvailableForDownload;
-        this.isCardVisibleToCustomers = isCardVisibleToCustomers;
-        this.pANLength = pANLength;
-        this.purchaseCategories = purchaseCategories;
-        this.tokenTypeId = tokenTypeId;
-        this.tokenTypeName = tokenTypeName;
-        this.usageRestrictions = usageRestrictions;
+        this.colCoCurrencyCode = colCoCurrencyCode;
+        this.colCoCurrencySymbol = colCoCurrencySymbol;
         this.eMVContactless = eMVContactless;
         this.rFID = rFID;
         this.pINChangeSupported = pINChangeSupported;
         this.requirePIN = requirePIN;
         this.offlinePIN = offlinePIN;
-        this.isDefault = isDefault;
-        this.applicationsToShowNPIITokens = applicationsToShowNPIITokens;
         this.mediumTypeID = mediumTypeID;
         this.mediumType = mediumType;
-        this.colCoCurrencySymbol = colCoCurrencySymbol;
-    }
-
-    /**
-     * Getter for CanHavePIN.
-     * True/False – Whether the cards of this card type can have PIN.
-     * @return Returns the Boolean
-     */
-    @JsonGetter("CanHavePIN")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Boolean getCanHavePIN() {
-        return canHavePIN;
-    }
-
-    /**
-     * Setter for CanHavePIN.
-     * True/False – Whether the cards of this card type can have PIN.
-     * @param canHavePIN Value for Boolean
-     */
-    @JsonSetter("CanHavePIN")
-    public void setCanHavePIN(Boolean canHavePIN) {
-        this.canHavePIN = canHavePIN;
-    }
-
-    /**
-     * Internal Getter for CardTypeId.
-     * Card Type Id
-     * @return Returns the Internal Integer
-     */
-    @JsonGetter("CardTypeId")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<Integer> internalGetCardTypeId() {
-        return this.cardTypeId;
+        this.cartTypeAccounts = cartTypeAccounts;
+        this.purchaseCategories = purchaseCategories;
     }
 
     /**
      * Getter for CardTypeId.
-     * Card Type Id
+     * Card Type Id in Cards Platform.
      * @return Returns the Integer
      */
+    @JsonGetter("CardTypeId")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public Integer getCardTypeId() {
-        return OptionalNullable.getFrom(cardTypeId);
+        return cardTypeId;
     }
 
     /**
      * Setter for CardTypeId.
-     * Card Type Id
+     * Card Type Id in Cards Platform.
      * @param cardTypeId Value for Integer
      */
     @JsonSetter("CardTypeId")
     public void setCardTypeId(Integer cardTypeId) {
-        this.cardTypeId = OptionalNullable.of(cardTypeId);
+        this.cardTypeId = cardTypeId;
     }
 
     /**
-     * UnSetter for CardTypeId.
-     * Card Type Id
+     * Getter for TokenTypeId.
+     * Token type identifier.
+     * @return Returns the Integer
      */
-    public void unsetCardTypeId() {
-        cardTypeId = null;
-    }
-
-    /**
-     * Internal Getter for CardTypeName.
-     * Card Type Name.
-     * @return Returns the Internal String
-     */
-    @JsonGetter("CardTypeName")
+    @JsonGetter("TokenTypeId")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<String> internalGetCardTypeName() {
-        return this.cardTypeName;
+    public Integer getTokenTypeId() {
+        return tokenTypeId;
+    }
+
+    /**
+     * Setter for TokenTypeId.
+     * Token type identifier.
+     * @param tokenTypeId Value for Integer
+     */
+    @JsonSetter("TokenTypeId")
+    public void setTokenTypeId(Integer tokenTypeId) {
+        this.tokenTypeId = tokenTypeId;
     }
 
     /**
@@ -340,8 +256,10 @@ public class CardTypeResponseCustomerCardTypesItems {
      * Card Type Name.
      * @return Returns the String
      */
+    @JsonGetter("CardTypeName")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public String getCardTypeName() {
-        return OptionalNullable.getFrom(cardTypeName);
+        return cardTypeName;
     }
 
     /**
@@ -351,202 +269,49 @@ public class CardTypeResponseCustomerCardTypesItems {
      */
     @JsonSetter("CardTypeName")
     public void setCardTypeName(String cardTypeName) {
-        this.cardTypeName = OptionalNullable.of(cardTypeName);
+        this.cardTypeName = cardTypeName;
     }
 
     /**
-     * UnSetter for CardTypeName.
-     * Card Type Name.
-     */
-    public void unsetCardTypeName() {
-        cardTypeName = null;
-    }
-
-    /**
-     * Internal Getter for ColCoCurrencyCode.
-     * ISO currency code of the country.
-     * @return Returns the Internal String
-     */
-    @JsonGetter("ColCoCurrencyCode")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<String> internalGetColCoCurrencyCode() {
-        return this.colCoCurrencyCode;
-    }
-
-    /**
-     * Getter for ColCoCurrencyCode.
-     * ISO currency code of the country.
+     * Getter for TokenTypeName.
+     * Token Type Name.
      * @return Returns the String
      */
-    public String getColCoCurrencyCode() {
-        return OptionalNullable.getFrom(colCoCurrencyCode);
-    }
-
-    /**
-     * Setter for ColCoCurrencyCode.
-     * ISO currency code of the country.
-     * @param colCoCurrencyCode Value for String
-     */
-    @JsonSetter("ColCoCurrencyCode")
-    public void setColCoCurrencyCode(String colCoCurrencyCode) {
-        this.colCoCurrencyCode = OptionalNullable.of(colCoCurrencyCode);
-    }
-
-    /**
-     * UnSetter for ColCoCurrencyCode.
-     * ISO currency code of the country.
-     */
-    public void unsetColCoCurrencyCode() {
-        colCoCurrencyCode = null;
-    }
-
-    /**
-     * Internal Getter for CustomerCardTypeId.
-     * Customer Card Type Id
-     * @return Returns the Internal Integer
-     */
-    @JsonGetter("CustomerCardTypeId")
+    @JsonGetter("TokenTypeName")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<Integer> internalGetCustomerCardTypeId() {
-        return this.customerCardTypeId;
+    public String getTokenTypeName() {
+        return tokenTypeName;
     }
 
     /**
-     * Getter for CustomerCardTypeId.
-     * Customer Card Type Id
+     * Setter for TokenTypeName.
+     * Token Type Name.
+     * @param tokenTypeName Value for String
+     */
+    @JsonSetter("TokenTypeName")
+    public void setTokenTypeName(String tokenTypeName) {
+        this.tokenTypeName = tokenTypeName;
+    }
+
+    /**
+     * Getter for PANLength.
+     * PAN Length.
      * @return Returns the Integer
      */
-    public Integer getCustomerCardTypeId() {
-        return OptionalNullable.getFrom(customerCardTypeId);
-    }
-
-    /**
-     * Setter for CustomerCardTypeId.
-     * Customer Card Type Id
-     * @param customerCardTypeId Value for Integer
-     */
-    @JsonSetter("CustomerCardTypeId")
-    public void setCustomerCardTypeId(Integer customerCardTypeId) {
-        this.customerCardTypeId = OptionalNullable.of(customerCardTypeId);
-    }
-
-    /**
-     * UnSetter for CustomerCardTypeId.
-     * Customer Card Type Id
-     */
-    public void unsetCustomerCardTypeId() {
-        customerCardTypeId = null;
-    }
-
-    /**
-     * Getter for DayTimeRestrictions.
-     * @return Returns the CardDayTimeRestrictions
-     */
-    @JsonGetter("DayTimeRestrictions")
+    @JsonGetter("PANLength")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public CardDayTimeRestrictions getDayTimeRestrictions() {
-        return dayTimeRestrictions;
+    public Integer getPANLength() {
+        return pANLength;
     }
 
     /**
-     * Setter for DayTimeRestrictions.
-     * @param dayTimeRestrictions Value for CardDayTimeRestrictions
+     * Setter for PANLength.
+     * PAN Length.
+     * @param pANLength Value for Integer
      */
-    @JsonSetter("DayTimeRestrictions")
-    public void setDayTimeRestrictions(CardDayTimeRestrictions dayTimeRestrictions) {
-        this.dayTimeRestrictions = dayTimeRestrictions;
-    }
-
-    /**
-     * Internal Getter for DefaultPurchaseCategoryId.
-     * Default Purchase category of the card type.
-     * @return Returns the Internal Integer
-     */
-    @JsonGetter("DefaultPurchaseCategoryId")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<Integer> internalGetDefaultPurchaseCategoryId() {
-        return this.defaultPurchaseCategoryId;
-    }
-
-    /**
-     * Getter for DefaultPurchaseCategoryId.
-     * Default Purchase category of the card type.
-     * @return Returns the Integer
-     */
-    public Integer getDefaultPurchaseCategoryId() {
-        return OptionalNullable.getFrom(defaultPurchaseCategoryId);
-    }
-
-    /**
-     * Setter for DefaultPurchaseCategoryId.
-     * Default Purchase category of the card type.
-     * @param defaultPurchaseCategoryId Value for Integer
-     */
-    @JsonSetter("DefaultPurchaseCategoryId")
-    public void setDefaultPurchaseCategoryId(Integer defaultPurchaseCategoryId) {
-        this.defaultPurchaseCategoryId = OptionalNullable.of(defaultPurchaseCategoryId);
-    }
-
-    /**
-     * UnSetter for DefaultPurchaseCategoryId.
-     * Default Purchase category of the card type.
-     */
-    public void unsetDefaultPurchaseCategoryId() {
-        defaultPurchaseCategoryId = null;
-    }
-
-    /**
-     * Internal Getter for EmbossAccountName.
-     * Default Name to be embossed on the card
-     * @return Returns the Internal String
-     */
-    @JsonGetter("EmbossAccountName")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<String> internalGetEmbossAccountName() {
-        return this.embossAccountName;
-    }
-
-    /**
-     * Getter for EmbossAccountName.
-     * Default Name to be embossed on the card
-     * @return Returns the String
-     */
-    public String getEmbossAccountName() {
-        return OptionalNullable.getFrom(embossAccountName);
-    }
-
-    /**
-     * Setter for EmbossAccountName.
-     * Default Name to be embossed on the card
-     * @param embossAccountName Value for String
-     */
-    @JsonSetter("EmbossAccountName")
-    public void setEmbossAccountName(String embossAccountName) {
-        this.embossAccountName = OptionalNullable.of(embossAccountName);
-    }
-
-    /**
-     * UnSetter for EmbossAccountName.
-     * Default Name to be embossed on the card
-     */
-    public void unsetEmbossAccountName() {
-        embossAccountName = null;
-    }
-
-    /**
-     * Internal Getter for ExpiryPeriod.
-     * Default Expiry period.
-     * @return Returns the Internal Integer
-     */
-    @JsonGetter("ExpiryPeriod")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<Integer> internalGetExpiryPeriod() {
-        return this.expiryPeriod;
+    @JsonSetter("PANLength")
+    public void setPANLength(Integer pANLength) {
+        this.pANLength = pANLength;
     }
 
     /**
@@ -554,8 +319,10 @@ public class CardTypeResponseCustomerCardTypesItems {
      * Default Expiry period.
      * @return Returns the Integer
      */
+    @JsonGetter("ExpiryPeriod")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public Integer getExpiryPeriod() {
-        return OptionalNullable.getFrom(expiryPeriod);
+        return expiryPeriod;
     }
 
     /**
@@ -565,15 +332,49 @@ public class CardTypeResponseCustomerCardTypesItems {
      */
     @JsonSetter("ExpiryPeriod")
     public void setExpiryPeriod(Integer expiryPeriod) {
-        this.expiryPeriod = OptionalNullable.of(expiryPeriod);
+        this.expiryPeriod = expiryPeriod;
     }
 
     /**
-     * UnSetter for ExpiryPeriod.
-     * Default Expiry period.
+     * Getter for IsNational.
+     * True/False – Whether it is a National Card type or not.
+     * @return Returns the Boolean
      */
-    public void unsetExpiryPeriod() {
-        expiryPeriod = null;
+    @JsonGetter("IsNational")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public Boolean getIsNational() {
+        return isNational;
+    }
+
+    /**
+     * Setter for IsNational.
+     * True/False – Whether it is a National Card type or not.
+     * @param isNational Value for Boolean
+     */
+    @JsonSetter("IsNational")
+    public void setIsNational(Boolean isNational) {
+        this.isNational = isNational;
+    }
+
+    /**
+     * Getter for IsInternational.
+     * True/False – Whether it is an International Card type or not.
+     * @return Returns the Boolean
+     */
+    @JsonGetter("IsInternational")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public Boolean getIsInternational() {
+        return isInternational;
+    }
+
+    /**
+     * Setter for IsInternational.
+     * True/False – Whether it is an International Card type or not.
+     * @param isInternational Value for Boolean
+     */
+    @JsonSetter("IsInternational")
+    public void setIsInternational(Boolean isInternational) {
+        this.isInternational = isInternational;
     }
 
     /**
@@ -619,45 +420,24 @@ public class CardTypeResponseCustomerCardTypesItems {
     }
 
     /**
-     * Getter for IsInternational.
-     * True/False – Whether it is an International Card type or not.
+     * Getter for IsShellSitesOnly.
+     * True/False – Whether it is only allowed in Shell Stations or not.
      * @return Returns the Boolean
      */
-    @JsonGetter("IsInternational")
+    @JsonGetter("IsShellSitesOnly")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Boolean getIsInternational() {
-        return isInternational;
+    public Boolean getIsShellSitesOnly() {
+        return isShellSitesOnly;
     }
 
     /**
-     * Setter for IsInternational.
-     * True/False – Whether it is an International Card type or not.
-     * @param isInternational Value for Boolean
+     * Setter for IsShellSitesOnly.
+     * True/False – Whether it is only allowed in Shell Stations or not.
+     * @param isShellSitesOnly Value for Boolean
      */
-    @JsonSetter("IsInternational")
-    public void setIsInternational(Boolean isInternational) {
-        this.isInternational = isInternational;
-    }
-
-    /**
-     * Getter for IsNational.
-     * True/False – Whether it is a National Card type or not.
-     * @return Returns the Boolean
-     */
-    @JsonGetter("IsNational")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Boolean getIsNational() {
-        return isNational;
-    }
-
-    /**
-     * Setter for IsNational.
-     * True/False – Whether it is a National Card type or not.
-     * @param isNational Value for Boolean
-     */
-    @JsonSetter("IsNational")
-    public void setIsNational(Boolean isNational) {
-        this.isNational = isNational;
+    @JsonSetter("IsShellSitesOnly")
+    public void setIsShellSitesOnly(Boolean isShellSitesOnly) {
+        this.isShellSitesOnly = isShellSitesOnly;
     }
 
     /**
@@ -682,24 +462,24 @@ public class CardTypeResponseCustomerCardTypesItems {
     }
 
     /**
-     * Getter for IsShellSitesOnly.
-     * True/False – Whether it is only allowed in Shell Stations or not.
+     * Getter for CanHavePIN.
+     * True/False – Whether the cards of this card type can have PIN.
      * @return Returns the Boolean
      */
-    @JsonGetter("IsShellSitesOnly")
+    @JsonGetter("CanHavePIN")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Boolean getIsShellSitesOnly() {
-        return isShellSitesOnly;
+    public Boolean getCanHavePIN() {
+        return canHavePIN;
     }
 
     /**
-     * Setter for IsShellSitesOnly.
-     * True/False – Whether it is only allowed in Shell Stations or not.
-     * @param isShellSitesOnly Value for Boolean
+     * Setter for CanHavePIN.
+     * True/False – Whether the cards of this card type can have PIN.
+     * @param canHavePIN Value for Boolean
      */
-    @JsonSetter("IsShellSitesOnly")
-    public void setIsShellSitesOnly(Boolean isShellSitesOnly) {
-        this.isShellSitesOnly = isShellSitesOnly;
+    @JsonSetter("CanHavePIN")
+    public void setCanHavePIN(Boolean canHavePIN) {
+        this.canHavePIN = canHavePIN;
     }
 
     /**
@@ -724,27 +504,6 @@ public class CardTypeResponseCustomerCardTypesItems {
     }
 
     /**
-     * Getter for IsVisibleToCustomers.
-     * True/False – Whether this card type is visible in SFH for card ordering.
-     * @return Returns the Boolean
-     */
-    @JsonGetter("IsVisibleToCustomers")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Boolean getIsVisibleToCustomers() {
-        return isVisibleToCustomers;
-    }
-
-    /**
-     * Setter for IsVisibleToCustomers.
-     * True/False – Whether this card type is visible in SFH for card ordering.
-     * @param isVisibleToCustomers Value for Boolean
-     */
-    @JsonSetter("IsVisibleToCustomers")
-    public void setIsVisibleToCustomers(Boolean isVisibleToCustomers) {
-        this.isVisibleToCustomers = isVisibleToCustomers;
-    }
-
-    /**
      * Getter for IsActive.
      * Whether card type is active or not.
      * @return Returns the Boolean
@@ -766,80 +525,350 @@ public class CardTypeResponseCustomerCardTypesItems {
     }
 
     /**
-     * Getter for IsCardAvailableForDownload.
-     * @return Returns the Boolean
+     * Internal Getter for IsCardAvailableForDownload.
+     * Whether card type is available for download.
+     * @return Returns the Internal Boolean
      */
     @JsonGetter("IsCardAvailableForDownload")
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<Boolean> internalGetIsCardAvailableForDownload() {
+        return this.isCardAvailableForDownload;
+    }
+
+    /**
+     * Getter for IsCardAvailableForDownload.
+     * Whether card type is available for download.
+     * @return Returns the Boolean
+     */
     public Boolean getIsCardAvailableForDownload() {
-        return isCardAvailableForDownload;
+        return OptionalNullable.getFrom(isCardAvailableForDownload);
     }
 
     /**
      * Setter for IsCardAvailableForDownload.
+     * Whether card type is available for download.
      * @param isCardAvailableForDownload Value for Boolean
      */
     @JsonSetter("IsCardAvailableForDownload")
     public void setIsCardAvailableForDownload(Boolean isCardAvailableForDownload) {
-        this.isCardAvailableForDownload = isCardAvailableForDownload;
+        this.isCardAvailableForDownload = OptionalNullable.of(isCardAvailableForDownload);
     }
 
     /**
-     * Getter for IsCardVisibleToCustomers.
-     * @return Returns the Boolean
+     * UnSetter for IsCardAvailableForDownload.
+     * Whether card type is available for download.
      */
-    @JsonGetter("IsCardVisibleToCustomers")
+    public void unsetIsCardAvailableForDownload() {
+        isCardAvailableForDownload = null;
+    }
+
+    /**
+     * Getter for ColCoCurrencyCode.
+     * ISO currency code of the country.
+     * @return Returns the String
+     */
+    @JsonGetter("ColCoCurrencyCode")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Boolean getIsCardVisibleToCustomers() {
-        return isCardVisibleToCustomers;
+    public String getColCoCurrencyCode() {
+        return colCoCurrencyCode;
     }
 
     /**
-     * Setter for IsCardVisibleToCustomers.
-     * @param isCardVisibleToCustomers Value for Boolean
+     * Setter for ColCoCurrencyCode.
+     * ISO currency code of the country.
+     * @param colCoCurrencyCode Value for String
      */
-    @JsonSetter("IsCardVisibleToCustomers")
-    public void setIsCardVisibleToCustomers(Boolean isCardVisibleToCustomers) {
-        this.isCardVisibleToCustomers = isCardVisibleToCustomers;
+    @JsonSetter("ColCoCurrencyCode")
+    public void setColCoCurrencyCode(String colCoCurrencyCode) {
+        this.colCoCurrencyCode = colCoCurrencyCode;
     }
 
     /**
-     * Internal Getter for PANLength.
-     * PAN Length
-     * @return Returns the Internal Integer
+     * Getter for ColCoCurrencySymbol.
+     * Currency symbol of the country.
+     * @return Returns the String
      */
-    @JsonGetter("PANLength")
+    @JsonGetter("ColCoCurrencySymbol")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public String getColCoCurrencySymbol() {
+        return colCoCurrencySymbol;
+    }
+
+    /**
+     * Setter for ColCoCurrencySymbol.
+     * Currency symbol of the country.
+     * @param colCoCurrencySymbol Value for String
+     */
+    @JsonSetter("ColCoCurrencySymbol")
+    public void setColCoCurrencySymbol(String colCoCurrencySymbol) {
+        this.colCoCurrencySymbol = colCoCurrencySymbol;
+    }
+
+    /**
+     * Internal Getter for EMVContactless.
+     * Is Europay, MasterCard, and Visa Contactless enabled or not.
+     * @return Returns the Internal Boolean
+     */
+    @JsonGetter("EMVContactless")
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<Integer> internalGetPANLength() {
-        return this.pANLength;
+    protected OptionalNullable<Boolean> internalGetEMVContactless() {
+        return this.eMVContactless;
     }
 
     /**
-     * Getter for PANLength.
-     * PAN Length
+     * Getter for EMVContactless.
+     * Is Europay, MasterCard, and Visa Contactless enabled or not.
+     * @return Returns the Boolean
+     */
+    public Boolean getEMVContactless() {
+        return OptionalNullable.getFrom(eMVContactless);
+    }
+
+    /**
+     * Setter for EMVContactless.
+     * Is Europay, MasterCard, and Visa Contactless enabled or not.
+     * @param eMVContactless Value for Boolean
+     */
+    @JsonSetter("EMVContactless")
+    public void setEMVContactless(Boolean eMVContactless) {
+        this.eMVContactless = OptionalNullable.of(eMVContactless);
+    }
+
+    /**
+     * UnSetter for EMVContactless.
+     * Is Europay, MasterCard, and Visa Contactless enabled or not.
+     */
+    public void unsetEMVContactless() {
+        eMVContactless = null;
+    }
+
+    /**
+     * Internal Getter for RFID.
+     * Whether the card type is enabled for RFID (Radio Frequency Identification)
+     * @return Returns the Internal Boolean
+     */
+    @JsonGetter("RFID")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<Boolean> internalGetRFID() {
+        return this.rFID;
+    }
+
+    /**
+     * Getter for RFID.
+     * Whether the card type is enabled for RFID (Radio Frequency Identification)
+     * @return Returns the Boolean
+     */
+    public Boolean getRFID() {
+        return OptionalNullable.getFrom(rFID);
+    }
+
+    /**
+     * Setter for RFID.
+     * Whether the card type is enabled for RFID (Radio Frequency Identification)
+     * @param rFID Value for Boolean
+     */
+    @JsonSetter("RFID")
+    public void setRFID(Boolean rFID) {
+        this.rFID = OptionalNullable.of(rFID);
+    }
+
+    /**
+     * UnSetter for RFID.
+     * Whether the card type is enabled for RFID (Radio Frequency Identification)
+     */
+    public void unsetRFID() {
+        rFID = null;
+    }
+
+    /**
+     * Internal Getter for PINChangeSupported.
+     * PIN change supported or not.
+     * @return Returns the Internal Boolean
+     */
+    @JsonGetter("PINChangeSupported")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<Boolean> internalGetPINChangeSupported() {
+        return this.pINChangeSupported;
+    }
+
+    /**
+     * Getter for PINChangeSupported.
+     * PIN change supported or not.
+     * @return Returns the Boolean
+     */
+    public Boolean getPINChangeSupported() {
+        return OptionalNullable.getFrom(pINChangeSupported);
+    }
+
+    /**
+     * Setter for PINChangeSupported.
+     * PIN change supported or not.
+     * @param pINChangeSupported Value for Boolean
+     */
+    @JsonSetter("PINChangeSupported")
+    public void setPINChangeSupported(Boolean pINChangeSupported) {
+        this.pINChangeSupported = OptionalNullable.of(pINChangeSupported);
+    }
+
+    /**
+     * UnSetter for PINChangeSupported.
+     * PIN change supported or not.
+     */
+    public void unsetPINChangeSupported() {
+        pINChangeSupported = null;
+    }
+
+    /**
+     * Internal Getter for RequirePIN.
+     * Whether a PIN is mandatory for the cards of this card type.
+     * @return Returns the Internal Boolean
+     */
+    @JsonGetter("RequirePIN")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<Boolean> internalGetRequirePIN() {
+        return this.requirePIN;
+    }
+
+    /**
+     * Getter for RequirePIN.
+     * Whether a PIN is mandatory for the cards of this card type.
+     * @return Returns the Boolean
+     */
+    public Boolean getRequirePIN() {
+        return OptionalNullable.getFrom(requirePIN);
+    }
+
+    /**
+     * Setter for RequirePIN.
+     * Whether a PIN is mandatory for the cards of this card type.
+     * @param requirePIN Value for Boolean
+     */
+    @JsonSetter("RequirePIN")
+    public void setRequirePIN(Boolean requirePIN) {
+        this.requirePIN = OptionalNullable.of(requirePIN);
+    }
+
+    /**
+     * UnSetter for RequirePIN.
+     * Whether a PIN is mandatory for the cards of this card type.
+     */
+    public void unsetRequirePIN() {
+        requirePIN = null;
+    }
+
+    /**
+     * Internal Getter for OfflinePIN.
+     * Whether offline PIN is enabled or not.
+     * @return Returns the Internal Boolean
+     */
+    @JsonGetter("OfflinePIN")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<Boolean> internalGetOfflinePIN() {
+        return this.offlinePIN;
+    }
+
+    /**
+     * Getter for OfflinePIN.
+     * Whether offline PIN is enabled or not.
+     * @return Returns the Boolean
+     */
+    public Boolean getOfflinePIN() {
+        return OptionalNullable.getFrom(offlinePIN);
+    }
+
+    /**
+     * Setter for OfflinePIN.
+     * Whether offline PIN is enabled or not.
+     * @param offlinePIN Value for Boolean
+     */
+    @JsonSetter("OfflinePIN")
+    public void setOfflinePIN(Boolean offlinePIN) {
+        this.offlinePIN = OptionalNullable.of(offlinePIN);
+    }
+
+    /**
+     * UnSetter for OfflinePIN.
+     * Whether offline PIN is enabled or not.
+     */
+    public void unsetOfflinePIN() {
+        offlinePIN = null;
+    }
+
+    /**
+     * Getter for MediumTypeID.
+     * Id of the medium type identifier. &lt;br&gt;&lt;br&gt; Full list below - &lt;br&gt; 1 - Fuel Card &lt;br&gt; 2 - Fuel
+     * Card with EV &lt;br&gt; 3 - EV only &lt;br&gt; 4 - Fuel Card and Key Fob &lt;br&gt; 5 - Key Fob &lt;br&gt; 6 -
+     * Virtual Card &lt;br&gt; 7 - NPII Token &lt;br&gt; 8 – Smartpay Token
      * @return Returns the Integer
      */
-    public Integer getPANLength() {
-        return OptionalNullable.getFrom(pANLength);
+    @JsonGetter("MediumTypeID")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public Integer getMediumTypeID() {
+        return mediumTypeID;
     }
 
     /**
-     * Setter for PANLength.
-     * PAN Length
-     * @param pANLength Value for Integer
+     * Setter for MediumTypeID.
+     * Id of the medium type identifier. &lt;br&gt;&lt;br&gt; Full list below - &lt;br&gt; 1 - Fuel Card &lt;br&gt; 2 - Fuel
+     * Card with EV &lt;br&gt; 3 - EV only &lt;br&gt; 4 - Fuel Card and Key Fob &lt;br&gt; 5 - Key Fob &lt;br&gt; 6 -
+     * Virtual Card &lt;br&gt; 7 - NPII Token &lt;br&gt; 8 – Smartpay Token
+     * @param mediumTypeID Value for Integer
      */
-    @JsonSetter("PANLength")
-    public void setPANLength(Integer pANLength) {
-        this.pANLength = OptionalNullable.of(pANLength);
+    @JsonSetter("MediumTypeID")
+    public void setMediumTypeID(Integer mediumTypeID) {
+        this.mediumTypeID = mediumTypeID;
     }
 
     /**
-     * UnSetter for PANLength.
-     * PAN Length
+     * Getter for MediumType.
+     * Name of the medium type identifier. &lt;br&gt;&lt;br&gt; Full list below - &lt;br&gt; 1 - Fuel Card &lt;br&gt; 2 -
+     * Fuel Card with EV &lt;br&gt; 3 - EV only &lt;br&gt; 4 - Fuel Card and Key Fob &lt;br&gt; 5 - Key Fob &lt;br&gt; 6 -
+     * Virtual Card &lt;br&gt; 7 - NPII Token &lt;br&gt; 8 – Smartpay Token
+     * @return Returns the String
      */
-    public void unsetPANLength() {
-        pANLength = null;
+    @JsonGetter("MediumType")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public String getMediumType() {
+        return mediumType;
+    }
+
+    /**
+     * Setter for MediumType.
+     * Name of the medium type identifier. &lt;br&gt;&lt;br&gt; Full list below - &lt;br&gt; 1 - Fuel Card &lt;br&gt; 2 -
+     * Fuel Card with EV &lt;br&gt; 3 - EV only &lt;br&gt; 4 - Fuel Card and Key Fob &lt;br&gt; 5 - Key Fob &lt;br&gt; 6 -
+     * Virtual Card &lt;br&gt; 7 - NPII Token &lt;br&gt; 8 – Smartpay Token
+     * @param mediumType Value for String
+     */
+    @JsonSetter("MediumType")
+    public void setMediumType(String mediumType) {
+        this.mediumType = mediumType;
+    }
+
+    /**
+     * Getter for CartTypeAccounts.
+     * List of accounts.
+     * @return Returns the List of CartTypeAccount
+     */
+    @JsonGetter("CartTypeAccounts")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public List<CartTypeAccount> getCartTypeAccounts() {
+        return cartTypeAccounts;
+    }
+
+    /**
+     * Setter for CartTypeAccounts.
+     * List of accounts.
+     * @param cartTypeAccounts Value for List of CartTypeAccount
+     */
+    @JsonSetter("CartTypeAccounts")
+    public void setCartTypeAccounts(List<CartTypeAccount> cartTypeAccounts) {
+        this.cartTypeAccounts = cartTypeAccounts;
     }
 
     /**
@@ -878,412 +907,25 @@ public class CardTypeResponseCustomerCardTypesItems {
     }
 
     /**
-     * Internal Getter for TokenTypeId.
-     * Token type identifier.
-     * @return Returns the Internal Integer
-     */
-    @JsonGetter("TokenTypeId")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<Integer> internalGetTokenTypeId() {
-        return this.tokenTypeId;
-    }
-
-    /**
-     * Getter for TokenTypeId.
-     * Token type identifier.
-     * @return Returns the Integer
-     */
-    public Integer getTokenTypeId() {
-        return OptionalNullable.getFrom(tokenTypeId);
-    }
-
-    /**
-     * Setter for TokenTypeId.
-     * Token type identifier.
-     * @param tokenTypeId Value for Integer
-     */
-    @JsonSetter("TokenTypeId")
-    public void setTokenTypeId(Integer tokenTypeId) {
-        this.tokenTypeId = OptionalNullable.of(tokenTypeId);
-    }
-
-    /**
-     * UnSetter for TokenTypeId.
-     * Token type identifier.
-     */
-    public void unsetTokenTypeId() {
-        tokenTypeId = null;
-    }
-
-    /**
-     * Internal Getter for TokenTypeName.
-     * Token Type Name.
-     * @return Returns the Internal String
-     */
-    @JsonGetter("TokenTypeName")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<String> internalGetTokenTypeName() {
-        return this.tokenTypeName;
-    }
-
-    /**
-     * Getter for TokenTypeName.
-     * Token Type Name.
-     * @return Returns the String
-     */
-    public String getTokenTypeName() {
-        return OptionalNullable.getFrom(tokenTypeName);
-    }
-
-    /**
-     * Setter for TokenTypeName.
-     * Token Type Name.
-     * @param tokenTypeName Value for String
-     */
-    @JsonSetter("TokenTypeName")
-    public void setTokenTypeName(String tokenTypeName) {
-        this.tokenTypeName = OptionalNullable.of(tokenTypeName);
-    }
-
-    /**
-     * UnSetter for TokenTypeName.
-     * Token Type Name.
-     */
-    public void unsetTokenTypeName() {
-        tokenTypeName = null;
-    }
-
-    /**
-     * Getter for UsageRestrictions.
-     * @return Returns the CardUsageRestrictions
-     */
-    @JsonGetter("UsageRestrictions")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public CardUsageRestrictions getUsageRestrictions() {
-        return usageRestrictions;
-    }
-
-    /**
-     * Setter for UsageRestrictions.
-     * @param usageRestrictions Value for CardUsageRestrictions
-     */
-    @JsonSetter("UsageRestrictions")
-    public void setUsageRestrictions(CardUsageRestrictions usageRestrictions) {
-        this.usageRestrictions = usageRestrictions;
-    }
-
-    /**
-     * Getter for EMVContactless.
-     * Is Europay, MasterCard, and Visa Contactless enabled or not.
-     * @return Returns the Boolean
-     */
-    @JsonGetter("EMVContactless")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Boolean getEMVContactless() {
-        return eMVContactless;
-    }
-
-    /**
-     * Setter for EMVContactless.
-     * Is Europay, MasterCard, and Visa Contactless enabled or not.
-     * @param eMVContactless Value for Boolean
-     */
-    @JsonSetter("EMVContactless")
-    public void setEMVContactless(Boolean eMVContactless) {
-        this.eMVContactless = eMVContactless;
-    }
-
-    /**
-     * Getter for RFID.
-     * Whether the card type is enabled for RFID (Radio Frequency Identification)
-     * @return Returns the Boolean
-     */
-    @JsonGetter("RFID")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Boolean getRFID() {
-        return rFID;
-    }
-
-    /**
-     * Setter for RFID.
-     * Whether the card type is enabled for RFID (Radio Frequency Identification)
-     * @param rFID Value for Boolean
-     */
-    @JsonSetter("RFID")
-    public void setRFID(Boolean rFID) {
-        this.rFID = rFID;
-    }
-
-    /**
-     * Getter for PINChangeSupported.
-     * PIN change supported or not.
-     * @return Returns the Boolean
-     */
-    @JsonGetter("PINChangeSupported")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Boolean getPINChangeSupported() {
-        return pINChangeSupported;
-    }
-
-    /**
-     * Setter for PINChangeSupported.
-     * PIN change supported or not.
-     * @param pINChangeSupported Value for Boolean
-     */
-    @JsonSetter("PINChangeSupported")
-    public void setPINChangeSupported(Boolean pINChangeSupported) {
-        this.pINChangeSupported = pINChangeSupported;
-    }
-
-    /**
-     * Getter for RequirePIN.
-     * Whether a PIN is mandatory for the cards of this card type.
-     * @return Returns the Boolean
-     */
-    @JsonGetter("RequirePIN")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Boolean getRequirePIN() {
-        return requirePIN;
-    }
-
-    /**
-     * Setter for RequirePIN.
-     * Whether a PIN is mandatory for the cards of this card type.
-     * @param requirePIN Value for Boolean
-     */
-    @JsonSetter("RequirePIN")
-    public void setRequirePIN(Boolean requirePIN) {
-        this.requirePIN = requirePIN;
-    }
-
-    /**
-     * Getter for OfflinePIN.
-     * Whether offline PIN is enabled or not.
-     * @return Returns the Boolean
-     */
-    @JsonGetter("OfflinePIN")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Boolean getOfflinePIN() {
-        return offlinePIN;
-    }
-
-    /**
-     * Setter for OfflinePIN.
-     * Whether offline PIN is enabled or not.
-     * @param offlinePIN Value for Boolean
-     */
-    @JsonSetter("OfflinePIN")
-    public void setOfflinePIN(Boolean offlinePIN) {
-        this.offlinePIN = offlinePIN;
-    }
-
-    /**
-     * Getter for IsDefault.
-     * Whether card type is default or not.
-     * @return Returns the Boolean
-     */
-    @JsonGetter("IsDefault")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Boolean getIsDefault() {
-        return isDefault;
-    }
-
-    /**
-     * Setter for IsDefault.
-     * Whether card type is default or not.
-     * @param isDefault Value for Boolean
-     */
-    @JsonSetter("IsDefault")
-    public void setIsDefault(Boolean isDefault) {
-        this.isDefault = isDefault;
-    }
-
-    /**
-     * Getter for ApplicationsToShowNPIITokens.
-     * True/False Note: ApplicationsToShowNPIITokens will be set as ‘True’ when the accessing
-     * application API key exists in the “ApplicationsToShowNPIITokens” card type configuration else
-     * “False”.
-     * @return Returns the Boolean
-     */
-    @JsonGetter("ApplicationsToShowNPIITokens")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public Boolean getApplicationsToShowNPIITokens() {
-        return applicationsToShowNPIITokens;
-    }
-
-    /**
-     * Setter for ApplicationsToShowNPIITokens.
-     * True/False Note: ApplicationsToShowNPIITokens will be set as ‘True’ when the accessing
-     * application API key exists in the “ApplicationsToShowNPIITokens” card type configuration else
-     * “False”.
-     * @param applicationsToShowNPIITokens Value for Boolean
-     */
-    @JsonSetter("ApplicationsToShowNPIITokens")
-    public void setApplicationsToShowNPIITokens(Boolean applicationsToShowNPIITokens) {
-        this.applicationsToShowNPIITokens = applicationsToShowNPIITokens;
-    }
-
-    /**
-     * Internal Getter for MediumTypeID.
-     * Id of the medium type identifier. Example: 1,2,4 Full list below: 1 - Fuel Card 2 - Fuel Card
-     * with EV 3 - EV only 4 - Fuel Card and Key Fob 5 - Key Fob 6 - Virtual Card 7 - NPII Token 8 –
-     * Smartpay Token
-     * @return Returns the Internal Integer
-     */
-    @JsonGetter("MediumTypeID")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<Integer> internalGetMediumTypeID() {
-        return this.mediumTypeID;
-    }
-
-    /**
-     * Getter for MediumTypeID.
-     * Id of the medium type identifier. Example: 1,2,4 Full list below: 1 - Fuel Card 2 - Fuel Card
-     * with EV 3 - EV only 4 - Fuel Card and Key Fob 5 - Key Fob 6 - Virtual Card 7 - NPII Token 8 –
-     * Smartpay Token
-     * @return Returns the Integer
-     */
-    public Integer getMediumTypeID() {
-        return OptionalNullable.getFrom(mediumTypeID);
-    }
-
-    /**
-     * Setter for MediumTypeID.
-     * Id of the medium type identifier. Example: 1,2,4 Full list below: 1 - Fuel Card 2 - Fuel Card
-     * with EV 3 - EV only 4 - Fuel Card and Key Fob 5 - Key Fob 6 - Virtual Card 7 - NPII Token 8 –
-     * Smartpay Token
-     * @param mediumTypeID Value for Integer
-     */
-    @JsonSetter("MediumTypeID")
-    public void setMediumTypeID(Integer mediumTypeID) {
-        this.mediumTypeID = OptionalNullable.of(mediumTypeID);
-    }
-
-    /**
-     * UnSetter for MediumTypeID.
-     * Id of the medium type identifier. Example: 1,2,4 Full list below: 1 - Fuel Card 2 - Fuel Card
-     * with EV 3 - EV only 4 - Fuel Card and Key Fob 5 - Key Fob 6 - Virtual Card 7 - NPII Token 8 –
-     * Smartpay Token
-     */
-    public void unsetMediumTypeID() {
-        mediumTypeID = null;
-    }
-
-    /**
-     * Internal Getter for MediumType.
-     * Name of the medium type identifier. Example: Fuel Card, Fuel Card with EV, Key Fob Full list
-     * below: 1 - Fuel Card 2 - Fuel Card with EV 3 - EV only 4 - Fuel Card and Key Fob 5 - Key Fob
-     * 6 - Virtual Card 7 - NPII Token 8 - Smartpay Token
-     * @return Returns the Internal String
-     */
-    @JsonGetter("MediumType")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<String> internalGetMediumType() {
-        return this.mediumType;
-    }
-
-    /**
-     * Getter for MediumType.
-     * Name of the medium type identifier. Example: Fuel Card, Fuel Card with EV, Key Fob Full list
-     * below: 1 - Fuel Card 2 - Fuel Card with EV 3 - EV only 4 - Fuel Card and Key Fob 5 - Key Fob
-     * 6 - Virtual Card 7 - NPII Token 8 - Smartpay Token
-     * @return Returns the String
-     */
-    public String getMediumType() {
-        return OptionalNullable.getFrom(mediumType);
-    }
-
-    /**
-     * Setter for MediumType.
-     * Name of the medium type identifier. Example: Fuel Card, Fuel Card with EV, Key Fob Full list
-     * below: 1 - Fuel Card 2 - Fuel Card with EV 3 - EV only 4 - Fuel Card and Key Fob 5 - Key Fob
-     * 6 - Virtual Card 7 - NPII Token 8 - Smartpay Token
-     * @param mediumType Value for String
-     */
-    @JsonSetter("MediumType")
-    public void setMediumType(String mediumType) {
-        this.mediumType = OptionalNullable.of(mediumType);
-    }
-
-    /**
-     * UnSetter for MediumType.
-     * Name of the medium type identifier. Example: Fuel Card, Fuel Card with EV, Key Fob Full list
-     * below: 1 - Fuel Card 2 - Fuel Card with EV 3 - EV only 4 - Fuel Card and Key Fob 5 - Key Fob
-     * 6 - Virtual Card 7 - NPII Token 8 - Smartpay Token
-     */
-    public void unsetMediumType() {
-        mediumType = null;
-    }
-
-    /**
-     * Internal Getter for ColCoCurrencySymbol.
-     * Currency symbol of the country.
-     * @return Returns the Internal String
-     */
-    @JsonGetter("ColCoCurrencySymbol")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<String> internalGetColCoCurrencySymbol() {
-        return this.colCoCurrencySymbol;
-    }
-
-    /**
-     * Getter for ColCoCurrencySymbol.
-     * Currency symbol of the country.
-     * @return Returns the String
-     */
-    public String getColCoCurrencySymbol() {
-        return OptionalNullable.getFrom(colCoCurrencySymbol);
-    }
-
-    /**
-     * Setter for ColCoCurrencySymbol.
-     * Currency symbol of the country.
-     * @param colCoCurrencySymbol Value for String
-     */
-    @JsonSetter("ColCoCurrencySymbol")
-    public void setColCoCurrencySymbol(String colCoCurrencySymbol) {
-        this.colCoCurrencySymbol = OptionalNullable.of(colCoCurrencySymbol);
-    }
-
-    /**
-     * UnSetter for ColCoCurrencySymbol.
-     * Currency symbol of the country.
-     */
-    public void unsetColCoCurrencySymbol() {
-        colCoCurrencySymbol = null;
-    }
-
-    /**
      * Converts this CardTypeResponseCustomerCardTypesItems into string format.
      * @return String representation of this class
      */
     @Override
     public String toString() {
-        return "CardTypeResponseCustomerCardTypesItems [" + "canHavePIN=" + canHavePIN
-                + ", cardTypeId=" + cardTypeId + ", cardTypeName=" + cardTypeName
-                + ", colCoCurrencyCode=" + colCoCurrencyCode + ", customerCardTypeId="
-                + customerCardTypeId + ", dayTimeRestrictions=" + dayTimeRestrictions
-                + ", defaultPurchaseCategoryId=" + defaultPurchaseCategoryId
-                + ", embossAccountName=" + embossAccountName + ", expiryPeriod=" + expiryPeriod
-                + ", isCRT=" + isCRT + ", isFleet=" + isFleet + ", isInternational="
-                + isInternational + ", isNational=" + isNational + ", isPartnerSitesIncluded="
-                + isPartnerSitesIncluded + ", isShellSitesOnly=" + isShellSitesOnly + ", isVirtual="
-                + isVirtual + ", isVisibleToCustomers=" + isVisibleToCustomers + ", isActive="
-                + isActive + ", isCardAvailableForDownload=" + isCardAvailableForDownload
-                + ", isCardVisibleToCustomers=" + isCardVisibleToCustomers + ", pANLength="
-                + pANLength + ", purchaseCategories=" + purchaseCategories + ", tokenTypeId="
-                + tokenTypeId + ", tokenTypeName=" + tokenTypeName + ", usageRestrictions="
-                + usageRestrictions + ", eMVContactless=" + eMVContactless + ", rFID=" + rFID
-                + ", pINChangeSupported=" + pINChangeSupported + ", requirePIN=" + requirePIN
-                + ", offlinePIN=" + offlinePIN + ", isDefault=" + isDefault
-                + ", applicationsToShowNPIITokens=" + applicationsToShowNPIITokens
-                + ", mediumTypeID=" + mediumTypeID + ", mediumType=" + mediumType
-                + ", colCoCurrencySymbol=" + colCoCurrencySymbol + "]";
+        return "CardTypeResponseCustomerCardTypesItems [" + "cardTypeId=" + cardTypeId
+                + ", tokenTypeId=" + tokenTypeId + ", cardTypeName=" + cardTypeName
+                + ", tokenTypeName=" + tokenTypeName + ", pANLength=" + pANLength
+                + ", expiryPeriod=" + expiryPeriod + ", isNational=" + isNational
+                + ", isInternational=" + isInternational + ", isCRT=" + isCRT + ", isFleet="
+                + isFleet + ", isShellSitesOnly=" + isShellSitesOnly + ", isPartnerSitesIncluded="
+                + isPartnerSitesIncluded + ", canHavePIN=" + canHavePIN + ", isVirtual=" + isVirtual
+                + ", isActive=" + isActive + ", isCardAvailableForDownload="
+                + isCardAvailableForDownload + ", colCoCurrencyCode=" + colCoCurrencyCode
+                + ", colCoCurrencySymbol=" + colCoCurrencySymbol + ", eMVContactless="
+                + eMVContactless + ", rFID=" + rFID + ", pINChangeSupported=" + pINChangeSupported
+                + ", requirePIN=" + requirePIN + ", offlinePIN=" + offlinePIN + ", mediumTypeID="
+                + mediumTypeID + ", mediumType=" + mediumType + ", cartTypeAccounts="
+                + cartTypeAccounts + ", purchaseCategories=" + purchaseCategories + "]";
     }
 
     /**
@@ -1293,41 +935,33 @@ public class CardTypeResponseCustomerCardTypesItems {
      */
     public Builder toBuilder() {
         Builder builder = new Builder()
-                .canHavePIN(getCanHavePIN())
-                .dayTimeRestrictions(getDayTimeRestrictions())
+                .cardTypeId(getCardTypeId())
+                .tokenTypeId(getTokenTypeId())
+                .cardTypeName(getCardTypeName())
+                .tokenTypeName(getTokenTypeName())
+                .pANLength(getPANLength())
+                .expiryPeriod(getExpiryPeriod())
+                .isNational(getIsNational())
+                .isInternational(getIsInternational())
                 .isCRT(getIsCRT())
                 .isFleet(getIsFleet())
-                .isInternational(getIsInternational())
-                .isNational(getIsNational())
-                .isPartnerSitesIncluded(getIsPartnerSitesIncluded())
                 .isShellSitesOnly(getIsShellSitesOnly())
+                .isPartnerSitesIncluded(getIsPartnerSitesIncluded())
+                .canHavePIN(getCanHavePIN())
                 .isVirtual(getIsVirtual())
-                .isVisibleToCustomers(getIsVisibleToCustomers())
                 .isActive(getIsActive())
-                .isCardAvailableForDownload(getIsCardAvailableForDownload())
-                .isCardVisibleToCustomers(getIsCardVisibleToCustomers())
-                .usageRestrictions(getUsageRestrictions())
-                .eMVContactless(getEMVContactless())
-                .rFID(getRFID())
-                .pINChangeSupported(getPINChangeSupported())
-                .requirePIN(getRequirePIN())
-                .offlinePIN(getOfflinePIN())
-                .isDefault(getIsDefault())
-                .applicationsToShowNPIITokens(getApplicationsToShowNPIITokens());
-        builder.cardTypeId = internalGetCardTypeId();
-        builder.cardTypeName = internalGetCardTypeName();
-        builder.colCoCurrencyCode = internalGetColCoCurrencyCode();
-        builder.customerCardTypeId = internalGetCustomerCardTypeId();
-        builder.defaultPurchaseCategoryId = internalGetDefaultPurchaseCategoryId();
-        builder.embossAccountName = internalGetEmbossAccountName();
-        builder.expiryPeriod = internalGetExpiryPeriod();
-        builder.pANLength = internalGetPANLength();
+                .colCoCurrencyCode(getColCoCurrencyCode())
+                .colCoCurrencySymbol(getColCoCurrencySymbol())
+                .mediumTypeID(getMediumTypeID())
+                .mediumType(getMediumType())
+                .cartTypeAccounts(getCartTypeAccounts());
+        builder.isCardAvailableForDownload = internalGetIsCardAvailableForDownload();
+        builder.eMVContactless = internalGetEMVContactless();
+        builder.rFID = internalGetRFID();
+        builder.pINChangeSupported = internalGetPINChangeSupported();
+        builder.requirePIN = internalGetRequirePIN();
+        builder.offlinePIN = internalGetOfflinePIN();
         builder.purchaseCategories = internalGetPurchaseCategories();
-        builder.tokenTypeId = internalGetTokenTypeId();
-        builder.tokenTypeName = internalGetTokenTypeName();
-        builder.mediumTypeID = internalGetMediumTypeID();
-        builder.mediumType = internalGetMediumType();
-        builder.colCoCurrencySymbol = internalGetColCoCurrencySymbol();
         return builder;
     }
 
@@ -1335,53 +969,35 @@ public class CardTypeResponseCustomerCardTypesItems {
      * Class to build instances of {@link CardTypeResponseCustomerCardTypesItems}.
      */
     public static class Builder {
-        private Boolean canHavePIN;
-        private OptionalNullable<Integer> cardTypeId;
-        private OptionalNullable<String> cardTypeName;
-        private OptionalNullable<String> colCoCurrencyCode;
-        private OptionalNullable<Integer> customerCardTypeId;
-        private CardDayTimeRestrictions dayTimeRestrictions;
-        private OptionalNullable<Integer> defaultPurchaseCategoryId;
-        private OptionalNullable<String> embossAccountName;
-        private OptionalNullable<Integer> expiryPeriod;
+        private Integer cardTypeId;
+        private Integer tokenTypeId;
+        private String cardTypeName;
+        private String tokenTypeName;
+        private Integer pANLength;
+        private Integer expiryPeriod;
+        private Boolean isNational;
+        private Boolean isInternational;
         private Boolean isCRT;
         private Boolean isFleet;
-        private Boolean isInternational;
-        private Boolean isNational;
-        private Boolean isPartnerSitesIncluded;
         private Boolean isShellSitesOnly;
+        private Boolean isPartnerSitesIncluded;
+        private Boolean canHavePIN;
         private Boolean isVirtual;
-        private Boolean isVisibleToCustomers;
         private Boolean isActive;
-        private Boolean isCardAvailableForDownload;
-        private Boolean isCardVisibleToCustomers;
-        private OptionalNullable<Integer> pANLength;
+        private OptionalNullable<Boolean> isCardAvailableForDownload;
+        private String colCoCurrencyCode;
+        private String colCoCurrencySymbol;
+        private OptionalNullable<Boolean> eMVContactless;
+        private OptionalNullable<Boolean> rFID;
+        private OptionalNullable<Boolean> pINChangeSupported;
+        private OptionalNullable<Boolean> requirePIN;
+        private OptionalNullable<Boolean> offlinePIN;
+        private Integer mediumTypeID;
+        private String mediumType;
+        private List<CartTypeAccount> cartTypeAccounts;
         private OptionalNullable<List<PurchaseCategories>> purchaseCategories;
-        private OptionalNullable<Integer> tokenTypeId;
-        private OptionalNullable<String> tokenTypeName;
-        private CardUsageRestrictions usageRestrictions;
-        private Boolean eMVContactless;
-        private Boolean rFID;
-        private Boolean pINChangeSupported;
-        private Boolean requirePIN;
-        private Boolean offlinePIN;
-        private Boolean isDefault;
-        private Boolean applicationsToShowNPIITokens;
-        private OptionalNullable<Integer> mediumTypeID;
-        private OptionalNullable<String> mediumType;
-        private OptionalNullable<String> colCoCurrencySymbol;
 
 
-
-        /**
-         * Setter for canHavePIN.
-         * @param  canHavePIN  Boolean value for canHavePIN.
-         * @return Builder
-         */
-        public Builder canHavePIN(Boolean canHavePIN) {
-            this.canHavePIN = canHavePIN;
-            return this;
-        }
 
         /**
          * Setter for cardTypeId.
@@ -1389,16 +1005,17 @@ public class CardTypeResponseCustomerCardTypesItems {
          * @return Builder
          */
         public Builder cardTypeId(Integer cardTypeId) {
-            this.cardTypeId = OptionalNullable.of(cardTypeId);
+            this.cardTypeId = cardTypeId;
             return this;
         }
 
         /**
-         * UnSetter for cardTypeId.
+         * Setter for tokenTypeId.
+         * @param  tokenTypeId  Integer value for tokenTypeId.
          * @return Builder
          */
-        public Builder unsetCardTypeId() {
-            cardTypeId = null;
+        public Builder tokenTypeId(Integer tokenTypeId) {
+            this.tokenTypeId = tokenTypeId;
             return this;
         }
 
@@ -1408,102 +1025,27 @@ public class CardTypeResponseCustomerCardTypesItems {
          * @return Builder
          */
         public Builder cardTypeName(String cardTypeName) {
-            this.cardTypeName = OptionalNullable.of(cardTypeName);
+            this.cardTypeName = cardTypeName;
             return this;
         }
 
         /**
-         * UnSetter for cardTypeName.
+         * Setter for tokenTypeName.
+         * @param  tokenTypeName  String value for tokenTypeName.
          * @return Builder
          */
-        public Builder unsetCardTypeName() {
-            cardTypeName = null;
+        public Builder tokenTypeName(String tokenTypeName) {
+            this.tokenTypeName = tokenTypeName;
             return this;
         }
 
         /**
-         * Setter for colCoCurrencyCode.
-         * @param  colCoCurrencyCode  String value for colCoCurrencyCode.
+         * Setter for pANLength.
+         * @param  pANLength  Integer value for pANLength.
          * @return Builder
          */
-        public Builder colCoCurrencyCode(String colCoCurrencyCode) {
-            this.colCoCurrencyCode = OptionalNullable.of(colCoCurrencyCode);
-            return this;
-        }
-
-        /**
-         * UnSetter for colCoCurrencyCode.
-         * @return Builder
-         */
-        public Builder unsetColCoCurrencyCode() {
-            colCoCurrencyCode = null;
-            return this;
-        }
-
-        /**
-         * Setter for customerCardTypeId.
-         * @param  customerCardTypeId  Integer value for customerCardTypeId.
-         * @return Builder
-         */
-        public Builder customerCardTypeId(Integer customerCardTypeId) {
-            this.customerCardTypeId = OptionalNullable.of(customerCardTypeId);
-            return this;
-        }
-
-        /**
-         * UnSetter for customerCardTypeId.
-         * @return Builder
-         */
-        public Builder unsetCustomerCardTypeId() {
-            customerCardTypeId = null;
-            return this;
-        }
-
-        /**
-         * Setter for dayTimeRestrictions.
-         * @param  dayTimeRestrictions  CardDayTimeRestrictions value for dayTimeRestrictions.
-         * @return Builder
-         */
-        public Builder dayTimeRestrictions(CardDayTimeRestrictions dayTimeRestrictions) {
-            this.dayTimeRestrictions = dayTimeRestrictions;
-            return this;
-        }
-
-        /**
-         * Setter for defaultPurchaseCategoryId.
-         * @param  defaultPurchaseCategoryId  Integer value for defaultPurchaseCategoryId.
-         * @return Builder
-         */
-        public Builder defaultPurchaseCategoryId(Integer defaultPurchaseCategoryId) {
-            this.defaultPurchaseCategoryId = OptionalNullable.of(defaultPurchaseCategoryId);
-            return this;
-        }
-
-        /**
-         * UnSetter for defaultPurchaseCategoryId.
-         * @return Builder
-         */
-        public Builder unsetDefaultPurchaseCategoryId() {
-            defaultPurchaseCategoryId = null;
-            return this;
-        }
-
-        /**
-         * Setter for embossAccountName.
-         * @param  embossAccountName  String value for embossAccountName.
-         * @return Builder
-         */
-        public Builder embossAccountName(String embossAccountName) {
-            this.embossAccountName = OptionalNullable.of(embossAccountName);
-            return this;
-        }
-
-        /**
-         * UnSetter for embossAccountName.
-         * @return Builder
-         */
-        public Builder unsetEmbossAccountName() {
-            embossAccountName = null;
+        public Builder pANLength(Integer pANLength) {
+            this.pANLength = pANLength;
             return this;
         }
 
@@ -1513,16 +1055,27 @@ public class CardTypeResponseCustomerCardTypesItems {
          * @return Builder
          */
         public Builder expiryPeriod(Integer expiryPeriod) {
-            this.expiryPeriod = OptionalNullable.of(expiryPeriod);
+            this.expiryPeriod = expiryPeriod;
             return this;
         }
 
         /**
-         * UnSetter for expiryPeriod.
+         * Setter for isNational.
+         * @param  isNational  Boolean value for isNational.
          * @return Builder
          */
-        public Builder unsetExpiryPeriod() {
-            expiryPeriod = null;
+        public Builder isNational(Boolean isNational) {
+            this.isNational = isNational;
+            return this;
+        }
+
+        /**
+         * Setter for isInternational.
+         * @param  isInternational  Boolean value for isInternational.
+         * @return Builder
+         */
+        public Builder isInternational(Boolean isInternational) {
+            this.isInternational = isInternational;
             return this;
         }
 
@@ -1547,22 +1100,12 @@ public class CardTypeResponseCustomerCardTypesItems {
         }
 
         /**
-         * Setter for isInternational.
-         * @param  isInternational  Boolean value for isInternational.
+         * Setter for isShellSitesOnly.
+         * @param  isShellSitesOnly  Boolean value for isShellSitesOnly.
          * @return Builder
          */
-        public Builder isInternational(Boolean isInternational) {
-            this.isInternational = isInternational;
-            return this;
-        }
-
-        /**
-         * Setter for isNational.
-         * @param  isNational  Boolean value for isNational.
-         * @return Builder
-         */
-        public Builder isNational(Boolean isNational) {
-            this.isNational = isNational;
+        public Builder isShellSitesOnly(Boolean isShellSitesOnly) {
+            this.isShellSitesOnly = isShellSitesOnly;
             return this;
         }
 
@@ -1577,12 +1120,12 @@ public class CardTypeResponseCustomerCardTypesItems {
         }
 
         /**
-         * Setter for isShellSitesOnly.
-         * @param  isShellSitesOnly  Boolean value for isShellSitesOnly.
+         * Setter for canHavePIN.
+         * @param  canHavePIN  Boolean value for canHavePIN.
          * @return Builder
          */
-        public Builder isShellSitesOnly(Boolean isShellSitesOnly) {
-            this.isShellSitesOnly = isShellSitesOnly;
+        public Builder canHavePIN(Boolean canHavePIN) {
+            this.canHavePIN = canHavePIN;
             return this;
         }
 
@@ -1593,16 +1136,6 @@ public class CardTypeResponseCustomerCardTypesItems {
          */
         public Builder isVirtual(Boolean isVirtual) {
             this.isVirtual = isVirtual;
-            return this;
-        }
-
-        /**
-         * Setter for isVisibleToCustomers.
-         * @param  isVisibleToCustomers  Boolean value for isVisibleToCustomers.
-         * @return Builder
-         */
-        public Builder isVisibleToCustomers(Boolean isVisibleToCustomers) {
-            this.isVisibleToCustomers = isVisibleToCustomers;
             return this;
         }
 
@@ -1622,36 +1155,161 @@ public class CardTypeResponseCustomerCardTypesItems {
          * @return Builder
          */
         public Builder isCardAvailableForDownload(Boolean isCardAvailableForDownload) {
-            this.isCardAvailableForDownload = isCardAvailableForDownload;
+            this.isCardAvailableForDownload = OptionalNullable.of(isCardAvailableForDownload);
             return this;
         }
 
         /**
-         * Setter for isCardVisibleToCustomers.
-         * @param  isCardVisibleToCustomers  Boolean value for isCardVisibleToCustomers.
+         * UnSetter for isCardAvailableForDownload.
          * @return Builder
          */
-        public Builder isCardVisibleToCustomers(Boolean isCardVisibleToCustomers) {
-            this.isCardVisibleToCustomers = isCardVisibleToCustomers;
+        public Builder unsetIsCardAvailableForDownload() {
+            isCardAvailableForDownload = null;
             return this;
         }
 
         /**
-         * Setter for pANLength.
-         * @param  pANLength  Integer value for pANLength.
+         * Setter for colCoCurrencyCode.
+         * @param  colCoCurrencyCode  String value for colCoCurrencyCode.
          * @return Builder
          */
-        public Builder pANLength(Integer pANLength) {
-            this.pANLength = OptionalNullable.of(pANLength);
+        public Builder colCoCurrencyCode(String colCoCurrencyCode) {
+            this.colCoCurrencyCode = colCoCurrencyCode;
             return this;
         }
 
         /**
-         * UnSetter for pANLength.
+         * Setter for colCoCurrencySymbol.
+         * @param  colCoCurrencySymbol  String value for colCoCurrencySymbol.
          * @return Builder
          */
-        public Builder unsetPANLength() {
-            pANLength = null;
+        public Builder colCoCurrencySymbol(String colCoCurrencySymbol) {
+            this.colCoCurrencySymbol = colCoCurrencySymbol;
+            return this;
+        }
+
+        /**
+         * Setter for eMVContactless.
+         * @param  eMVContactless  Boolean value for eMVContactless.
+         * @return Builder
+         */
+        public Builder eMVContactless(Boolean eMVContactless) {
+            this.eMVContactless = OptionalNullable.of(eMVContactless);
+            return this;
+        }
+
+        /**
+         * UnSetter for eMVContactless.
+         * @return Builder
+         */
+        public Builder unsetEMVContactless() {
+            eMVContactless = null;
+            return this;
+        }
+
+        /**
+         * Setter for rFID.
+         * @param  rFID  Boolean value for rFID.
+         * @return Builder
+         */
+        public Builder rFID(Boolean rFID) {
+            this.rFID = OptionalNullable.of(rFID);
+            return this;
+        }
+
+        /**
+         * UnSetter for rFID.
+         * @return Builder
+         */
+        public Builder unsetRFID() {
+            rFID = null;
+            return this;
+        }
+
+        /**
+         * Setter for pINChangeSupported.
+         * @param  pINChangeSupported  Boolean value for pINChangeSupported.
+         * @return Builder
+         */
+        public Builder pINChangeSupported(Boolean pINChangeSupported) {
+            this.pINChangeSupported = OptionalNullable.of(pINChangeSupported);
+            return this;
+        }
+
+        /**
+         * UnSetter for pINChangeSupported.
+         * @return Builder
+         */
+        public Builder unsetPINChangeSupported() {
+            pINChangeSupported = null;
+            return this;
+        }
+
+        /**
+         * Setter for requirePIN.
+         * @param  requirePIN  Boolean value for requirePIN.
+         * @return Builder
+         */
+        public Builder requirePIN(Boolean requirePIN) {
+            this.requirePIN = OptionalNullable.of(requirePIN);
+            return this;
+        }
+
+        /**
+         * UnSetter for requirePIN.
+         * @return Builder
+         */
+        public Builder unsetRequirePIN() {
+            requirePIN = null;
+            return this;
+        }
+
+        /**
+         * Setter for offlinePIN.
+         * @param  offlinePIN  Boolean value for offlinePIN.
+         * @return Builder
+         */
+        public Builder offlinePIN(Boolean offlinePIN) {
+            this.offlinePIN = OptionalNullable.of(offlinePIN);
+            return this;
+        }
+
+        /**
+         * UnSetter for offlinePIN.
+         * @return Builder
+         */
+        public Builder unsetOfflinePIN() {
+            offlinePIN = null;
+            return this;
+        }
+
+        /**
+         * Setter for mediumTypeID.
+         * @param  mediumTypeID  Integer value for mediumTypeID.
+         * @return Builder
+         */
+        public Builder mediumTypeID(Integer mediumTypeID) {
+            this.mediumTypeID = mediumTypeID;
+            return this;
+        }
+
+        /**
+         * Setter for mediumType.
+         * @param  mediumType  String value for mediumType.
+         * @return Builder
+         */
+        public Builder mediumType(String mediumType) {
+            this.mediumType = mediumType;
+            return this;
+        }
+
+        /**
+         * Setter for cartTypeAccounts.
+         * @param  cartTypeAccounts  List of CartTypeAccount value for cartTypeAccounts.
+         * @return Builder
+         */
+        public Builder cartTypeAccounts(List<CartTypeAccount> cartTypeAccounts) {
+            this.cartTypeAccounts = cartTypeAccounts;
             return this;
         }
 
@@ -1675,194 +1333,16 @@ public class CardTypeResponseCustomerCardTypesItems {
         }
 
         /**
-         * Setter for tokenTypeId.
-         * @param  tokenTypeId  Integer value for tokenTypeId.
-         * @return Builder
-         */
-        public Builder tokenTypeId(Integer tokenTypeId) {
-            this.tokenTypeId = OptionalNullable.of(tokenTypeId);
-            return this;
-        }
-
-        /**
-         * UnSetter for tokenTypeId.
-         * @return Builder
-         */
-        public Builder unsetTokenTypeId() {
-            tokenTypeId = null;
-            return this;
-        }
-
-        /**
-         * Setter for tokenTypeName.
-         * @param  tokenTypeName  String value for tokenTypeName.
-         * @return Builder
-         */
-        public Builder tokenTypeName(String tokenTypeName) {
-            this.tokenTypeName = OptionalNullable.of(tokenTypeName);
-            return this;
-        }
-
-        /**
-         * UnSetter for tokenTypeName.
-         * @return Builder
-         */
-        public Builder unsetTokenTypeName() {
-            tokenTypeName = null;
-            return this;
-        }
-
-        /**
-         * Setter for usageRestrictions.
-         * @param  usageRestrictions  CardUsageRestrictions value for usageRestrictions.
-         * @return Builder
-         */
-        public Builder usageRestrictions(CardUsageRestrictions usageRestrictions) {
-            this.usageRestrictions = usageRestrictions;
-            return this;
-        }
-
-        /**
-         * Setter for eMVContactless.
-         * @param  eMVContactless  Boolean value for eMVContactless.
-         * @return Builder
-         */
-        public Builder eMVContactless(Boolean eMVContactless) {
-            this.eMVContactless = eMVContactless;
-            return this;
-        }
-
-        /**
-         * Setter for rFID.
-         * @param  rFID  Boolean value for rFID.
-         * @return Builder
-         */
-        public Builder rFID(Boolean rFID) {
-            this.rFID = rFID;
-            return this;
-        }
-
-        /**
-         * Setter for pINChangeSupported.
-         * @param  pINChangeSupported  Boolean value for pINChangeSupported.
-         * @return Builder
-         */
-        public Builder pINChangeSupported(Boolean pINChangeSupported) {
-            this.pINChangeSupported = pINChangeSupported;
-            return this;
-        }
-
-        /**
-         * Setter for requirePIN.
-         * @param  requirePIN  Boolean value for requirePIN.
-         * @return Builder
-         */
-        public Builder requirePIN(Boolean requirePIN) {
-            this.requirePIN = requirePIN;
-            return this;
-        }
-
-        /**
-         * Setter for offlinePIN.
-         * @param  offlinePIN  Boolean value for offlinePIN.
-         * @return Builder
-         */
-        public Builder offlinePIN(Boolean offlinePIN) {
-            this.offlinePIN = offlinePIN;
-            return this;
-        }
-
-        /**
-         * Setter for isDefault.
-         * @param  isDefault  Boolean value for isDefault.
-         * @return Builder
-         */
-        public Builder isDefault(Boolean isDefault) {
-            this.isDefault = isDefault;
-            return this;
-        }
-
-        /**
-         * Setter for applicationsToShowNPIITokens.
-         * @param  applicationsToShowNPIITokens  Boolean value for applicationsToShowNPIITokens.
-         * @return Builder
-         */
-        public Builder applicationsToShowNPIITokens(Boolean applicationsToShowNPIITokens) {
-            this.applicationsToShowNPIITokens = applicationsToShowNPIITokens;
-            return this;
-        }
-
-        /**
-         * Setter for mediumTypeID.
-         * @param  mediumTypeID  Integer value for mediumTypeID.
-         * @return Builder
-         */
-        public Builder mediumTypeID(Integer mediumTypeID) {
-            this.mediumTypeID = OptionalNullable.of(mediumTypeID);
-            return this;
-        }
-
-        /**
-         * UnSetter for mediumTypeID.
-         * @return Builder
-         */
-        public Builder unsetMediumTypeID() {
-            mediumTypeID = null;
-            return this;
-        }
-
-        /**
-         * Setter for mediumType.
-         * @param  mediumType  String value for mediumType.
-         * @return Builder
-         */
-        public Builder mediumType(String mediumType) {
-            this.mediumType = OptionalNullable.of(mediumType);
-            return this;
-        }
-
-        /**
-         * UnSetter for mediumType.
-         * @return Builder
-         */
-        public Builder unsetMediumType() {
-            mediumType = null;
-            return this;
-        }
-
-        /**
-         * Setter for colCoCurrencySymbol.
-         * @param  colCoCurrencySymbol  String value for colCoCurrencySymbol.
-         * @return Builder
-         */
-        public Builder colCoCurrencySymbol(String colCoCurrencySymbol) {
-            this.colCoCurrencySymbol = OptionalNullable.of(colCoCurrencySymbol);
-            return this;
-        }
-
-        /**
-         * UnSetter for colCoCurrencySymbol.
-         * @return Builder
-         */
-        public Builder unsetColCoCurrencySymbol() {
-            colCoCurrencySymbol = null;
-            return this;
-        }
-
-        /**
          * Builds a new {@link CardTypeResponseCustomerCardTypesItems} object using the set fields.
          * @return {@link CardTypeResponseCustomerCardTypesItems}
          */
         public CardTypeResponseCustomerCardTypesItems build() {
-            return new CardTypeResponseCustomerCardTypesItems(canHavePIN, cardTypeId, cardTypeName,
-                    colCoCurrencyCode, customerCardTypeId, dayTimeRestrictions,
-                    defaultPurchaseCategoryId, embossAccountName, expiryPeriod, isCRT, isFleet,
-                    isInternational, isNational, isPartnerSitesIncluded, isShellSitesOnly,
-                    isVirtual, isVisibleToCustomers, isActive, isCardAvailableForDownload,
-                    isCardVisibleToCustomers, pANLength, purchaseCategories, tokenTypeId,
-                    tokenTypeName, usageRestrictions, eMVContactless, rFID, pINChangeSupported,
-                    requirePIN, offlinePIN, isDefault, applicationsToShowNPIITokens, mediumTypeID,
-                    mediumType, colCoCurrencySymbol);
+            return new CardTypeResponseCustomerCardTypesItems(cardTypeId, tokenTypeId, cardTypeName,
+                    tokenTypeName, pANLength, expiryPeriod, isNational, isInternational, isCRT,
+                    isFleet, isShellSitesOnly, isPartnerSitesIncluded, canHavePIN, isVirtual,
+                    isActive, isCardAvailableForDownload, colCoCurrencyCode, colCoCurrencySymbol,
+                    eMVContactless, rFID, pINChangeSupported, requirePIN, offlinePIN, mediumTypeID,
+                    mediumType, cartTypeAccounts, purchaseCategories);
         }
     }
 }

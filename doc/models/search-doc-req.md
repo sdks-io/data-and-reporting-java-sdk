@@ -14,7 +14,6 @@
 | `AccountNumberList` | `List<String>` | Optional | Account Number of the customers.<br>optional.<br>This input is a search criterion, if given.<br>Example: [“GB00000123”, “GB00000225”] | List<String> getAccountNumberList() | setAccountNumberList(List<String> accountNumberList) |
 | `InvoiceNumber` | `String` | Optional | Invoice number.<br>Optional if InvoiceNumberList is passed else Mandatory<br>This input is a search criterion, if given.<br>Example: 0123456789 | String getInvoiceNumber() | setInvoiceNumber(String invoiceNumber) |
 | `InvoiceNumberList` | `List<String>` | Optional | List of Invoice number.<br>Optional if InvoiceNumber is passed else Mandatory<br>Example: [“0123456789”, “0123459799”] | List<String> getInvoiceNumberList() | setInvoiceNumberList(List<String> invoiceNumberList) |
-| `InvoiceStatus` | `String` | Optional | The status of the invoices<br>Optional<br>One of the following values:<br>•    NEW<br>•    VIEWED<br>•    DOWNLOADED<br>•    RESTORED | String getInvoiceStatus() | setInvoiceStatus(String invoiceStatus) |
 | `IssuingDateFrom` | `String` | Optional | Invoice Issuing Date Range/From<br>Optional<br>Format: yyyy/MM/dd | String getIssuingDateFrom() | setIssuingDateFrom(String issuingDateFrom) |
 | `IssuingDateTo` | `String` | Optional | Invoice Issuing Date Range/To<br>Optional<br>Format: yyyy/MM/dd | String getIssuingDateTo() | setIssuingDateTo(String issuingDateTo) |
 | `DueDateFrom` | `String` | Optional | Invoice Due Date Range/From<br>Optional<br>Format: yyyy/MM/dd | String getDueDateFrom() | setDueDateFrom(String dueDateFrom) |
@@ -39,7 +38,7 @@
   "InvoiceNumberList": [
     "InvoiceNumberList5"
   ],
-  "InvoiceStatus": "InvoiceStatus4",
+  "IssuingDateFrom": "IssuingDateFrom2",
   "ColCoCode": 50
 }
 ```

@@ -13,10 +13,10 @@ import io.apimatic.coreinterfaces.http.Context;
 import java.util.List;
 
 /**
- * This is a model class for ErrorObjectException type.
+ * This is a model class for InvoiceManagementV1Eiddownload401ErrorException type.
  */
-public class ErrorObjectException extends ApiException {
-    private static final long serialVersionUID = 7953861512236907034L;
+public class InvoiceManagementV1Eiddownload401ErrorException extends ApiException {
+    private static final long serialVersionUID = 6353986210105737505L;
     private String requestId;
     private String status;
     private List<ErrorDetails> errors;
@@ -26,7 +26,7 @@ public class ErrorObjectException extends ApiException {
      * @param   reason  The reason for throwing exception
      * @param   context The context of the API exception
      */
-    public ErrorObjectException(String reason, Context context) {
+    public InvoiceManagementV1Eiddownload401ErrorException(String reason, Context context) {
         super(reason, context);
     }
 
@@ -92,13 +92,13 @@ public class ErrorObjectException extends ApiException {
     }
 
     /**
-     * Converts this ErrorObjectException into string format.
+     * Converts this InvoiceManagementV1Eiddownload401ErrorException into string format.
      * @return String representation of this class
      */
     @Override
     public String toString() {
-        return "ErrorObjectException [" + "statusCode=" + getResponseCode() + ", message="
-                + getMessage() + ", requestId=" + requestId + ", status=" + status + ", errors="
-                + errors + "]";
+        return "InvoiceManagementV1Eiddownload401ErrorException [" + "statusCode="
+                + getResponseCode() + ", message=" + getMessage() + ", requestId=" + requestId
+                + ", status=" + status + ", errors=" + errors + "]";
     }
 }

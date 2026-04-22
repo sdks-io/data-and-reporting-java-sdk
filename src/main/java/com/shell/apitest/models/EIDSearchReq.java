@@ -24,7 +24,6 @@ public class EIDSearchReq {
     private OptionalNullable<String> fromDate;
     private OptionalNullable<String> toDate;
     private OptionalNullable<String> invoiceType;
-    private OptionalNullable<String> invoiceStatus;
     private List<String> sortBy;
 
     /**
@@ -42,7 +41,6 @@ public class EIDSearchReq {
      * @param  fromDate  String value for fromDate.
      * @param  toDate  String value for toDate.
      * @param  invoiceType  String value for invoiceType.
-     * @param  invoiceStatus  String value for invoiceStatus.
      * @param  sortBy  List of String value for sortBy.
      */
     public EIDSearchReq(
@@ -53,7 +51,6 @@ public class EIDSearchReq {
             String fromDate,
             String toDate,
             String invoiceType,
-            String invoiceStatus,
             List<String> sortBy) {
         this.colCoCode = colCoCode;
         this.accountGroupCountry = accountGroupCountry;
@@ -62,7 +59,6 @@ public class EIDSearchReq {
         this.fromDate = OptionalNullable.of(fromDate);
         this.toDate = OptionalNullable.of(toDate);
         this.invoiceType = OptionalNullable.of(invoiceType);
-        this.invoiceStatus = OptionalNullable.of(invoiceStatus);
         this.sortBy = sortBy;
     }
 
@@ -75,15 +71,13 @@ public class EIDSearchReq {
      * @param  fromDate  String value for fromDate.
      * @param  toDate  String value for toDate.
      * @param  invoiceType  String value for invoiceType.
-     * @param  invoiceStatus  String value for invoiceStatus.
      * @param  sortBy  List of String value for sortBy.
      */
 
     protected EIDSearchReq(Integer colCoCode, Integer accountGroupCountry,
             List<String> accountGroupId, OptionalNullable<String> accountGroupName,
             OptionalNullable<String> fromDate, OptionalNullable<String> toDate,
-            OptionalNullable<String> invoiceType, OptionalNullable<String> invoiceStatus,
-            List<String> sortBy) {
+            OptionalNullable<String> invoiceType, List<String> sortBy) {
         this.colCoCode = colCoCode;
         this.accountGroupCountry = accountGroupCountry;
         this.accountGroupId = accountGroupId;
@@ -91,7 +85,6 @@ public class EIDSearchReq {
         this.fromDate = fromDate;
         this.toDate = toDate;
         this.invoiceType = invoiceType;
-        this.invoiceStatus = invoiceStatus;
         this.sortBy = sortBy;
     }
 
@@ -312,45 +305,6 @@ public class EIDSearchReq {
     }
 
     /**
-     * Internal Getter for InvoiceStatus.
-     * Status of the document. Optional. Possible values: • NEW • VIEWED • DOWNLOADED • RESTORED
-     * @return Returns the Internal String
-     */
-    @JsonGetter("InvoiceStatus")
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonSerialize(using = OptionalNullable.Serializer.class)
-    protected OptionalNullable<String> internalGetInvoiceStatus() {
-        return this.invoiceStatus;
-    }
-
-    /**
-     * Getter for InvoiceStatus.
-     * Status of the document. Optional. Possible values: • NEW • VIEWED • DOWNLOADED • RESTORED
-     * @return Returns the String
-     */
-    public String getInvoiceStatus() {
-        return OptionalNullable.getFrom(invoiceStatus);
-    }
-
-    /**
-     * Setter for InvoiceStatus.
-     * Status of the document. Optional. Possible values: • NEW • VIEWED • DOWNLOADED • RESTORED
-     * @param invoiceStatus Value for String
-     */
-    @JsonSetter("InvoiceStatus")
-    public void setInvoiceStatus(String invoiceStatus) {
-        this.invoiceStatus = OptionalNullable.of(invoiceStatus);
-    }
-
-    /**
-     * UnSetter for InvoiceStatus.
-     * Status of the document. Optional. Possible values: • NEW • VIEWED • DOWNLOADED • RESTORED
-     */
-    public void unsetInvoiceStatus() {
-        invoiceStatus = null;
-    }
-
-    /**
      * Getter for SortBy.
      * Sort option – • InvoiceNumber ASC • InvoiceDate ASC • InvoiceNumber DESC • InvoiceDate DESC
      * Optional
@@ -382,8 +336,7 @@ public class EIDSearchReq {
         return "EIDSearchReq [" + "colCoCode=" + colCoCode + ", accountGroupCountry="
                 + accountGroupCountry + ", accountGroupId=" + accountGroupId + ", accountGroupName="
                 + accountGroupName + ", fromDate=" + fromDate + ", toDate=" + toDate
-                + ", invoiceType=" + invoiceType + ", invoiceStatus=" + invoiceStatus + ", sortBy="
-                + sortBy + "]";
+                + ", invoiceType=" + invoiceType + ", sortBy=" + sortBy + "]";
     }
 
     /**
@@ -398,7 +351,6 @@ public class EIDSearchReq {
         builder.fromDate = internalGetFromDate();
         builder.toDate = internalGetToDate();
         builder.invoiceType = internalGetInvoiceType();
-        builder.invoiceStatus = internalGetInvoiceStatus();
         return builder;
     }
 
@@ -413,7 +365,6 @@ public class EIDSearchReq {
         private OptionalNullable<String> fromDate;
         private OptionalNullable<String> toDate;
         private OptionalNullable<String> invoiceType;
-        private OptionalNullable<String> invoiceStatus;
         private List<String> sortBy;
 
         /**
@@ -542,25 +493,6 @@ public class EIDSearchReq {
         }
 
         /**
-         * Setter for invoiceStatus.
-         * @param  invoiceStatus  String value for invoiceStatus.
-         * @return Builder
-         */
-        public Builder invoiceStatus(String invoiceStatus) {
-            this.invoiceStatus = OptionalNullable.of(invoiceStatus);
-            return this;
-        }
-
-        /**
-         * UnSetter for invoiceStatus.
-         * @return Builder
-         */
-        public Builder unsetInvoiceStatus() {
-            invoiceStatus = null;
-            return this;
-        }
-
-        /**
          * Setter for sortBy.
          * @param  sortBy  List of String value for sortBy.
          * @return Builder
@@ -576,7 +508,7 @@ public class EIDSearchReq {
          */
         public EIDSearchReq build() {
             return new EIDSearchReq(colCoCode, accountGroupCountry, accountGroupId,
-                    accountGroupName, fromDate, toDate, invoiceType, invoiceStatus, sortBy);
+                    accountGroupName, fromDate, toDate, invoiceType, sortBy);
         }
     }
 }

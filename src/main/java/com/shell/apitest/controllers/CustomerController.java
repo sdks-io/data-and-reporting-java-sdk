@@ -9,7 +9,46 @@ package com.shell.apitest.controllers;
 import com.shell.apitest.ApiHelper;
 import com.shell.apitest.Server;
 import com.shell.apitest.exceptions.ApiException;
-import com.shell.apitest.exceptions.ErrorObjectException;
+import com.shell.apitest.exceptions.CustomerManagementV1Accounts400ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Accounts401ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Accounts403ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Accounts404ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Accounts500ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Auditreport400ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Auditreport401ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Auditreport403ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Auditreport404ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Auditreport500ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Cardgroups400ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Cardgroups401ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Cardgroups403ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Cardgroups404ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Cardgroups500ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Customer400ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Customer401ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Customer403ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Customer404ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Customer500ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Payers400ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Payers401ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Payers403ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Payers404ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Payers500ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Pricelist400ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Pricelist401ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Pricelist403ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Pricelist404ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV1Pricelist500ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV2Cardtype400ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV2Cardtype401ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV2Cardtype403ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV2Cardtype404ErrorException;
+import com.shell.apitest.exceptions.CustomerManagementV2Cardtype500ErrorException;
+import com.shell.apitest.exceptions.UserManagementV1Loggedinuser400ErrorException;
+import com.shell.apitest.exceptions.UserManagementV1Loggedinuser401ErrorException;
+import com.shell.apitest.exceptions.UserManagementV1Loggedinuser403ErrorException;
+import com.shell.apitest.exceptions.UserManagementV1Loggedinuser404ErrorException;
+import com.shell.apitest.exceptions.UserManagementV1Loggedinuser500ErrorException;
 import com.shell.apitest.http.request.HttpMethod;
 import com.shell.apitest.models.AccountReq;
 import com.shell.apitest.models.AccountRes;
@@ -113,20 +152,20 @@ public final class CustomerController extends BaseController {
                                 response -> ApiHelper.deserialize(response, LoggedInUserRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new UserManagementV1Loggedinuser400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new UserManagementV1Loggedinuser401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new UserManagementV1Loggedinuser403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new UserManagementV1Loggedinuser404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new UserManagementV1Loggedinuser500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -197,20 +236,20 @@ public final class CustomerController extends BaseController {
                                 response -> ApiHelper.deserialize(response, PayerRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new CustomerManagementV1Payers400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new CustomerManagementV1Payers401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new CustomerManagementV1Payers403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new CustomerManagementV1Payers404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new CustomerManagementV1Payers500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -275,20 +314,20 @@ public final class CustomerController extends BaseController {
                                 response -> ApiHelper.deserialize(response, CustomerRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new CustomerManagementV1Customer400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new CustomerManagementV1Customer401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new CustomerManagementV1Customer403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new CustomerManagementV1Customer404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new CustomerManagementV1Customer500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -353,20 +392,20 @@ public final class CustomerController extends BaseController {
                                 response -> ApiHelper.deserialize(response, AccountRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new CustomerManagementV1Accounts400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new CustomerManagementV1Accounts401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new CustomerManagementV1Accounts403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new CustomerManagementV1Accounts404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new CustomerManagementV1Accounts500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -417,7 +456,7 @@ public final class CustomerController extends BaseController {
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/customer-management/v1/cardtype")
+                        .path("/customer-management/v2/cardtype")
                         .bodyParam(param -> param.value(body))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
                         .headerParam(param -> param.key("RequestId")
@@ -433,20 +472,20 @@ public final class CustomerController extends BaseController {
                                 response -> ApiHelper.deserialize(response, CardTypeRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new CustomerManagementV2Cardtype400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new CustomerManagementV2Cardtype401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new CustomerManagementV2Cardtype403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new CustomerManagementV2Cardtype404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new CustomerManagementV2Cardtype500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -519,20 +558,20 @@ public final class CustomerController extends BaseController {
                                 response -> ApiHelper.deserialize(response, CardGroupRes.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new CustomerManagementV1Cardgroups400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new CustomerManagementV1Cardgroups401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new CustomerManagementV1Cardgroups403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new CustomerManagementV1Cardgroups404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new CustomerManagementV1Cardgroups500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -605,20 +644,20 @@ public final class CustomerController extends BaseController {
                                 response -> ApiHelper.deserialize(response, AuditResponse.class))
                         .nullify404(false)
                         .localErrorCase("400",
-                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+                                (reason, context) -> new CustomerManagementV1Auditreport400ErrorException(reason, context)))
                         .localErrorCase("401",
-                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
+                                (reason, context) -> new CustomerManagementV1Auditreport401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new CustomerManagementV1Auditreport403ErrorException(reason, context)))
                         .localErrorCase("404",
-                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
+                                (reason, context) -> new CustomerManagementV1Auditreport404ErrorException(reason, context)))
                         .localErrorCase("500",
-                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                 ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
+                                (reason, context) -> new CustomerManagementV1Auditreport500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -694,19 +733,19 @@ public final class CustomerController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new CustomerManagementV1Pricelist400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new CustomerManagementV1Pricelist401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new CustomerManagementV1Pricelist403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new CustomerManagementV1Pricelist404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new CustomerManagementV1Pricelist500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }

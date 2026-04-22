@@ -9,7 +9,71 @@ package com.shell.apitest.controllers;
 import com.shell.apitest.ApiHelper;
 import com.shell.apitest.Server;
 import com.shell.apitest.exceptions.ApiException;
-import com.shell.apitest.exceptions.ErrorObjectException;
+import com.shell.apitest.exceptions.TransactionDataV1Cardusagesummary400ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Cardusagesummary401ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Cardusagesummary403ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Cardusagesummary404ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Cardusagesummary500ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Exceptions400ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Exceptions401ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Exceptions403ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Exceptions404ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Exceptions500ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Fees400ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Fees401ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Fees403ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Fees404ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Fees500ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Feessummary400ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Feessummary401ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Feessummary403ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Feessummary404ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Feessummary500ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Fuelconsumption400ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Fuelconsumption401ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Fuelconsumption403ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Fuelconsumption404ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Fuelconsumption500ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Multipayerspricedtransactions400ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Multipayerspricedtransactions401ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Multipayerspricedtransactions403ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Multipayerspricedtransactions404ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Multipayerspricedtransactions500ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Priced400ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Priced401ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Priced403ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Priced404ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Priced500ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Pricedtransaction400ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Pricedtransaction401ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Pricedtransaction403ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Pricedtransaction404ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Pricedtransaction500ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Pricedtransactionssummary400ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Pricedtransactionssummary401ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Pricedtransactionssummary403ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Pricedtransactionssummary404ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Pricedtransactionssummary500ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Recent400ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Recent401ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Recent403ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Recent404ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Recent500ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Updateodometer400ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Updateodometer401ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Updateodometer403ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Updateodometer404ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Updateodometer500ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Volumebasedbonus400ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Volumebasedbonus401ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Volumebasedbonus403ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Volumebasedbonus404ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Volumebasedbonus500ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Volumebasedpricing400ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Volumebasedpricing401ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Volumebasedpricing403ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Volumebasedpricing404ErrorException;
+import com.shell.apitest.exceptions.TransactionDataV1Volumebasedpricing500ErrorException;
 import com.shell.apitest.http.request.HttpMethod;
 import com.shell.apitest.models.CardUsageSummaryReq;
 import com.shell.apitest.models.CardUsageSummaryRes;
@@ -150,19 +214,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Pricedtransaction400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Pricedtransaction401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Pricedtransaction403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Pricedtransaction404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Pricedtransaction500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -256,19 +320,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Pricedtransactionssummary400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Pricedtransactionssummary401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Pricedtransactionssummary403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Pricedtransactionssummary404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Pricedtransactionssummary500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -360,19 +424,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Multipayerspricedtransactions400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Multipayerspricedtransactions401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Multipayerspricedtransactions403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Multipayerspricedtransactions404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Multipayerspricedtransactions500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -440,19 +504,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Cardusagesummary400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Cardusagesummary401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Cardusagesummary403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Cardusagesummary404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Cardusagesummary500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -505,7 +569,7 @@ public final class TransactionController extends BaseController {
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
                         .server(Server.SHELL.value())
-                        .path("/transaction-data/v1/volumebasedbonuss")
+                        .path("/transaction-data/v1/volumebasedbonus")
                         .bodyParam(param -> param.value(body).isRequired(false))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
                         .headerParam(param -> param.key("RequestId")
@@ -522,19 +586,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Volumebasedbonus400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Volumebasedbonus401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Volumebasedbonus403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Volumebasedbonus404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Volumebasedbonus500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -602,19 +666,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Volumebasedpricing400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Volumebasedpricing401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Volumebasedpricing403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Volumebasedpricing404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Volumebasedpricing500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -688,19 +752,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Fees400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Fees401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Fees403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Fees404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Fees500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -774,19 +838,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Feessummary400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Feessummary401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Feessummary403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Feessummary404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Feessummary500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -856,19 +920,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Fuelconsumption400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Fuelconsumption401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Fuelconsumption403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Fuelconsumption404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Fuelconsumption500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -936,19 +1000,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Updateodometer400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Updateodometer401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Updateodometer403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Updateodometer404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Updateodometer500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -1018,19 +1082,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Exceptions400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Exceptions401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Exceptions403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Exceptions404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Exceptions500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -1108,19 +1172,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Recent400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Recent401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Recent403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Recent404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Recent500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }
@@ -1208,19 +1272,19 @@ public final class TransactionController extends BaseController {
                         .nullify404(false)
                         .localErrorCase("400",
                                  ErrorCase.setReason("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Priced400ErrorException(reason, context)))
                         .localErrorCase("401",
                                  ErrorCase.setReason("The request has not been applied because it lacks valid  authentication credentials for the target resource.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Priced401ErrorException(reason, context)))
                         .localErrorCase("403",
                                  ErrorCase.setReason("Forbidden",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Priced403ErrorException(reason, context)))
                         .localErrorCase("404",
                                  ErrorCase.setReason("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Priced404ErrorException(reason, context)))
                         .localErrorCase("500",
                                  ErrorCase.setReason("The server encountered an unexpected condition that  prevented it from fulfilling the request.",
-                                (reason, context) -> new ErrorObjectException(reason, context)))
+                                (reason, context) -> new TransactionDataV1Priced500ErrorException(reason, context)))
                         .globalErrorCase(GLOBAL_ERROR_CASES))
                 .build();
     }

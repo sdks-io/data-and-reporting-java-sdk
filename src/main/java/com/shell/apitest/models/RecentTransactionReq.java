@@ -293,7 +293,7 @@ public class RecentTransactionReq {
 
     /**
      * Internal Getter for CardPAN.
-     * Card identifier number masked
+     * Card PAN Number without masked
      * @return Returns the Internal String
      */
     @JsonGetter("CardPAN")
@@ -305,7 +305,7 @@ public class RecentTransactionReq {
 
     /**
      * Getter for CardPAN.
-     * Card identifier number masked
+     * Card PAN Number without masked
      * @return Returns the String
      */
     public String getCardPAN() {
@@ -314,7 +314,7 @@ public class RecentTransactionReq {
 
     /**
      * Setter for CardPAN.
-     * Card identifier number masked
+     * Card PAN Number without masked
      * @param cardPAN Value for String
      */
     @JsonSetter("CardPAN")
@@ -324,7 +324,7 @@ public class RecentTransactionReq {
 
     /**
      * UnSetter for CardPAN.
-     * Card identifier number masked
+     * Card PAN Number without masked
      */
     public void unsetCardPAN() {
         cardPAN = null;

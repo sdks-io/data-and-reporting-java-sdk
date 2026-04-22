@@ -17,7 +17,7 @@ import java.util.List;
 public class EIDDocumentResponse {
     private String requestId;
     private String status;
-    private List<EIDDocument> data;
+    private List<EIDDocument> document;
     private Integer pageSize;
     private Integer page;
     private Integer totalPages;
@@ -35,7 +35,7 @@ public class EIDDocumentResponse {
      * Initialization constructor.
      * @param  requestId  String value for requestId.
      * @param  status  String value for status.
-     * @param  data  List of EIDDocument value for data.
+     * @param  document  List of EIDDocument value for document.
      * @param  pageSize  Integer value for pageSize.
      * @param  page  Integer value for page.
      * @param  totalPages  Integer value for totalPages.
@@ -46,7 +46,7 @@ public class EIDDocumentResponse {
     public EIDDocumentResponse(
             String requestId,
             String status,
-            List<EIDDocument> data,
+            List<EIDDocument> document,
             Integer pageSize,
             Integer page,
             Integer totalPages,
@@ -55,7 +55,7 @@ public class EIDDocumentResponse {
             Boolean isLastPage) {
         this.requestId = requestId;
         this.status = status;
-        this.data = data;
+        this.document = document;
         this.pageSize = pageSize;
         this.page = page;
         this.totalPages = totalPages;
@@ -109,22 +109,22 @@ public class EIDDocumentResponse {
     }
 
     /**
-     * Getter for Data.
+     * Getter for Document.
      * @return Returns the List of EIDDocument
      */
-    @JsonGetter("Data")
+    @JsonGetter("Document")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public List<EIDDocument> getData() {
-        return data;
+    public List<EIDDocument> getDocument() {
+        return document;
     }
 
     /**
-     * Setter for Data.
-     * @param data Value for List of EIDDocument
+     * Setter for Document.
+     * @param document Value for List of EIDDocument
      */
-    @JsonSetter("Data")
-    public void setData(List<EIDDocument> data) {
-        this.data = data;
+    @JsonSetter("Document")
+    public void setDocument(List<EIDDocument> document) {
+        this.document = document;
     }
 
     /**
@@ -259,10 +259,10 @@ public class EIDDocumentResponse {
      */
     @Override
     public String toString() {
-        return "EIDDocumentResponse [" + "requestId=" + requestId + ", status=" + status + ", data="
-                + data + ", pageSize=" + pageSize + ", page=" + page + ", totalPages=" + totalPages
-                + ", totalRecords=" + totalRecords + ", isFirstPage=" + isFirstPage
-                + ", isLastPage=" + isLastPage + "]";
+        return "EIDDocumentResponse [" + "requestId=" + requestId + ", status=" + status
+                + ", document=" + document + ", pageSize=" + pageSize + ", page=" + page
+                + ", totalPages=" + totalPages + ", totalRecords=" + totalRecords + ", isFirstPage="
+                + isFirstPage + ", isLastPage=" + isLastPage + "]";
     }
 
     /**
@@ -274,7 +274,7 @@ public class EIDDocumentResponse {
         Builder builder = new Builder()
                 .requestId(getRequestId())
                 .status(getStatus())
-                .data(getData())
+                .document(getDocument())
                 .pageSize(getPageSize())
                 .page(getPage())
                 .totalPages(getTotalPages())
@@ -290,7 +290,7 @@ public class EIDDocumentResponse {
     public static class Builder {
         private String requestId;
         private String status;
-        private List<EIDDocument> data;
+        private List<EIDDocument> document;
         private Integer pageSize;
         private Integer page;
         private Integer totalPages;
@@ -321,12 +321,12 @@ public class EIDDocumentResponse {
         }
 
         /**
-         * Setter for data.
-         * @param  data  List of EIDDocument value for data.
+         * Setter for document.
+         * @param  document  List of EIDDocument value for document.
          * @return Builder
          */
-        public Builder data(List<EIDDocument> data) {
-            this.data = data;
+        public Builder document(List<EIDDocument> document) {
+            this.document = document;
             return this;
         }
 
@@ -395,7 +395,7 @@ public class EIDDocumentResponse {
          * @return {@link EIDDocumentResponse}
          */
         public EIDDocumentResponse build() {
-            return new EIDDocumentResponse(requestId, status, data, pageSize, page, totalPages,
+            return new EIDDocumentResponse(requestId, status, document, pageSize, page, totalPages,
                     totalRecords, isFirstPage, isLastPage);
         }
     }

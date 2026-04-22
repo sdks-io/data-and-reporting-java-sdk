@@ -19,15 +19,16 @@
 | `NetAmount` | `Double` | Optional | - | Double getNetAmount() | setNetAmount(Double netAmount) |
 | `TaxAmount` | `Double` | Optional | - | Double getTaxAmount() | setTaxAmount(Double taxAmount) |
 | `CurrencyCode` | `String` | Optional | - | String getCurrencyCode() | setCurrencyCode(String currencyCode) |
-| `InvoiceStatus` | `String` | Optional | - | String getInvoiceStatus() | setInvoiceStatus(String invoiceStatus) |
 | `InvoiceDate` | `String` | Optional | - | String getInvoiceDate() | setInvoiceDate(String invoiceDate) |
 | `DueDate` | `String` | Optional | - | String getDueDate() | setDueDate(String dueDate) |
 | `VATCountryISOCode` | `String` | Optional | - | String getVATCountryISOCode() | setVATCountryISOCode(String vATCountryISOCode) |
+| `KsefDocumentReference` | `String` | Optional | Unique identifier for the invoice in KSeF system. This field is populated only when the invoice is registered in KSeF system. | String getKsefDocumentReference() | setKsefDocumentReference(String ksefDocumentReference) |
 
 ## Example (as JSON)
 
 ```json
 {
+  "KsefDocumentReference": "1234567890123456",
   "DocumentReference": 10,
   "InvoiceNumber": "InvoiceNumber0",
   "PayerName": "PayerName0",

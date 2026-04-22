@@ -37,7 +37,7 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
 | `SortOrder` | [`PricedTransactionReqV2SortOrderEnum`](../../doc/models/priced-transaction-req-v2-sort-order-enum.md) | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` | PricedTransactionReqV2SortOrderEnum getSortOrder() | setSortOrder(PricedTransactionReqV2SortOrderEnum sortOrder) |
 | `FromDate` | `String` | Optional | From transaction delivery date<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` | String getFromDate() | setFromDate(String fromDate) |
 | `ToDate` | `String` | Optional | To transaction delivery date<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` | String getToDate() | setToDate(String toDate) |
-| `Period` | [`PricedTransactionReqV2PeriodEnum`](../../doc/models/priced-transaction-req-v2-period-enum.md) | Optional | - | PricedTransactionReqV2PeriodEnum getPeriod() | setPeriod(PricedTransactionReqV2PeriodEnum period) |
+| `Period` | [`PricedTransactionReqV2PeriodEnum`](../../doc/models/priced-transaction-req-v2-period-enum.md) | Optional | Pass below one of the value as per the required transaction period<br><br>1. Last 7 Days<br>2. Last 30 Days<br>3. Last 90 Days | PricedTransactionReqV2PeriodEnum getPeriod() | setPeriod(PricedTransactionReqV2PeriodEnum period) |
 | `PostingDateFrom` | `String` | Optional | Transaction posting start date and time<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` | String getPostingDateFrom() | setPostingDateFrom(String postingDateFrom) |
 | `PostingDateTo` | `String` | Optional | Transaction posting end date and time<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` | String getPostingDateTo() | setPostingDateTo(String postingDateTo) |
 | `TransactionItemId` | `String` | Optional | Unique id of the transaction that may include one or more salesitems | String getTransactionItemId() | setTransactionItemId(String transactionItemId) |
@@ -78,6 +78,7 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
   "LineItemDescription": "ABC3",
   "FromDate": "2022-01-01 00:00:00",
   "ToDate": "2022-01-01 00:00:00",
+  "Period": 3,
   "PostingDateFrom": "2022-01-01 00:00:00",
   "PostingDateTo": "2022-01-01 00:00:00",
   "TransactionItemId": "io9KVXk1UkW57XWKyeaHHg",

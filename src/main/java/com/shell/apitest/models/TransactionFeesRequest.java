@@ -25,6 +25,9 @@ public class TransactionFeesRequest {
     private OptionalNullable<Integer> cardId;
     private OptionalNullable<String> cardPAN;
     private OptionalNullable<String> invoiceStatus;
+    private OptionalNullable<String> invoiceNumber;
+    private OptionalNullable<String> postedDateFrom;
+    private OptionalNullable<String> postedDateTo;
     private OptionalNullable<String> feeTypeGroup;
     private OptionalNullable<Integer> feeTypeId;
     private OptionalNullable<String> fromDate;
@@ -52,6 +55,9 @@ public class TransactionFeesRequest {
      * @param  cardId  Integer value for cardId.
      * @param  cardPAN  String value for cardPAN.
      * @param  invoiceStatus  String value for invoiceStatus.
+     * @param  invoiceNumber  String value for invoiceNumber.
+     * @param  postedDateFrom  String value for postedDateFrom.
+     * @param  postedDateTo  String value for postedDateTo.
      * @param  feeTypeGroup  String value for feeTypeGroup.
      * @param  feeTypeId  Integer value for feeTypeId.
      * @param  fromDate  String value for fromDate.
@@ -72,6 +78,9 @@ public class TransactionFeesRequest {
             Integer cardId,
             String cardPAN,
             String invoiceStatus,
+            String invoiceNumber,
+            String postedDateFrom,
+            String postedDateTo,
             String feeTypeGroup,
             Integer feeTypeId,
             String fromDate,
@@ -90,6 +99,9 @@ public class TransactionFeesRequest {
         this.cardId = OptionalNullable.of(cardId);
         this.cardPAN = OptionalNullable.of(cardPAN);
         this.invoiceStatus = OptionalNullable.of(invoiceStatus);
+        this.invoiceNumber = OptionalNullable.of(invoiceNumber);
+        this.postedDateFrom = OptionalNullable.of(postedDateFrom);
+        this.postedDateTo = OptionalNullable.of(postedDateTo);
         this.feeTypeGroup = OptionalNullable.of(feeTypeGroup);
         this.feeTypeId = OptionalNullable.of(feeTypeId);
         this.fromDate = OptionalNullable.of(fromDate);
@@ -112,6 +124,9 @@ public class TransactionFeesRequest {
      * @param  cardId  Integer value for cardId.
      * @param  cardPAN  String value for cardPAN.
      * @param  invoiceStatus  String value for invoiceStatus.
+     * @param  invoiceNumber  String value for invoiceNumber.
+     * @param  postedDateFrom  String value for postedDateFrom.
+     * @param  postedDateTo  String value for postedDateTo.
      * @param  feeTypeGroup  String value for feeTypeGroup.
      * @param  feeTypeId  Integer value for feeTypeId.
      * @param  fromDate  String value for fromDate.
@@ -128,12 +143,13 @@ public class TransactionFeesRequest {
             OptionalNullable<Integer> colCoCode, OptionalNullable<Integer> payerId,
             OptionalNullable<String> payerNumber, List<Accounts> accounts,
             OptionalNullable<Integer> cardId, OptionalNullable<String> cardPAN,
-            OptionalNullable<String> invoiceStatus, OptionalNullable<String> feeTypeGroup,
-            OptionalNullable<Integer> feeTypeId, OptionalNullable<String> fromDate,
-            OptionalNullable<String> toDate, OptionalNullable<Integer> period,
-            OptionalNullable<Boolean> includeCancelledItems, OptionalNullable<Integer> productId,
-            OptionalNullable<String> productCode, OptionalNullable<String> lineItemDescription,
-            OptionalNullable<String> sortOrder) {
+            OptionalNullable<String> invoiceStatus, OptionalNullable<String> invoiceNumber,
+            OptionalNullable<String> postedDateFrom, OptionalNullable<String> postedDateTo,
+            OptionalNullable<String> feeTypeGroup, OptionalNullable<Integer> feeTypeId,
+            OptionalNullable<String> fromDate, OptionalNullable<String> toDate,
+            OptionalNullable<Integer> period, OptionalNullable<Boolean> includeCancelledItems,
+            OptionalNullable<Integer> productId, OptionalNullable<String> productCode,
+            OptionalNullable<String> lineItemDescription, OptionalNullable<String> sortOrder) {
         this.colCoId = colCoId;
         this.colCoCode = colCoCode;
         this.payerId = payerId;
@@ -142,6 +158,9 @@ public class TransactionFeesRequest {
         this.cardId = cardId;
         this.cardPAN = cardPAN;
         this.invoiceStatus = invoiceStatus;
+        this.invoiceNumber = invoiceNumber;
+        this.postedDateFrom = postedDateFrom;
+        this.postedDateTo = postedDateTo;
         this.feeTypeGroup = feeTypeGroup;
         this.feeTypeId = feeTypeId;
         this.fromDate = fromDate;
@@ -476,6 +495,123 @@ public class TransactionFeesRequest {
      */
     public void unsetInvoiceStatus() {
         invoiceStatus = null;
+    }
+
+    /**
+     * Internal Getter for InvoiceNumber.
+     * Invoice Number Optional
+     * @return Returns the Internal String
+     */
+    @JsonGetter("InvoiceNumber")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetInvoiceNumber() {
+        return this.invoiceNumber;
+    }
+
+    /**
+     * Getter for InvoiceNumber.
+     * Invoice Number Optional
+     * @return Returns the String
+     */
+    public String getInvoiceNumber() {
+        return OptionalNullable.getFrom(invoiceNumber);
+    }
+
+    /**
+     * Setter for InvoiceNumber.
+     * Invoice Number Optional
+     * @param invoiceNumber Value for String
+     */
+    @JsonSetter("InvoiceNumber")
+    public void setInvoiceNumber(String invoiceNumber) {
+        this.invoiceNumber = OptionalNullable.of(invoiceNumber);
+    }
+
+    /**
+     * UnSetter for InvoiceNumber.
+     * Invoice Number Optional
+     */
+    public void unsetInvoiceNumber() {
+        invoiceNumber = null;
+    }
+
+    /**
+     * Internal Getter for PostedDateFrom.
+     * Fee Item Posted Date From Optional Format: yyyyMMdd
+     * @return Returns the Internal String
+     */
+    @JsonGetter("PostedDateFrom")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetPostedDateFrom() {
+        return this.postedDateFrom;
+    }
+
+    /**
+     * Getter for PostedDateFrom.
+     * Fee Item Posted Date From Optional Format: yyyyMMdd
+     * @return Returns the String
+     */
+    public String getPostedDateFrom() {
+        return OptionalNullable.getFrom(postedDateFrom);
+    }
+
+    /**
+     * Setter for PostedDateFrom.
+     * Fee Item Posted Date From Optional Format: yyyyMMdd
+     * @param postedDateFrom Value for String
+     */
+    @JsonSetter("PostedDateFrom")
+    public void setPostedDateFrom(String postedDateFrom) {
+        this.postedDateFrom = OptionalNullable.of(postedDateFrom);
+    }
+
+    /**
+     * UnSetter for PostedDateFrom.
+     * Fee Item Posted Date From Optional Format: yyyyMMdd
+     */
+    public void unsetPostedDateFrom() {
+        postedDateFrom = null;
+    }
+
+    /**
+     * Internal Getter for PostedDateTo.
+     * Fee Item Posted Date To Optional Format: yyyyMMdd
+     * @return Returns the Internal String
+     */
+    @JsonGetter("PostedDateTo")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonSerialize(using = OptionalNullable.Serializer.class)
+    protected OptionalNullable<String> internalGetPostedDateTo() {
+        return this.postedDateTo;
+    }
+
+    /**
+     * Getter for PostedDateTo.
+     * Fee Item Posted Date To Optional Format: yyyyMMdd
+     * @return Returns the String
+     */
+    public String getPostedDateTo() {
+        return OptionalNullable.getFrom(postedDateTo);
+    }
+
+    /**
+     * Setter for PostedDateTo.
+     * Fee Item Posted Date To Optional Format: yyyyMMdd
+     * @param postedDateTo Value for String
+     */
+    @JsonSetter("PostedDateTo")
+    public void setPostedDateTo(String postedDateTo) {
+        this.postedDateTo = OptionalNullable.of(postedDateTo);
+    }
+
+    /**
+     * UnSetter for PostedDateTo.
+     * Fee Item Posted Date To Optional Format: yyyyMMdd
+     */
+    public void unsetPostedDateTo() {
+        postedDateTo = null;
     }
 
     /**
@@ -925,11 +1061,12 @@ public class TransactionFeesRequest {
         return "TransactionFeesRequest [" + "colCoId=" + colCoId + ", colCoCode=" + colCoCode
                 + ", payerId=" + payerId + ", payerNumber=" + payerNumber + ", accounts=" + accounts
                 + ", cardId=" + cardId + ", cardPAN=" + cardPAN + ", invoiceStatus=" + invoiceStatus
-                + ", feeTypeGroup=" + feeTypeGroup + ", feeTypeId=" + feeTypeId + ", fromDate="
-                + fromDate + ", toDate=" + toDate + ", period=" + period
-                + ", includeCancelledItems=" + includeCancelledItems + ", productId=" + productId
-                + ", productCode=" + productCode + ", lineItemDescription=" + lineItemDescription
-                + ", sortOrder=" + sortOrder + "]";
+                + ", invoiceNumber=" + invoiceNumber + ", postedDateFrom=" + postedDateFrom
+                + ", postedDateTo=" + postedDateTo + ", feeTypeGroup=" + feeTypeGroup
+                + ", feeTypeId=" + feeTypeId + ", fromDate=" + fromDate + ", toDate=" + toDate
+                + ", period=" + period + ", includeCancelledItems=" + includeCancelledItems
+                + ", productId=" + productId + ", productCode=" + productCode
+                + ", lineItemDescription=" + lineItemDescription + ", sortOrder=" + sortOrder + "]";
     }
 
     /**
@@ -947,6 +1084,9 @@ public class TransactionFeesRequest {
         builder.cardId = internalGetCardId();
         builder.cardPAN = internalGetCardPAN();
         builder.invoiceStatus = internalGetInvoiceStatus();
+        builder.invoiceNumber = internalGetInvoiceNumber();
+        builder.postedDateFrom = internalGetPostedDateFrom();
+        builder.postedDateTo = internalGetPostedDateTo();
         builder.feeTypeGroup = internalGetFeeTypeGroup();
         builder.feeTypeId = internalGetFeeTypeId();
         builder.fromDate = internalGetFromDate();
@@ -972,6 +1112,9 @@ public class TransactionFeesRequest {
         private OptionalNullable<Integer> cardId;
         private OptionalNullable<String> cardPAN;
         private OptionalNullable<String> invoiceStatus;
+        private OptionalNullable<String> invoiceNumber;
+        private OptionalNullable<String> postedDateFrom;
+        private OptionalNullable<String> postedDateTo;
         private OptionalNullable<String> feeTypeGroup;
         private OptionalNullable<Integer> feeTypeId;
         private OptionalNullable<String> fromDate;
@@ -1125,6 +1268,63 @@ public class TransactionFeesRequest {
          */
         public Builder unsetInvoiceStatus() {
             invoiceStatus = null;
+            return this;
+        }
+
+        /**
+         * Setter for invoiceNumber.
+         * @param  invoiceNumber  String value for invoiceNumber.
+         * @return Builder
+         */
+        public Builder invoiceNumber(String invoiceNumber) {
+            this.invoiceNumber = OptionalNullable.of(invoiceNumber);
+            return this;
+        }
+
+        /**
+         * UnSetter for invoiceNumber.
+         * @return Builder
+         */
+        public Builder unsetInvoiceNumber() {
+            invoiceNumber = null;
+            return this;
+        }
+
+        /**
+         * Setter for postedDateFrom.
+         * @param  postedDateFrom  String value for postedDateFrom.
+         * @return Builder
+         */
+        public Builder postedDateFrom(String postedDateFrom) {
+            this.postedDateFrom = OptionalNullable.of(postedDateFrom);
+            return this;
+        }
+
+        /**
+         * UnSetter for postedDateFrom.
+         * @return Builder
+         */
+        public Builder unsetPostedDateFrom() {
+            postedDateFrom = null;
+            return this;
+        }
+
+        /**
+         * Setter for postedDateTo.
+         * @param  postedDateTo  String value for postedDateTo.
+         * @return Builder
+         */
+        public Builder postedDateTo(String postedDateTo) {
+            this.postedDateTo = OptionalNullable.of(postedDateTo);
+            return this;
+        }
+
+        /**
+         * UnSetter for postedDateTo.
+         * @return Builder
+         */
+        public Builder unsetPostedDateTo() {
+            postedDateTo = null;
             return this;
         }
 
@@ -1324,9 +1524,9 @@ public class TransactionFeesRequest {
          */
         public TransactionFeesRequest build() {
             return new TransactionFeesRequest(colCoId, colCoCode, payerId, payerNumber, accounts,
-                    cardId, cardPAN, invoiceStatus, feeTypeGroup, feeTypeId, fromDate, toDate,
-                    period, includeCancelledItems, productId, productCode, lineItemDescription,
-                    sortOrder);
+                    cardId, cardPAN, invoiceStatus, invoiceNumber, postedDateFrom, postedDateTo,
+                    feeTypeGroup, feeTypeId, fromDate, toDate, period, includeCancelledItems,
+                    productId, productCode, lineItemDescription, sortOrder);
         }
     }
 }

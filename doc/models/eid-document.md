@@ -17,7 +17,6 @@
 | `DocumentDate` | `String` | Optional | Document date.<br>Example: 20170101 | String getDocumentDate() | setDocumentDate(String documentDate) |
 | `NumberOfInvoices` | `Integer` | Optional | Number of invoices | Integer getNumberOfInvoices() | setNumberOfInvoices(Integer numberOfInvoices) |
 | `FileSize` | `Integer` | Optional | Document size | Integer getFileSize() | setFileSize(Integer fileSize) |
-| `DocumentStatus` | `String` | Optional | Document status.<br>Possible values:<br>•    NEW<br>•    VIEWED<br>•    DOWNLOADED<br>•    RESTORED | String getDocumentStatus() | setDocumentStatus(String documentStatus) |
 | `DocumentName` | `String` | Optional | Document file name. | String getDocumentName() | setDocumentName(String documentName) |
 
 ## Example (as JSON)

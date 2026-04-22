@@ -72,12 +72,12 @@ public class TransactionControllerTest extends BaseControllerTest {
         RecentTransactionRequest body = ApiHelper.deserialize(
                 "{\"PageSize\":1,\"Page\":1,\"Filters\":{\"ColCoCode\":14,\"PayerNumber\":\"GB00001"
                 + "232\",\"AccountNumber\":\"GB00001233\",\"ProductCode\":\"22\",\"PurchasedInCount"
-                + "ry\":\"GB\",\"CardPAN\":\"700205******890645\",\"FromDateTime\":\"2020-11-09 13:"
-                + "56:03.000\",\"ToDateTime\":\"2020-12-09 13:56:03.000\",\"TransactionStatus\":\"A"
-                + "PPROVED\",\"FuelOnly\":\"False\",\"ProductGroupName\":\"Motor gasoline\",\"Vehic"
-                + "leRegistrationNumber\":\"YG67OUM\",\"IncludeDeclines\":true,\"CardIssuerName\":"
-                + "\"Mathew\",\"ColumnList\":\"PayerNumber,AccountNumber,ProductName,FuelVolume,PAN"
-                + "\"}}",
+                + "ry\":\"GB\",\"CardPAN\":\"7002051006629890645\",\"FromDateTime\":\"2020-11-09 13"
+                + ":56:03.000\",\"ToDateTime\":\"2020-12-09 13:56:03.000\",\"TransactionStatus\":"
+                + "\"APPROVED\",\"FuelOnly\":\"False\",\"ProductGroupName\":\"Motor gasoline\",\"Ve"
+                + "hicleRegistrationNumber\":\"YG67OUM\",\"IncludeDeclines\":true,\"CardIssuerName"
+                + "\":\"Mathew\",\"ColumnList\":\"PayerNumber,AccountNumber,ProductName,FuelVolume,"
+                + "PAN\"}}",
                 RecentTransactionRequest.class);
 
         // Set callback and perform API call

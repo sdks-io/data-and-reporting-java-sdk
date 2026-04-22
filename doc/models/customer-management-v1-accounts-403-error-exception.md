@@ -1,9 +1,9 @@
 
-# Error Object Exception
+# Customer Management V1 Accounts 403 Error Exception
 
 ## Structure
 
-`ErrorObjectException`
+`CustomerManagementV1Accounts403ErrorException`
 
 ## Fields
 
@@ -17,8 +17,8 @@
 
 ```json
 {
-  "RequestId": "RequestId0",
-  "Status": "Status6",
+  "RequestId": "RequestId4",
+  "Status": "Status0",
   "Errors": [
     {
       "Code": "Code4",

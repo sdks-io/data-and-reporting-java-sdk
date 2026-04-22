@@ -11,7 +11,7 @@
 |  --- | --- | --- | --- | --- | --- |
 | `RequestId` | `String` | Optional | UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. | String getRequestId() | setRequestId(String requestId) |
 | `Status` | `String` | Optional | Indicates overall status of the request. Allowed values: SUCCESS, FAILED | String getStatus() | setStatus(String status) |
-| `Data` | [`List<EIDDocument>`](../../doc/models/eid-document.md) | Optional | - | List<EIDDocument> getData() | setData(List<EIDDocument> data) |
+| `Document` | [`List<EIDDocument>`](../../doc/models/eid-document.md) | Optional | - | List<EIDDocument> getDocument() | setDocument(List<EIDDocument> document) |
 | `PageSize` | `Integer` | Optional | Number of records returned in the response | Integer getPageSize() | setPageSize(Integer pageSize) |
 | `Page` | `Integer` | Optional | Current page | Integer getPage() | setPage(Integer page) |
 | `TotalPages` | `Integer` | Optional | Total number of pages available for the requested data | Integer getTotalPages() | setTotalPages(Integer totalPages) |
@@ -25,13 +25,13 @@
 {
   "RequestId": "RequestId8",
   "Status": "Status4",
-  "Data": [
+  "Document": [
     {
-      "DocumentId": 28,
-      "AccountGroupId": "AccountGroupId2",
-      "AccountGroupName": "AccountGroupName6",
+      "DocumentId": 66,
+      "AccountGroupId": "AccountGroupId0",
+      "AccountGroupName": "AccountGroupName8",
       "DocumentType": "DocumentType6",
-      "DocumentFormat": "DocumentFormat0"
+      "DocumentFormat": "DocumentFormat2"
     }
   ],
   "PageSize": 188,

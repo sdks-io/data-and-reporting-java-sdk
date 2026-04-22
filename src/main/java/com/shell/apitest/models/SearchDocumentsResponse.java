@@ -17,7 +17,7 @@ import java.util.List;
 public class SearchDocumentsResponse {
     private String requestId;
     private String status;
-    private List<SearchDocumentsInvoice> data;
+    private List<SearchDocumentsInvoice> invoices;
     private Integer totalRecords;
     private Integer totalRecordsOnPage;
     private Boolean isFirstPage;
@@ -33,7 +33,7 @@ public class SearchDocumentsResponse {
      * Initialization constructor.
      * @param  requestId  String value for requestId.
      * @param  status  String value for status.
-     * @param  data  List of SearchDocumentsInvoice value for data.
+     * @param  invoices  List of SearchDocumentsInvoice value for invoices.
      * @param  totalRecords  Integer value for totalRecords.
      * @param  totalRecordsOnPage  Integer value for totalRecordsOnPage.
      * @param  isFirstPage  Boolean value for isFirstPage.
@@ -42,14 +42,14 @@ public class SearchDocumentsResponse {
     public SearchDocumentsResponse(
             String requestId,
             String status,
-            List<SearchDocumentsInvoice> data,
+            List<SearchDocumentsInvoice> invoices,
             Integer totalRecords,
             Integer totalRecordsOnPage,
             Boolean isFirstPage,
             Boolean isLastPage) {
         this.requestId = requestId;
         this.status = status;
-        this.data = data;
+        this.invoices = invoices;
         this.totalRecords = totalRecords;
         this.totalRecordsOnPage = totalRecordsOnPage;
         this.isFirstPage = isFirstPage;
@@ -101,22 +101,22 @@ public class SearchDocumentsResponse {
     }
 
     /**
-     * Getter for Data.
+     * Getter for Invoices.
      * @return Returns the List of SearchDocumentsInvoice
      */
-    @JsonGetter("Data")
+    @JsonGetter("Invoices")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public List<SearchDocumentsInvoice> getData() {
-        return data;
+    public List<SearchDocumentsInvoice> getInvoices() {
+        return invoices;
     }
 
     /**
-     * Setter for Data.
-     * @param data Value for List of SearchDocumentsInvoice
+     * Setter for Invoices.
+     * @param invoices Value for List of SearchDocumentsInvoice
      */
-    @JsonSetter("Data")
-    public void setData(List<SearchDocumentsInvoice> data) {
-        this.data = data;
+    @JsonSetter("Invoices")
+    public void setInvoices(List<SearchDocumentsInvoice> invoices) {
+        this.invoices = invoices;
     }
 
     /**
@@ -210,9 +210,9 @@ public class SearchDocumentsResponse {
     @Override
     public String toString() {
         return "SearchDocumentsResponse [" + "requestId=" + requestId + ", status=" + status
-                + ", data=" + data + ", totalRecords=" + totalRecords + ", totalRecordsOnPage="
-                + totalRecordsOnPage + ", isFirstPage=" + isFirstPage + ", isLastPage=" + isLastPage
-                + "]";
+                + ", invoices=" + invoices + ", totalRecords=" + totalRecords
+                + ", totalRecordsOnPage=" + totalRecordsOnPage + ", isFirstPage=" + isFirstPage
+                + ", isLastPage=" + isLastPage + "]";
     }
 
     /**
@@ -224,7 +224,7 @@ public class SearchDocumentsResponse {
         Builder builder = new Builder()
                 .requestId(getRequestId())
                 .status(getStatus())
-                .data(getData())
+                .invoices(getInvoices())
                 .totalRecords(getTotalRecords())
                 .totalRecordsOnPage(getTotalRecordsOnPage())
                 .isFirstPage(getIsFirstPage())
@@ -238,7 +238,7 @@ public class SearchDocumentsResponse {
     public static class Builder {
         private String requestId;
         private String status;
-        private List<SearchDocumentsInvoice> data;
+        private List<SearchDocumentsInvoice> invoices;
         private Integer totalRecords;
         private Integer totalRecordsOnPage;
         private Boolean isFirstPage;
@@ -267,12 +267,12 @@ public class SearchDocumentsResponse {
         }
 
         /**
-         * Setter for data.
-         * @param  data  List of SearchDocumentsInvoice value for data.
+         * Setter for invoices.
+         * @param  invoices  List of SearchDocumentsInvoice value for invoices.
          * @return Builder
          */
-        public Builder data(List<SearchDocumentsInvoice> data) {
-            this.data = data;
+        public Builder invoices(List<SearchDocumentsInvoice> invoices) {
+            this.invoices = invoices;
             return this;
         }
 
@@ -321,7 +321,7 @@ public class SearchDocumentsResponse {
          * @return {@link SearchDocumentsResponse}
          */
         public SearchDocumentsResponse build() {
-            return new SearchDocumentsResponse(requestId, status, data, totalRecords,
+            return new SearchDocumentsResponse(requestId, status, invoices, totalRecords,
                     totalRecordsOnPage, isFirstPage, isLastPage);
         }
     }

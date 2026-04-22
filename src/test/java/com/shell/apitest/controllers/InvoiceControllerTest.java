@@ -408,12 +408,12 @@ public class InvoiceControllerTest extends BaseControllerTest {
         SearchDocumentsRequest body = ApiHelper.deserialize(
                 "{\"Filters\":{\"PayerNumber\":\"DE00000096\",\"AccountNumber\":\"DE00000096\",\"Co"
                 + "lCoCode\":14,\"AccountNumberList\":[\"DE00000123\",\"DE00000225\"],\"InvoiceNumb"
-                + "er\":\"1234567\",\"InvoiceNumberList\":[\"6400013693\",\"9421000010\"],\"Invoice"
-                + "Status\":\"NEW\",\"IssuingDateFrom\":\"2023/05/01\",\"IssuingDateTo\":\"2023/06/"
-                + "30\",\"DueDateFrom\":\"2023/05/04\",\"DueDateTo\":\"2023/06/30\",\"GrossAmount"
-                + "\":\"1000\",\"GrossAmountOperator\":\"LT\",\"DocumentType\":\"SOA\",\"VATIssuerC"
-                + "ountry\":\"DE\",\"SortyBy\":[\"InvoiceNumber ASC\",\"InvoiceDate DESC\"]},\"Page"
-                + "\":\"1\",\"PageSize\":\"50\"}",
+                + "er\":\"1234567\",\"InvoiceNumberList\":[\"6400013693\",\"9421000010\"],\"Issuing"
+                + "DateFrom\":\"2023/05/01\",\"IssuingDateTo\":\"2023/06/30\",\"DueDateFrom\":\"202"
+                + "3/05/04\",\"DueDateTo\":\"2023/06/30\",\"GrossAmount\":\"1000\",\"GrossAmountOpe"
+                + "rator\":\"LT\",\"DocumentType\":\"SOA\",\"VATIssuerCountry\":\"DE\",\"SortyBy\":"
+                + "[\"InvoiceNumber ASC\",\"InvoiceDate DESC\"]},\"Page\":\"1\",\"PageSize\":\"50"
+                + "\"}",
                 SearchDocumentsRequest.class);
 
         // Set callback and perform API call
@@ -443,13 +443,13 @@ public class InvoiceControllerTest extends BaseControllerTest {
                 result);
         assertTrue("Response body does not match in keys", 
                 TestHelper.isJsonObjectProperSubsetOf(
-                "{\"RequestId\":\"a8b81c1d-f44a-4365-8113-8958061c0b7e\",\"Status\":\"SUCCESS\",\"D"
-                + "ata\":[{\"DocumentReference\":311161,\"InvoiceNumber\":\"6400013693\",\"PayerNam"
-                + "e\":\"DE00000096\",\"AccountNumber\":\"DE00000096\",\"AccountName\":\"DE00000096"
-                + "\",\"DocumentType\":\"NAT\",\"GrossAmount\":-3141.93,\"NetAmount\":0,\"TaxAmount"
-                + "\":0,\"CurrencyCode\":\"EUR\",\"InvoiceStatus\":\"NEW\",\"InvoiceDate\":\"2023/0"
-                + "1/31\",\"DueDate\":\"2023/02/07\",\"VATCountryISOCode\":\"DE\"}],\"TotalRecords"
-                + "\":2,\"TotalRecordsOnPage\":2,\"IsFirstPage\":true,\"IsLastPage\":true}",
+                "{\"RequestId\":\"a8b81c1d-f44a-4365-8113-8958061c0b7e\",\"Status\":\"SUCCESS\",\"I"
+                + "nvoices\":[{\"DocumentReference\":311161,\"InvoiceNumber\":\"6400013693\",\"Paye"
+                + "rName\":\"DE00000096\",\"AccountNumber\":\"DE00000096\",\"AccountName\":\"DE0000"
+                + "0096\",\"DocumentType\":\"NAT\",\"GrossAmount\":-3141.93,\"NetAmount\":0,\"TaxAm"
+                + "ount\":0,\"CurrencyCode\":\"EUR\",\"InvoiceDate\":\"2023/01/31\",\"DueDate\":\"2"
+                + "023/02/07\",\"VATCountryISOCode\":\"DE\"}],\"TotalRecords\":2,\"TotalRecordsOnPa"
+                + "ge\":2,\"IsFirstPage\":true,\"IsLastPage\":true}",
                 TestHelper.convertStreamToString(httpResponse.getResponse().getRawBody()), 
                 false, true, false));
     }
@@ -467,8 +467,8 @@ public class InvoiceControllerTest extends BaseControllerTest {
         EIDSearchRequest body = ApiHelper.deserialize(
                 "{\"Filters\":{\"ColCoCode\":32,\"AccountGroupCountry\":32,\"AccountGroupId\":[\"12"
                 + "2\"],\"AccountGroupName\":null,\"FromDate\":\"2017/08/30\",\"ToDate\":\"2017/10/"
-                + "31\",\"InvoiceType\":\"NAT\",\"InvoiceStatus\":\"NEW\",\"SortBy\":[\"DocumentDat"
-                + "e ASC\"]},\"Page\":1,\"PageSize\":10}",
+                + "31\",\"InvoiceType\":\"NAT\",\"SortBy\":[\"DocumentDate ASC\"]},\"Page\":1,\"Pag"
+                + "eSize\":10}",
                 EIDSearchRequest.class);
 
         // Set callback and perform API call
@@ -499,12 +499,11 @@ public class InvoiceControllerTest extends BaseControllerTest {
         assertTrue("Response body does not match in keys", 
                 TestHelper.isJsonObjectProperSubsetOf(
                 "{\"RequestId\":\"a0a1596f-b242-4672-b513-66c5e5554195\",\"Status\":\"SUCCESS\",\"D"
-                + "ata\":[{\"DocumentId\":15029,\"AccountGroupId\":\"122\",\"AccountGroupName\":\"E"
-                + "ID-122\",\"DocumentType\":\"INT\",\"DocumentFormat\":\"FLAT\",\"DocumentDate\":"
-                + "\"2022/12/28\",\"NumberOfInvoices\":1,\"FileSize\":1624,\"DocumentStatus\":\"DOW"
-                + "NLOADED\",\"DocumentName\":\"032_122_INT_28122022.TXT\"}],\"PageSize\":1,\"Page"
-                + "\":1,\"TotalPages\":12,\"TotalRecords\":120,\"IsFirstPage\":true,\"IsLastPage\":"
-                + "false}",
+                + "ocument\":[{\"DocumentId\":15029,\"AccountGroupId\":\"122\",\"AccountGroupName"
+                + "\":\"EID-122\",\"DocumentType\":\"INT\",\"DocumentFormat\":\"FLAT\",\"DocumentDa"
+                + "te\":\"2022/12/28\",\"NumberOfInvoices\":1,\"FileSize\":1624,\"DocumentName\":"
+                + "\"032_122_INT_28122022.TXT\"}],\"PageSize\":1,\"Page\":1,\"TotalPages\":12,\"Tot"
+                + "alRecords\":120,\"IsFirstPage\":true,\"IsLastPage\":false}",
                 TestHelper.convertStreamToString(httpResponse.getResponse().getRawBody()), 
                 false, true, false));
     }

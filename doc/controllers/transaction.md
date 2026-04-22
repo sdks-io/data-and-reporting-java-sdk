@@ -95,8 +95,28 @@ transactionController.pricedTransactionsAsync(requestId, body).thenAccept(result
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof TransactionDataV1Pricedtransaction400ErrorException) {
+        TransactionDataV1Pricedtransaction400ErrorException transactionDataV1Pricedtransaction400ErrorException = (TransactionDataV1Pricedtransaction400ErrorException) cause;
+        transactionDataV1Pricedtransaction400ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Pricedtransaction401ErrorException) {
+        TransactionDataV1Pricedtransaction401ErrorException transactionDataV1Pricedtransaction401ErrorException = (TransactionDataV1Pricedtransaction401ErrorException) cause;
+        transactionDataV1Pricedtransaction401ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Pricedtransaction403ErrorException) {
+        TransactionDataV1Pricedtransaction403ErrorException transactionDataV1Pricedtransaction403ErrorException = (TransactionDataV1Pricedtransaction403ErrorException) cause;
+        transactionDataV1Pricedtransaction403ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Pricedtransaction404ErrorException) {
+        TransactionDataV1Pricedtransaction404ErrorException transactionDataV1Pricedtransaction404ErrorException = (TransactionDataV1Pricedtransaction404ErrorException) cause;
+        transactionDataV1Pricedtransaction404ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Pricedtransaction500ErrorException) {
+        TransactionDataV1Pricedtransaction500ErrorException transactionDataV1Pricedtransaction500ErrorException = (TransactionDataV1Pricedtransaction500ErrorException) cause;
+        transactionDataV1Pricedtransaction500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -105,11 +125,11 @@ transactionController.pricedTransactionsAsync(requestId, body).thenAccept(result
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Pricedtransaction400ErrorException`](../../doc/models/transaction-data-v1-pricedtransaction-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Pricedtransaction401ErrorException`](../../doc/models/transaction-data-v1-pricedtransaction-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Pricedtransaction403ErrorException`](../../doc/models/transaction-data-v1-pricedtransaction-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Pricedtransaction404ErrorException`](../../doc/models/transaction-data-v1-pricedtransaction-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Pricedtransaction500ErrorException`](../../doc/models/transaction-data-v1-pricedtransaction-500-error-exception.md) |
 
 
 # Priced Transactions Summary
@@ -174,8 +194,28 @@ transactionController.pricedTransactionsSummaryAsync(requestId, null).thenAccept
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof TransactionDataV1Pricedtransactionssummary400ErrorException) {
+        TransactionDataV1Pricedtransactionssummary400ErrorException transactionDataV1Pricedtransactionssummary400ErrorException = (TransactionDataV1Pricedtransactionssummary400ErrorException) cause;
+        transactionDataV1Pricedtransactionssummary400ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Pricedtransactionssummary401ErrorException) {
+        TransactionDataV1Pricedtransactionssummary401ErrorException transactionDataV1Pricedtransactionssummary401ErrorException = (TransactionDataV1Pricedtransactionssummary401ErrorException) cause;
+        transactionDataV1Pricedtransactionssummary401ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Pricedtransactionssummary403ErrorException) {
+        TransactionDataV1Pricedtransactionssummary403ErrorException transactionDataV1Pricedtransactionssummary403ErrorException = (TransactionDataV1Pricedtransactionssummary403ErrorException) cause;
+        transactionDataV1Pricedtransactionssummary403ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Pricedtransactionssummary404ErrorException) {
+        TransactionDataV1Pricedtransactionssummary404ErrorException transactionDataV1Pricedtransactionssummary404ErrorException = (TransactionDataV1Pricedtransactionssummary404ErrorException) cause;
+        transactionDataV1Pricedtransactionssummary404ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Pricedtransactionssummary500ErrorException) {
+        TransactionDataV1Pricedtransactionssummary500ErrorException transactionDataV1Pricedtransactionssummary500ErrorException = (TransactionDataV1Pricedtransactionssummary500ErrorException) cause;
+        transactionDataV1Pricedtransactionssummary500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -184,11 +224,11 @@ transactionController.pricedTransactionsSummaryAsync(requestId, null).thenAccept
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Pricedtransactionssummary400ErrorException`](../../doc/models/transaction-data-v1-pricedtransactionssummary-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Pricedtransactionssummary401ErrorException`](../../doc/models/transaction-data-v1-pricedtransactionssummary-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Pricedtransactionssummary403ErrorException`](../../doc/models/transaction-data-v1-pricedtransactionssummary-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Pricedtransactionssummary404ErrorException`](../../doc/models/transaction-data-v1-pricedtransactionssummary-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Pricedtransactionssummary500ErrorException`](../../doc/models/transaction-data-v1-pricedtransactionssummary-500-error-exception.md) |
 
 
 # Multipriced Transactions
@@ -254,8 +294,28 @@ transactionController.multipricedTransactionsAsync(requestId, body).thenAccept(r
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof TransactionDataV1Multipayerspricedtransactions400ErrorException) {
+        TransactionDataV1Multipayerspricedtransactions400ErrorException transactionDataV1Multipayerspricedtransactions400ErrorException = (TransactionDataV1Multipayerspricedtransactions400ErrorException) cause;
+        transactionDataV1Multipayerspricedtransactions400ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Multipayerspricedtransactions401ErrorException) {
+        TransactionDataV1Multipayerspricedtransactions401ErrorException transactionDataV1Multipayerspricedtransactions401ErrorException = (TransactionDataV1Multipayerspricedtransactions401ErrorException) cause;
+        transactionDataV1Multipayerspricedtransactions401ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Multipayerspricedtransactions403ErrorException) {
+        TransactionDataV1Multipayerspricedtransactions403ErrorException transactionDataV1Multipayerspricedtransactions403ErrorException = (TransactionDataV1Multipayerspricedtransactions403ErrorException) cause;
+        transactionDataV1Multipayerspricedtransactions403ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Multipayerspricedtransactions404ErrorException) {
+        TransactionDataV1Multipayerspricedtransactions404ErrorException transactionDataV1Multipayerspricedtransactions404ErrorException = (TransactionDataV1Multipayerspricedtransactions404ErrorException) cause;
+        transactionDataV1Multipayerspricedtransactions404ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Multipayerspricedtransactions500ErrorException) {
+        TransactionDataV1Multipayerspricedtransactions500ErrorException transactionDataV1Multipayerspricedtransactions500ErrorException = (TransactionDataV1Multipayerspricedtransactions500ErrorException) cause;
+        transactionDataV1Multipayerspricedtransactions500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -264,11 +324,11 @@ transactionController.multipricedTransactionsAsync(requestId, body).thenAccept(r
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Multipayerspricedtransactions400ErrorException`](../../doc/models/transaction-data-v1-multipayerspricedtransactions-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Multipayerspricedtransactions401ErrorException`](../../doc/models/transaction-data-v1-multipayerspricedtransactions-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Multipayerspricedtransactions403ErrorException`](../../doc/models/transaction-data-v1-multipayerspricedtransactions-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Multipayerspricedtransactions404ErrorException`](../../doc/models/transaction-data-v1-multipayerspricedtransactions-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Multipayerspricedtransactions500ErrorException`](../../doc/models/transaction-data-v1-multipayerspricedtransactions-500-error-exception.md) |
 
 
 # Card Usage Summary
@@ -301,8 +361,28 @@ transactionController.cardUsageSummaryAsync(requestId, null).thenAccept(result -
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof TransactionDataV1Cardusagesummary400ErrorException) {
+        TransactionDataV1Cardusagesummary400ErrorException transactionDataV1Cardusagesummary400ErrorException = (TransactionDataV1Cardusagesummary400ErrorException) cause;
+        transactionDataV1Cardusagesummary400ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Cardusagesummary401ErrorException) {
+        TransactionDataV1Cardusagesummary401ErrorException transactionDataV1Cardusagesummary401ErrorException = (TransactionDataV1Cardusagesummary401ErrorException) cause;
+        transactionDataV1Cardusagesummary401ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Cardusagesummary403ErrorException) {
+        TransactionDataV1Cardusagesummary403ErrorException transactionDataV1Cardusagesummary403ErrorException = (TransactionDataV1Cardusagesummary403ErrorException) cause;
+        transactionDataV1Cardusagesummary403ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Cardusagesummary404ErrorException) {
+        TransactionDataV1Cardusagesummary404ErrorException transactionDataV1Cardusagesummary404ErrorException = (TransactionDataV1Cardusagesummary404ErrorException) cause;
+        transactionDataV1Cardusagesummary404ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Cardusagesummary500ErrorException) {
+        TransactionDataV1Cardusagesummary500ErrorException transactionDataV1Cardusagesummary500ErrorException = (TransactionDataV1Cardusagesummary500ErrorException) cause;
+        transactionDataV1Cardusagesummary500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -348,11 +428,11 @@ transactionController.cardUsageSummaryAsync(requestId, null).thenAccept(result -
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Cardusagesummary400ErrorException`](../../doc/models/transaction-data-v1-cardusagesummary-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Cardusagesummary401ErrorException`](../../doc/models/transaction-data-v1-cardusagesummary-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Cardusagesummary403ErrorException`](../../doc/models/transaction-data-v1-cardusagesummary-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Cardusagesummary404ErrorException`](../../doc/models/transaction-data-v1-cardusagesummary-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Cardusagesummary500ErrorException`](../../doc/models/transaction-data-v1-cardusagesummary-500-error-exception.md) |
 
 
 # Volume Based Bonus
@@ -385,8 +465,28 @@ transactionController.volumeBasedBonusAsync(requestId, null).thenAccept(result -
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof TransactionDataV1Volumebasedbonus400ErrorException) {
+        TransactionDataV1Volumebasedbonus400ErrorException transactionDataV1Volumebasedbonus400ErrorException = (TransactionDataV1Volumebasedbonus400ErrorException) cause;
+        transactionDataV1Volumebasedbonus400ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Volumebasedbonus401ErrorException) {
+        TransactionDataV1Volumebasedbonus401ErrorException transactionDataV1Volumebasedbonus401ErrorException = (TransactionDataV1Volumebasedbonus401ErrorException) cause;
+        transactionDataV1Volumebasedbonus401ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Volumebasedbonus403ErrorException) {
+        TransactionDataV1Volumebasedbonus403ErrorException transactionDataV1Volumebasedbonus403ErrorException = (TransactionDataV1Volumebasedbonus403ErrorException) cause;
+        transactionDataV1Volumebasedbonus403ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Volumebasedbonus404ErrorException) {
+        TransactionDataV1Volumebasedbonus404ErrorException transactionDataV1Volumebasedbonus404ErrorException = (TransactionDataV1Volumebasedbonus404ErrorException) cause;
+        transactionDataV1Volumebasedbonus404ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Volumebasedbonus500ErrorException) {
+        TransactionDataV1Volumebasedbonus500ErrorException transactionDataV1Volumebasedbonus500ErrorException = (TransactionDataV1Volumebasedbonus500ErrorException) cause;
+        transactionDataV1Volumebasedbonus500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -522,11 +622,11 @@ transactionController.volumeBasedBonusAsync(requestId, null).thenAccept(result -
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Volumebasedbonus400ErrorException`](../../doc/models/transaction-data-v1-volumebasedbonus-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Volumebasedbonus401ErrorException`](../../doc/models/transaction-data-v1-volumebasedbonus-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Volumebasedbonus403ErrorException`](../../doc/models/transaction-data-v1-volumebasedbonus-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Volumebasedbonus404ErrorException`](../../doc/models/transaction-data-v1-volumebasedbonus-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Volumebasedbonus500ErrorException`](../../doc/models/transaction-data-v1-volumebasedbonus-500-error-exception.md) |
 
 
 # Volume Based Pricing
@@ -559,8 +659,28 @@ transactionController.volumeBasedPricingAsync(requestId, null).thenAccept(result
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof TransactionDataV1Volumebasedpricing400ErrorException) {
+        TransactionDataV1Volumebasedpricing400ErrorException transactionDataV1Volumebasedpricing400ErrorException = (TransactionDataV1Volumebasedpricing400ErrorException) cause;
+        transactionDataV1Volumebasedpricing400ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Volumebasedpricing401ErrorException) {
+        TransactionDataV1Volumebasedpricing401ErrorException transactionDataV1Volumebasedpricing401ErrorException = (TransactionDataV1Volumebasedpricing401ErrorException) cause;
+        transactionDataV1Volumebasedpricing401ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Volumebasedpricing403ErrorException) {
+        TransactionDataV1Volumebasedpricing403ErrorException transactionDataV1Volumebasedpricing403ErrorException = (TransactionDataV1Volumebasedpricing403ErrorException) cause;
+        transactionDataV1Volumebasedpricing403ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Volumebasedpricing404ErrorException) {
+        TransactionDataV1Volumebasedpricing404ErrorException transactionDataV1Volumebasedpricing404ErrorException = (TransactionDataV1Volumebasedpricing404ErrorException) cause;
+        transactionDataV1Volumebasedpricing404ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Volumebasedpricing500ErrorException) {
+        TransactionDataV1Volumebasedpricing500ErrorException transactionDataV1Volumebasedpricing500ErrorException = (TransactionDataV1Volumebasedpricing500ErrorException) cause;
+        transactionDataV1Volumebasedpricing500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -662,11 +782,11 @@ transactionController.volumeBasedPricingAsync(requestId, null).thenAccept(result
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Volumebasedpricing400ErrorException`](../../doc/models/transaction-data-v1-volumebasedpricing-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Volumebasedpricing401ErrorException`](../../doc/models/transaction-data-v1-volumebasedpricing-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Volumebasedpricing403ErrorException`](../../doc/models/transaction-data-v1-volumebasedpricing-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Volumebasedpricing404ErrorException`](../../doc/models/transaction-data-v1-volumebasedpricing-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Volumebasedpricing500ErrorException`](../../doc/models/transaction-data-v1-volumebasedpricing-500-error-exception.md) |
 
 
 # Fees
@@ -716,8 +836,28 @@ transactionController.feesAsync(requestId, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof TransactionDataV1Fees400ErrorException) {
+        TransactionDataV1Fees400ErrorException transactionDataV1Fees400ErrorException = (TransactionDataV1Fees400ErrorException) cause;
+        transactionDataV1Fees400ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Fees401ErrorException) {
+        TransactionDataV1Fees401ErrorException transactionDataV1Fees401ErrorException = (TransactionDataV1Fees401ErrorException) cause;
+        transactionDataV1Fees401ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Fees403ErrorException) {
+        TransactionDataV1Fees403ErrorException transactionDataV1Fees403ErrorException = (TransactionDataV1Fees403ErrorException) cause;
+        transactionDataV1Fees403ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Fees404ErrorException) {
+        TransactionDataV1Fees404ErrorException transactionDataV1Fees404ErrorException = (TransactionDataV1Fees404ErrorException) cause;
+        transactionDataV1Fees404ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Fees500ErrorException) {
+        TransactionDataV1Fees500ErrorException transactionDataV1Fees500ErrorException = (TransactionDataV1Fees500ErrorException) cause;
+        transactionDataV1Fees500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -726,11 +866,11 @@ transactionController.feesAsync(requestId, body).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Fees400ErrorException`](../../doc/models/transaction-data-v1-fees-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Fees401ErrorException`](../../doc/models/transaction-data-v1-fees-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Fees403ErrorException`](../../doc/models/transaction-data-v1-fees-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Fees404ErrorException`](../../doc/models/transaction-data-v1-fees-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Fees500ErrorException`](../../doc/models/transaction-data-v1-fees-500-error-exception.md) |
 
 
 # Fee Summary Response
@@ -775,8 +915,28 @@ transactionController.feeSummaryResponseAsync(requestId, null).thenAccept(result
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof TransactionDataV1Feessummary400ErrorException) {
+        TransactionDataV1Feessummary400ErrorException transactionDataV1Feessummary400ErrorException = (TransactionDataV1Feessummary400ErrorException) cause;
+        transactionDataV1Feessummary400ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Feessummary401ErrorException) {
+        TransactionDataV1Feessummary401ErrorException transactionDataV1Feessummary401ErrorException = (TransactionDataV1Feessummary401ErrorException) cause;
+        transactionDataV1Feessummary401ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Feessummary403ErrorException) {
+        TransactionDataV1Feessummary403ErrorException transactionDataV1Feessummary403ErrorException = (TransactionDataV1Feessummary403ErrorException) cause;
+        transactionDataV1Feessummary403ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Feessummary404ErrorException) {
+        TransactionDataV1Feessummary404ErrorException transactionDataV1Feessummary404ErrorException = (TransactionDataV1Feessummary404ErrorException) cause;
+        transactionDataV1Feessummary404ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Feessummary500ErrorException) {
+        TransactionDataV1Feessummary500ErrorException transactionDataV1Feessummary500ErrorException = (TransactionDataV1Feessummary500ErrorException) cause;
+        transactionDataV1Feessummary500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -785,11 +945,11 @@ transactionController.feeSummaryResponseAsync(requestId, null).thenAccept(result
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Feessummary400ErrorException`](../../doc/models/transaction-data-v1-feessummary-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Feessummary401ErrorException`](../../doc/models/transaction-data-v1-feessummary-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Feessummary403ErrorException`](../../doc/models/transaction-data-v1-feessummary-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Feessummary404ErrorException`](../../doc/models/transaction-data-v1-feessummary-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Feessummary500ErrorException`](../../doc/models/transaction-data-v1-feessummary-500-error-exception.md) |
 
 
 # Fuel Consumption
@@ -822,8 +982,28 @@ transactionController.fuelConsumptionAsync(requestId, null).thenAccept(result ->
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof TransactionDataV1Fuelconsumption400ErrorException) {
+        TransactionDataV1Fuelconsumption400ErrorException transactionDataV1Fuelconsumption400ErrorException = (TransactionDataV1Fuelconsumption400ErrorException) cause;
+        transactionDataV1Fuelconsumption400ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Fuelconsumption401ErrorException) {
+        TransactionDataV1Fuelconsumption401ErrorException transactionDataV1Fuelconsumption401ErrorException = (TransactionDataV1Fuelconsumption401ErrorException) cause;
+        transactionDataV1Fuelconsumption401ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Fuelconsumption403ErrorException) {
+        TransactionDataV1Fuelconsumption403ErrorException transactionDataV1Fuelconsumption403ErrorException = (TransactionDataV1Fuelconsumption403ErrorException) cause;
+        transactionDataV1Fuelconsumption403ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Fuelconsumption404ErrorException) {
+        TransactionDataV1Fuelconsumption404ErrorException transactionDataV1Fuelconsumption404ErrorException = (TransactionDataV1Fuelconsumption404ErrorException) cause;
+        transactionDataV1Fuelconsumption404ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Fuelconsumption500ErrorException) {
+        TransactionDataV1Fuelconsumption500ErrorException transactionDataV1Fuelconsumption500ErrorException = (TransactionDataV1Fuelconsumption500ErrorException) cause;
+        transactionDataV1Fuelconsumption500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -832,11 +1012,11 @@ transactionController.fuelConsumptionAsync(requestId, null).thenAccept(result ->
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Fuelconsumption400ErrorException`](../../doc/models/transaction-data-v1-fuelconsumption-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Fuelconsumption401ErrorException`](../../doc/models/transaction-data-v1-fuelconsumption-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Fuelconsumption403ErrorException`](../../doc/models/transaction-data-v1-fuelconsumption-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Fuelconsumption404ErrorException`](../../doc/models/transaction-data-v1-fuelconsumption-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Fuelconsumption500ErrorException`](../../doc/models/transaction-data-v1-fuelconsumption-500-error-exception.md) |
 
 
 # Update Odometer
@@ -869,8 +1049,28 @@ transactionController.updateOdometerAsync(requestId, null).thenAccept(result -> 
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof TransactionDataV1Updateodometer400ErrorException) {
+        TransactionDataV1Updateodometer400ErrorException transactionDataV1Updateodometer400ErrorException = (TransactionDataV1Updateodometer400ErrorException) cause;
+        transactionDataV1Updateodometer400ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Updateodometer401ErrorException) {
+        TransactionDataV1Updateodometer401ErrorException transactionDataV1Updateodometer401ErrorException = (TransactionDataV1Updateodometer401ErrorException) cause;
+        transactionDataV1Updateodometer401ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Updateodometer403ErrorException) {
+        TransactionDataV1Updateodometer403ErrorException transactionDataV1Updateodometer403ErrorException = (TransactionDataV1Updateodometer403ErrorException) cause;
+        transactionDataV1Updateodometer403ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Updateodometer404ErrorException) {
+        TransactionDataV1Updateodometer404ErrorException transactionDataV1Updateodometer404ErrorException = (TransactionDataV1Updateodometer404ErrorException) cause;
+        transactionDataV1Updateodometer404ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Updateodometer500ErrorException) {
+        TransactionDataV1Updateodometer500ErrorException transactionDataV1Updateodometer500ErrorException = (TransactionDataV1Updateodometer500ErrorException) cause;
+        transactionDataV1Updateodometer500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -879,11 +1079,11 @@ transactionController.updateOdometerAsync(requestId, null).thenAccept(result -> 
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Updateodometer400ErrorException`](../../doc/models/transaction-data-v1-updateodometer-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Updateodometer401ErrorException`](../../doc/models/transaction-data-v1-updateodometer-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Updateodometer403ErrorException`](../../doc/models/transaction-data-v1-updateodometer-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Updateodometer404ErrorException`](../../doc/models/transaction-data-v1-updateodometer-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Updateodometer500ErrorException`](../../doc/models/transaction-data-v1-updateodometer-500-error-exception.md) |
 
 
 # Transaction Exceptions
@@ -916,8 +1116,28 @@ transactionController.transactionExceptionsAsync(requestId, null).thenAccept(res
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof TransactionDataV1Exceptions400ErrorException) {
+        TransactionDataV1Exceptions400ErrorException transactionDataV1Exceptions400ErrorException = (TransactionDataV1Exceptions400ErrorException) cause;
+        transactionDataV1Exceptions400ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Exceptions401ErrorException) {
+        TransactionDataV1Exceptions401ErrorException transactionDataV1Exceptions401ErrorException = (TransactionDataV1Exceptions401ErrorException) cause;
+        transactionDataV1Exceptions401ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Exceptions403ErrorException) {
+        TransactionDataV1Exceptions403ErrorException transactionDataV1Exceptions403ErrorException = (TransactionDataV1Exceptions403ErrorException) cause;
+        transactionDataV1Exceptions403ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Exceptions404ErrorException) {
+        TransactionDataV1Exceptions404ErrorException transactionDataV1Exceptions404ErrorException = (TransactionDataV1Exceptions404ErrorException) cause;
+        transactionDataV1Exceptions404ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Exceptions500ErrorException) {
+        TransactionDataV1Exceptions500ErrorException transactionDataV1Exceptions500ErrorException = (TransactionDataV1Exceptions500ErrorException) cause;
+        transactionDataV1Exceptions500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -926,11 +1146,11 @@ transactionController.transactionExceptionsAsync(requestId, null).thenAccept(res
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Exceptions400ErrorException`](../../doc/models/transaction-data-v1-exceptions-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Exceptions401ErrorException`](../../doc/models/transaction-data-v1-exceptions-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Exceptions403ErrorException`](../../doc/models/transaction-data-v1-exceptions-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Exceptions404ErrorException`](../../doc/models/transaction-data-v1-exceptions-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Exceptions500ErrorException`](../../doc/models/transaction-data-v1-exceptions-500-error-exception.md) |
 
 
 # Recent Transactions New
@@ -986,7 +1206,7 @@ RecentTransactionRequest body = new RecentTransactionRequest.Builder(
     .accountNumber("GB00001233")
     .productCode("22")
     .purchasedInCountry("GB")
-    .cardPAN("700205******890645")
+    .cardPAN("7002051006629890645")
     .fromDateTime("2020-11-09 13:56:03.000")
     .toDateTime("2020-12-09 13:56:03.000")
     .transactionStatus("APPROVED")
@@ -1004,8 +1224,28 @@ transactionController.recentTransactionsNewAsync(requestId, body).thenAccept(res
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof TransactionDataV1Recent400ErrorException) {
+        TransactionDataV1Recent400ErrorException transactionDataV1Recent400ErrorException = (TransactionDataV1Recent400ErrorException) cause;
+        transactionDataV1Recent400ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Recent401ErrorException) {
+        TransactionDataV1Recent401ErrorException transactionDataV1Recent401ErrorException = (TransactionDataV1Recent401ErrorException) cause;
+        transactionDataV1Recent401ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Recent403ErrorException) {
+        TransactionDataV1Recent403ErrorException transactionDataV1Recent403ErrorException = (TransactionDataV1Recent403ErrorException) cause;
+        transactionDataV1Recent403ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Recent404ErrorException) {
+        TransactionDataV1Recent404ErrorException transactionDataV1Recent404ErrorException = (TransactionDataV1Recent404ErrorException) cause;
+        transactionDataV1Recent404ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Recent500ErrorException) {
+        TransactionDataV1Recent500ErrorException transactionDataV1Recent500ErrorException = (TransactionDataV1Recent500ErrorException) cause;
+        transactionDataV1Recent500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -1102,11 +1342,11 @@ transactionController.recentTransactionsNewAsync(requestId, body).thenAccept(res
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Recent400ErrorException`](../../doc/models/transaction-data-v1-recent-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Recent401ErrorException`](../../doc/models/transaction-data-v1-recent-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Recent403ErrorException`](../../doc/models/transaction-data-v1-recent-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Recent404ErrorException`](../../doc/models/transaction-data-v1-recent-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Recent500ErrorException`](../../doc/models/transaction-data-v1-recent-500-error-exception.md) |
 
 
 # Priced Transactions V2
@@ -1216,8 +1456,28 @@ transactionController.pricedTransactionsV2Async(requestId, body).thenAccept(resu
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {
-    // TODO failure callback handler
-    exception.printStackTrace();
+    Throwable cause = exception.getCause();
+
+    if (cause instanceof TransactionDataV1Priced400ErrorException) {
+        TransactionDataV1Priced400ErrorException transactionDataV1Priced400ErrorException = (TransactionDataV1Priced400ErrorException) cause;
+        transactionDataV1Priced400ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Priced401ErrorException) {
+        TransactionDataV1Priced401ErrorException transactionDataV1Priced401ErrorException = (TransactionDataV1Priced401ErrorException) cause;
+        transactionDataV1Priced401ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Priced403ErrorException) {
+        TransactionDataV1Priced403ErrorException transactionDataV1Priced403ErrorException = (TransactionDataV1Priced403ErrorException) cause;
+        transactionDataV1Priced403ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Priced404ErrorException) {
+        TransactionDataV1Priced404ErrorException transactionDataV1Priced404ErrorException = (TransactionDataV1Priced404ErrorException) cause;
+        transactionDataV1Priced404ErrorException.printStackTrace();
+    } else if (cause instanceof TransactionDataV1Priced500ErrorException) {
+        TransactionDataV1Priced500ErrorException transactionDataV1Priced500ErrorException = (TransactionDataV1Priced500ErrorException) cause;
+        transactionDataV1Priced500ErrorException.printStackTrace();
+    } else {
+        // fallback for unexpected errors
+        exception.printStackTrace();
+    }
+
     return null;
 });
 ```
@@ -1412,9 +1672,9 @@ transactionController.pricedTransactionsV2Async(requestId, body).thenAccept(resu
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Priced400ErrorException`](../../doc/models/transaction-data-v1-priced-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Priced401ErrorException`](../../doc/models/transaction-data-v1-priced-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Priced403ErrorException`](../../doc/models/transaction-data-v1-priced-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Priced404ErrorException`](../../doc/models/transaction-data-v1-priced-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Priced500ErrorException`](../../doc/models/transaction-data-v1-priced-500-error-exception.md) |
 
